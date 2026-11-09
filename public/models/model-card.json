@@ -1,0 +1,139 @@
+{
+  "name": "Bananenblick YOLOX-Nano",
+  "architecture": "YOLOX-Nano",
+  "version": "0.1.0",
+  "path": "/models/banana-yolox-nano.onnx",
+  "inputSize": 320,
+  "inputName": "images",
+  "outputName": "predictions",
+  "classes": [
+    "unreif",
+    "reif",
+    "überreif"
+  ],
+  "trainedAt": "2026-11-09T15:21:49.896270+00:00",
+  "dataset": {
+    "title": "Annotated Banana Ripeness Stage Dataset",
+    "url": "https://data.mendeley.com/datasets/56c75hvm7r/1",
+    "license": "CC BY 4.0"
+  },
+  "preprocessing": {
+    "channelOrder": "BGR",
+    "range": [
+      0,
+      255
+    ],
+    "layout": "NCHW",
+    "padding": 114,
+    "letterbox": "top-left"
+  },
+  "output": {
+    "shape": [
+      1,
+      2100,
+      8
+    ],
+    "columns": [
+      "cx",
+      "cy",
+      "width",
+      "height",
+      "objectness",
+      "unreif",
+      "reif",
+      "überreif"
+    ],
+    "decoded": true
+  },
+  "thresholds": {
+    "detection": 0.5,
+    "classification": 0.6,
+    "margin": 0.15,
+    "nmsIou": 0.45
+  },
+  "sha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419",
+  "bytes": 3688139,
+  "metrics": {
+    "mAP50": 0.9394923329768426,
+    "precision": 0.9504950495049505,
+    "recall": 0.9504950495049505,
+    "visibleRecall": 0.9207920792079208,
+    "uncertainCount": 3,
+    "testImages": 101,
+    "perClass": [
+      {
+        "class": "unreif",
+        "support": 33,
+        "truePositive": 30,
+        "falsePositive": 3,
+        "falseNegative": 3,
+        "precision": 0.9090909090909091,
+        "recall": 0.9090909090909091,
+        "localizationRecall": 0.9090909090909091,
+        "wrongRipeness": 0,
+        "missed": 3,
+        "uncertain": 3,
+        "visibleTruePositive": 27,
+        "visibleRecall": 0.8181818181818182,
+        "ap50": 0.8837700147185934
+      },
+      {
+        "class": "reif",
+        "support": 31,
+        "truePositive": 31,
+        "falsePositive": 0,
+        "falseNegative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "localizationRecall": 1.0,
+        "wrongRipeness": 0,
+        "missed": 0,
+        "uncertain": 0,
+        "visibleTruePositive": 31,
+        "visibleRecall": 1.0,
+        "ap50": 1.0
+      },
+      {
+        "class": "überreif",
+        "support": 37,
+        "truePositive": 35,
+        "falsePositive": 2,
+        "falseNegative": 2,
+        "precision": 0.9459459459459459,
+        "recall": 0.9459459459459459,
+        "localizationRecall": 0.9459459459459459,
+        "wrongRipeness": 0,
+        "missed": 2,
+        "uncertain": 0,
+        "visibleTruePositive": 35,
+        "visibleRecall": 0.9459459459459459,
+        "ap50": 0.9347069842119347
+      }
+    ],
+    "cpuReference": {
+      "environment": "Cloud-Linux, ONNX Runtime CPU, 3 Threads; keine Handy-Messung",
+      "medianMs": 12.008840999897075,
+      "p95Ms": 49.62966400012192,
+      "evaluationsPerSecond": 83.27198270079276,
+      "sampleCount": 101,
+      "includes": "Nur ONNX-Inferenz, ohne Kamera, Vor-/Nachverarbeitung oder Rendering",
+      "cpuCount": 3,
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "onnxruntime": "1.31.1"
+    },
+    "realDeviceTestsComplete": false
+  },
+  "evaluationUrl": "/evaluation/test-report.json",
+  "status": "prototype",
+  "limitations": [
+    "Erste CPU-Transfer-Lernrunde auf einem kleinen öffentlichen Datensatz. Keine unabhängige Prüfung in Supermarktumgebungen.",
+    "Die öffentlichen manuellen Annotationen sind teilweise ungenau; keine vollständige Neuannotation. EXIF-Drehungen wurden vor Training und Prüfung normalisiert.",
+    "Nahe Bildduplikate per pHash und Namensfamilien gruppiert. Unbekannte Aufnahmeserien und dieselben physischen Früchte können trotz Audit gruppenübergreifend vorkommen.",
+    "Die Originalannotation kann ein Büschel als ein Objekt zusammenfassen. Sichere Einzelbananenerkennung bei Büscheln und Überlappungen ist nicht belegt.",
+    "Der Datensatz enthält keine annotierten Negativbilder. Falschalarme auf beliebigen Szenen ohne Bananen sind nicht quantifiziert.",
+    "Gemischte Reifestufen im selben realen Bild, wechselndes Licht, starke Bewegung, Überlappungen und Kameradrehungen benötigen separate Praxistests.",
+    "Android- und iPhone-Kameratests sowie Browser- und Energieverbrauchsmessungen auf echten Geräten stehen aus.",
+    "Die Konfidenz ist ein Modellausgabewert und keine kalibrierte Wahrscheinlichkeit; unsicher ab Detektionswert <0,60 oder Abstand der zwei höchsten Klassenwerte <0,15."
+  ],
+  "checkpointSha256": "cb52dd2ba7c4139265ff83a1837104232798a07e05a8c61bbc826d20a8d44968"
+}

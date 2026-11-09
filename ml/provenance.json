@@ -1,0 +1,23 @@
+{
+  "architecture": "YOLOX-Nano, depth=0.33, width=0.25, depthwise=true",
+  "upstream_repository": "https://github.com/Megvii-BaseDetection/YOLOX",
+  "upstream_commit": "6ddff4824372906469a7fae2dc3206c7aa4bbaee",
+  "license": "Apache-2.0",
+  "vendor_changes": "Minimal utils subset; visualization omitted; CPU-compatible autocast API; imports reduced. Architecture, SimOTA assignments and losses preserved.",
+  "pretrained": "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_nano.pth",
+  "dataset": {
+    "title": "Annotated Banana Ripeness Stage Dataset",
+    "doi": "10.17632/56c75hvm7r.1",
+    "url": "https://data.mendeley.com/datasets/56c75hvm7r/1",
+    "license": "CC BY 4.0",
+    "authors": "Natiq-Ul-Haque Rohit; Abu Raihan; Afia Sarkar Mim; Fahima Fahima Tabassum; Aziza Haque",
+    "archive_sha256": "aa635da1a7e8c4e09056a7a72d8625b2facccbc7f9d9e6a8b3b62c0e3712161e"
+  },
+  "pretrained_sha256": "cd28f55fbbc1829f99d9ac9b38a16d259a22889739c8728ea877610201feff7b",
+  "training_environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torchvision": "0.29.2+cpu",
+    "num_threads": 3
+  }
+}

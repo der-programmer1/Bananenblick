@@ -1,0 +1,14 @@
+/*
+  Permissions-Policy: camera=(self), microphone=(), geolocation=()
+  Referrer-Policy: same-origin
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self' blob:; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'
+
+/ort/*
+  Cache-Control: public, max-age=86400
+
+/models/model-card.json
+  Cache-Control: no-cache
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

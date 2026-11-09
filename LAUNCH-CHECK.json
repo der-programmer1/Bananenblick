@@ -1,0 +1,27 @@
+{
+  "status": "ready-for-github-pages-launch",
+  "scope": "Launch-Paket; keine vollständige Smartphone-Abnahme",
+  "verified": {
+    "zipExtraction": "passed",
+    "allFileChecksums": "passed",
+    "npmCiInFreshExtraction": "passed",
+    "typescript": "passed",
+    "unitTests": {
+      "passed": 9,
+      "failed": 0
+    },
+    "staticProductionBuildFromExtraction": "passed",
+    "repositorySubpathsAndModelHash": "passed",
+    "githubWorkflowActionlint": "passed (actionlint v1.7.12)"
+  },
+  "notRun": [
+    "GitHub-Actions-Ausführung in deinem Repository",
+    "Live-Kameraabnahme auf echten Android-/iPhone-Geräten"
+  ],
+  "launch": [
+    "Öffentliches Repository, Branch main; gesamten Inhalt des Ordners bananenblick hochladen.",
+    "Settings → Pages → Source → GitHub Actions.",
+    "Actions → Bananenblick auf GitHub Pages → Run workflow."
+  ],
+  "modelSha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419"
+}

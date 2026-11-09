@@ -1,0 +1,1731 @@
+{
+  "title": "Feste diagnostische Stresskontrollen",
+  "createdAt": "2026-11-09T15:21:51.853863+00:00",
+  "modelSha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419",
+  "thresholds": {
+    "detection": 0.5,
+    "classification": 0.6,
+    "margin": 0.15,
+    "nmsIou": 0.45
+  },
+  "coordinateSpace": "boxes are xyxy in the 320x320 top-left-letterboxed model input, before inverse mapping to source image",
+  "scope": "Synthetische, aus dem Holdout abgeleitete Varianten und ein externes Negativfoto. Nicht zum Training oder zur Schwellwertwahl verwendet. Kein unabhängiger Test echter Theken-, Büschel-, Lichtwechsel-, Bewegungs- oder Smartphone-Szenen.",
+  "results": [
+    {
+      "id": "mixed-montage",
+      "title": "Drei Reifestufen · synthetische Montage",
+      "kind": "synthetic-derived",
+      "detail": "Drei vollständige Holdout-Fotos nebeneinander; keine echte Thekenszene.",
+      "sources": [
+        "BANANA_DATASET/images/test/unripe_085.jpg",
+        "BANANA_DATASET/images/test/ripe_136.jpg",
+        "BANANA_DATASET/images/test/overripe_061.jpg"
+      ],
+      "image": "/evaluation/stress-assets/mixed-montage.jpg",
+      "width": 1200,
+      "height": 640,
+      "expectedObjects": 3,
+      "detections": 3,
+      "groundTruth": [
+        {
+          "class": 0,
+          "box": [
+            23.303909301757812,
+            17.86667251586914,
+            66.93297576904297,
+            137.14175415039062
+          ]
+        },
+        {
+          "class": 1,
+          "box": [
+            133.52996826171875,
+            68.73918914794922,
+            210.66665649414062,
+            104.1500473022461
+          ]
+        },
+        {
+          "class": 2,
+          "box": [
+            232.7815704345703,
+            76.09466552734375,
+            297.3445739746094,
+            102.28883361816406
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "box": [
+            233.59149169921875,
+            75.57633972167969,
+            296.97613525390625,
+            102.67733764648438
+          ],
+          "class": 2,
+          "score": 0.853602409362793,
+          "classProbability": 0.8626325130462646,
+          "classMargin": 0.8565682172775269,
+          "objectness": 0.989531934261322
+        },
+        {
+          "box": [
+            137.35874938964844,
+            63.77873229980469,
+            195.86021423339844,
+            113.19465637207031
+          ],
+          "class": 1,
+          "score": 0.7782038450241089,
+          "classProbability": 0.793489396572113,
+          "classMargin": 0.7926470041275024,
+          "objectness": 0.9807363152503967
+        },
+        {
+          "box": [
+            23.961952209472656,
+            18.582401275634766,
+            70.56830596923828,
+            142.77142333984375
+          ],
+          "class": 0,
+          "score": 0.7465436458587646,
+          "classProbability": 0.7613545656204224,
+          "classMargin": 0.7609738111495972,
+          "objectness": 0.9805465936660767
+        }
+      ],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "visibleRecall": 1.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          },
+          {
+            "class": "reif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          },
+          {
+            "class": "überreif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "overlap-montage",
+      "title": "Teilweise Überdeckung · synthetische Montage",
+      "kind": "synthetic-derived",
+      "detail": "Zwei überlagerte Fotoflächen; volle ursprüngliche Boxen als diagnostische Ziele. Keine unabhängige reale Überlappungsszene.",
+      "sources": [
+        "BANANA_DATASET/images/test/unripe_085.jpg",
+        "BANANA_DATASET/images/test/ripe_136.jpg"
+      ],
+      "image": "/evaluation/stress-assets/overlap-montage.jpg",
+      "width": 800,
+      "height": 640,
+      "expectedObjects": 2,
+      "detections": 2,
+      "groundTruth": [
+        {
+          "class": 0,
+          "box": [
+            47.02899932861328,
+            12.000007629394531,
+            121.0835952758789,
+            214.45376586914062
+          ]
+        },
+        {
+          "class": 1,
+          "box": [
+            149.0706024169922,
+            97.89677429199219,
+            280.0,
+            158.00205993652344
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "box": [
+            27.446029663085938,
+            35.26721954345703,
+            103.34184265136719,
+            217.65878295898438
+          ],
+          "class": 0,
+          "score": 0.8438093662261963,
+          "classProbability": 0.8506925702095032,
+          "classMargin": 0.8504623174667358,
+          "objectness": 0.9919087290763855
+        },
+        {
+          "box": [
+            153.3319854736328,
+            91.53614807128906,
+            256.7801513671875,
+            176.27305603027344
+          ],
+          "class": 1,
+          "score": 0.7603718042373657,
+          "classProbability": 0.7761430740356445,
+          "classMargin": 0.7704465985298157,
+          "objectness": 0.9796799421310425
+        }
+      ],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "visibleRecall": 1.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          },
+          {
+            "class": "reif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "brightness-0",
+      "title": "Unreif · dunkel",
+      "kind": "synthetic-derived",
+      "detail": "Fester Helligkeitsfaktor 0.45; kein Wechsellicht-Kameratest.",
+      "sources": [
+        "BANANA_DATASET/images/test/unripe_085.jpg"
+      ],
+      "image": "/evaluation/stress-assets/brightness-0.jpg",
+      "width": 480,
+      "height": 640,
+      "expectedObjects": 1,
+      "detections": 1,
+      "groundTruth": [
+        {
+          "class": 0,
+          "box": [
+            48.87767791748047,
+            0.0,
+            152.20968627929688,
+            282.49359130859375
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "box": [
+            33.55746841430664,
+            6.2289276123046875,
+            156.11749267578125,
+            284.1871337890625
+          ],
+          "class": 0,
+          "score": 0.6360034942626953,
+          "classProbability": 0.7687491178512573,
+          "classMargin": 0.768709659576416,
+          "objectness": 0.8273226022720337
+        }
+      ],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.3333333333333333,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "visibleRecall": 1.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          },
+          {
+            "class": "reif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "brightness-1",
+      "title": "Reif · hell",
+      "kind": "synthetic-derived",
+      "detail": "Fester Helligkeitsfaktor 1.55; kein Wechsellicht-Kameratest.",
+      "sources": [
+        "BANANA_DATASET/images/test/ripe_136.jpg"
+      ],
+      "image": "/evaluation/stress-assets/brightness-1.jpg",
+      "width": 482,
+      "height": 640,
+      "expectedObjects": 1,
+      "detections": 1,
+      "groundTruth": [
+        {
+          "class": 1,
+          "box": [
+            57.546592712402344,
+            120.35536193847656,
+            241.0,
+            204.57264709472656
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "box": [
+            64.52287292480469,
+            79.58238983154297,
+            204.58091735839844,
+            231.24484252929688
+          ],
+          "class": 1,
+          "score": 0.703491747379303,
+          "classProbability": 0.745193362236023,
+          "classMargin": 0.7423880100250244,
+          "objectness": 0.9440391659736633
+        }
+      ],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "visibleRecall": 0.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "reif",
+            "support": 1,
+            "truePositive": 0,
+            "falsePositive": 1,
+            "falseNegative": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 1,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "brightness-2",
+      "title": "Überreif · dunkel",
+      "kind": "synthetic-derived",
+      "detail": "Fester Helligkeitsfaktor 0.6; kein Wechsellicht-Kameratest.",
+      "sources": [
+        "BANANA_DATASET/images/test/overripe_061.jpg"
+      ],
+      "image": "/evaluation/stress-assets/brightness-2.jpg",
+      "width": 640,
+      "height": 480,
+      "expectedObjects": 1,
+      "detections": 1,
+      "groundTruth": [
+        {
+          "class": 2,
+          "box": [
+            52.99440002441406,
+            91.24632263183594,
+            256.87762451171875,
+            173.96473693847656
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "box": [
+            58.15026092529297,
+            91.9630126953125,
+            261.2842712402344,
+            171.39669799804688
+          ],
+          "class": 2,
+          "score": 0.9278576374053955,
+          "classProbability": 0.9377456903457642,
+          "classMargin": 0.9373973608016968,
+          "objectness": 0.98945552110672
+        }
+      ],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.3333333333333333,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "visibleRecall": 1.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "reif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "überreif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "rotation-90",
+      "title": "Um 90° gedrehte Bilddatei",
+      "kind": "synthetic-derived",
+      "detail": "Pixel und Zielboxen rechnerisch um 90° gedreht; kein Handy-Drehungstest.",
+      "sources": [
+        "BANANA_DATASET/images/test/ripe_136.jpg"
+      ],
+      "image": "/evaluation/stress-assets/rotation-90.jpg",
+      "width": 640,
+      "height": 482,
+      "expectedObjects": 1,
+      "detections": 1,
+      "groundTruth": [
+        {
+          "class": 1,
+          "box": [
+            115.42735290527344,
+            57.546592712402344,
+            199.64463806152344,
+            241.0
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "box": [
+            103.21887969970703,
+            46.35664367675781,
+            211.31256103515625,
+            237.9102020263672
+          ],
+          "class": 1,
+          "score": 0.8662829995155334,
+          "classProbability": 0.8744239807128906,
+          "classMargin": 0.8725174069404602,
+          "objectness": 0.9906898736953735
+        }
+      ],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.3333333333333333,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "visibleRecall": 1.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "reif",
+            "support": 1,
+            "truePositive": 1,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "localizationRecall": 1.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 1,
+            "visibleRecall": 1.0,
+            "ap50": 1.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "empty-0",
+      "title": "Leeres Kontrollbild · schwarz",
+      "kind": "synthetic-negative",
+      "detail": "Homogene leere Fläche; ersetzt keine reale Negativszenen-Stichprobe.",
+      "sources": [],
+      "image": "/evaluation/stress-assets/empty-0.jpg",
+      "width": 640,
+      "height": 480,
+      "expectedObjects": 0,
+      "detections": 0,
+      "groundTruth": [],
+      "predictions": [],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "visibleRecall": 0.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "reif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "empty-114",
+      "title": "Leeres Kontrollbild · neutralgrau",
+      "kind": "synthetic-negative",
+      "detail": "Homogene leere Fläche; ersetzt keine reale Negativszenen-Stichprobe.",
+      "sources": [],
+      "image": "/evaluation/stress-assets/empty-114.jpg",
+      "width": 640,
+      "height": 480,
+      "expectedObjects": 0,
+      "detections": 0,
+      "groundTruth": [],
+      "predictions": [],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "visibleRecall": 0.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "reif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "empty-255",
+      "title": "Leeres Kontrollbild · weiß",
+      "kind": "synthetic-negative",
+      "detail": "Homogene leere Fläche; ersetzt keine reale Negativszenen-Stichprobe.",
+      "sources": [],
+      "image": "/evaluation/stress-assets/empty-255.jpg",
+      "width": 640,
+      "height": 480,
+      "expectedObjects": 0,
+      "detections": 0,
+      "groundTruth": [],
+      "predictions": [],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "visibleRecall": 0.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "reif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "no-banana-photograph",
+      "title": "Reales Foto ohne Banane",
+      "kind": "external-real-negative",
+      "detail": "NASA-Foto aus scikit-image (Public Domain). Ein einzelnes Motiv außerhalb des Thekenbereichs; kein belastbarer Negativdatensatz.",
+      "sources": [
+        "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.19.3/skimage/data/astronaut.png",
+        "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.astronaut"
+      ],
+      "image": "/evaluation/stress-assets/no-banana-photograph.jpg",
+      "width": 512,
+      "height": 512,
+      "expectedObjects": 0,
+      "detections": 0,
+      "groundTruth": [],
+      "predictions": [],
+      "metrics": {
+        "threshold": 0.5,
+        "iouThreshold": 0.5,
+        "nmsIou": 0.45,
+        "apCandidateThreshold": 0.01,
+        "maxDetectionsPerImage": 40,
+        "mAP50": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "visibleRecall": 0.0,
+        "uncertainCount": 0,
+        "perClass": [
+          {
+            "class": "unreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "reif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          },
+          {
+            "class": "überreif",
+            "support": 0,
+            "truePositive": 0,
+            "falsePositive": 0,
+            "falseNegative": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "localizationRecall": 0.0,
+            "wrongRipeness": 0,
+            "missed": 0,
+            "uncertain": 0,
+            "visibleTruePositive": 0,
+            "visibleRecall": 0.0,
+            "ap50": 0.0
+          }
+        ],
+        "confusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "visibleConfusion": {
+          "rows": [
+            "unreif",
+            "reif",
+            "überreif"
+          ],
+          "columns": [
+            "unreif",
+            "reif",
+            "überreif",
+            "unsicher",
+            "nicht erkannt"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "externalImage": {
+    "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.19.3/skimage/data/astronaut.png",
+    "licenseSource": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.astronaut",
+    "credit": "NASA, distributed by scikit-image",
+    "license": "Public Domain; no known copyright restrictions",
+    "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5"
+  },
+  "summary": {
+    "cases": 10,
+    "negativeControls": 4,
+    "falseAlarmsOnNegativeControls": 0,
+    "syntheticPositiveCases": 6
+  },
+  "limitations": [
+    "Die Kontrollen wurden vor Betrachtung der Ausgaben festgelegt. Sie sind klein, nicht repräsentativ und teilweise künstlich zusammengesetzt.",
+    "Tatsächliche gemischte Thekenbilder, dicht liegende Büschel und reale Überlappungen bleiben offen.",
+    "Es wurde nach diesen Ausgaben nicht nachtrainiert und kein Schwellwert angepasst."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "bananenblick",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/prepare-runtime.mjs && vite --config vite.pages.config.ts",
+    "build": "node scripts/prepare-runtime.mjs && vite build --config vite.pages.config.ts && node scripts/verify-pages.mjs",
+    "start": "vite preview --config vite.pages.config.ts",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "check": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "dev:sites": "vite",
+    "build:sites": "node scripts/prepare-runtime.mjs && vinext build",
+    "start:sites": "wrangler dev --config dist/server/wrangler.json",
+    "check:runtime": "node scripts/prepare-runtime.mjs && node --import tsx scripts/check-web-runtime.ts"
+  },
+  "dependencies": {
+    "lucide-react": "^0.577.0",
+    "onnxruntime-web": "1.24.3",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "vinext": "1.0.0-beta.5"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@cloudflare/workers-types": "4.20260515.1",
+    "@openai/sites-vite-plugin": "0.2.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "oxfmt": "0.61.0",
+    "oxlint": "1.76.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "sharp": "0.34.5",
+    "tailwindcss": "4.2.1",
+    "tsx": "^4.20.6",
+    "typescript": "5.9.3",
+    "vite": "8.0.13",
+    "wrangler": "4.92.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

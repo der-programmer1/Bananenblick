@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-11-09T15:22:02.961Z",
+  "status": "passed",
+  "provisional": false,
+  "scope": "Actual onnxruntime-web/all 1.24.3 JSEP WASM on Node/Linux, not a browser, camera, Android or iPhone test.",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "linux",
+    "arch": "x64",
+    "threads": 1,
+    "modelSha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419"
+  },
+  "loadMs": 744.5013180000001,
+  "outputShape": [
+    1,
+    2100,
+    8
+  ],
+  "imageSensitivityPassed": true,
+  "timing": {
+    "measurements": 15,
+    "medianMs": 54.30814199999986,
+    "p95Ms": 374.6395520000003,
+    "inferencePerSecond": 18.413445262038287,
+    "includes": "WASM model run only; excludes image decode/resize, camera, drawing, worker transfer and scheduling"
+  },
+  "examples": [
+    {
+      "id": "unreif",
+      "inferenceMs": 50.21309599999995,
+      "detections": [
+        {
+          "box": {
+            "x": 0.1336740016937256,
+            "y": 0.03601837158203125,
+            "width": 0.5010131518046061,
+            "height": 0.8413825035095215
+          },
+          "predictedClass": 0,
+          "ripeness": "unreif",
+          "confidence": 0.7088408380307243,
+          "capturedAt": 1794237722058
+        }
+      ],
+      "outputSignature": 6717139.339945674
+    },
+    {
+      "id": "reif",
+      "inferenceMs": 56.285484,
+      "detections": [
+        {
+          "box": {
+            "x": 0.2814475411696058,
+            "y": 0.3140740156173706,
+            "width": 0.5922019610266468,
+            "height": 0.4033512592315674
+          },
+          "predictedClass": 1,
+          "ripeness": "reif",
+          "confidence": 0.7410505043648925,
+          "capturedAt": 1794237722405
+        }
+      ],
+      "outputSignature": 6538417.150970608
+    },
+    {
+      "id": "ueberreif",
+      "inferenceMs": 53.14775700000018,
+      "detections": [
+        {
+          "box": {
+            "x": 0.19019930362701415,
+            "y": 0.3948375384012858,
+            "width": 0.6235682010650635,
+            "height": 0.318333371480306
+          },
+          "predictedClass": 2,
+          "ripeness": "überreif",
+          "confidence": 0.9256200024880741,
+          "capturedAt": 1794237722776
+        }
+      ],
+      "outputSignature": 6526803.004330248
+    }
+  ],
+  "syntheticBlankControls": [
+    {
+      "syntheticColor": "#727272",
+      "falseDetections": 0,
+      "detections": []
+    },
+    {
+      "syntheticColor": "#ffffff",
+      "falseDetections": 0,
+      "detections": []
+    },
+    {
+      "syntheticColor": "#1d382b",
+      "falseDetections": 0,
+      "detections": []
+    }
+  ],
+  "realDeviceTests": "not performed",
+  "webgpu": "not tested in this environment"
+}

@@ -1,0 +1,8 @@
+# Install CPU PyTorch separately; see README.md. Versions used for this run.
+numpy==2.5.4
+pillow==13.0.0
+opencv-python-headless==5.0.0.93
+scipy==1.18.1
+loguru==0.7.3
+onnx==1.23.2
+onnxruntime==1.31.1
