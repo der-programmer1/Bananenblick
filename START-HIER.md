@@ -1,5 +1,9 @@
 # Bananenblick starten
 
+**Die App ist bereits online: https://der-programmer1.github.io/Bananenblick/**
+
+Für eine eigene Kopie:
+
 1. Die ZIP entpacken. Den **Inhalt** des Ordners `bananenblick` in ein neues **öffentliches GitHub-Repository** mit Branch **main** übernehmen. `.github` gehört dazu.
 2. **Settings → Pages → Source → GitHub Actions** auswählen.
 3. **Actions → Bananenblick auf GitHub Pages → Run workflow → main** starten.

@@ -1,6 +1,8 @@
-# Bananenblick – GitHub-Pages-Launch
+# Bananenblick – live auf GitHub Pages
 
-**Die Website ist fertig gebaut.** Dieses Paket enthält die öffentlich nutzbare App, das tatsächlich trainierte ONNX-Modell, den kompletten React-/TypeScript-Quellcode, die CPU-Trainingspipeline, Prüfdaten und den GitHub-Pages-Workflow. Die App braucht keine Anmeldung und keinen API-Schlüssel; Kamerabilder werden auf dem jeweiligen Gerät ausgewertet.
+**[App öffnen](https://der-programmer1.github.io/Bananenblick/)** · [Erfolgreicher GitHub-Workflow](https://github.com/der-programmer1/Bananenblick/actions/runs/42658377737)
+
+**Die Website ist veröffentlicht.** Dieses Paket enthält die öffentlich nutzbare App, das tatsächlich trainierte ONNX-Modell, den kompletten React-/TypeScript-Quellcode, die CPU-Trainingspipeline, Prüfdaten und den GitHub-Pages-Workflow. Die App braucht keine Anmeldung und keinen API-Schlüssel; Kamerabilder werden auf dem jeweiligen Gerät ausgewertet.
 
 ## In drei Schritten veröffentlichen
 
@@ -8,7 +10,7 @@
 2. **GitHub Pages einstellen.** Im Repository **Settings → Pages → Build and deployment → Source → GitHub Actions** auswählen.
 3. **Workflow starten.** Unter **Actions → Bananenblick auf GitHub Pages → Run workflow** den Branch **main** wählen und starten. Wenn alle Schritte grün sind, zeigt der Schritt „Veröffentlichen“ die HTTPS-Adresse. Diese Adresse kann jeder in einem aktuellen Safari- oder Chrome-Browser öffnen und „Kamera starten“ antippen.
 
-Bei späteren Änderungen baut und veröffentlicht jeder Push auf `main` automatisch. Ein tatsächlicher GitHub-Actions-Lauf kann erst in deinem Repository stattfinden; die ZIP wurde hier frisch entpackt, mit `npm ci` installiert, typgeprüft, getestet und erfolgreich gebaut. Der Workflow ist außerdem separat mit actionlint geprüft.
+Bei späteren Änderungen baut und veröffentlicht jeder Push auf `main` automatisch. Installation, TypeScript-Prüfung, alle neun Tests, Build und Veröffentlichung sind im [GitHub-Actions-Lauf](https://github.com/der-programmer1/Bananenblick/actions/runs/42658377737) erfolgreich abgeschlossen. Die ZIP wurde außerdem frisch entpackt und lokal gebaut; der Workflow ist mit actionlint geprüft. Die Anleitung unten beschreibt das Einrichten einer eigenen Kopie.
 
 Es muss kein Repositoryname im Code eingetragen und das Modell nicht neu trainiert werden. Relative Asset-Pfade unterstützen sowohl `https://NAME.github.io/REPOSITORY/` als auch eine eigene Domain. Der fertige `docs/`-Ordner ist vollständig enthalten.
 

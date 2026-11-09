@@ -1,5 +1,5 @@
 {
-  "status": "ready-for-github-pages-launch",
+  "status": "published-on-github-pages",
   "scope": "Launch-Paket; keine vollständige Smartphone-Abnahme",
   "verified": {
     "zipExtraction": "passed",
@@ -12,10 +12,22 @@
     },
     "staticProductionBuildFromExtraction": "passed",
     "repositorySubpathsAndModelHash": "passed",
-    "githubWorkflowActionlint": "passed (actionlint v1.7.12)"
+    "githubWorkflowActionlint": "passed (actionlint v1.7.12)",
+    "githubActionsHostedRun": {
+      "status": "success",
+      "url": "https://github.com/der-programmer1/Bananenblick/actions/runs/42658377737",
+      "buildCommit": "6b682c4707a41e9109b8a6c57034081950b69229"
+    },
+    "publicDeployment": {
+      "url": "https://der-programmer1.github.io/Bananenblick/",
+      "httpsEnforced": true,
+      "htmlAndScriptAssets": 200,
+      "modelSha256Verified": true,
+      "wasmStatus": 200,
+      "wasmContentType": "application/wasm"
+    }
   },
   "notRun": [
-    "GitHub-Actions-Ausführung in deinem Repository",
     "Live-Kameraabnahme auf echten Android-/iPhone-Geräten"
   ],
   "launch": [

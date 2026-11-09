@@ -20,18 +20,18 @@
     },
     {
       "path": "LAUNCH-CHECK.json",
-      "bytes": 955,
-      "sha256": "19d578e731e46c5896f72d4dd31f16581b0b70b1ae5f79e1975fde995f453b50"
+      "bytes": 1379,
+      "sha256": "f8475908d1d6ae2195acdd472dac4f08cf0efb063f43504d19fd9e36e8b57b3f"
     },
     {
       "path": "README.md",
-      "bytes": 8927,
-      "sha256": "adcf77b5ee62f8264fc28754078c97377b5ffefb5213d69fc8c1b22bce68fb96"
+      "bytes": 9235,
+      "sha256": "6365c6d61ea03b169480460ef7cda4df27e8eed98fbac38700bf1127ecfe06c3"
     },
     {
       "path": "START-HIER.md",
-      "bytes": 798,
-      "sha256": "bdda49a84d48b76468129a62ca20c003025c7d327ea4f8e45430412f271a21d3"
+      "bytes": 904,
+      "sha256": "dcac3c288abea2d24080be91c6c4684be8dfc52753515612d9a052000cc4fe17"
     },
     {
       "path": "app/globals.css",
