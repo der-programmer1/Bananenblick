@@ -30,8 +30,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { type Ripeness } from "../lib/detection";
-import { containRect } from "../lib/detection";
+import { containRect, DEFAULT_THRESHOLDS, type Ripeness } from "../lib/detection";
 import { recommendation } from "../lib/result-view";
 import { FruitBoxes, FruitList } from "./fruit-results";
 import { useScanner, type Example } from "../lib/use-scanner";
@@ -847,7 +846,7 @@ export default function Home() {
           </div>
           <input
             type="range"
-            min="60"
+            min={Math.round((modelCard?.thresholds.classification ?? DEFAULT_THRESHOLDS.classification) * 100)}
             max="90"
             step="5"
             value={Math.round(scanner.classification * 100)}
@@ -872,7 +871,7 @@ export default function Home() {
           </div>
           <button
             className="button button-light"
-            onClick={() => scanner.setConfidence(modelCard?.thresholds?.classification ?? 0.6)}
+            onClick={() => scanner.setConfidence(modelCard?.thresholds?.classification ?? DEFAULT_THRESHOLDS.classification)}
           >
             <RotateCcw size={15} /> Standard wiederherstellen
           </button>

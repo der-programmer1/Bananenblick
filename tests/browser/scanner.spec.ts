@@ -1,5 +1,42 @@
 import { test, expect } from "@playwright/test";
 
+test("stopping a pending camera request also stops a stream granted afterwards", async ({ page }) => {
+  await page.addInitScript(() => {
+    const state = window as any;
+    state.testTrack = { readyState: "live", stop() { this.readyState = "ended"; } };
+    state.testWorkersStarted = 0;
+    Object.defineProperty(navigator, "mediaDevices", { value: {
+      getUserMedia: () => new Promise((resolve) => {
+        state.grantTestCamera = () => resolve({ getTracks: () => [state.testTrack] });
+      }),
+    } });
+    state.Worker = class { constructor() { state.testWorkersStarted++; } };
+  });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Kamera starten", exact: true }).first().click();
+  await expect(page.getByRole("button", { name: "Kamera wird gestartet …" })).toBeDisabled();
+  await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
+  await page.evaluate(() => (window as any).grantTestCamera());
+  await expect.poll(() => page.evaluate(() => (window as any).testTrack.readyState)).toBe("ended");
+  expect(await page.evaluate(() => (window as any).testWorkersStarted)).toBe(0);
+  expect(await page.locator("video").evaluate((video: HTMLVideoElement) => video.srcObject)).toBeNull();
+  await expect(page.locator(".detection-box")).toHaveCount(0);
+  await expect(page.locator(".ready-summary")).toHaveText("Aktuell keine Banane sicher als essreif erkannt");
+});
+
+test("a model hash mismatch stops inference and explains the retry", async ({ page }) => {
+  await page.route("**/models/banana-yolox-nano.onnx?v=*", (route) =>
+    route.fulfill({ contentType: "application/octet-stream", body: "incomplete or stale model" }));
+  await page.goto("/");
+  await page.getByRole("button", { name: "Erst mal ein Beispiel ansehen" }).click();
+  await page.locator(".example-tile").filter({ hasText: "Gelbe Banane" }).click();
+  await expect(page.locator(".standby-content")).toContainText(
+    "Das Bananenmodell passt noch nicht zur aktuellen Version", { timeout: 30000 });
+  await expect(page.getByRole("button", { name: "Erneut starten", exact: true })).toBeVisible();
+  await expect(page.locator(".detection-box")).toHaveCount(0);
+  await expect(page.locator(".ready-summary")).toHaveText("Aktuell keine Banane sicher als essreif erkannt");
+});
+
 test("number selection, motion, uncertainty, disappearance, orientation and camera stop", async ({
   page,
   browserName,

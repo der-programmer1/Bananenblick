@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { updateTracks, type FrameResult, type Track } from "./detection";
+import { DEFAULT_THRESHOLDS, updateTracks, type FrameResult, type Track } from "./detection";
 import { assetPath } from "./assets";
 
 export type ScannerMode = "idle" | "starting" | "live" | "example" | "error";
@@ -40,12 +40,14 @@ export function useScanner() {
   const forceWasmRef = useRef(false);
   const restartWorkerRef = useRef<(forceWasm: boolean) => void>(() => {});
   const sizeRef = useRef(320);
+  const modelSha256Ref = useRef<string | undefined>(undefined);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const vfcRef = useRef<number | null>(null);
   const frameRef = useRef(0);
   const clearAfterFrameRef = useRef(0);
   const examplePassesRef = useRef(0);
-  const thresholdRef = useRef(0.6);
+  const thresholdRef = useRef(DEFAULT_THRESHOLDS.classification);
+  const minimumConfidenceRef = useRef(DEFAULT_THRESHOLDS.classification);
   const userThresholdRef = useRef(false);
   const captureRef = useRef<() => void>(() => {});
   const loopStartRef = useRef(0);
@@ -69,7 +71,7 @@ export function useScanner() {
     frames: 0,
     capturedAt: 0,
   });
-  const [classification, setClassification] = useState(0.6);
+  const [classification, setClassification] = useState(DEFAULT_THRESHOLDS.classification);
   const [notice, setNotice] = useState("");
   const changeMode = useCallback((value: ScannerMode) => {
     modeRef.current = value;
@@ -107,6 +109,7 @@ export function useScanner() {
     busySinceRef.current = 0;
     workerStartedRef.current = 0;
     forceWasmRef.current = false;
+    modelSha256Ref.current = undefined;
     setModelReady(false);
     setProvider("");
     setModelStatus("Modell startet mit deinem Scan");
@@ -236,12 +239,14 @@ export function useScanner() {
       if (data.type === "ready") {
         readyRef.current = true;
         sizeRef.current = data.inputSize;
+        modelSha256Ref.current = data.modelSha256;
         setModelReady(true);
         setProvider(data.provider);
-        if (!userThresholdRef.current) {
-          thresholdRef.current = data.thresholds.classification;
-          setClassification(data.thresholds.classification);
-        }
+        minimumConfidenceRef.current = data.thresholds.classification;
+        thresholdRef.current = userThresholdRef.current
+          ? Math.max(thresholdRef.current, minimumConfidenceRef.current)
+          : minimumConfidenceRef.current;
+        setClassification(thresholdRef.current);
         setModelStatus("YOLOX-Nano bereit");
         captureRef.current();
       }
@@ -380,7 +385,7 @@ export function useScanner() {
   const setConfidence = useCallback(
     (value: number) => {
       userThresholdRef.current = true;
-      const threshold = Math.max(0.6, Math.min(0.9, value));
+      const threshold = Math.max(minimumConfidenceRef.current, Math.min(0.9, value));
       thresholdRef.current = threshold;
       setClassification(threshold);
       examplePassesRef.current = 0;
@@ -458,6 +463,8 @@ export function useScanner() {
     () => ({
       generatedAt: new Date().toISOString(),
       device: navigator.userAgent,
+      modelSha256: modelSha256Ref.current,
+      inputSize: sizeRef.current,
       provider,
       source: modeRef.current,
       thresholds: { classification: thresholdRef.current },

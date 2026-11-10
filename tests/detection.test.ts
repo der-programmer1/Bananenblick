@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { spawnSync } from "node:child_process";
-import { containRect, decodePredictions, updateTracks, type Detection } from "../lib/detection";
+import { containRect, decodePredictions, updateTracks, DEFAULT_THRESHOLDS, type Detection } from "../lib/detection";
 
 test("decodes landscape letterbox into source-normalized positions", () => {
   const result = decodePredictions(
@@ -36,19 +36,20 @@ test("NMS suppresses competing ripeness classes for the same fruit", () => {
   assert.equal(result[0].ripeness, "unreif");
 });
 test("uncertainty uses joint confidence and class margin", () => {
-  const lowJoint = decodePredictions([160, 120, 160, 80, 0.75, 0.75, 0.1, 0.1], 320, 640, 480, 1);
+  const policy = { ...DEFAULT_THRESHOLDS, detection: .25, classification: .6, margin: .15 };
+  const lowJoint = decodePredictions([160, 120, 160, 80, 0.75, 0.75, 0.1, 0.1], 320, 640, 480, 1, policy);
   assert.equal(lowJoint[0].ripeness, "unsicher");
-  const ambiguous = decodePredictions([160, 120, 160, 80, 0.99, 0.9, 0.8, 0.1], 320, 640, 480, 1);
+  const ambiguous = decodePredictions([160, 120, 160, 80, 0.99, 0.9, 0.8, 0.1], 320, 640, 480, 1, policy);
   assert.equal(ambiguous[0].ripeness, "unsicher");
 });
 test("a lower display threshold cannot turn weak ripe evidence into a recommendation", () => {
   const detections = decodePredictions(
-    [160, 120, 160, 80, 0.5, 0.01, 0.9, 0.01],
+    [160, 120, 160, 80, DEFAULT_THRESHOLDS.classification * .8 / .9, 0.01, 0.9, 0.01],
     320,
     640,
     480,
     100,
-    { detection: 0.25, classification: 0.4, margin: 0.15, nmsIou: 0.4 },
+    { detection: .1, classification: DEFAULT_THRESHOLDS.classification * .5, margin: 0.15, nmsIou: 0.4 },
   );
   assert.equal(detections[0].ripeEvidence, false);
   let tracks = updateTracks([], detections, 0, () => 1);

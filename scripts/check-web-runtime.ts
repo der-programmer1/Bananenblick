@@ -16,6 +16,7 @@ const card = provisional
   : JSON.parse(await readFile("public/models/model-card.json", "utf8"));
 const examples = JSON.parse(await readFile("public/examples/index.json", "utf8"));
 const size = card.inputSize;
+const outputShape = [1, [8, 16, 32].reduce((n, stride) => n + (size / stride) ** 2, 0), 8];
 const thresholds = card.thresholds as Thresholds;
 ort.env.wasm.numThreads = 1;
 ort.env.wasm.proxy = false;
@@ -54,7 +55,7 @@ async function predict(bytes: Uint8Array, width: number, height: number) {
   const outputs = await session.run({ [session.inputNames[0]]: tensor });
   const inferenceMs = performance.now() - began;
   const output = outputs[session.outputNames[0]];
-  assert.deepEqual(output.dims, [1, 2100, 8]);
+  assert.deepEqual(output.dims, outputShape);
   const values = Array.from(output.data as Float32Array);
   assert.ok(values.every(Number.isFinite));
   const detections = decodePredictions(values, size, width, height, Date.now(), thresholds);
@@ -110,7 +111,7 @@ const report = {
     modelSha256: card.sha256 ?? card.model?.sha256,
   },
   loadMs,
-  outputShape: [1, 2100, 8],
+  outputShape,
   imageSensitivityPassed: true,
   timing: {
     measurements: times.length,

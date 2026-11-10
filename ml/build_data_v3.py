@@ -1,7 +1,7 @@
 """Continue learning from the old, seen v1 cases; preserve the unseen v2 holdout."""
 from pathlib import Path
 from datetime import datetime, timezone
-import hashlib,json,shutil
+import hashlib,json,shutil,urllib.request
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parent; WORK=ROOT/'work'; BASE=WORK/'individual-v2'; DATA=WORK/'individual-v3'
@@ -22,7 +22,10 @@ def main():
     supplemental=[]
     for key,entry in labels.items():
         source=images[key];assert f'coco-{key}' not in original_groups
-        path=WORK/'coco/train2017'/source['file_name'];assert path.exists()
+        path=WORK/'coco/train2017'/source['file_name']
+        if not path.exists():
+            path.parent.mkdir(parents=True,exist_ok=True)
+            urllib.request.urlretrieve(source['coco_url'].replace('http:','https:'),path)
         crop=entry['crop'];boxes=entry['boxes'];im=Image.open(path).convert('RGB');w,h=im.size
         im=im.crop((round(w*crop[0]/100),round(h*crop[1]/100),round(w*crop[2]/100),round(h*crop[3]/100)))
         name=f'validation-v3-{key}.jpg';im.save(DATA/'images'/name,quality=94)
