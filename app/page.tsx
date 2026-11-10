@@ -885,7 +885,7 @@ export default function Home() {
           wide
         >
           <p className="modal-lead">
-            Diese Testbilder werden mit demselben lokalen Modell ausgewertet. Sie sind ausdrücklich
+            Diese Beispielbilder werden mit demselben lokalen Modell ausgewertet. Sie sind ausdrücklich
             keine Live-Kamerabilder.
           </p>
           <div className="example-grid">
@@ -920,9 +920,11 @@ export default function Home() {
             >
               Annotated Banana Ripeness Stage Dataset
             </a>
-            , Rohit et al., CC BY 4.0. Die Bilder stammen aus dem getrennten Testbestand.
+            , Rohit et al., CC BY 4.0. Die drei Einzelbilder stammen aus dem getrennten Testbestand.
             {" "}Büschelbeispiel: <a href="https://www.flickr.com/photos/scaredykat/4430551771/" target="_blank" rel="noreferrer">goodiesfirst · putahracsa fruit plate</a>,
             {" "}<a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a> (verkleinert, via COCO 2017).
+            {" "}Gemischter Büschel: <a href="https://commons.wikimedia.org/wiki/File:Bunch_of_banana.jpg" target="_blank" rel="noreferrer">Esther Musasike · Bunch of banana.jpg</a>,
+            {" "}<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> (Ausschnitt, verkleinert; Trainingsbeispiel).
           </p>
         </Modal>
       )}
@@ -962,7 +964,7 @@ export default function Home() {
               <p>Ziel: mindestens 3 Auswertungen/s</p>
             </div>
           </div>
-          <h3 className="modal-section-title">Einzelbananen in realen Mehrfruchtszenen</h3>
+          <h3 className="modal-section-title">Einzelbananen in realen Büscheln</h3>
           {modelCard?.individualBenchmark && <div className="info-callout">
             <CircleHelp size={19} />
             <p><strong>{modelCard.individualBenchmark.passed ? "Zielwerte im Fototest erreicht." : "Zielwerte im Fototest nicht erreicht."}</strong>{" "}

@@ -12,7 +12,7 @@ test("stopping a pending camera request also stops a stream granted afterwards",
     } });
     state.Worker = class { constructor() { state.testWorkersStarted++; } };
   });
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("button", { name: "Kamera starten", exact: true }).first().click();
   await expect(page.getByRole("button", { name: "Kamera wird gestartet …" })).toBeDisabled();
   await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
@@ -27,7 +27,7 @@ test("stopping a pending camera request also stops a stream granted afterwards",
 test("a model hash mismatch stops inference and explains the retry", async ({ page }) => {
   await page.route("**/models/banana-yolox-nano.onnx?v=*", (route) =>
     route.fulfill({ contentType: "application/octet-stream", body: "incomplete or stale model" }));
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("button", { name: "Erst mal ein Beispiel ansehen" }).click();
   await page.locator(".example-tile").filter({ hasText: "Gelbe Banane" }).click();
   await expect(page.locator(".standby-content")).toContainText(
@@ -156,7 +156,7 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
       }
     };
   }, browserName === "webkit");
-  await page.goto("/");
+  await page.goto("./");
   expect(scriptErrors).toEqual([]);
   expect(await page.evaluate(() => Array.isArray((window as any).testStreams))).toBe(true);
   await page.getByRole("button", { name: "Kamera starten", exact: true }).first().click();
@@ -201,7 +201,7 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
   await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
 });
 
-test("real ONNX example runs three passes and stays within both orientations", async ({ page }) => {
+test("real ONNX example runs three passes and stays within both orientations", async ({ page, browser, browserName }) => {
   await page.addInitScript(() => {
     const state = window as any;
     state.inferenceResults = [];
@@ -211,7 +211,7 @@ test("real ONNX example runs three passes and stays within both orientations", a
       constructor(url: string | URL, options?: WorkerOptions) {
         super(url, options);
         this.addEventListener("message", (event) => {
-          state.inferenceEvents.push({ type: event.data.type, message: event.data.message, provider: event.data.provider, at: Date.now() });
+          state.inferenceEvents.push({ type: event.data.type, message: event.data.message, provider: event.data.provider, modelSha256: event.data.modelSha256, at: Date.now() });
           if (event.data.type === "result")
             state.inferenceResults.push({ ...event.data, receivedAt: Date.now() });
         });
@@ -224,7 +224,7 @@ test("real ONNX example runs three passes and stays within both orientations", a
   page.on("request", (request) => {
     if (["POST", "PUT", "PATCH"].includes(request.method())) writes.push(request.url());
   });
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("button", { name: "Erst mal ein Beispiel ansehen" }).click();
   await page.locator(".example-tile").filter({ hasText: "Gelbe Banane" }).click();
   try {
@@ -242,6 +242,14 @@ test("real ONNX example runs three passes and stays within both orientations", a
     .poll(() => page.evaluate(() => (window as any).inferenceResults.length), { timeout: 20000 })
     .toBe(3);
   const results = await page.evaluate(() => (window as any).inferenceResults);
+  const ready = await page.evaluate(() => (window as any).inferenceEvents.find((event: any) => event.type === "ready"));
+  const card = await (await page.request.get(new URL("models/model-card.json", page.url()).href)).json();
+  expect(ready.modelSha256).toBe(card.sha256);
+  await test.info().attach("verified-runtime", {
+    body: JSON.stringify({ modelSha256: ready.modelSha256, inputSize: card.inputSize,
+      browserName, browserVersion: browser.version(), provider: ready.provider, url: page.url() }),
+    contentType: "application/json",
+  });
   await test
     .info()
     .attach("local-inference-results", {

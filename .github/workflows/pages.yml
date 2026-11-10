@@ -27,7 +27,7 @@ jobs:
       - run: npm test
       - run: npx playwright install --with-deps chromium webkit
       - run: npm run test:browser
-      - run: npm run build
+      - run: node scripts/record-browser-validation.mjs
       - name: Modell- und Geräteabnahme vor Veröffentlichung
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: node scripts/check-release.mjs
@@ -36,7 +36,7 @@ jobs:
         with:
           name: browser-test-report
           path: |
-            outputs/browser-results.json
+            outputs/browser*.json
             test-results/
       - uses: actions/upload-pages-artifact@v4
         with:

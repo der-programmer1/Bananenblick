@@ -1,6 +1,6 @@
 """Continue individual-fruit learning without exposing the new frozen test."""
 from pathlib import Path
-import copy,hashlib,json,math,random,subprocess,time
+import copy,hashlib,json,math,random,shutil,subprocess,time
 import cv2
 import numpy as np
 import torch
@@ -22,7 +22,9 @@ def main():
     assert not (SITE/'public/evaluation/individual-v2-report.json').exists(),'The new test must still be unseen.'
     seed=20261113;random.seed(seed);np.random.seed(seed);torch.manual_seed(seed);torch.set_num_threads(2);cv2.setNumThreads(1)
     torch.use_deterministic_algorithms(True);OUT.mkdir(parents=True,exist_ok=True)
-    initial=OUT/'initial.pt';assert initial.exists(),'Copy the selected completed pilot checkpoint before continuation.'
+    initial=OUT/'initial.pt'
+    if not initial.exists():shutil.copyfile(ROOT/'artifacts/banana-individual-v3-initial.pt',initial)
+    assert sha(initial)==plan['pilot']['initialCheckpointSha256']
     size=protocol['inputSize'];pilot.OUT=OUT;pilot.SIZE=size
     model=create_model(initial);ema=copy.deepcopy(model).eval()
     for p in ema.parameters():p.requires_grad_(False)

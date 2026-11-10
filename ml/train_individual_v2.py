@@ -1,6 +1,6 @@
 """Full-backbone training for individual bananas; selects on validation only."""
 from pathlib import Path
-import copy,hashlib,json,math,random,subprocess,time
+import argparse,copy,hashlib,json,math,random,subprocess,time
 import cv2
 import numpy as np
 import torch
@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 from model import create_model
 from train import BananaDataset
 from scene_augmentation import SceneDataset
-from postprocess import decode
+from postprocess import decode,DEFAULTS
 
 ROOT=Path(__file__).resolve().parent;SITE=ROOT.parent;DATA=ROOT/'work/individual-v2';OUT=ROOT/'work/training-v2';SIZE=448
 def sha(path):
@@ -16,6 +16,8 @@ def sha(path):
 
 @torch.inference_mode()
 def validate(model,dataset):
+    # Reproducing training must not depend on a later release's calibrated floor.
+    DEFAULTS.update({'detection':.25,'classification':.6,'margin':.15,'nmsIou':.65})
     model.eval();cases=[];loader=DataLoader(dataset,batch_size=8,shuffle=False,num_workers=0);index=0
     for images,_ in loader:
         outputs=model(images).numpy()
@@ -30,6 +32,7 @@ def validate(model,dataset):
     return report
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--stop-after',type=int);args=parser.parse_args()
     frozen=ROOT/'individual-benchmark-v2.json';manifest=json.loads(frozen.read_text());assert manifest['realBunchScenes']==30 and manifest['negativeScenes']==30
     assert manifest['annotationSha256']==sha(ROOT/'individual_annotations_v2.json')
     assert manifest['trainingAnnotationSha256']==sha(ROOT/'individual_training_v2.json')
@@ -50,7 +53,7 @@ def main():
     started=time.time();steps=0;best=-1;history=[];best_epoch=0;epochs=manifest['protocol']['maxEpochs'];patience=manifest['protocol']['earlyStoppingPatience']
     print('TRAIN_V2_STARTED',json.dumps({'benchmarkSha256':sha(frozen),'inputSize':SIZE,'uniqueTrainingImages':len(dataset.base.records),
         'samplesPerEpoch':len(dataset),'validationImages':len(validation),'syntheticTrainingOnly':600,'fullBackboneFromEpoch':1,'epochsMax':epochs}),flush=True)
-    for epoch in range(epochs):
+    for epoch in range(min(epochs,args.stop_after or epochs)):
         model.train();model.head.use_l1=epoch>=epochs-4;sums=[];start=time.time()
         for batch,(images,targets) in enumerate(loader):
             fraction=(epoch+batch/len(loader))/epochs;warmup=min(1,(steps+1)/len(loader))

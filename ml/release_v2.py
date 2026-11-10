@@ -107,9 +107,19 @@ def main():
             'syntheticTrainingScenesPerEpoch':600,'realPositiveRepeat':6,'fullBackboneFromEpoch':1,'benchmarkFrozenCommit':'59efe9e','continuationFrozenCommit':'18308d4','trainingPlanSha256':sha(plan_path)},
         'limitations':report['limitations']+['Individual-fruit acceptance '+('passed on this static benchmark.' if report['passed'] else 'NOT met on this static benchmark.'),'No physical Android/Chrome or iPhone/Safari checks in this environment.']})
     card['output']['shape']=[1,sum((size//s)**2 for s in [8,16,32]),8]
+    card['recommendationPolicy']={'requiredConsecutiveConfirmations':3,'resetOnUncertainOrMissing':True,'minimumJointConfidence':thresholds['classification'],'meaning':'visible peel ripeness only'}
+    card['additionalDatasets']=[{'name':'COCO 2017','url':'https://cocodataset.org/','sourcesAndLicenses':'/evaluation/individual-training-plan.json'},
+        {'name':'Wikimedia Commons photographs','url':'https://commons.wikimedia.org/','sourcesAndLicenses':'/evaluation/individual-benchmark.json'}]
     shutil.copyfile(model_path,PUBLIC/'models/banana-yolox-nano.onnx');shutil.copyfile(TRAINING/'best.pt',ROOT/'artifacts/banana-yolox-nano.pt')
     card['checkpointSha256']=sha(ROOT/'artifacts/banana-yolox-nano.pt')
     (PUBLIC/'models/model-card.json').write_text(json.dumps(card,ensure_ascii=False,indent=2)+'\n')
+    provenance_path=ROOT/'provenance.json';provenance=json.loads(provenance_path.read_text())
+    provenance['training_environment']['num_threads']=2
+    provenance['individual_fruit_v3']={'modelSha256':card['sha256'],'training':card['training'],
+        'benchmark':'individual-benchmark-v2.json','trainingPlan':'individual-training-v3.json',
+        'acceptedStaticBenchmark':report['passed'],'physicalDeviceTestsPerformed':False,
+        'annotationReview':'Coding assistant visible-instance review; independent human adjudication pending.'}
+    provenance_path.write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n')
     (SITE/'lib/postprocess-config.json').write_text(json.dumps(thresholds,indent=2)+'\n')
     print('V2_TEST_RESULT',json.dumps({k:v for k,v in report.items() if k!='scenes'}),flush=True)
 
