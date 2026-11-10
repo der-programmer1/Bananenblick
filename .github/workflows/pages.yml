@@ -35,7 +35,9 @@ jobs:
         if: always()
         with:
           name: browser-test-report
-          path: outputs/browser-results.json
+          path: |
+            outputs/browser-results.json
+            test-results/
       - uses: actions/upload-pages-artifact@v4
         with:
           path: docs

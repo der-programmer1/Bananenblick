@@ -168,11 +168,13 @@ test("real ONNX example runs three passes and stays within both orientations", a
   await page.addInitScript(() => {
     const state = window as any;
     state.inferenceResults = [];
+    state.inferenceEvents = [];
     const RealWorker = window.Worker;
     state.Worker = class extends RealWorker {
       constructor(url: string | URL, options?: WorkerOptions) {
         super(url, options);
         this.addEventListener("message", (event) => {
+          state.inferenceEvents.push({ type: event.data.type, message: event.data.message, provider: event.data.provider, at: Date.now() });
           if (event.data.type === "result")
             state.inferenceResults.push({ ...event.data, receivedAt: Date.now() });
         });
@@ -188,7 +190,17 @@ test("real ONNX example runs three passes and stays within both orientations", a
   await page.goto("/");
   await page.getByRole("button", { name: "Erst mal ein Beispiel ansehen" }).click();
   await page.locator(".example-tile").filter({ hasText: "Gelbe Banane" }).click();
-  await expect(page.locator(".detection-box").first()).toBeVisible({ timeout: 45000 });
+  try {
+    await expect(page.locator(".detection-box").first()).toBeVisible({ timeout: 45000 });
+  } catch (error) {
+    console.log("SCANNER_DIAGNOSTICS", await page.evaluate(() => ({
+      events: (window as any).inferenceEvents,
+      results: (window as any).inferenceResults,
+      message: document.querySelector(".standby-content")?.textContent,
+      status: document.querySelector(".source-badge")?.textContent,
+    })));
+    throw error;
+  }
   await expect
     .poll(() => page.evaluate(() => (window as any).inferenceResults.length), { timeout: 20000 })
     .toBe(3);
