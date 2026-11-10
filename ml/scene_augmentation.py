@@ -41,8 +41,9 @@ def compose_scene(sprites,background,rng=random,size=320):
     return canvas,visible_targets(masks,classes,areas)
 
 class SceneDataset(Dataset):
-    def __init__(self,data,sprites,synthetic_count=600,real_repeat=6,size=448):
+    def __init__(self,data,sprites,synthetic_count=600,real_repeat=6,size=448,plain_background_probability=0):
         self.size=size
+        self.plain_background_probability=plain_background_probability
         self.base=BananaDataset(data,'train',True,mosaic=0,size=size)
         self.indices=[]
         for i,r in enumerate(self.base.records):
@@ -55,6 +56,12 @@ class SceneDataset(Dataset):
     def __len__(self):return len(self.indices)+self.synthetic_count
     def __getitem__(self,index):
         if index<len(self.indices):return self.base[self.indices[index]]
-        image,boxes=compose_scene(self.sprites,random.choice(self.backgrounds),size=self.size)
+        background=random.choice(self.backgrounds)
+        if self.plain_background_probability>0 and random.random()<self.plain_background_probability:
+            # Single-fruit training mostly has plain backgrounds. Show multiple
+            # fruits there as well so the background does not imply one object.
+            shade=random.randint(100,255)
+            background=np.full((self.size,self.size,3),shade,np.uint8)
+        image,boxes=compose_scene(self.sprites,background,size=self.size)
         target=np.zeros((100,5),np.float32);target[:len(boxes)]=boxes
         return torch.from_numpy(np.ascontiguousarray(image.transpose(2,0,1))).float(),torch.from_numpy(target)

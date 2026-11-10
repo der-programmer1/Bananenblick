@@ -1,14 +1,36 @@
 #!/usr/bin/env python3
 """Meaningful checks for transforms, metric semantics and split integrity."""
 from pathlib import Path
-import json,unittest
+import json,unittest,tempfile
+from unittest.mock import patch
 import numpy as np
-from train import prepare,metrics,iou
+from train import prepare,metrics,iou,BananaDataset
+from scene_augmentation import visible_targets
 from prepare_data import normalize_display_image
 from PIL import Image
 ROOT=Path(__file__).resolve().parent
 
 class PipelineChecks(unittest.TestCase):
+    def test_visible_boxes_shrink_after_occlusion(self):
+        first=np.zeros((20,20),bool);first[:,:10]=True
+        second=np.zeros((20,20),bool);second[:,10:]=True
+        targets=visible_targets([first,second],[1,0],[400,200])
+        np.testing.assert_array_equal(targets,[[1,5,10,10,20],[0,15,10,10,20]])
+
+    def test_almost_hidden_training_fruit_is_not_given_a_full_box(self):
+        mask=np.zeros((20,20),bool);mask[:,:1]=True
+        self.assertEqual(len(visible_targets([mask],[1],[400])),0)
+
+    def test_horizontal_flip_uses_the_selected_model_size(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);Image.new('RGB',(64,64),'yellow').save(root/'image.png')
+            (root/'train.json').write_text(json.dumps([{'id':0,'file':'image.png','boxes':[[1,.25,.25,.5,.5]]}]))
+            ds=BananaDataset(root,'train',augment=True,mosaic=0,size=448)
+            with patch('train.random.random',return_value=0),patch('train.random.uniform',side_effect=[1,0,1,1]):
+                image,targets=ds[0]
+            self.assertEqual(tuple(image.shape),(3,448,448))
+            np.testing.assert_allclose(targets[0],[1,336,112,224,224])
+
     def test_exif_orientation_is_applied_before_resize(self):
         im=Image.new('RGB',(3,2),'black');im.putpixel((0,0),(255,0,0));im.getexif()[274]=6
         shown=normalize_display_image(im)
