@@ -37,6 +37,7 @@ export function useScanner() {
   const busyRef = useRef(false);
   const busySinceRef = useRef(0);
   const workerStartedRef = useRef(0);
+  const workerPhaseRef = useRef("download");
   const forceWasmRef = useRef(false);
   const restartWorkerRef = useRef<(forceWasm: boolean) => void>(() => {});
   const sizeRef = useRef(320);
@@ -212,6 +213,7 @@ export function useScanner() {
   }, [capture]);
   const prepareWorker = useCallback((forceWasm = false) => {
     workerStartedRef.current = performance.now();
+    workerPhaseRef.current = "download";
     forceWasmRef.current = forceWasm;
     let worker: Worker;
     try {
@@ -230,7 +232,13 @@ export function useScanner() {
     worker.onmessage = (event) => {
       if (workerRef.current !== worker) return;
       const data = event.data;
-      if (data.type === "status") setModelStatus(data.message);
+      if (data.type === "status") {
+        setModelStatus(data.message);
+        if (data.phase && data.phase !== workerPhaseRef.current) {
+          workerPhaseRef.current = data.phase;
+          workerStartedRef.current = performance.now();
+        }
+      }
       if (data.type === "provider") setProvider(data.provider);
       if (data.type === "error") {
         fail(data.message);
@@ -401,9 +409,14 @@ export function useScanner() {
     const interval = setInterval(() => {
       const now = performance.now();
       if (modeRef.current !== "live" && modeRef.current !== "example") return;
+      const initTimeout = workerPhaseRef.current === "download" ? 120000 : forceWasmRef.current ? 30000 : 12000;
       const stalled = (busyRef.current && now - busySinceRef.current > (forceWasmRef.current ? 10000 : 2500)) ||
-        (workerRef.current && !readyRef.current && now - workerStartedRef.current > 12000);
+        (workerRef.current && !readyRef.current && now - workerStartedRef.current > initTimeout);
       if (stalled) {
+        if (!readyRef.current && workerPhaseRef.current === "download") {
+          fail("Das Laden der lokalen Erkennung dauert zu lange. Prüfe deine Verbindung und starte den Scan erneut.");
+          return;
+        }
         if (forceWasmRef.current) { fail("Die lokale Erkennung antwortet nicht. Beende den Scan und starte erneut."); return; }
         workerRef.current?.terminate();
         workerRef.current = null;

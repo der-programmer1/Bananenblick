@@ -45,7 +45,7 @@ class PipelineChecks(unittest.TestCase):
         self.assertTrue(np.all(canvas[160:]==114))
     def test_iou_and_wrong_class_are_not_detection_success(self):
         p={'box':[0,0,100,100],'class':1,'score':.9,'classProbability':.9,'classMargin':.8}
-        r=metrics([[p]],[[{'box':[0,0,100,100],'class':0}]])
+        r=metrics([[p]],[[{'box':[0,0,100,100],'class':0}]],classification=.6,margin=.15)
         self.assertEqual(r['recall'],0)
         self.assertEqual(r['perClass'][0]['wrongRipeness'],1)
         self.assertEqual(r['perClass'][0]['localizationRecall'],1)
@@ -55,7 +55,7 @@ class PipelineChecks(unittest.TestCase):
         r=metrics([[p]],[[]]);self.assertEqual(r['perClass'][1]['falsePositive'],1)
     def test_low_confidence_is_uncertain(self):
         p={'box':[0,0,100,100],'class':0,'score':.4,'classProbability':.5,'classMargin':.1}
-        r=metrics([[p]],[[{'box':[0,0,100,100],'class':0}]])
+        r=metrics([[p]],[[{'box':[0,0,100,100],'class':0}]],classification=.6,margin=.15)
         self.assertEqual(r['visibleConfusion']['counts'][0],[0,0,0,1,0])
     def test_actual_split_integrity(self):
         data=ROOT/'work/data'

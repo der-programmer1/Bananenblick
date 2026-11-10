@@ -35,16 +35,30 @@ async function createSession(preferGpu: boolean) {
 async function initialize(assetBase: string, preferGpu = true) {
   const base = new URL(assetBase);
   if (base.origin !== scope.location.origin) throw new Error("Modell und Laufzeit müssen von derselben Website stammen.");
-  send({ type: "status", message: "Lokale Laufzeit wird geladen …" });
+  send({ type: "status", phase: "download", message: "Lokale Laufzeit wird geladen …" });
   // The all build uses the JSEP binary for both WebGPU and WASM (<25 MiB).
   ort = await import("onnxruntime-web/all");
-  ort.env.wasm.wasmPaths = new URL("ort/", base).href;
+  const runtimeVersion = ort.env.versions.web ?? ort.env.versions.common;
+  const wasmUrl = new URL("ort/ort-wasm-simd-threaded.jsep.wasm", base);
+  const mjsUrl = new URL("ort/ort-wasm-simd-threaded.jsep.mjs", base);
+  wasmUrl.searchParams.set("v", runtimeVersion);
+  mjsUrl.searchParams.set("v", runtimeVersion);
+  ort.env.wasm.wasmPaths = { mjs: mjsUrl.href, wasm: wasmUrl.href };
   ort.env.wasm.numThreads = 1;
   ort.env.wasm.proxy = false;
-  const card = await fetch(new URL("models/model-card.json", base), { cache: "no-cache" }).then((response) => {
-    if (!response.ok) throw new Error("Modellbeschreibung konnte nicht geladen werden.");
-    return response.json() as Promise<{ inputSize?: number; thresholds?: Partial<Thresholds>; sha256?: string }>;
-  });
+  // Download the large WASM binary explicitly. Network time must not be mistaken
+  // for a stalled GPU session on a slower mobile connection.
+  const [card, wasmBytes] = await Promise.all([
+    fetch(new URL("models/model-card.json", base), { cache: "no-cache" }).then((response) => {
+      if (!response.ok) throw new Error("Modellbeschreibung konnte nicht geladen werden.");
+      return response.json() as Promise<{ inputSize?: number; thresholds?: Partial<Thresholds>; sha256?: string }>;
+    }),
+    fetch(wasmUrl).then((response) => {
+      if (!response.ok) throw new Error("Lokale Laufzeit konnte nicht geladen werden.");
+      return response.arrayBuffer();
+    }),
+  ]);
+  ort.env.wasm.wasmBinary = wasmBytes;
   inputSize = card.inputSize ?? 320;
   modelSha256 = card.sha256;
   thresholds = { ...DEFAULT_THRESHOLDS, ...card.thresholds };
@@ -59,7 +73,7 @@ async function initialize(assetBase: string, preferGpu = true) {
       .map((byte) => byte.toString(16).padStart(2, "0")).join("");
     if (digest !== card.sha256) throw new Error("Das Bananenmodell passt noch nicht zur aktuellen Version. Bitte starte den Scan erneut.");
   }
-  send({ type: "status", message: "Bananenmodell wird vorbereitet …" });
+  send({ type: "status", phase: "session", message: "Bananenmodell wird vorbereitet …" });
   await createSession(preferGpu);
   send({ type: "ready", provider, inputSize, thresholds, modelSha256 });
 }

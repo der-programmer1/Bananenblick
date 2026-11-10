@@ -201,7 +201,13 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
   await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
 });
 
-test("real ONNX example runs three passes and stays within both orientations", async ({ page, browser, browserName }) => {
+test("slow runtime download and three actual ONNX passes work in both orientations", async ({ page, browser, browserName }) => {
+  let runtimeDownloads = 0;
+  await page.route("**/ort/*.wasm?*", async (route) => {
+    runtimeDownloads++;
+    await new Promise((resolve) => setTimeout(resolve, 13000));
+    await route.continue();
+  });
   await page.addInitScript(() => {
     const state = window as any;
     state.inferenceResults = [];
@@ -257,6 +263,7 @@ test("real ONNX example runs three passes and stays within both orientations", a
       contentType: "application/json",
     });
   expect(results.every((r: any) => r.detections.length >= 1)).toBe(true);
+  expect(runtimeDownloads).toBe(1);
   // Browser image resampling can change uncertainty. Only three certain observations recommend.
   if (results.every((r: any) => r.detections.length === 1 && r.detections[0].ripeEvidence))
     await expect(page.locator(".ready-summary")).toHaveText(/Jetzt essreif: Nr\./);

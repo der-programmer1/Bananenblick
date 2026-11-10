@@ -35,6 +35,8 @@ def main():
     assert manifest['annotationSha256']==sha(ROOT/'individual_annotations_v2.json')
     for rs in manifest['splits'].values():
         for r in rs:assert sha(DATA/r['file'])==r['sha256_file']
+    subprocess.run([str(ROOT/'.venv/bin/python'),str(ROOT/'audit_individual_data.py')],cwd=SITE,check=True)
+    assert json.loads((EVAL/'individual-split-audit.json').read_text())['passedAutomaticChecks']
     size=checkpoint['inputSize'];torch.set_num_threads(2);cv2.setNumThreads(1)
     model=create_model();model.load_state_dict(checkpoint['model']);model.eval()
     for m in model.modules():
@@ -81,8 +83,9 @@ def main():
         'inferenceMs':{'median':float(np.median(times)),'p95':float(np.percentile(times,95)),'context':'ONNX Runtime CPU, Linux, two threads; inference only'}})
     target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     archive=EVAL/'experiment-v1';archive.mkdir(exist_ok=True)
-    for name in ['individual-report.json','individual-predictions.json','individual-validation-selection.json','individual-training-history.json','individual-benchmark.json','test-report.json','test-predictions.json','validation-selection.json','validation-history.json','stress-report.json','web-runtime.json']:
+    for name in ['individual-report.json','individual-predictions.json','individual-validation-selection.json','individual-training-history.json','individual-benchmark.json','test-report.json','test-predictions.json','validation-selection.json','validation-history.json','stress-report.json','web-runtime.json','model-report.md','acceptance.md','device-validation.json']:
         if (EVAL/name).exists():shutil.copyfile(EVAL/name,archive/name)
+    shutil.copyfile(PUBLIC/'models/model-card.json',archive/'model-card.json')
     shutil.copyfile(target,EVAL/'individual-report.json');shutil.copyfile(predictions,EVAL/'individual-predictions.json')
     shutil.copyfile(TRAINING/'threshold-selection.json',EVAL/'individual-validation-selection.json')
     shutil.copyfile(TRAINING/'history.json',EVAL/'individual-training-history.json');shutil.copyfile(frozen,EVAL/'individual-benchmark.json')

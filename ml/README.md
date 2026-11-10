@@ -1,62 +1,71 @@
-# Lokales YOLOX-Nano · Einzelbananen-Entwurf
+# Lokales YOLOX-Nano · nummerierte Einzelbananen
 
-Die Architektur und die lokale ONNX-Auswertung bleiben erhalten. Dieser Stand enthält ein tatsächlich ausgeführtes Nachtraining und ein fehlgeschlagenes neues Prüfergebnis. Er ist kein freigegebenes Modell für zuverlässige Büschelerkennung.
+Der aktuelle Stand verwendet die bestehende Architektur mit vollständigem Backbone-Nachtraining und engen Einzelboxen. Das tatsächliche Ergebnis, die gewählten Schwellwerte und die offene Geräteabnahme stehen im [Modellbericht](../public/evaluation/model-report.md). Kamerabilder und Inferenz bleiben auf dem Gerät. Es gibt keine Bild- oder Inferenz-API.
 
-## Tatsächlich ausgeführter Lauf
+## Daten und eingefrorener Test
 
-Linux, Python 3.12, PyTorch 2.15.0+cpu, torchvision 0.29.2+cpu, drei CPU-Threads, Seed 20261110. Die gepinnten weiteren Pakete stehen in `requirements.txt`. Kein CUDA und keine Bild-API. Acht zusätzliche Epochen dauerten insgesamt etwa 333 Sekunden. Höchstes Validierungs-mAP50 wählte Epoche 1. Der ausgewählte Stand hat lediglich die Head-Aufwärmphase durchlaufen; das ist ein wesentlicher Grund, dieses Experiment nicht als erfolgreiches Einzelbananen-Nachtraining auszugeben.
+- Ausgangsdaten: 471 Training / 101 Validierung / 101 Test, Mendeley, CC BY 4.0. EXIF-Normalisierung und ursprüngliche Gruppen-/Duplikatprüfung sind in `public/evaluation/split-audit.json` dokumentiert. Eine identisch doppelte Quellannotation wurde im ergänzten Training entfernt.
+- Erstes Experiment: 503 Training / 110 Validierung, zwölf zusätzliche echte positive und zwanzig negative COCO-Fotos. Der alte 60-Foto-Test verfehlte die Ziele. Seine unveränderten Berichte bleiben unter `public/evaluation/experiment-v1/` erhalten.
+- Neues Training: echte zusätzliche Commons-Fotos mit 13 eng annotierten Ausschnitten. Die schon eingesehenen alten 30 Negativfotos sind ausdrücklich Trainingsdaten. 29 alte positive Fotos wurden in der Fortsetzung ebenfalls Trainingsdaten; ein visuell nicht beurteilbares Foto blieb in der Validierung. Sechs neue COCO-Ausschnitte bilden zusätzliche Validierung.
+- Endgültiger Split: **575 Training / 117 Validierung / 101 bisheriger Einzelbildtest / 60 neue Prüffotos**.
+- Der neue Test umfasst **30 reale Commons-Büschelfotos und 30 echte COCO-Negativfotos**. `individual-benchmark-v2.json` und `individual_annotations_v2.json` wurden vor Training in Commit `59efe9e` eingefroren. Bei der Fortsetzung in Commit `18308d4` blieben Fotos, Mitgliedschaft und Annotationen des Tests unverändert. Der eingefrorene Fortsetzungsplan steht in `individual-training-v3.json`.
+- Klassen: 0 unreif, 1 reif, 2 überreif; 3 bedeutet visuell nicht sicher bestimmbar und darf keine sichere Reifeempfehlung ergeben. Die zusätzliche Annotation beschreibt einzelne sichtbare Früchte statt grober Sammelboxen.
 
-Ursprüngliche Gewichte für diesen Lauf: `ml/artifacts/banana-yolox-nano.pt` aus Commit `6b682c4`. Der aktuell enthaltene Checkpoint ist der neue ausgewählte Stand. Modellhash, Initialcheckpoint-Hash und tatsächliche Laufdaten stehen in `public/models/model-card.json` und `public/evaluation/individual-training-history.json`.
+Die Einzelboxen wurden vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. Quellen, Bildhashes, Autoren, individuelle Lizenzen und Ausschnitte stehen in den Manifesten. COCO-Trainingsfotos waren im generischen Vortraining enthalten. Die neuen Commons-Testbilder sind davon getrennt; öffentliche Quellen liefern jedoch keine physischen Frucht- oder Aufnahmeserien-IDs. Die automatische zusätzliche Gruppen-, Pixel- und pHash-Prüfung ist in `public/evaluation/individual-split-audit.json` dokumentiert.
+
+## Vorbereitung und Training reproduzieren
+
+Linux, Python 3.12, PyTorch 2.15.0+cpu, torchvision 0.29.2+cpu, zwei CPU-Threads. Alle weiteren Pakete stehen gepinnt in `requirements.txt`. Die Vorbereitung benötigt mehrere GB freien Speicherplatz und lädt ausschließlich öffentliche Originalquellen.
 
 ```bash
 python3 -m venv ml/.venv
 ml/.venv/bin/pip install torch==2.15.0 torchvision==0.29.2 --index-url https://download.pytorch.org/whl/cpu
 ml/.venv/bin/pip install -r ml/requirements.txt
+npm ci
 ml/.venv/bin/python ml/prepare_data.py
 ml/.venv/bin/python ml/build_individual_data.py
+ml/.venv/bin/python ml/build_data_v2.py
+ml/.venv/bin/python ml/build_data_v3.py
+ml/.venv/bin/python ml/prepare_sprites.py
 ml/.venv/bin/python ml/verify.py
-mkdir -p ml/work
-# Den ursprünglichen Ausgangscheckpoint für eine Reproduktion wiederherstellen:
-git show 6b682c4:ml/artifacts/banana-yolox-nano.pt > ml/work/base-v0.1.pt
-ml/.venv/bin/python ml/train.py --data ml/work/individual --output ml/work/individual-training --pretrained ml/work/base-v0.1.pt --epochs 8 --batch-size 8 --threads 3 --seed 20261110 --nms-iou .45 --freeze-manifest ml/individual-benchmark.json
+ml/.venv/bin/python ml/audit_individual_data.py
+ml/.venv/bin/python ml/train_individual_v3.py
 ```
 
-Die Vorbereitung benötigt mehrere GB freien Platz. `prepare_data.py` lädt das Mendeley-Archiv mit festem SHA-256 und erzeugt den ursprünglichen gruppierten Split. `build_individual_data.py` lädt bei Bedarf die offiziellen COCO-2017-Annotationen und die im eingefrorenen Manifest genannten Bilder. Es überprüft Bildhashes und Mitgliedschaft und überschreibt keine geänderte eingefrorene Annotation. Originalfotos, virtuelle Umgebung und Arbeitsdateien unter `work/` werden nicht committed.
+`build_individual_data.py` lädt die ursprünglichen COCO-Annotationen und benötigten Bilder. Die weiteren Builder rekonstruieren die eingefrorenen Quellen und prüfen Hashes; Änderungen an eingefrorenen Annotationen werden nicht still überschrieben. Arbeitsbilder, virtuelle Umgebung und Trainingsdateien unter `ml/work/` sind nicht committed.
 
-## Daten und Audit
+Die Fortsetzung beginnt mit dem tatsächlich ausgewählten Pilotcheckpoint `artifacts/banana-individual-v3-initial.pt`; sein SHA-256 ist im eingefrorenen Trainingsplan festgelegt. Damit kann das Training ohne erneuten Pilotlauf reproduziert werden. Der endgültige ausgewählte Checkpoint steht unter `artifacts/banana-yolox-nano.pt`.
 
-- Ursprünglich: 471 Training / 101 Validierung / 101 Test, Mendeley, CC BY 4.0; EXIF-Normalisierung und pHash-/Namensgruppen wie im ursprünglichen `split-audit.json`.
-- Ergänzt: zwölf positive und zwanzig negative reale COCO-Trainingsfotos; vier positive und fünf negative Validierungsfotos. Überlappungen, wechselnde Hintergründe, Licht und gemischte Schalenreife sind vertreten.
-- Neuer Holdout: dreißig reale Mehrfruchtszenen und dreißig negative Fotos. Einige positive Szenen zeigen arrangierte Früchte; die strenge Forderung nach dreißig unabhängig abgenommenen Büschelszenen ist noch offen.
-- `individual_annotations.json` enthält geprüfte sichtbare Einzelboxen in Prozent statt der ausgewählten groben COCO-Sammelboxen. Klassen 0/1/2: unreif/reif/überreif. Klasse 3 im Test: ungewöhnliche Schale visuell nicht bestimmbar; keine sichere Empfehlung.
-- Eine exakt doppelte Quellannotation in Mendeley-Bild 298 wurde entfernt. Der ursprüngliche Split-Audit beschreibt weiterhin die ursprünglichen Daten, nicht die vollständige Ergänzung.
-- Der zusätzliche Split wird nach COCO-Bild-ID getrennt. Bildhashes, Flickr-Verweise, individuelle CC-BY-/CC-BY-SA-2.0-Lizenzen und die vollständige Mitgliedschaft stehen in `individual-benchmark.json`, festgeschrieben in Commit `28b35eb` vor Training.
-
-Die Annotation wurde vom Coding-Assistenten visuell geprüft; unabhängige menschliche Gegenprüfung fehlt. Physische Frucht- und Aufnahmeserien-IDs fehlen. COCO-Trainingsfotos waren außerdem bereits Teil des generischen COCO-Vortrainings. Es ist kein vollständig unabhängiger Frucht-/Standort-/Vortrainings-Holdout.
-
-## Export und einmaliger Test
-
-`release_individual.py` exportiert den Validierungscheckpoint, prüft ONNX/PyTorch numerisch und wählt ausschließlich anhand der Validierung NMS und Schwellwerte. Für diesen Lauf wurden 72 Kombinationen geprüft (NMS 0,40–0,75; Detektion 0,25/0,35/0,50; sichere Klassifikation 0,60/0,70/0,80; Marge 0,15). Gewählt: Detektion 0,50; Klassifikation 0,60; Marge 0,15; NMS 0,40. Das kleine Validierungsplus ist für dichte Büschel nicht ausreichend repräsentativ.
-
-Danach lief der neue Holdout einmal mit dem fertigen ONNX-Artefakt. `scripts/evaluate-recommendations.ts` nutzt den tatsächlichen Browser-Tracker auf drei identischen Resultaten pro Foto. IoU ≥0,50; unsichere oder nicht dreimal bestätigte Treffer zählen als ausgelassene Empfehlung. Ergebnis: **0 TP / 1 FP / 169 FN, Präzision 0 %, Recall 0 %**. Das Modell erkennt überwiegend den gesamten Büschel oder nichts. Die Ziele sind verfehlt.
+Der Pilot hat 13 vollständige Epochen mit Seed 20261112 durchlaufen; höchstes Validierungs-F1 wählte Epoche 11. Er wurde während Epoche 14 beendet, um bereits eingesehene reale Büschel in das weitere Training aufzunehmen. Keine Inferenz des neuen Tests war erfolgt. Die tatsächlichen 13 Epochen bleiben unter `public/evaluation/pilot-v2/training-history.json` erhalten. Eine optionale Reproduktion des Piloten lautet:
 
 ```bash
-# Dieser einmalige Export wurde bereits ausgeführt:
-ml/.venv/bin/python ml/release_individual.py
-# Das Skript verweigert ein Überschreiben des bereits eingesehenen neuen Tests.
-# Vorhandene Vorhersagen ohne erneutes Training nachvollziehen:
+git show 6b682c4:ml/artifacts/banana-yolox-nano.pt > ml/work/base-v0.1.pt
+ml/.venv/bin/python ml/train_individual_v2.py --stop-after 13
+```
+
+`--stop-after 13` behält den ursprünglichen Kosinusplan mit maximal 24 Epochen bei und beendet nur den Lauf früher. Die Fortsetzung verwendet Seed 20261113, höchstens zwölf Epochen, AdamW, EMA, vollständiges Backbone ab Epoche 1 und späte L1-Lokalisierung. Das höchste bestätigte Reife-F1 auf der Validierung wählt den Checkpoint. Tatsächliche Laufzeit, gewählte Epoche und alle Validierungswerte stehen in `public/models/model-card.json` und `public/evaluation/individual-training-history.json`.
+
+Zusätzliche Trainingsaugmentation: 467 aus ursprünglichen Trainingsfotos gewonnene GrabCut-Fruchtmasken; 600 Montagen je Epoche mit drei bis neun Früchten, Überlappungen, Drehungen und Beleuchtungsänderungen. Verdeckte Zielboxen werden auf sichtbare Pixel verkleinert; nahezu vollständig verdeckte Früchte werden ausgelassen. Zu 30 % werden einfarbige Hintergründe verwendet. Echte zusätzliche positive Fotos werden sechsmal je Epoche gezogen. **Keine Montage zählt als realer Test.**
+
+## Validierungswahl und einmaliger Test
+
+`release_v2.py` exportiert den ausgewählten Fortsetzungscheckpoint mit ONNX-Opset 17, fusioniert Conv/BatchNorm und prüft PyTorch/ONNX numerisch. Die ausschließlich auf Validierung geprüften Kombinationen umfassen NMS-IoU 0,45–0,90, Detektionsschwelle 0,20–0,50, Klassifikationsschwelle 0,40–0,90 und Klassenmarge 0,10–0,40. Die tatsächliche Browser-Objektverfolgung bewertet jede Kombination nach drei Bestätigungen. Auswahl: mindestens 95 % Präzision, dann höchster Recall; falls kein Punkt genügt, höchstes F1 mit dokumentiertem Fehlschlag.
+
+Erst danach wird der neue eingefrorene Test einmal mit dem fertigen ONNX-Artefakt ausgewertet. IoU ≥0,50; unsichere oder unbestätigte reife Früchte zählen als ausgelassene Empfehlung. Der bisherige 101-Foto-Test wird separat ausgewiesen. Das Exportskript verweigert ein Überschreiben eines bereits eingesehenen neuen Tests. Eine erneute Berechnung der schon gespeicherten Empfehlungsmetriken benötigt kein Training:
+
+```bash
 node --import tsx scripts/evaluate-recommendations.ts public/evaluation/individual-predictions.json ml/work/reproduced-recommendations.json
 ml/.venv/bin/python ml/write_summary.py
 ```
 
-Nach weiterem modell- oder testgetriebenem Tuning ist ein neuer, vorab festgelegter unberührter Holdout nötig. Das vorhandene Fehlresultat nicht löschen oder als unabhängiges neues Testergebnis überschreiben. Historische Berichte des Modells 0.1 tragen den Präfix `legacy-v0.1-`.
+Nach weiterem testgetriebenem Tuning ist ein neuer, vorab festgelegter unberührter Holdout erforderlich. Bereits eingesehene Fehlresultate dürfen nicht gelöscht und als unabhängige neue Testergebnisse ausgegeben werden. Historische Berichte des Modells 0.1 tragen den Präfix `legacy-v0.1-`; das fehlgeschlagene Experiment 0.2 bleibt ausdrücklich archiviert.
 
-## Vertrag zwischen Python und Browser
+## Gemeinsamer Laufzeitvertrag
 
-Eingang `images`: Float32 `[1,3,320,320]`, BGR, 0…255, links oben eingeordnet, Padding rechts/unten 114. Ausgang `predictions`: `[1,2100,8]` mit bereits dekodiertem `cx,cy,w,h,objectness,unreif,reif,überreif`. Kein zweiter Grid-Decode.
+Eingang `images`: Float32 `[1,3,448,448]`, BGR, 0…255, links oben eingeordnet, Padding rechts/unten 114. Ausgang `predictions`: `[1,4116,8]` mit bereits dekodiertem `cx,cy,w,h,objectness,unreif,reif,überreif`. Kein zweiter Grid-Decode.
 
-`lib/postprocess-config.json` wird von TypeScript und dem Python-Modul `postprocess.py` gelesen. Gemeinsame Regeln: Score als Objektwert × größter Klassenwert, Clipping, Mindestboxgröße, klassenübergreifende NMS, stabile Reihenfolge bei Gleichstand, höchstens 40 Treffer, Klassenmarge und Unsicherheit. `npm test` vergleicht echte Python- und TypeScript-Ausgaben direkt. Ein abgesenkter Anzeige-Schwellwert umgeht die Mindestkonfidenz der Reife-Bestätigung nicht.
+`lib/postprocess-config.json` wird von TypeScript und `postprocess.py` gelesen. Gemeinsame Regeln: Objektwert × größter Klassenwert, Clipping, Mindestboxgröße, klassenübergreifende NMS, stabile Reihenfolge bei Gleichstand, höchstens 40 Treffer, Klassenmarge und Unsicherheit. `npm test` vergleicht echte Python- und TypeScript-Ausgaben direkt. Die App kann die Sicherheitsschwelle erhöhen; sie unterschreitet den auf Validierung kalibrierten Mindestwert für Empfehlungen nicht.
 
-Die eigentliche Empfehlung ist ein Trackingzustand: drei sichere, eindeutig zugeordnete Reifebewertungen; bei Unsicherheit, fehlender Frucht, Unterbrechung oder zu alten Liveframes wird sie gelöscht. Ein statisches Beispiel benötigt ebenfalls drei tatsächliche Modellaufrufe, bleibt aber unabhängig von der Rechenzeit dasselbe Foto.
+Die Empfehlung ist ein Trackingzustand: drei sichere, eindeutig zugeordnete Reifebewertungen; bei Unsicherheit, fehlender Frucht, Unterbrechung oder zu alten Liveframes wird sie gelöscht. Ein statisches Beispiel benötigt ebenfalls drei tatsächliche Modellaufrufe, bleibt aber unabhängig von der Rechenzeit dasselbe Foto.
 
-Browser- und reale Gerätetests sind in `public/evaluation/acceptance.md` dokumentiert. Linux-/Node-Zahlen sind keine Smartphone-Benchmarks. Die private Sites-Veröffentlichung gehört nicht zu diesem Lauf. Weitere Herkunft: `provenance.json`; YOLOX-Lizenz: `vendor/YOLOX-LICENSE`.
+`npm run test:browser` baut den Produktionsstand und prüft ihn unter dem Pages-Unterpfad `/Bananenblick/`, einschließlich langsamen Laufzeitdownloads, verspäteter Kamerafreigabe nach Stopp, Modellhashfehlern und GPU-Hang mit WASM-Neustart. Chromium/WebKit verwenden mobile Linux-Emulation; echte Geräteprüfungen werden dadurch nicht ersetzt. Physische Android-/Chrome- und iPhone-/Safari-Nachweise bleiben gesondert in `public/evaluation/device-validation.json` dokumentiert. Die private Sites-Veröffentlichung gehört nicht zu dieser Änderung.
