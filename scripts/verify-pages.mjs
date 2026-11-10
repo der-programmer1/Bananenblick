@@ -22,6 +22,8 @@ const card = JSON.parse(await readFile(path.join(root, "models/model-card.json")
 const model = await readFile(path.join(root, "models/banana-yolox-nano.onnx"));
 assert.equal(createHash("sha256").update(model).digest("hex"), card.sha256);
 assert.equal(card.sha256, JSON.parse(await readFile(path.join(root, "evaluation/test-report.json"), "utf8")).modelSha256);
+assert.deepEqual(card.thresholds, JSON.parse(await readFile("lib/postprocess-config.json", "utf8")), "Browser and Python must share the selected defaults.");
+assert.equal(card.sha256, JSON.parse(await readFile(path.join(root, "evaluation/individual-report.json"), "utf8")).modelSha256);
 const examples = JSON.parse(await readFile(path.join(root, "examples/index.json"), "utf8"));
 for (const example of examples) assert.ok((await stat(path.join(root, example.src.replace(/^\/+/, "")))).isFile());
 for (const file of ["ort-wasm-simd-threaded.jsep.mjs", "ort-wasm-simd-threaded.jsep.wasm"]) assert.ok((await stat(path.join(root, "ort", file))).size > 0);

@@ -7,7 +7,7 @@ Flickr source links retained. No source images are committed by this script.
 """
 from pathlib import Path
 from datetime import datetime, timezone
-import concurrent.futures, hashlib, json, random, re, shutil, urllib.request
+import collections, hashlib, json, random, re, shutil, urllib.request, zipfile
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent
@@ -22,10 +22,26 @@ def digest(path):
 
 def main():
     labels = json.loads(ANNOTATIONS.read_text())
-    train_candidates = json.loads((WORK / 'coco-train-candidates.json').read_text())
+    if not all((WORK/f'coco-{s}2017.json').exists() for s in ['train','val']):
+        archive=WORK/'coco-annotations.zip'
+        urllib.request.urlretrieve('https://images.cocodataset.org/annotations/annotations_trainval2017.zip',archive)
+        with zipfile.ZipFile(archive) as z:
+            for s in ['train','val']:
+                (WORK/f'coco-{s}2017.json').write_bytes(z.read(f'annotations/instances_{s}2017.json'))
+        archive.unlink()
     # Candidate index ordering is also persisted in the benchmark for reproduction.
     datasets = {s: json.loads((WORK / f'coco-{s}2017.json').read_text()) for s in ['train', 'val']}
     maps = {s: {i['id']: i for i in d['images']} for s, d in datasets.items()}
+    if FROZEN.exists():
+        train_candidates=[maps['train'][i] for i in json.loads(FROZEN.read_text())['candidateOrdering']]
+    else:
+        anns=collections.defaultdict(list)
+        for a in datasets['train']['annotations']:
+            if a['category_id']==52:anns[a['image_id']].append(a)
+        train_candidates=[i for i in datasets['train']['images'] if i['license'] in [4,5] and
+            2<=len(anns[i['id']])<=8 and sum(a['area'] for a in anns[i['id']])/(i['width']*i['height'])>.1 and
+            all(not a['iscrowd'] for a in anns[i['id']])]
+        random.Random(20261110).shuffle(train_candidates);train_candidates=train_candidates[:100]
     licenses = {l['id']: l for l in datasets['val']['licenses']}
     OUT.mkdir(parents=True, exist_ok=True)
     shutil.copytree(WORK/'data/images', OUT/'images', dirs_exist_ok=True)

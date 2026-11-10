@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T15:22:02.961Z",
+  "generatedAt": "2026-11-10T16:37:08.187Z",
   "status": "passed",
   "provisional": false,
   "scope": "Actual onnxruntime-web/all 1.24.3 JSEP WASM on Node/Linux, not a browser, camera, Android or iPhone test.",
@@ -8,9 +8,9 @@
     "platform": "linux",
     "arch": "x64",
     "threads": 1,
-    "modelSha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419"
+    "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a"
   },
-  "loadMs": 744.5013180000001,
+  "loadMs": 894.462254,
   "outputShape": [
     1,
     2100,
@@ -18,69 +18,92 @@
   ],
   "imageSensitivityPassed": true,
   "timing": {
-    "measurements": 15,
-    "medianMs": 54.30814199999986,
-    "p95Ms": 374.6395520000003,
-    "inferencePerSecond": 18.413445262038287,
+    "measurements": 20,
+    "medianMs": 52.714866999999686,
+    "p95Ms": 413.2456339999999,
+    "inferencePerSecond": 18.96998051801982,
     "includes": "WASM model run only; excludes image decode/resize, camera, drawing, worker transfer and scheduling"
   },
   "examples": [
     {
       "id": "unreif",
-      "inferenceMs": 50.21309599999995,
+      "inferenceMs": 59.895330999999715,
       "detections": [
         {
           "box": {
-            "x": 0.1336740016937256,
-            "y": 0.03601837158203125,
-            "width": 0.5010131518046061,
-            "height": 0.8413825035095215
+            "x": 0.13222341537475585,
+            "y": 0.03193678855895996,
+            "width": 0.5040591557820638,
+            "height": 0.8598379135131836
           },
           "predictedClass": 0,
           "ripeness": "unreif",
-          "confidence": 0.7088408380307243,
-          "capturedAt": 1794237722058
+          "confidence": 0.73822465923989,
+          "capturedAt": 1794328626741,
+          "ripeEvidence": false
         }
       ],
-      "outputSignature": 6717139.339945674
+      "outputSignature": 6823523.21855104
     },
     {
       "id": "reif",
-      "inferenceMs": 56.285484,
+      "inferenceMs": 51.79093899999998,
       "detections": [
         {
           "box": {
-            "x": 0.2814475411696058,
-            "y": 0.3140740156173706,
-            "width": 0.5922019610266468,
-            "height": 0.4033512592315674
+            "x": 0.28088638495607493,
+            "y": 0.31027677059173586,
+            "width": 0.5934358335629538,
+            "height": 0.40700469017028806
           },
           "predictedClass": 1,
           "ripeness": "reif",
-          "confidence": 0.7410505043648925,
-          "capturedAt": 1794237722405
+          "confidence": 0.7442056382582223,
+          "capturedAt": 1794328627248,
+          "ripeEvidence": true
         }
       ],
-      "outputSignature": 6538417.150970608
+      "outputSignature": 6608299.518451363
     },
     {
       "id": "ueberreif",
-      "inferenceMs": 53.14775700000018,
+      "inferenceMs": 52.714866999999686,
       "detections": [
         {
           "box": {
-            "x": 0.19019930362701415,
-            "y": 0.3948375384012858,
-            "width": 0.6235682010650635,
-            "height": 0.318333371480306
+            "x": 0.1903623342514038,
+            "y": 0.39185075759887694,
+            "width": 0.6171390056610108,
+            "height": 0.31983636220296224
           },
           "predictedClass": 2,
           "ripeness": "überreif",
-          "confidence": 0.9256200024880741,
-          "capturedAt": 1794237722776
+          "confidence": 0.889522067825169,
+          "capturedAt": 1794328627647,
+          "ripeEvidence": false
         }
       ],
-      "outputSignature": 6526803.004330248
+      "outputSignature": 6582734.569455117
+    },
+    {
+      "id": "bueschel",
+      "inferenceMs": 52.24224699999968,
+      "detections": [
+        {
+          "box": {
+            "x": 0,
+            "y": 0.1579438497920236,
+            "width": 0.797909140586853,
+            "height": 0.5558749872767282
+          },
+          "predictedClass": 1,
+          "ripeness": "unsicher",
+          "confidence": 0.5960203982390055,
+          "capturedAt": 1794328627982,
+          "ripeEvidence": false
+        }
+      ],
+      "outputSignature": 6655302.69152388
     }
   ],
   "syntheticBlankControls": [

@@ -1,91 +1,49 @@
-# Bananenblick – live auf GitHub Pages
+# Bananenblick · nummerierte Einzelbananen
 
-**[App öffnen](https://der-programmer1.github.io/Bananenblick/)** · [Erfolgreicher GitHub-Workflow](https://github.com/der-programmer1/Bananenblick/actions/runs/42658377737)
+**Änderungsentwurf 0.2 – noch nicht veröffentlicht.** Die bisherige öffentliche App steht unter [der-programmer1.github.io/Bananenblick](https://der-programmer1.github.io/Bananenblick/). Dieser Branch ersetzt sie nicht: Der neue Mehrfruchttest verfehlt die Modellziele, und echte Android-/iPhone-Prüfungen fehlen.
 
-**Die Website ist veröffentlicht.** Dieses Paket enthält die öffentlich nutzbare App, das tatsächlich trainierte ONNX-Modell, den kompletten React-/TypeScript-Quellcode, die CPU-Trainingspipeline, Prüfdaten und den GitHub-Pages-Workflow. Die App braucht keine Anmeldung und keinen API-Schlüssel; Kamerabilder werden auf dem jeweiligen Gerät ausgewertet.
+Jeder aktuelle Treffer erhält eine eindeutige Nummer. Rahmen und Ergebnisliste verwenden dieselbe Nummer; Antippen wählt die zugehörige Frucht aus. Die globale Zuordnung hält Nummern bei leichter Bewegung stabil. Beim Neustart beginnt die Nummerierung wieder bei 1.
 
-## In drei Schritten veröffentlichen
+Ausschließlich drei aufeinanderfolgende sichere Bewertungen als „reif“ ergeben einen grünen Rahmen und „✓ Jetzt essreif“. Unsicherheit, ein verschwundener Treffer oder eine zweifelhafte Zuordnung unterbrechen die Bestätigung. Andere Ergebnisse heißen „Unreif“, „Überreif“ oder „Nicht sicher beurteilbar“. Der Überblick nennt die empfohlenen Nummern oder zeigt „Aktuell keine Banane sicher als essreif erkannt“. Bewertet wird ausschließlich die sichtbare Schalenreife.
 
-1. **ZIP entpacken und Dateien hochladen.** Auf GitHub ein neues öffentliches Repository mit dem Hauptbranch **main** erstellen. Den **Inhalt** des entpackten Ordners `bananenblick` in die oberste Ebene des Repositorys übernehmen. Dort müssen anschließend `README.md`, `package.json`, `docs/`, `app/`, `lib/`, `public/` und `.github/workflows/pages.yml` liegen. Die ZIP-Datei selbst hochzuladen startet keine Website. Versteckte Ordner wie `.github` mit übernehmen.
-2. **GitHub Pages einstellen.** Im Repository **Settings → Pages → Build and deployment → Source → GitHub Actions** auswählen.
-3. **Workflow starten.** Unter **Actions → Bananenblick auf GitHub Pages → Run workflow** den Branch **main** wählen und starten. Wenn alle Schritte grün sind, zeigt der Schritt „Veröffentlichen“ die HTTPS-Adresse. Diese Adresse kann jeder in einem aktuellen Safari- oder Chrome-Browser öffnen und „Kamera starten“ antippen.
+## Tatsächlicher Modellstand
 
-Bei späteren Änderungen baut und veröffentlicht jeder Push auf `main` automatisch. Installation, TypeScript-Prüfung, alle neun Tests, Build und Veröffentlichung sind im [GitHub-Actions-Lauf](https://github.com/der-programmer1/Bananenblick/actions/runs/42658377737) erfolgreich abgeschlossen. Die ZIP wurde außerdem frisch entpackt und lokal gebaut; der Workflow ist mit actionlint geprüft. Die Anleitung unten beschreibt das Einrichten einer eigenen Kopie.
+Die bestehende YOLOX-Nano-Pipeline wurde mit korrigierten Einzelboxen um zwölf reale positive COCO-Fotos und zwanzig Negativfotos ergänzt und acht CPU-Epochen nachtrainiert. Der auf Validierung gewählte Checkpoint stammt aus Epoche 1. Datensätze: **503 Training / 110 Validierung / 101 bisheriger Test / 60 neue Prüffotos**. Einzelannotation und Mitgliedschaft wurden vor Trainingsbeginn in Commit `28b35eb` festgelegt.
 
-Es muss kein Repositoryname im Code eingetragen und das Modell nicht neu trainiert werden. Relative Asset-Pfade unterstützen sowohl `https://NAME.github.io/REPOSITORY/` als auch eine eigene Domain. Der fertige `docs/`-Ordner ist vollständig enthalten.
+**Neuer Test: 0 richtige Empfehlungen, 1 falsche Empfehlung, 169 ausgelassene reife Einzelbananen; Präzision 0 %, Recall 0 %.** Der Bestand enthält 30 reale Mehrfruchtszenen und 30 reale Negativszenen. Er enthält auch arrangierte Früchte und ersetzt noch keine unabhängige Abnahme von 30 Büschelszenen. Die zusätzliche Annotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige Gegenprüfung fehlt. COCO-Trainingsbilder waren außerdem im generischen Vortraining enthalten.
 
-## Dateien bequem übernehmen
+Das Modell gibt bei Büscheln weiterhin überwiegend keinen oder einen zu großen Gesamtrahmen aus. Die gewünschte zuverlässige Erkennung einzelner Früchte ist damit **nicht erreicht**. Der neue Bericht nennt diese Grenze ausdrücklich; bisherige Einzelbildwerte werden separat ausgewiesen. Das neue Büschelbeispiel zeigt einen fehlgeschlagenen Fall.
 
-Mit GitHub Desktop: Den entpackten Projektordner über **File → Add local repository** hinzufügen, bei Bedarf **create a repository here** wählen, alle Dateien committen und mit **Publish repository** veröffentlichen. Ein öffentliches Repository auswählen. Anschließend die drei Launch-Schritte oben ab Schritt 2 ausführen.
+- [Modellbericht](documentation/model-validation.md)
+- [Neue Empfehlungsmetriken](public/evaluation/individual-report.json)
+- [Eingefrorene Szenen, Boxen, Hashes und Quellen](ml/individual-benchmark.json)
+- [Tatsächliche Browserprüfungen und offene Geräteabnahme](public/evaluation/acceptance.md)
+- [Trainingspipeline und Reproduktion](ml/README.md)
 
-Alternativ im entpackten Projektordner mit Git arbeiten. Die URL in der vorletzten Zeile durch die Adresse deines neuen, leeren Repositorys ersetzen:
+## Lokal prüfen
 
-```bash
-git init -b main
-git add .
-git commit -m "Bananenblick GitHub Pages Launch"
-git remote add origin https://github.com/DEIN-NAME/DEIN-REPOSITORY.git
-git push -u origin main
-```
-
-Die Anmeldung erfolgt über die eigene GitHub-Anmeldung. Die ZIP enthält keine Zugangsdaten. Der Workflow verwendet das von GitHub bereitgestellte `GITHUB_TOKEN` mit bereits festgelegten Rechten. Es müssen keine Repository-Secrets angelegt werden.
-
-## Wenn GitHub keine Website zeigt
-
-- In **Settings → Pages** muss die Quelle **GitHub Actions** ausgewählt sein.
-- Der Hauptbranch heißt **main**; der Workflow wird auf diesem Branch ausgeführt.
-- `package.json` und `.github/workflows/pages.yml` müssen in der obersten Repositoryebene liegen. Ein zusätzlicher Projekt-Unterordner im Repository verhindert den Start.
-- Falls der erste automatische Lauf vor dem Aktivieren von Pages gestartet ist, danach über **Run workflow** erneut starten.
-- Unter **Actions** zeigt der fehlgeschlagene Schritt die konkrete Meldung. Für Kamera und Module die veröffentlichte HTTPS-Adresse direkt im Browser öffnen.
-
-## Lokal weiterentwickeln
-
-Node.js **24 LTS** und npm:
+Node.js 24, Python 3 für den direkten Vergleich zwischen Python- und Browser-Nachverarbeitung:
 
 ```bash
 npm ci
 npm run dev
-```
-
-Prüfen und neu bauen:
-
-```bash
 npm run check
 npm test
+npx playwright install --with-deps chromium webkit
+npm run test:browser
 npm run build
 ```
 
-`npm run build` aktualisiert `docs/`. Das Skript stellt die ONNX-Runtime-Dateien aus der fest gepinnten npm-Abhängigkeit wieder her und prüft anschließend Unterpfade, Modell-Hash und erforderliche Assets. Die relative Basis `./` vermeidet eine Anpassung an Benutzer- und Repositorynamen. Der Modell-Worker erhält die Basisadresse explizit von der Seite, damit Modell und WASM auch unter `/DEIN-REPOSITORY/` geladen werden.
+`npm run build` erstellt den statischen GitHub-Pages-Export unter `docs/` und prüft relative Pfade, Assets, Modellhashes und die gemeinsame Nachverarbeitungskonfiguration. `npm run check:runtime` führt zusätzlich das echte ONNX-Modell mit WASM unter Node/Linux aus. Dies ist kein Smartphone-Benchmark.
 
-Die fertige WASM-Laufzeit ist vollständig in `docs/ort/` enthalten. Die zusätzliche Arbeitskopie `public/ort/` wird beim Entwickeln und Bauen erzeugt und daher nicht doppelt in die ZIP gepackt. Sämtliche nötigen Dateien für die sofortige Veröffentlichung sind bereits in `docs/` vorhanden.
+Die Browserfälle nutzen Chromium und WebKit mit mobilen Ansichtsgrößen unter Linux. Der Kamerafall verwendet kontrollierte Video-/Worker-Doubles; der Beispieltest verwendet das echte ONNX-Modell. Erfolgreiche Emulation wird nicht als Android-/iPhone-Geräteabnahme bezeichnet.
 
-Nicht per Doppelklick als `file://` öffnen: Module und Kamera benötigen einen Webserver. `npm start` bietet eine lokale Vorschau des fertigen Builds an.
+## Veröffentlichung
 
-## Modell und Teststand
+Ziel bleibt ausschließlich **GitHub Pages** über `.github/workflows/pages.yml`. Pull Requests prüfen TypeScript, Tests, Chromium/WebKit und den statischen Build. Nur `main` kann veröffentlichen. Vor der Veröffentlichung kontrolliert `scripts/check-release.mjs` die Modellziele (≥95 % Präzision, ≥80 % Recall) und tatsächliche Android-/iPhone-Nachweise einschließlich mindestens drei vollständiger Auswertungen/s. Diese Abnahme schlägt aktuell erwartungsgemäß fehl. Ein lokaler Build bleibt für die Prüfung des Entwurfs möglich.
 
-Das mitgelieferte YOLOX-Nano wurde mit **16 CPU-Epochen** trainiert; der Checkpoint wurde ausschließlich auf Validierungsdaten gewählt. Es erkennt drei Reifestufen und kennzeichnet unsichere Vorhersagen. WebGPU wird verwendet, wenn verfügbar; sonst WebAssembly. Frames werden flüchtig verarbeitet, ohne Warteschlange alter Kamerabilder. Beim Stoppen, Hintergrundwechsel und Verlassen der Seite wird die Kamera freigegeben.
+Nach weiterem Training mit überprüften Einzelbananen-Annotationen ist ein **neuer unberührter Prüfbestand** erforderlich; der jetzige Test wurde eingesehen und darf nicht für weiteres Tuning als unabhängiger Nachweis ausgegeben werden. Anschließend sind reale Geräteprüfungen nach dem [Prüfprotokoll](public/evaluation/acceptance.md) nötig.
 
-Getrennte Daten: **471 Training / 101 Validierung / 101 Test**. Erkannte ähnliche Bilder wurden vor dem Split gruppiert; zwischen Splits gibt es keine erkannten Duplikate. Aufnahmeserien und physische Frucht-IDs sind nicht bekannt und begrenzen die Aussagekraft.
+Die Auswertung bleibt lokal im Browser. Kamerabilder werden weder hochgeladen noch gespeichert. Es gibt keine neue öffentliche API. Die private Sites-Veröffentlichung wurde nicht geändert oder ausgeliefert.
 
-- Test: **95,05 %** gemeinsame Erkennungsquote mit richtiger oberster Reifeklasse; **92,08 %** sicher sichtbar richtig beschriftet; mAP50 **93,95 %**.
-- CPU-Referenz: 12,0 ms Median mit ONNX Runtime CPU und drei Threads. Separater ONNX-Runtime-Web-WASM-Lauf unter Node/Linux: 54,3 ms Median. Beides sind **keine Handy-Benchmarks**.
-- [Lesbarer Modellbericht](documentation/model-validation.md)
-- [Modellkarte](public/models/model-card.json), [Testbericht](public/evaluation/test-report.json), [Stresskontrollen](public/evaluation/stress-report.json), [Web-Laufzeit](public/evaluation/web-runtime.json)
-- [Prüfprotokoll und noch offene Geräteabnahme](public/evaluation/acceptance.md)
-- [CPU-Training reproduzieren](ml/README.md), finaler Checkpoint in `ml/artifacts/banana-yolox-nano.pt`
-
-Die sichtbare Schalenreife ist keine Aussage über Verderb oder innere Fruchtqualität. Echte Android-/iPhone-Livestreamtests, Geschwindigkeit von mindestens drei vollständigen Auswertungen/s, Rahmenpositionen bei Bewegung und Rotation sowie die Netzwerkprüfung auf echten Geräten sind noch offen. Einzelbananen in dichten Büscheln sind mit diesem Datensatz nicht belastbar abgenommen. Die Browser-Steuerung stand hier nicht zur Verfügung; der Pages-Unterpfad wird durch Build-/URL-Prüfungen überprüft, nicht durch eine behauptete Handyabnahme.
-
-## Öffentlich nutzbar, Bilder lokal
-
-Diese Ausgabe enthält **keine Anmeldung**. Bei normalem GitHub Pages ist die Website öffentlich erreichbar. Die App-Dateien, das Modell und die Beispielbilder können heruntergeladen werden. Kamerabilder bleiben im Arbeitsspeicher des jeweiligen Nutzers. GitHub erhält die üblichen Abrufe der statischen Website-Dateien, keine Kamera-Uploads aus dieser App.
-
-Keine eigenen Fotos als Ersatz in `public/` ablegen, wenn sie nicht öffentlich sein sollen: Alles in `docs/` wird bei Veröffentlichung ausgeliefert. Das ist eine Eigenschaft statischen Hostings, keine Kamerafunktion der App.
-
-## Herkunft und ergänzendes Sites-Buildziel
-
-Die ursprüngliche Oberfläche stammt aus dem offiziellen Sites-Vinext-Starter; die wiederverwendete React-/TypeScript-App liegt unverändert in ihrer Struktur unter `app/` und `lib/`. GitHub Pages kann keinen Cloudflare-Worker ausführen. Deshalb rendert `app/pages-entry.tsx` dieselbe Oberfläche als statische Vite-App. Der GitHub-Pages-Build ist der Standard. Optional bleiben `npm run dev:sites`, `npm run build:sites`, `vite.config.ts` und `app/layout.tsx` für eine eigene Sites-/Vinext-Umgebung erhalten. Die Hosting-Datei ist neutral und enthält **keine fremde Projekt-ID**. Für eine Sites-Publikation muss eine eigene Site eingerichtet werden.
-
-Trainingsdaten: Rohit et al. (2026), [Annotated Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0. YOLOX-Architektur: Megvii, Apache 2.0, Lizenz in `ml/vendor/YOLOX-LICENSE`. Weitere Herkunftsangaben stehen in `ml/provenance.json`, Font-Lizenz in `public/fonts/OFL.txt`. Original-Trainingsbilder werden bei Bedarf über das Skript mit Hash-Prüfung heruntergeladen; sie sind wegen der Größe nicht Bestandteil dieser ZIP. Enthalten sind das fertige Modell, die Skripte und die verwendeten Beispielbilder.
-
-Offizielle Hosting-Anleitung: [GitHub Pages – Veröffentlichungsquelle](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site), [GitHub Pages – eigene Workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+Quellen: Rohit et al. (2026), [Mendeley Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0; [COCO 2017](https://cocodataset.org/) mit den individuellen CC-BY-/CC-BY-SA-2.0-Bildlizenzen und Flickr-Verweisen im Manifest. Büschelbeispiel: [goodiesfirst, „putahracsa fruit plate“](https://www.flickr.com/photos/scaredykat/4430551771/), CC BY 2.0, verkleinert. YOLOX: Megvii, Apache 2.0. Ursprüngliche Herkunft: offizieller Sites-/Vinext-Starter; das Standard-Buildziel ist der statische Pages-Export.

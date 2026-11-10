@@ -1,13 +1,14 @@
-# Bananenblick starten
+# Bananenblick 0.2 prüfen
 
-**Die App ist bereits online: https://der-programmer1.github.io/Bananenblick/**
+Dieser Stand ist ein Änderungsentwurf. Die neue Büschelerkennung verfehlt die Genauigkeitsziele; echte Handyprüfungen fehlen. Er wurde nicht auf GitHub Pages veröffentlicht.
 
-Für eine eigene Kopie:
+Lokal mit Node.js 24 starten:
 
-1. Die ZIP entpacken. Den **Inhalt** des Ordners `bananenblick` in ein neues **öffentliches GitHub-Repository** mit Branch **main** übernehmen. `.github` gehört dazu.
-2. **Settings → Pages → Source → GitHub Actions** auswählen.
-3. **Actions → Bananenblick auf GitHub Pages → Run workflow → main** starten.
+```bash
+npm ci
+npm run dev
+```
 
-Nach dem erfolgreichen Lauf steht die HTTPS-Adresse im Workflow-Schritt „Veröffentlichen“ und unter Settings → Pages. Jeder kann die App dort ohne Anmeldung verwenden. Kamerabilder bleiben auf dem jeweiligen Handy.
+`npm run check`, `npm test`, `npm run test:browser` und `npm run build` prüfen den Entwurf. Die Browserinstallation und weitere Einzelheiten stehen in [README.md](README.md).
 
-Die vollständige Anleitung, Git-Befehle und Lösungen für Startprobleme stehen in **README.md**. Website, Modell und Trainingsskripte sind enthalten. Es werden weder ein API-Schlüssel noch ein eigener Modellserver benötigt.
+Die bestehende öffentliche Version ist weiterhin unter https://der-programmer1.github.io/Bananenblick/ erreichbar. Der Pages-Workflow enthält für diesen Entwurf eine Modell- und Geräteabnahme vor der Veröffentlichung. Die private Sites-Veröffentlichung ist nicht Teil dieser Änderung.

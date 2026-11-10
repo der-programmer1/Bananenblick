@@ -19,5 +19,17 @@
     "torch": "2.15.0+cpu",
     "torchvision": "0.29.2+cpu",
     "num_threads": 3
+  },
+  "individual_fruit_experiment": {
+    "additional_dataset": "COCO 2017",
+    "url": "https://cocodataset.org/",
+    "image_sources_and_licenses": "individual-benchmark.json (CC BY / CC BY-SA 2.0, with Flickr source links)",
+    "annotations": "individual_annotations.json; coding-assistant visual review, independent review pending",
+    "frozen_commit": "28b35eb",
+    "initial_banana_checkpoint_commit": "6b682c4",
+    "epochs_requested": 8,
+    "selected_epoch": 1,
+    "accepted": false,
+    "model_sha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a"
   }
 }

@@ -8,7 +8,6 @@ import {
   Camera,
   CameraOff,
   Check,
-  CheckCheck,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -31,7 +30,10 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { containRect, type Ripeness } from "../lib/detection";
+import { type Ripeness } from "../lib/detection";
+import { containRect } from "../lib/detection";
+import { recommendation } from "../lib/result-view";
+import { FruitBoxes, FruitList } from "./fruit-results";
 import { useScanner, type Example } from "../lib/use-scanner";
 import type { ModelCard, EvaluationReport } from "../lib/model-types";
 import { assetPath } from "../lib/assets";
@@ -178,16 +180,21 @@ export default function Home() {
   const [evaluation, setEvaluation] = useState<EvaluationReport | null>(null);
   const [stageSize, setStageSize] = useState({ width: 0, height: 0 });
   const [fullscreen, setFullscreen] = useState(false);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const scannerRef = useRef<HTMLElement>(null);
   const live = scanner.mode === "live";
   const isExample = scanner.mode === "example";
   const hasSource = live || isExample;
   const loading = scanner.mode === "starting" || (hasSource && !scanner.modelReady);
+  useEffect(() => {
+    if (!scanner.tracks.some((track) => track.id === selectedId)) setSelectedId(null);
+  }, [scanner.tracks, selectedId]);
   const counts = Object.fromEntries(
     ["unreif", "reif", "überreif", "unsicher"].map((stage) => [
       stage,
-      scanner.tracks.filter((track) => track.ripeness === stage).length,
+      scanner.tracks.filter((track) => stage === "reif" ? track.readyToEat :
+        stage === "unsicher" ? track.ripeness === "unsicher" || (track.ripeness === "reif" && !track.readyToEat) : track.ripeness === stage).length,
     ]),
   );
   const average = scanner.tracks.length
@@ -365,7 +372,6 @@ export default function Home() {
                 autoPlay
                 playsInline
                 muted
-                onResize={scanner.clearTracks}
                 aria-label="Livebild deiner Rückkamera"
               />
               {isExample && scanner.example && (
@@ -407,30 +413,8 @@ export default function Home() {
                   </span>
                 )}
               </div>
-              <div className="detection-layer" aria-hidden="true">
-                {hasSource &&
-                  scanner.tracks.map((track) => (
-                    <div
-                      key={track.id}
-                      className={`detection-box ${track.ripeness}`}
-                      style={{
-                        left: sourceRect.x + track.box.x * sourceRect.width,
-                        top: sourceRect.y + track.box.y * sourceRect.height,
-                        width: track.box.width * sourceRect.width,
-                        height: track.box.height * sourceRect.height,
-                      }}
-                    >
-                      <span className="detection-label">
-                        {track.ripeness === "unsicher" ? (
-                          <CircleHelp size={12} />
-                        ) : (
-                          <Check size={12} />
-                        )}{" "}
-                        {track.ripeness} <span>{Math.round(track.confidence * 100)} %</span>
-                      </span>
-                    </div>
-                  ))}
-              </div>
+              {hasSource && <FruitBoxes tracks={scanner.tracks} rect={sourceRect}
+                selectedId={selectedId} onSelect={setSelectedId} />}
               {!hasSource && (
                 <div className="standby-content">
                   <div
@@ -583,6 +567,11 @@ export default function Home() {
                 {isExample ? "Beispiel" : live ? "Aktueller Scan" : "Live-Auswertung"}
               </span>
             </div>
+            <p className={`ready-summary ${scanner.tracks.some((track) => track.readyToEat) ? "has-ready" : ""}`}
+              role="status" aria-live="polite">{recommendation(scanner.tracks)}</p>
+            {hasSource && scanner.modelReady && (!scanner.tracks.length || scanner.tracks.some((track) => !track.readyToEat && track.ripeness !== "unreif" && track.ripeness !== "überreif")) &&
+              <p className="recognition-hint">Nicht alle Früchte erkannt? Nimm den Büschel näher oder von der Seite auf, sodass einzelne Bananen sichtbar sind.</p>}
+            <FruitList tracks={scanner.tracks} selectedId={selectedId} onSelect={setSelectedId} />
             <div className="total-count">
               <span className="total-number">
                 {scanner.tracks.length.toString().padStart(2, "0")}
@@ -608,7 +597,7 @@ export default function Home() {
                     ) : stage.id === "reif" ? (
                       <Sun size={18} />
                     ) : (
-                      <CheckCheck size={18} />
+                      <Eye size={18} />
                     )}
                   </span>
                   <div>
@@ -858,7 +847,7 @@ export default function Home() {
           </div>
           <input
             type="range"
-            min="40"
+            min="60"
             max="90"
             step="5"
             value={Math.round(scanner.classification * 100)}
@@ -933,6 +922,8 @@ export default function Home() {
               Annotated Banana Ripeness Stage Dataset
             </a>
             , Rohit et al., CC BY 4.0. Die Bilder stammen aus dem getrennten Testbestand.
+            {" "}Büschelbeispiel: <a href="https://www.flickr.com/photos/scaredykat/4430551771/" target="_blank" rel="noreferrer">goodiesfirst · putahracsa fruit plate</a>,
+            {" "}<a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a> (verkleinert, via COCO 2017).
           </p>
         </Modal>
       )}
@@ -972,7 +963,16 @@ export default function Home() {
               <p>Ziel: mindestens 3 Auswertungen/s</p>
             </div>
           </div>
-          <h3 className="modal-section-title">Erkennungsqualität im getrennten Testbestand</h3>
+          <h3 className="modal-section-title">Einzelbananen in realen Mehrfruchtszenen</h3>
+          {modelCard?.individualBenchmark && <div className="info-callout">
+            <CircleHelp size={19} />
+            <p><strong>{modelCard.individualBenchmark.passed ? "Zielwerte im Fototest erreicht." : "Zielwerte im Fototest nicht erreicht."}</strong>{" "}
+              {modelCard.individualBenchmark.positiveScenes} Mehrfruchtszenen und {modelCard.individualBenchmark.negativeScenes} Negativszenen:{" "}
+              {(modelCard.individualBenchmark.precision * 100).toFixed(1).replace(".", ",")} % Präzision,{" "}
+              {(modelCard.individualBenchmark.recall * 100).toFixed(1).replace(".", ",")} % Erkennungsquote für bestätigte essreife Einzelbananen.
+              Ziel: mindestens 95 % und 80 %. Unsicherheit zählt als ausgelassene Empfehlung.</p>
+          </div>}
+          <h3 className="modal-section-title">Bisheriger Testbestand mit überwiegend Einzelaufnahmen</h3>
           <p className="setting-description">
             Die Erkennungsquote misst, wie viele markierte Früchte korrekt gefunden und eingestuft
             werden (IoU ≥ 0,5). Die Rohwerte zählen die beste Modellklasse auch bei „unsicher“.
@@ -1023,16 +1023,15 @@ export default function Home() {
           <div className="info-callout">
             <CircleHelp size={19} />
             <p>
-              <strong>Die Geräteabnahme ist noch offen.</strong> Der Datensatz enthält überwiegend
-              einzelne Früchte und als ein Objekt markierte Büschel. Die Erkennung jeder einzelnen
-              Banane in dichten Büscheln ist damit noch nicht belegt. Kamerazugriff, Drehung,
+              <strong>Die Geräteabnahme ist noch offen.</strong> Das Nachtraining und der neue Fototest
+              belegen noch keine zuverlässige Erkennung jeder einzelnen Banane in dichten Büscheln. Kamerazugriff, Drehung,
               Bewegung, Rahmenpositionen, ≥ 3 Bilder/s und Netzwerkverkehr müssen auf echten
               Android- und iPhone-Geräten geprüft werden. Beispielbilder ersetzen diesen Nachweis
               nicht.
             </p>
           </div>
           <div className="quality-actions">
-            <a className="button button-forest" href={assetPath("/evaluation/test-report.json")} download>
+            <a className="button button-forest" href={assetPath("/evaluation/individual-report.json")} download>
               <Download size={16} /> Modellbericht
             </a>
             <button

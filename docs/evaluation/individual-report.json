@@ -1,0 +1,656 @@
+{
+  "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+  "iou": 0.5,
+  "requiredConfirmations": 3,
+  "positiveScenes": 30,
+  "negativeScenes": 30,
+  "truePositive": 0,
+  "falsePositive": 1,
+  "falseNegative": 169,
+  "precision": 0,
+  "recall": 0,
+  "uncertainOrUnconfirmed": 1,
+  "negativeFalseRecommendations": 1,
+  "negativeFalseDetections": 7,
+  "targets": {
+    "precision": 0.95,
+    "recall": 0.8
+  },
+  "passed": false,
+  "scenes": [
+    {
+      "id": "coco-train-298142",
+      "scene": "multiple-real-fruits",
+      "support": 7,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 7,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-152795",
+      "scene": "multiple-real-fruits",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-26041",
+      "scene": "multiple-real-fruits",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-113113",
+      "scene": "multiple-real-fruits",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-157860",
+      "scene": "multiple-real-fruits",
+      "support": 4,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 4,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-113367",
+      "scene": "multiple-real-fruits",
+      "support": 4,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 4,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-79992",
+      "scene": "multiple-real-fruits",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-211445",
+      "scene": "multiple-real-fruits",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-403096",
+      "scene": "multiple-real-fruits",
+      "support": 7,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 7,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-44815",
+      "scene": "multiple-real-fruits",
+      "support": 14,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 14,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-87235",
+      "scene": "multiple-real-fruits",
+      "support": 12,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 12,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-481407",
+      "scene": "multiple-real-fruits",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-58231",
+      "scene": "multiple-real-fruits",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-332891",
+      "scene": "multiple-real-fruits",
+      "support": 9,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 9,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-156066",
+      "scene": "multiple-real-fruits",
+      "support": 8,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 8,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-227185",
+      "scene": "multiple-real-fruits",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-383805",
+      "scene": "multiple-real-fruits",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-424174",
+      "scene": "multiple-real-fruits",
+      "support": 13,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 13,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-56784",
+      "scene": "multiple-real-fruits",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-134072",
+      "scene": "multiple-real-fruits",
+      "support": 3,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 3,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-362072",
+      "scene": "multiple-real-fruits",
+      "support": 8,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 8,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-458756",
+      "scene": "multiple-real-fruits",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-21921",
+      "scene": "multiple-real-fruits",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-193710",
+      "scene": "multiple-real-fruits",
+      "support": 8,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 8,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-283144",
+      "scene": "multiple-real-fruits",
+      "support": 9,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 9,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-63764",
+      "scene": "multiple-real-fruits",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-157192",
+      "scene": "multiple-real-fruits",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-474479",
+      "scene": "multiple-real-fruits",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-87522",
+      "scene": "multiple-real-fruits",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-189078",
+      "scene": "multiple-real-fruits",
+      "support": 3,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 3,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-293044",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-530052",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-99053",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-92053",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-397133",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-371677",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-161925",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-356248",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-129113",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-109798",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-309678",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-384661",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-356424",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-189820",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-356498",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-359219",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-350388",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-109916",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-473406",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-192191",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-207844",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-283412",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-386134",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-411938",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-480936",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 1,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.2600299471146833,
+            "y": 0.40973083972930907,
+            "width": 0.3912678002321868,
+            "height": 0.5304900646209717
+          },
+          "confidence": 0.8305495201311714
+        }
+      ]
+    },
+    {
+      "id": "coco-val-372466",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-127494",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-10707",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-578922",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-554291",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    }
+  ],
+  "generatedAt": "2026-11-10T16:24:55.901109+00:00",
+  "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a",
+  "benchmarkSha256": "76eb42130dee722ccb2c2dc884fb4d27827ddc28fa21749a16b717e3cee0fcf3",
+  "frozenAt": "2026-11-10T16:17:40.559961+00:00",
+  "thresholds": {
+    "detection": 0.5,
+    "classification": 0.6,
+    "margin": 0.15,
+    "nmsIou": 0.4
+  },
+  "checkpointEpoch": 1,
+  "limitations": [
+    "COCO train photographs were exposed to the original COCO pretrained detector; this is a holdout from banana fine tuning, not from generic COCO pretraining.",
+    "Single coding-assistant annotation review; independent human ripeness/box adjudication is still required.",
+    "Static real photographs cannot establish live-camera temporal or device performance."
+  ],
+  "inferenceMs": {
+    "median": 11.011354000061147,
+    "p95": 43.809828949940766,
+    "context": "ONNX Runtime CPU, Linux, three threads; inference only, not smartphone throughput"
+  },
+  "realBunchScenes": null,
+  "realBunchSceneCountVerified": false
+}

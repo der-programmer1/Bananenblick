@@ -1,65 +1,53 @@
 #!/usr/bin/env python3
-"""Render the actual reports into a concise German model validation document."""
+"""Generate the current model report without promoting failed acceptance to success."""
 from pathlib import Path
 import json
-ROOT=Path(__file__).resolve().parent;SITE=ROOT.parent
-r=json.loads((SITE/'public/evaluation/test-report.json').read_text());t=r['test'];s=r['speed']
+ROOT=Path(__file__).resolve().parent; SITE=ROOT.parent
+load=lambda p:json.loads((SITE/p).read_text())
+card=load('public/models/model-card.json'); report=load('public/evaluation/individual-report.json')
+legacy=load('public/evaluation/test-report.json')['test']; training=card['training']; thresholds=card['thresholds']
 pct=lambda x:f'{x*100:.1f} %'.replace('.',',')
 lines=[
-'# Bananenblick: Modell und nachgewiesener Prüfstand',
-'',
-'**Prototyp. Die Ausgaben stammen aus einem tatsächlich feintrainierten YOLOX-Nano-Modell. Eine Abnahme auf echten Android- und iPhone-Kameras steht aus.**',
-'',
-'## Modell und Daten',
-'',
-f"CPU-Training über {r['training']['epochsRequested']} Epochen; auf Validierung gewählter Checkpoint: Epoche {r['training']['epoch']}. Eingang 320 × 320, Float32/BGR; fertiger ONNX-Export {r['export']['bytes']/1024/1024:.2f} MiB. Testvorhersagen verwenden genau diesen Export, SHA-256 `{r['modelSha256']}`.",
-'',
-'Daten: Rohit et al. (2026), [Annotated Banana Ripeness Stage Dataset, DOI 10.17632/56c75hvm7r.1](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0. Die Beispielbilder sind verkleinert und EXIF-normalisiert.',
-'',
-'| Split | Bilder | Ähnlichkeitsgruppen | Unreif | Reif | Überreif |',
-'|---|---:|---:|---:|---:|---:|'
-]
-for name,title in [('train','Training'),('val','Validierung'),('test','Test')]:
- q=r['splits'][name];c=q['objects_per_class'];lines.append(f"| {title} | {q['images']} | {q['groups']} | {c['unreif']} | {c['reif']} | {c['überreif']} |")
-lines += ['',f"Audit: {r['audit']['exactDuplicatesRemoved']} exakte Bildduplikate entfernt; {r['audit']['nearDuplicatePairsGrouped']} ähnliche Bildpaare in unteilbare Gruppen gefasst. {r['audit']['detectedCrossSplitDuplicates']} erkannte gruppenübergreifende Duplikate. pHash-Prüfung berücksichtigt Drehungen und Spiegelungen. {r['audit']['boundaryBoxesClipped']} Randboxen wurden beschnitten. EXIF-Drehungen wurden vor Skalierung und Training angewendet und mit Zielannotationen visuell geprüft.",'',
-'Physische Frucht- und Aufnahmeserien-IDs fehlen. Derselbe Bananentyp oder dieselbe physische Frucht kann trotz automatischer Ähnlichkeitsprüfung in verschiedenen Gruppen vorkommen. Die Zahlen belegen daher keine unabhängige Standort-/Frucht-Generalisation. Die manuellen Annotationen sind teils ungenau.','',
-'## Einmalige Holdout-Auswertung','',
-f"Der Detektionsschwellwert {t['threshold']:.2f} wurde ausschließlich auf Validierung gewählt. IoU ≥ 0,50 definiert einen Positionstreffer. mAP50 im Test: **{pct(t['mAP50'])}**. Gemeinsame Erkennung mit richtiger oberster Reifeklasse: **{pct(t['recall'])} Recall**, **{pct(t['precision'])} Precision**. Als sichere Reifestufe in der Oberfläche beschriftet: **{pct(t['visibleRecall'])}**; **{t['uncertainCount']}** Treffer erhalten „unsicher“.",'',
-'| Reifestufe | Testobjekte | Präzision roh | Recall roh | Sicher beschriftet | Falsche Reife | Übersehen | Unsicher |',
-'|---|---:|---:|---:|---:|---:|---:|---:|'
-]
-for c in t['perClass']:lines.append(f"| {c['class']} | {c['support']} | {pct(c['precision'])} | {pct(c['recall'])} | {pct(c['visibleRecall'])} | {c['wrongRipeness']} | {c['missed']} | {c['uncertain']} |")
-lines += ['',
-'„Roh“ zählt die höchste Modellklasse auch bei einer Enthaltung der Oberfläche. „Sicher beschriftet“ zählt nur richtige Position und Reifestufe oberhalb der Konfidenz-/Margengrenze. „Falsche Reife“ zählt falsch klassifizierte, aber passend lokalisierte Testobjekte; „übersehen“ hat keinen passenden Rahmen. Falschalarme werden in der Präzision berücksichtigt. Vollständige Matrizen inklusive „unsicher“ und „nicht erkannt“ stehen im JSON-Bericht.','',
-'## Geschwindigkeit','',
-f"**Cloud-CPU-Referenz, keine Smartphone-Messung:** ONNX Runtime CPU mit drei Threads, Median {s['medianMs']:.1f} ms, p95 {s['p95Ms']:.1f} ms über {s['sampleCount']} Testbilder. Das sind rechnerisch {s['evaluationsPerSecond']:.1f} reine Modellaufrufe/s. Kamera, Pixelumwandlung, NMS und Darstellung sind darin nicht enthalten. Das Ziel von mindestens drei vollständigen Kameraauswertungen/s ist auf echten Handys noch nicht nachgewiesen.",'',
-'## Begrenzte Stresskontrollen',''
-]
-stress_path=SITE/'public/evaluation/stress-report.json'
-if stress_path.exists():
- st=json.loads(stress_path.read_text());q=st['summary'];lines += [f"{q['cases']} vorab festgelegte Kontrollen, davon {q['negativeControls']} ohne Zielbanane. Falschalarme in diesen wenigen Negativkontrollen: {q['falseAlarmsOnNegativeControls']}. Die positiven Varianten sind synthetische Montagen, Helligkeitsänderungen und eine Dateidrehung aus Holdout-Fotos. Ein externes reales NASA-Foto ohne Banane ist Public Domain laut offizieller scikit-image-Dokumentation. Kein Nachtraining oder Tuning auf diese Kontrollen.",'','| Kontrolle | Zielobjekte | Rahmen | Richtige rohe Treffer | Sicher richtige Treffer |','|---|---:|---:|---:|---:|']
- for case in st['results']:
-  tp=sum(c['truePositive'] for c in case['metrics']['perClass']);vtp=sum(c['visibleTruePositive'] for c in case['metrics']['perClass']);lines.append(f"| {case['title']} | {case['expectedObjects']} | {case['detections']} | {tp} | {vtp} |")
- if any(case['expectedObjects']>sum(c['truePositive'] for c in case['metrics']['perClass']) for case in st['results']):
-  lines += ['', 'Die aufgehellte reife Probe verfehlt das Positionskriterium IoU ≥ 0,50 trotz korrekter oberster Reifeklasse. Die Kontrollen sind somit nicht durchgehend erfolgreich; robuste Erkennung bei starken Lichtänderungen ist nicht belegt.']
-else:lines += ['Noch nicht ausgeführt; keine Stressprüfung behauptet.']
-lines += ['',
-'Diese kleinen Kontrollen sind kein unabhängiger Praxistest. Echte gemischte Bananentheken, dicht liegende Büschel, tatsächliche Überlappungen, Wechsellicht, Bewegung, Handyrotation und repräsentative Negativszenen bleiben offen.','',
-'## Prüfartefakte','',
-'- [Vollständiger Modell-Testbericht](/evaluation/test-report.json)',
-'- [Split-Audit mit Mitgliedschaft, Hashes und Gruppen](/evaluation/split-audit.json)',
-'- [Einzelvorhersagen im Test](/evaluation/test-predictions.json)',
-'- [Validierung und Schwellwertwahl](/evaluation/validation-selection.json)',
-'- [Trainingsverlauf](/evaluation/validation-history.json)',
-'- [Stresskontrollen mit Bildern](/evaluation/stress-report.json)',
-'- [Zielannotation nach EXIF-Normalisierung](/evaluation/annotation-orientation-qa.jpg)',
-'- [Modellkarte](/models/model-card.json)',
-'- [Trainiertes ONNX-Modell](/models/banana-yolox-nano.onnx)',
-'',
-'Die CPU-Trainingsskripte, Quellverweise, verwendete YOLOX-Lizenz, Reproduktionsanleitung und Prüftests liegen im Quellprojekt unter `ml/`. Der finale CPU-Checkpoint liegt unter `ml/artifacts/banana-yolox-nano.pt`. Kamerabilder sind kein Teil dieser Trainings-/Testartefakte.',
-''
+'# Bananenblick 0.2: Modellprüfung', '',
+'**Änderungsentwurf, nicht zur Veröffentlichung abgenommen. Die Zielwerte für essreife Einzelbananen werden verfehlt.**', '',
+'## Neuer Prüfbestand und Ergebnis', '',
+f"Der Prüfbestand wurde am {report['frozenAt']} in Commit `28b35eb` vor dem Nachtraining festgelegt. Er enthält 30 reale Mehrfruchtszenen (Büschel sowie arrangierte Früchte) und 30 reale Fotos ohne sichtbare Bananen. Die enge Forderung nach 30 unabhängig abgenommenen Büschelszenen ist damit noch nicht vollständig belegt. Keine Montage zählt als reale Szene.", '',
+'| Empfehlung nach drei Bestätigungen | Ergebnis | Ziel |', '|---|---:|---:|',
+f"| Präzision | {pct(report['precision'])} | ≥ 95 % |",
+f"| Recall sichtbarer reifer Einzelbananen | {pct(report['recall'])} | ≥ 80 % |",
+f"| Richtige / falsche Empfehlungen | {report['truePositive']} / {report['falsePositive']} | |",
+f"| Ausgelassene reife Einzelbananen | {report['falseNegative']} | |",
+f"| Falsche Empfehlungen auf Negativfotos | {report['negativeFalseRecommendations']} | |", '',
+'IoU ≥ 0,50 definiert eine passende Einzelbox. Unsichere, nicht bestätigte oder nicht lokalisierte reife Früchte zählen als ausgelassene Empfehlungen. Die exakte TypeScript-Objektverfolgung erhält je Foto drei identische Inferenzergebnisse in 200-ms-Abständen. Dies prüft die Empfehlung auf statischen Fotos; es belegt keine zeitliche Stabilität einer echten Kamera.', '',
+'Der Detektor liefert in diesem Bestand überwiegend keinen Treffer oder einen zu großen Gesamtrahmen für mehrere Früchte. Zehn der 30 positiven Fotos haben überhaupt einen Treffer oberhalb der Detektionsschwelle. Die hohe Quote auf bisherigen Einzelaufnahmen lässt sich nicht auf Büschel übertragen. Ein weiteres Nachtraining oder Tuning anhand dieses nun eingesehenen Prüfbestands benötigt einen neuen unberührten Holdout.', '',
+'## Training und Nachverarbeitung', '',
+f"YOLOX-Nano, 320 × 320 BGR/Float32, acht zusätzliche CPU-Epochen mit Seed {training['seed']}. Höchstes Validierungs-mAP50 wählt Epoche {training['selectedEpoch']}. Der gewählte Checkpoint ist somit ein früher Trainingsstand; es wird kein Erfolg des vollständigen Nachtrainings behauptet. 503 Trainingsbilder, 110 Validierungsbilder, 101 bisherige Testbilder und 60 neue Prüffotos.", '',
+'471 ursprüngliche Trainingsbilder wurden um 12 reale positive COCO-Fotos und 20 reale Negativfotos ergänzt. Die Validierung erhielt vier positive und fünf negative COCO-Fotos. Die positiven Ergänzungen enthalten Überlappungen, unterschiedliche Hintergründe und Beleuchtungen sowie gemischte Schalenreife. Visuell geprüfte Einzelboxen ersetzen die ausgewählten groben COCO-Büschelboxen. Eine doppelte identische Mendeley-Annotation wurde entfernt. Die neue Menge genügt noch nicht für belastbare Büschelerkennung.', '',
+'Die Einzelboxen und Reifestufen wurden vom Coding-Assistenten visuell geprüft. Eine unabhängige menschliche Gegenprüfung fehlt. Die Klassen für ungewöhnlich rote Schalen sind im Holdout als visuell nicht bestimmbar markiert. Die COCO-Trainingsfotos waren außerdem bereits im ursprünglichen COCO-Vortraining des Detektors enthalten. Dies ist ein Holdout vom Bananen-Nachtraining, kein vollständig unabhängiger Test vom generischen Vortraining.', '',
+f"Ausschließlich Validierung wählte Detektion {thresholds['detection']}, sichere Klassifikation {thresholds['classification']}, Klassenmarge {thresholds['margin']} und klassenübergreifende NMS-IoU {thresholds['nmsIou']}. Geprüfte NMS-Werte: 0,40–0,75. Trotz höherer Kandidaten bevorzugte die Validierung 0,40; deren kleine Ergänzung deckt dichte Überlappungen nicht ausreichend ab. Es wurde nach Sichtung des neuen Tests kein Schwellwert angepasst.", '',
+'Python und Browser lesen dieselbe versionierte Konfiguration. Ein direkter automatisierter Vergleich prüft beide Decoder auf identischen Daten einschließlich Clipping, Gleichständen, Überlappung und Unsicherheit. Die globale eindeutige Zuordnung nutzt IoU und Bewegung; zweifelhafte Zuordnungen übertragen keine bestätigte Reife. Fehlende oder unsichere Treffer verlieren die Empfehlung sofort. Ein Neustart setzt die Nummern auf 1 zurück.', '',
+'## Bisheriger Einzelbildtest mit neuem Modell', '',
+f"Die 101 bisherigen Testbilder wurden separat mit dem neuen Artefakt ausgewertet: rohe Präzision {pct(legacy['precision'])}, roher Recall {pct(legacy['recall'])}, sicher richtig beschriftet {pct(legacy['visibleRecall'])}. Diese Werte sind keine Aussage über bestätigte Einzelbananen in Büscheln.", '',
+'## Geschwindigkeit und Geräte', '',
+f"ONNX Runtime CPU unter Linux, drei Threads: Median {report['inferenceMs']['median']:.1f} ms, p95 {report['inferenceMs']['p95']:.1f} ms für reine Modellaufrufe. Kamera, Vorverarbeitung, Tracking und Darstellung sind nicht enthalten. Der separate WASM-Bericht misst Node/Linux. Beide Zahlen ersetzen keine Messung von mindestens drei vollständigen Kameraauswertungen/s auf Android/Chrome oder iPhone/Safari.", '',
+'Chromium- und WebKit-Prüfungen verwenden mobile Ansichtsgrößen in Linux. Der Kameratest verwendet kontrollierte Video-/Worker-Doubles; der Beispieltest führt das echte lokale ONNX-Modell aus. Tatsächliche Gerätetests: keine. Einzelheiten und reproduzierbare Schritte stehen in `acceptance.md` und `device-validation.json`.', '',
+'## Artefakte', '',
+'- [Neue Empfehlungen und Ergebnisse pro Szene](./individual-report.json)',
+'- [Eingefrorene Mitgliedschaft, Einzelboxen, Bildhashes, Quellen und Lizenzen](./individual-benchmark.json)',
+'- [Unveränderte Vorhersagen des neuen Tests](./individual-predictions.json)',
+'- [Validierungswahl einschließlich aller NMS-Kandidaten](./individual-validation-selection.json)',
+'- [Acht zusätzliche Trainingsepochen](./individual-training-history.json)',
+'- [Separater bisheriger Einzelbildtest](./test-report.json)',
+'- [WASM-Referenzlauf](./web-runtime.json)',
+'- [Geräte- und Browserprüfprotokoll](./acceptance.md)', '',
+f"Modell-SHA-256: `{card['sha256']}`. Benchmark-SHA-256: `{report['benchmarkSha256']}`.", '',
+'## Quellen', '',
+'Mendeley: Rohit et al. (2026), [Annotated Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0. COCO: [Common Objects in Context 2017](https://cocodataset.org/), Bildautoren und individuelle CC-BY-/CC-BY-SA-2.0-Lizenzen mit Flickr-Verweisen im eingefrorenen Manifest. Quellfotos sind lokal heruntergeladen; nur ausdrücklich gekennzeichnete Beispiele werden mit Lizenzhinweisen mitgeliefert. YOLOX: Megvii, Apache 2.0.', '',
+'„Jetzt essreif“ beschreibt ausschließlich die sichtbare Schalenreife; Verderb und innere Qualität werden nicht beurteilt.', ''
 ]
 text='\n'.join(lines)
-(SITE/'docs/model-validation.md').write_text(text)
 (SITE/'public/evaluation/model-report.md').write_text(text)
-print('Wrote model validation summary')
+# Repository copy uses paths appropriate to its own location.
+repo=text.replace('](./', '](../public/evaluation/')
+(SITE/'documentation/model-validation.md').write_text(repo)
+print('Current model report generated; acceptance remains failed.')

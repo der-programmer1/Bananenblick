@@ -11,6 +11,7 @@ export type Example = {
   description: string;
   width: number;
   height: number;
+  sourceUrl?: string;
 };
 const cameraMessage = (error: unknown) => {
   const name = error instanceof DOMException ? error.name : "";
@@ -38,6 +39,8 @@ export function useScanner() {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const vfcRef = useRef<number | null>(null);
   const frameRef = useRef(0);
+  const clearAfterFrameRef = useRef(0);
+  const examplePassesRef = useRef(0);
   const thresholdRef = useRef(0.6);
   const userThresholdRef = useRef(false);
   const captureRef = useRef<() => void>(() => {});
@@ -45,6 +48,7 @@ export function useScanner() {
   const lastResultRef = useRef(0);
   const lastVideoTimeRef = useRef({ videoTime: 0, changedAt: 0 });
   const lastCapturedVideoTimeRef = useRef(-1);
+  const sourceDimensionsRef = useRef({ width: 0, height: 0 });
   const samplesRef = useRef<{ at: number; inference: number; age: number }[]>([]);
   const [mode, setMode] = useState<ScannerMode>("idle");
   const [tracks, setTracks] = useState<Track[]>([]);
@@ -68,6 +72,7 @@ export function useScanner() {
     setMode(value);
   }, []);
   const clearTracks = useCallback(() => {
+    clearAfterFrameRef.current = frameRef.current;
     tracksRef.current = [];
     setTracks([]);
   }, []);
@@ -83,6 +88,7 @@ export function useScanner() {
     streamRef.current?.getTracks().forEach((track) => {
       track.onended = null;
       track.onmute = null;
+      track.onunmute = null;
       track.stop();
     });
     streamRef.current = null;
@@ -110,8 +116,11 @@ export function useScanner() {
     setStats({ fps: 0, inferenceMs: 0, ageMs: 0, frames: 0, capturedAt: 0 });
     samplesRef.current = [];
     frameRef.current = 0;
+    clearAfterFrameRef.current = 0;
+    examplePassesRef.current = 0;
     nextTrackRef.current = 1;
     lastCapturedVideoTimeRef.current = -1;
+    sourceDimensionsRef.current = { width: 0, height: 0 };
   }, [cancelLoop, changeMode, clearTracks]);
   const fail = useCallback(
     (message: string) => {
@@ -232,6 +241,11 @@ export function useScanner() {
       if (result.sessionId !== sessionRef.current) return;
       const live = modeRef.current === "live";
       if (!live && modeRef.current !== "example") return;
+      if (result.frameId <= clearAfterFrameRef.current) {
+        if (live) schedule();
+        else captureRef.current();
+        return;
+      }
       if (Math.abs(result.classification - thresholdRef.current) > 0.001) {
         if (live) schedule();
         else captureRef.current();
@@ -248,20 +262,22 @@ export function useScanner() {
         return;
       }
       const now = performance.now();
-      const next = live
-        ? updateTracks(
-            tracksRef.current,
-            age <= 1200 ? result.detections : [],
-            now,
-            () => nextTrackRef.current++,
-          )
-        : result.detections.map((detection) => ({
-            ...detection,
-            id: nextTrackRef.current++,
-            lastSeen: now,
-          }));
+      if (
+        sourceDimensionsRef.current.width &&
+        (sourceDimensionsRef.current.width !== result.width ||
+          sourceDimensionsRef.current.height !== result.height)
+      ) {
+        tracksRef.current = [];
+      }
+      sourceDimensionsRef.current = { width: result.width, height: result.height };
+      const next = updateTracks(
+        tracksRef.current,
+        !live || age <= 900 ? result.detections : [],
+        live ? now : result.frameId * 200,
+        () => nextTrackRef.current++,
+      );
       tracksRef.current = next;
-      setTracks(next);
+      setTracks(next.filter((track) => track.visible));
       setDimensions({ width: result.width, height: result.height });
       lastResultRef.current = now;
       samplesRef.current.push({ at: now, inference: result.inferenceMs, age });
@@ -278,6 +294,8 @@ export function useScanner() {
         capturedAt: result.capturedAt,
       });
       if (live) schedule();
+      else if (++examplePassesRef.current < 3)
+        timerRef.current = setTimeout(() => captureRef.current(), 200);
     };
     worker.postMessage({ type: "init", assetBase: new URL(assetPath(""), document.baseURI).href });
   }, [clearTracks, fail, schedule]);
@@ -350,12 +368,17 @@ export function useScanner() {
   const setConfidence = useCallback(
     (value: number) => {
       userThresholdRef.current = true;
-      thresholdRef.current = value;
-      setClassification(value);
+      const threshold = Math.max(0.6, Math.min(0.9, value));
+      thresholdRef.current = threshold;
+      setClassification(threshold);
+      examplePassesRef.current = 0;
       clearTracks();
-      if (modeRef.current === "example") captureRef.current();
+      if (modeRef.current === "example") {
+        cancelLoop();
+        captureRef.current();
+      }
     },
-    [clearTracks],
+    [cancelLoop, clearTracks],
   );
   useEffect(() => {
     const interval = setInterval(() => {
@@ -385,6 +408,8 @@ export function useScanner() {
     };
     const unload = () => stop();
     const geometry = () => {
+      // A static example keeps its source coordinates when only the viewport rotates.
+      if (modeRef.current !== "live") return;
       clearTracks();
       const v = videoRef.current;
       if (v?.videoWidth) setDimensions({ width: v.videoWidth, height: v.videoHeight });

@@ -1156,18 +1156,28 @@ footer button {
 }
 .detection-box {
   position: absolute;
-  border: 2px solid #a6d36c;
+  border: 2px solid #d9bc5e;
   border-radius: 6px;
-  color: #d4f0ad;
+  color: #fff1bf;
   box-shadow:
     inset 0 0 0 1px #0002,
     0 0 0 1px #0002;
-  background: #b0dc7705;
+  background: #dfc66a05;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  pointer-events: auto;
+  cursor: pointer;
 }
-.detection-box.reif {
-  border-color: #f1d75b;
-  color: #ffec9a;
-  background: #f1d75b08;
+.detection-box.ready {
+  border: 3px solid #43df86;
+  color: #c5ffda;
+  background: #43df8610;
+}
+.detection-box.selected, .detection-box:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+  z-index: 2;
 }
 .detection-box.überreif {
   border-color: #d8a77c;
@@ -1187,7 +1197,9 @@ footer button {
   top: 0;
   left: 0;
   transform: translateY(-1px);
-  white-space: nowrap;
+  flex-wrap: wrap;
+  white-space: normal;
+  max-width: 140px;
   background: #20342eea;
   box-shadow: 0 1px 7px #0003;
   border-radius: 0 0 5px 0;
@@ -1198,11 +1210,63 @@ footer button {
   line-height: 1.4;
 }
 .detection-label > span {
-  font-size: 9px;
-  opacity: 0.8;
-  font-weight: 450;
-  margin-left: 3px;
+  font-size: 10px;
+  font-weight: 600;
 }
+.ready-summary {
+  margin: 18px 0 12px;
+  padding: 13px;
+  background: #f5f2e7;
+  border-radius: 10px;
+  color: #5d654f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.ready-summary.has-ready {
+  color: #145a33;
+  background: #e5f5e9;
+  font-weight: 700;
+}
+.recognition-hint {
+  color: #66715f;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+.fruit-results {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  max-height: 330px;
+  overflow-y: auto;
+}
+.fruit-results button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  padding: 9px;
+  margin: 3px 0;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: #f8f7f0;
+  color: #3c4837;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+.fruit-results button.ready {
+  color: #145a33;
+  background: #e5f5e9;
+}
+.fruit-results button.selected, .fruit-results button:focus-visible {
+  border-color: #526d42;
+  outline: 1px solid #526d42;
+}
+.fruit-number { font-weight: 700; white-space: nowrap; }
+.fruit-results small { display: block; margin-top: 3px; color: #6c705d; }
 .loading-overlay {
   position: absolute;
   inset: 0;

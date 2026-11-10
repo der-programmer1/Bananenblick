@@ -1,39 +1,74 @@
 {
-  "status": "published-on-github-pages",
-  "scope": "Launch-Paket; keine vollständige Smartphone-Abnahme",
+  "status": "draft-acceptance-failed-not-published",
+  "checkedAt": "2026-11-10T16:43:01.155923+00:00",
+  "scope": "GitHub Pages only; previous public deployment unchanged",
+  "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a",
   "verified": {
-    "zipExtraction": "passed",
-    "allFileChecksums": "passed",
-    "npmCiInFreshExtraction": "passed",
     "typescript": "passed",
     "unitTests": {
-      "passed": 9,
+      "passed": 20,
       "failed": 0
     },
-    "staticProductionBuildFromExtraction": "passed",
-    "repositorySubpathsAndModelHash": "passed",
-    "githubWorkflowActionlint": "passed (actionlint v1.7.12)",
-    "githubActionsHostedRun": {
-      "status": "success",
-      "url": "https://github.com/der-programmer1/Bananenblick/actions/runs/42658377737",
-      "buildCommit": "6b682c4707a41e9109b8a6c57034081950b69229"
+    "pythonPipelineTests": {
+      "passed": 6,
+      "failed": 0
     },
-    "publicDeployment": {
-      "url": "https://der-programmer1.github.io/Bananenblick/",
-      "httpsEnforced": true,
-      "htmlAndScriptAssets": 200,
-      "modelSha256Verified": true,
-      "wasmStatus": 200,
-      "wasmContentType": "application/wasm"
-    }
+    "browserEmulation": {
+      "context": "Playwright mobile viewport/device emulation on Linux; not physical Android or iPhone",
+      "versions": {
+        "chromium": "158.0.8127.18",
+        "webkit": "27.2"
+      },
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "status": "expected",
+          "durationMs": 7579
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "status": "expected",
+          "durationMs": 4213
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "real ONNX example runs three passes and stays within both orientations",
+          "status": "expected",
+          "durationMs": 3655
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "real ONNX example runs three passes and stays within both orientations",
+          "status": "expected",
+          "durationMs": 6726
+        }
+      ],
+      "media": "Controlled video clock and worker; Chromium canvas MediaStream; WebKit simulated media track. Separate examples run the real ONNX worker."
+    },
+    "staticProductionBuild": "passed",
+    "repositorySubpathsModelHashAndSharedPostprocessing": "passed"
   },
-  "notRun": [
-    "Live-Kameraabnahme auf echten Android-/iPhone-Geräten"
-  ],
-  "launch": [
-    "Öffentliches Repository, Branch main; gesamten Inhalt des Ordners bananenblick hochladen.",
-    "Settings → Pages → Source → GitHub Actions.",
-    "Actions → Bananenblick auf GitHub Pages → Run workflow."
-  ],
-  "modelSha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419"
+  "acceptance": {
+    "passed": false,
+    "precision": 0,
+    "recall": 0,
+    "truePositive": 0,
+    "falsePositive": 1,
+    "falseNegative": 169,
+    "positiveScenes": 30,
+    "negativeScenes": 30,
+    "verifiedRealBunchScenes": null,
+    "physicalDeviceTestsPerformed": false
+  },
+  "publication": {
+    "publishedThisVersion": false,
+    "reason": "Individual-fruit precision/recall targets failed; 30 independently verified bunch scenes and physical device checks pending.",
+    "workflow": ".github/workflows/pages.yml",
+    "reviewBranch": "codex/numbered-individual-bananas"
+  }
 }

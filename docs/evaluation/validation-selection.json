@@ -1,1934 +1,1031 @@
 {
-  "selectedThreshold": 0.5,
-  "metrics": {
-    "threshold": 0.5,
-    "iouThreshold": 0.5,
-    "nmsIou": 0.45,
-    "apCandidateThreshold": 0.01,
-    "maxDetectionsPerImage": 40,
-    "mAP50": 0.9738973897389739,
-    "precision": 0.9801980198019802,
-    "recall": 0.9801980198019802,
-    "f1": 0.9801980198019802,
-    "visibleRecall": 0.9702970297029703,
-    "uncertainCount": 1,
-    "perClass": [
-      {
-        "class": "unreif",
-        "support": 33,
-        "truePositive": 31,
-        "falsePositive": 2,
-        "falseNegative": 2,
-        "precision": 0.9393939393939394,
-        "recall": 0.9393939393939394,
-        "localizationRecall": 0.9393939393939394,
-        "wrongRipeness": 0,
-        "missed": 2,
-        "uncertain": 0,
-        "visibleTruePositive": 31,
-        "visibleRecall": 0.9393939393939394,
-        "ap50": 0.9216921692169218
-      },
-      {
-        "class": "reif",
-        "support": 31,
-        "truePositive": 31,
-        "falsePositive": 0,
-        "falseNegative": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "localizationRecall": 1.0,
-        "wrongRipeness": 0,
-        "missed": 0,
-        "uncertain": 1,
-        "visibleTruePositive": 30,
-        "visibleRecall": 0.967741935483871,
-        "ap50": 1.0
-      },
-      {
-        "class": "überreif",
-        "support": 37,
-        "truePositive": 37,
-        "falsePositive": 0,
-        "falseNegative": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "localizationRecall": 1.0,
-        "wrongRipeness": 0,
-        "missed": 0,
-        "uncertain": 0,
-        "visibleTruePositive": 37,
-        "visibleRecall": 1.0,
-        "ap50": 1.0
-      }
-    ],
-    "confusion": {
-      "rows": [
-        "unreif",
-        "reif",
-        "überreif"
-      ],
-      "columns": [
-        "unreif",
-        "reif",
-        "überreif",
-        "nicht erkannt"
-      ],
-      "counts": [
-        [
-          31,
-          0,
-          0,
-          2
-        ],
-        [
-          0,
-          31,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          37,
-          0
-        ]
-      ]
+  "selected": {
+    "thresholds": {
+      "detection": 0.5,
+      "classification": 0.6,
+      "margin": 0.15,
+      "nmsIou": 0.4
     },
-    "visibleConfusion": {
-      "rows": [
-        "unreif",
-        "reif",
-        "überreif"
-      ],
-      "columns": [
-        "unreif",
-        "reif",
-        "überreif",
-        "unsicher",
-        "nicht erkannt"
-      ],
-      "counts": [
-        [
-          31,
-          0,
-          0,
-          0,
-          2
-        ],
-        [
-          0,
-          30,
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          37,
-          0,
-          0
-        ]
-      ]
-    }
+    "precision": 1.0,
+    "recall": 0.8108108108108109,
+    "truePositive": 30,
+    "falsePositive": 0,
+    "support": 37,
+    "f1": 0.8955223880597014
   },
   "candidates": [
     {
-      "threshold": 0.15,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.4
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
     },
     {
-      "threshold": 0.2,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.4
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
     },
     {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.4
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
     },
     {
-      "threshold": 0.3,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.4
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
     },
     {
-      "threshold": 0.35,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.4
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
     },
     {
-      "threshold": 0.4,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.4
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
     },
     {
-      "threshold": 0.5,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.4
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.4
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.4
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.45
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.5
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.55
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.6
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.65
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.7
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.25,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.35,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.6,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.7,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.8108108108108109,
+      "truePositive": 30,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8955223880597014
+    },
+    {
+      "thresholds": {
+        "detection": 0.5,
+        "classification": 0.8,
+        "margin": 0.15,
+        "nmsIou": 0.75
+      },
+      "precision": 1.0,
+      "recall": 0.7297297297297297,
+      "truePositive": 27,
+      "falsePositive": 0,
+      "support": 37,
+      "f1": 0.8437499999999999
     }
   ],
-  "checkpointEpoch": 15,
-  "rule": "highest validation mAP50 chooses checkpoint, then highest validation F1 chooses threshold; test split untouched",
-  "onnxBrowserEquivalentCandidates": [
-    {
-      "threshold": 0.15,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "visibleRecall": 0.9702970297029703,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9393939393939394,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.967741935483871,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 1.0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
-      },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
-    },
-    {
-      "threshold": 0.2,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "visibleRecall": 0.9702970297029703,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9393939393939394,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.967741935483871,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 1.0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
-      },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
-    },
-    {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "visibleRecall": 0.9702970297029703,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9393939393939394,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.967741935483871,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 1.0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
-      },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
-    },
-    {
-      "threshold": 0.3,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "visibleRecall": 0.9702970297029703,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9393939393939394,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.967741935483871,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 1.0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
-      },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
-    },
-    {
-      "threshold": 0.35,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "visibleRecall": 0.9702970297029703,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9393939393939394,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.967741935483871,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 1.0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
-      },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
-    },
-    {
-      "threshold": 0.4,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "visibleRecall": 0.9702970297029703,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9393939393939394,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.967741935483871,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 1.0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
-      },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
-    },
-    {
-      "threshold": 0.5,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.9738973897389739,
-      "precision": 0.9801980198019802,
-      "recall": 0.9801980198019802,
-      "f1": 0.9801980198019802,
-      "visibleRecall": 0.9702970297029703,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 33,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9393939393939394,
-          "recall": 0.9393939393939394,
-          "localizationRecall": 0.9393939393939394,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9393939393939394,
-          "ap50": 0.9216921692169218
-        },
-        {
-          "class": "reif",
-          "support": 31,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.967741935483871,
-          "ap50": 1.0
-        },
-        {
-          "class": "überreif",
-          "support": 37,
-          "truePositive": 37,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "precision": 1.0,
-          "recall": 1.0,
-          "localizationRecall": 1.0,
-          "wrongRipeness": 0,
-          "missed": 0,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 1.0,
-          "ap50": 1.0
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            31,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0
-          ]
-        ]
-      },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            0
-          ]
-        ]
-      }
-    }
-  ]
+  "rule": "Validation-only ripe recommendation precision >= .95, then highest recall; if none qualifies, highest validation F1. Ties prefer precision, lower NMS IoU, higher detection threshold. Static single-pass evidence for threshold selection; final benchmark runs the browser tracker for three confirmations.",
+  "checkpointEpoch": 1,
+  "validationImages": 110,
+  "benchmarkUntouched": true,
+  "selectedThreshold": 0.5
 }
