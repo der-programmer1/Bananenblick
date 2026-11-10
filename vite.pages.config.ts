@@ -13,6 +13,9 @@ export default defineConfig({
     transformIndexHtml: html => html.replace(/<meta http-equiv="Content-Security-Policy"[^>]*>/, ""),
   }],
   resolve: { conditions },
+  // Discover the lazily imported worker runtime before the first scan. Otherwise
+  // Vite restarts a fresh development page when it first optimizes ORT.
+  optimizeDeps: { include: ["onnxruntime-web/all"] },
   css: { postcss: { plugins: [tailwindcss()] } },
   worker: {
     format: "es",
