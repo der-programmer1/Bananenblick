@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-11-10T16:37:08.187Z",
+  "status": "passed",
+  "provisional": false,
+  "scope": "Actual onnxruntime-web/all 1.24.3 JSEP WASM on Node/Linux, not a browser, camera, Android or iPhone test.",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "linux",
+    "arch": "x64",
+    "threads": 1,
+    "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a"
+  },
+  "loadMs": 894.462254,
+  "outputShape": [
+    1,
+    2100,
+    8
+  ],
+  "imageSensitivityPassed": true,
+  "timing": {
+    "measurements": 20,
+    "medianMs": 52.714866999999686,
+    "p95Ms": 413.2456339999999,
+    "inferencePerSecond": 18.96998051801982,
+    "includes": "WASM model run only; excludes image decode/resize, camera, drawing, worker transfer and scheduling"
+  },
+  "examples": [
+    {
+      "id": "unreif",
+      "inferenceMs": 59.895330999999715,
+      "detections": [
+        {
+          "box": {
+            "x": 0.13222341537475585,
+            "y": 0.03193678855895996,
+            "width": 0.5040591557820638,
+            "height": 0.8598379135131836
+          },
+          "predictedClass": 0,
+          "ripeness": "unreif",
+          "confidence": 0.73822465923989,
+          "capturedAt": 1794328626741,
+          "ripeEvidence": false
+        }
+      ],
+      "outputSignature": 6823523.21855104
+    },
+    {
+      "id": "reif",
+      "inferenceMs": 51.79093899999998,
+      "detections": [
+        {
+          "box": {
+            "x": 0.28088638495607493,
+            "y": 0.31027677059173586,
+            "width": 0.5934358335629538,
+            "height": 0.40700469017028806
+          },
+          "predictedClass": 1,
+          "ripeness": "reif",
+          "confidence": 0.7442056382582223,
+          "capturedAt": 1794328627248,
+          "ripeEvidence": true
+        }
+      ],
+      "outputSignature": 6608299.518451363
+    },
+    {
+      "id": "ueberreif",
+      "inferenceMs": 52.714866999999686,
+      "detections": [
+        {
+          "box": {
+            "x": 0.1903623342514038,
+            "y": 0.39185075759887694,
+            "width": 0.6171390056610108,
+            "height": 0.31983636220296224
+          },
+          "predictedClass": 2,
+          "ripeness": "überreif",
+          "confidence": 0.889522067825169,
+          "capturedAt": 1794328627647,
+          "ripeEvidence": false
+        }
+      ],
+      "outputSignature": 6582734.569455117
+    },
+    {
+      "id": "bueschel",
+      "inferenceMs": 52.24224699999968,
+      "detections": [
+        {
+          "box": {
+            "x": 0,
+            "y": 0.1579438497920236,
+            "width": 0.797909140586853,
+            "height": 0.5558749872767282
+          },
+          "predictedClass": 1,
+          "ripeness": "unsicher",
+          "confidence": 0.5960203982390055,
+          "capturedAt": 1794328627982,
+          "ripeEvidence": false
+        }
+      ],
+      "outputSignature": 6655302.69152388
+    }
+  ],
+  "syntheticBlankControls": [
+    {
+      "syntheticColor": "#727272",
+      "falseDetections": 0,
+      "detections": []
+    },
+    {
+      "syntheticColor": "#ffffff",
+      "falseDetections": 0,
+      "detections": []
+    },
+    {
+      "syntheticColor": "#1d382b",
+      "falseDetections": 0,
+      "detections": []
+    }
+  ],
+  "realDeviceTests": "not performed",
+  "webgpu": "not tested in this environment"
+}

@@ -2,12 +2,13 @@
 """Generate the current report from actual measured results and frozen provenance."""
 from pathlib import Path
 import json
+from decimal import Decimal,ROUND_HALF_UP
 ROOT=Path(__file__).resolve().parent;SITE=ROOT.parent
 load=lambda p:json.loads((SITE/p).read_text())
 card=load('public/models/model-card.json');report=load('public/evaluation/individual-report.json')
 legacy=load('public/evaluation/test-report.json')['test'];training=card['training'];thresholds=card['thresholds']
 plan=load('ml/individual-training-v3.json');selection=load('public/evaluation/individual-validation-selection.json')
-pct=lambda x:f'{x*100:.1f} %'.replace('.',',')
+pct=lambda x:f"{Decimal(str(x*100)).quantize(Decimal('0.1'),rounding=ROUND_HALF_UP)} %".replace('.',',')
 status='Die Zielwerte im statischen Fototest sind erreicht.' if report['passed'] else 'Die Zielwerte für essreife Einzelbananen sind nicht erreicht.'
 lines=[
 f"# Bananenblick {card['version']}: Modellprüfung",'',
@@ -122,3 +123,39 @@ npm run dev
 
 Bestehende öffentliche Version: https://der-programmer1.github.io/Bananenblick/. Die private Sites-Veröffentlichung ist nicht Teil dieser Änderung.
 ''')
+
+acceptance_path=SITE/'public/evaluation/acceptance.md'
+old_protocol=acceptance_path.read_text().partition('## Noch erforderlich: echte Geräte')[2]
+if not old_protocol:raise RuntimeError('Keep the physical-device protocol when updating the report.')
+old_protocol=old_protocol.replace('Die öffentliche HTTPS-Seite direkt öffnen; Emulation und Node-Zahlen zählen nicht als Gerätetest.', 'Den zu prüfenden Build unter HTTPS oder über eine lokale USB-/Portweiterleitung öffnen und den Modellhash kontrollieren. Die öffentliche Altversion zählt nicht als Prüfung der neuen Gewichte. Emulation und Node-Zahlen zählen nicht als Gerätetest.')
+acceptance=f'''# Prüfprotokoll · Bananenblick {card['version']}
+
+**{status} Veröffentlichungsabnahme offen; keine Veröffentlichung dieses Stands.** Der bisherige GitHub-Pages-Stand bleibt bestehen.
+
+## Tatsächlich ausgeführt
+
+| Prüfung | Ergebnis und Grenze |
+|---|---|
+| TypeScript | Bestanden |
+| Automatisierte Tests | 20 bestanden: Überlappung, globale eindeutige Zuordnung, Bewegung, Unsicherheit, drei Bestätigungen, fehlende Treffer, Nummern, Liste/Rahmen, Python-/TypeScript-Parität |
+| Python-Pipeline | 9 Tests bestanden, einschließlich Verdeckung, sichtbarer Zielboxen, 448-Pixel-Spiegelung, ursprünglicher Split-Integrität und Metriksemantik |
+| Chromium unter Linux, mobile Pixel-7-Ansichtsgröße | Vier Browserfälle bestanden am Produktionsbuild unter `/Bananenblick/`: verspätete Kamerafreigabe nach Stopp, falscher Modellhash, kontrollierte Kamera/Worker mit Auswahl/Bewegung/Unsicherheit/Verschwinden/Hoch-/Querformat/Stopp/Nummernreset/GPU-Hang, zusätzlich echtes ONNX-Beispiel mit verzögertem Download und drei Durchläufen |
+| WebKit unter Linux, mobile iPhone-13-Ansichtsgröße | Dieselben vier Browserfälle bestanden; WebKit-WPE ist kein echtes iPhone/Safari |
+| Tatsächliche physische Geräte | **Keine** Android-/Chrome- oder iPhone-/Safari-Geräte geprüft |
+| WASM unter Node/Linux | Echter ONNX-Aufruf, endliche `[1,4116,8]`-Ausgabe und bildabhängige Ergebnisse; Werte in `web-runtime.json` |
+| Statischer Pages-Build | Bestanden; relative Assets, Worker, Modellhashes und gemeinsame Schwellwerte geprüft; Browser laufen auf diesem Build |
+| Neue Datenprüfung | Keine Bildgruppenüberschneidung, identischen Quellbilder oder pHash-Nahduplikatkandidaten zwischen neuem Test und übrigen Splits |
+| Neuer realer Büscheltest | 30 reale Commons-Büschelszenen und 30 COCO-Negativszenen vor Training eingefroren; **{report['truePositive']} TP, {report['falsePositive']} FP, {report['falseNegative']} FN**, Präzision **{pct(report['precision'])}**, Recall **{pct(report['recall'])}** |
+
+Der neue Prüfbestand wurde in Commit `59efe9e` eingefroren und bei der Fortsetzung in Commit `18308d4` unverändert gelassen. Bilder, Annotationen, Lizenzen und Hashes stehen in `individual-benchmark.json`. Die zusätzliche Einzelannotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. Öffentliche Quellen liefern keine physischen Frucht-/Aufnahmeserien-IDs. Das alte fehlgeschlagene Experiment wurde ausdrücklich Training/Validierung und ist unter `experiment-v1/` archiviert.
+
+Die Empfehlungsmetrik nutzt den echten TypeScript-Tracker mit drei identischen Ergebnissen je statischem Foto. Unsichere Ergebnisse zählen als ausgelassene Empfehlungen. Auf den 30 Negativfotos entstanden {report['negativeFalseRecommendations']} falsche Empfehlungen. Zu große Gesamtrahmen ohne passende Einzelbox zählen nicht als richtige Erkennung. Nach Sichtung des neuen Tests erfolgte kein Nachjustieren.
+
+Browser-Kameratests verwenden kontrollierte Video-/Worker-Doubles. Chromium verwendet einen lokalen Canvas-Medienstream; WebKit simuliert Medienquelle und Trackzustände. Das zusätzliche Beispiel verwendet unveränderte Bildpixel und den echten Worker. Modellhash und Browserversion werden vom Lauf erfasst und in `device-validation.json` dokumentiert. Ein künstlich um 13 Sekunden verzögerter WASM-Download prüft, dass Netzwerklatenz keinen unnötigen GPU-Neustart auslöst. Kein solcher Test belegt den physischen Kameraindikator, echte Smartphone-Leistung oder echten Kamera-Netzwerkverkehr.
+
+## Modellabnahme
+
+Ziel: ≥95 % Präzision und ≥80 % Recall für bestätigte Empfehlungen sichtbarer reifer Einzelbananen bei IoU ≥0,5; Enthaltungen zählen als ausgelassene Empfehlungen. {status} Der Bericht enthält die tatsächlich gemessenen Werte. Nach weiterem testgetriebenem Tuning muss ein neuer Holdout vor Training festgelegt werden; der jetzige Test ist nun eingesehen.
+
+## Noch erforderlich: echte Geräte'''+old_protocol
+acceptance_path.write_text(acceptance)

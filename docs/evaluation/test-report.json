@@ -1,35 +1,34 @@
 {
-  "generatedAt": "2026-11-10T16:24:55.901109+00:00",
-  "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a",
-  "scope": "Legacy 101-image single-fruit test, re-evaluated after fixed validation selection; not the individual-bunch acceptance benchmark.",
+  "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+  "scope": "Legacy Mendeley 101-image test; separate from the new 30-bunch/30-negative benchmark",
   "test": {
     "threshold": 0.5,
     "iouThreshold": 0.5,
-    "nmsIou": 0.4,
+    "nmsIou": 0.45,
     "apCandidateThreshold": 0.01,
     "maxDetectionsPerImage": 40,
-    "mAP50": 0.9498034912638874,
-    "precision": 0.9603960396039604,
-    "recall": 0.9603960396039604,
-    "f1": 0.9603960396039604,
-    "visibleRecall": 0.9405940594059405,
-    "uncertainCount": 2,
+    "mAP50": 0.8970869446156895,
+    "precision": 0.9108910891089109,
+    "recall": 0.9108910891089109,
+    "f1": 0.9108910891089109,
+    "visibleRecall": 0.7722772277227723,
+    "uncertainCount": 14,
     "perClass": [
       {
         "class": "unreif",
         "support": 33,
-        "truePositive": 31,
-        "falsePositive": 2,
-        "falseNegative": 2,
-        "precision": 0.9393939393939394,
-        "recall": 0.9393939393939394,
-        "localizationRecall": 0.9393939393939394,
+        "truePositive": 27,
+        "falsePositive": 6,
+        "falseNegative": 6,
+        "precision": 0.8181818181818182,
+        "recall": 0.8181818181818182,
+        "localizationRecall": 0.8181818181818182,
         "wrongRipeness": 0,
-        "missed": 2,
-        "uncertain": 1,
-        "visibleTruePositive": 30,
-        "visibleRecall": 0.9090909090909091,
-        "ap50": 0.9153223014609154
+        "missed": 6,
+        "uncertain": 10,
+        "visibleTruePositive": 17,
+        "visibleRecall": 0.5151515151515151,
+        "ap50": 0.7859887477581505
       },
       {
         "class": "reif",
@@ -42,26 +41,26 @@
         "localizationRecall": 1.0,
         "wrongRipeness": 0,
         "missed": 0,
-        "uncertain": 0,
-        "visibleTruePositive": 31,
-        "visibleRecall": 1.0,
+        "uncertain": 3,
+        "visibleTruePositive": 28,
+        "visibleRecall": 0.9032258064516129,
         "ap50": 1.0
       },
       {
         "class": "überreif",
         "support": 37,
-        "truePositive": 35,
-        "falsePositive": 2,
-        "falseNegative": 2,
-        "precision": 0.9459459459459459,
-        "recall": 0.9459459459459459,
-        "localizationRecall": 0.9459459459459459,
+        "truePositive": 34,
+        "falsePositive": 3,
+        "falseNegative": 3,
+        "precision": 0.918918918918919,
+        "recall": 0.918918918918919,
+        "localizationRecall": 0.918918918918919,
         "wrongRipeness": 0,
-        "missed": 2,
+        "missed": 3,
         "uncertain": 1,
-        "visibleTruePositive": 34,
-        "visibleRecall": 0.918918918918919,
-        "ap50": 0.9340881723307466
+        "visibleTruePositive": 33,
+        "visibleRecall": 0.8918918918918919,
+        "ap50": 0.9052720860889177
       }
     ],
     "confusion": {
@@ -78,10 +77,10 @@
       ],
       "counts": [
         [
-          31,
+          27,
           0,
           0,
-          2
+          6
         ],
         [
           0,
@@ -92,8 +91,8 @@
         [
           0,
           0,
-          35,
-          2
+          34,
+          3
         ]
       ]
     },
@@ -112,28 +111,27 @@
       ],
       "counts": [
         [
-          30,
+          17,
           0,
           0,
-          1,
-          2
+          10,
+          6
         ],
         [
           0,
-          31,
+          28,
           0,
-          0,
+          3,
           0
         ],
         [
           0,
           0,
-          34,
+          33,
           1,
-          2
+          3
         ]
       ]
     }
-  },
-  "individualBenchmark": "individual-report.json"
+  }
 }

@@ -79,7 +79,7 @@ def main():
     subprocess.run(['node','--import','tsx','scripts/evaluate-recommendations.ts',str(predictions),str(target)],cwd=SITE,check=True)
     report=json.loads(target.read_text());report.update({'generatedAt':datetime.now(timezone.utc).isoformat(),'modelSha256':sha(model_path),
         'benchmarkSha256':sha(frozen),'frozenAt':manifest['frozenAt'],'realBunchScenes':30,'realBunchSceneCountVerified':True,
-        'thresholds':thresholds,'inputSize':size,'selectedEpoch':checkpoint['epoch'],'trainingPlanSha256':sha(plan_path),'limitations':manifest['limits']+plan['limits'],
+        'thresholds':thresholds,'inputSize':size,'selectedEpoch':checkpoint['epoch'],'trainingPlanSha256':sha(plan_path),'limitations':[v for v in manifest['limits'] if not v.startswith('Previous failed v1 test is now validation')]+plan['limits'],
         'inferenceMs':{'median':float(np.median(times)),'p95':float(np.percentile(times,95)),'context':'ONNX Runtime CPU, Linux, two threads; inference only'}})
     target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     archive=EVAL/'experiment-v1';archive.mkdir(exist_ok=True)

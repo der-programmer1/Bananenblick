@@ -1,22 +1,22 @@
 # Bananenblick · nummerierte Einzelbananen
 
-**Änderungsentwurf 0.2 – noch nicht veröffentlicht.** Die bisherige öffentliche App steht unter [der-programmer1.github.io/Bananenblick](https://der-programmer1.github.io/Bananenblick/). Dieser Branch ersetzt sie nicht: Der neue Mehrfruchttest verfehlt die Modellziele, und echte Android-/iPhone-Prüfungen fehlen.
+**Stand 0.3.0 – Veröffentlichungsabnahme noch offen.** Die bestehende öffentliche App steht unter [der-programmer1.github.io/Bananenblick](https://der-programmer1.github.io/Bananenblick/). Der neue Stand liegt im Änderungsbranch. Die Zielwerte für essreife Einzelbananen sind nicht erreicht. Tatsächliche Android-/iPhone-Prüfungen fehlen.
 
-Jeder aktuelle Treffer erhält eine eindeutige Nummer. Rahmen und Ergebnisliste verwenden dieselbe Nummer; Antippen wählt die zugehörige Frucht aus. Die globale Zuordnung hält Nummern bei leichter Bewegung stabil. Beim Neustart beginnt die Nummerierung wieder bei 1.
+Jeder aktuelle Treffer erhält eine eindeutige Nummer. Rahmen und Ergebnisliste verwenden dieselbe Nummer; Antippen wählt die zugehörige Frucht aus. Die globale eindeutige Zuordnung hält Nummern bei leichter Bewegung stabil. Beim Neustart beginnt die Nummerierung wieder bei 1.
 
 Ausschließlich drei aufeinanderfolgende sichere Bewertungen als „reif“ ergeben einen grünen Rahmen und „✓ Jetzt essreif“. Unsicherheit, ein verschwundener Treffer oder eine zweifelhafte Zuordnung unterbrechen die Bestätigung. Andere Ergebnisse heißen „Unreif“, „Überreif“ oder „Nicht sicher beurteilbar“. Der Überblick nennt die empfohlenen Nummern oder zeigt „Aktuell keine Banane sicher als essreif erkannt“. Bewertet wird ausschließlich die sichtbare Schalenreife.
 
 ## Tatsächlicher Modellstand
 
-Die bestehende YOLOX-Nano-Pipeline wurde mit korrigierten Einzelboxen um zwölf reale positive COCO-Fotos und zwanzig Negativfotos ergänzt und acht CPU-Epochen nachtrainiert. Der auf Validierung gewählte Checkpoint stammt aus Epoche 1. Datensätze: **503 Training / 110 Validierung / 101 bisheriger Test / 60 neue Prüffotos**. Einzelannotation und Mitgliedschaft wurden vor Trainingsbeginn in Commit `28b35eb` festgelegt.
+Die bestehende YOLOX-Nano-Pipeline wurde mit engen Einzelboxen vollständig nachtrainiert. 13 abgeschlossene Pilotepochen und 9 Fortsetzungsepochen, 448 × 448, zwei CPU-Threads. Datensätze der Fortsetzung: **575 Training / 117 Validierung / 101 bisheriger Test / 60 neue Prüffotos**. Überlappung, wechselndes Licht, gemischte Schalenreife und echte Negativfotos sind ergänzt; Trainingsmontagen verwenden ausschließlich ursprüngliche Trainingsfrüchte.
 
-**Neuer Test: 0 richtige Empfehlungen, 1 falsche Empfehlung, 169 ausgelassene reife Einzelbananen; Präzision 0 %, Recall 0 %.** Der Bestand enthält 30 reale Mehrfruchtszenen und 30 reale Negativszenen. Er enthält auch arrangierte Früchte und ersetzt noch keine unabhängige Abnahme von 30 Büschelszenen. Die zusätzliche Annotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige Gegenprüfung fehlt. COCO-Trainingsbilder waren außerdem im generischen Vortraining enthalten.
+Der neue Test enthält **30 reale Commons-Büschelszenen und 30 reale COCO-Negativszenen**, vor Training in Commit `59efe9e` festgelegt und bei der Fortsetzung in Commit `18308d4` unverändert. Ergebnis nach drei Bestätigungen: **6 richtige Empfehlungen, 1 falsche Empfehlungen, 90 ausgelassene reife Einzelbananen; Präzision 85,7 %, Recall 6,3 %**. Ziel: ≥95 % Präzision, ≥80 % Recall. Unsicherheit zählt als ausgelassene Empfehlung.
 
-Das Modell gibt bei Büscheln weiterhin überwiegend keinen oder einen zu großen Gesamtrahmen aus. Die gewünschte zuverlässige Erkennung einzelner Früchte ist damit **nicht erreicht**. Der neue Bericht nennt diese Grenze ausdrücklich; bisherige Einzelbildwerte werden separat ausgewiesen. Das neue Büschelbeispiel zeigt einen fehlgeschlagenen Fall.
+Die Annotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. COCO-Trainingsfotos waren im generischen Vortraining enthalten. Das frühere fehlgeschlagene Experiment bleibt archiviert; seine bereits eingesehenen Szenen sind ausdrücklich Trainings-/Validierungsdaten und kein neuer unabhängiger Test.
 
 - [Modellbericht](documentation/model-validation.md)
 - [Neue Empfehlungsmetriken](public/evaluation/individual-report.json)
-- [Eingefrorene Szenen, Boxen, Hashes und Quellen](ml/individual-benchmark.json)
+- [Eingefrorene Szenen, Boxen, Hashes und Quellen](ml/individual-benchmark-v2.json)
 - [Tatsächliche Browserprüfungen und offene Geräteabnahme](public/evaluation/acceptance.md)
 - [Trainingspipeline und Reproduktion](ml/README.md)
 
@@ -31,19 +31,19 @@ npm run check
 npm test
 npx playwright install --with-deps chromium webkit
 npm run test:browser
-npm run build
+npm run check:runtime
 ```
 
-`npm run build` erstellt den statischen GitHub-Pages-Export unter `docs/` und prüft relative Pfade, Assets, Modellhashes und die gemeinsame Nachverarbeitungskonfiguration. `npm run check:runtime` führt zusätzlich das echte ONNX-Modell mit WASM unter Node/Linux aus. Dies ist kein Smartphone-Benchmark.
+`npm run test:browser` erstellt zuerst den statischen GitHub-Pages-Build und prüft ihn unter `/Bananenblick/` in Chromium und WebKit. Die Kamerafälle verwenden kontrollierte Video-/Worker-Doubles; der Beispieltest führt das echte ONNX-Modell aus. Die Artefakte enthalten den vom Worker geprüften Modellhash und die Browserversionen. Erfolgreiche Emulation wird nicht als Android-/iPhone-Geräteabnahme bezeichnet.
 
-Die Browserfälle nutzen Chromium und WebKit mit mobilen Ansichtsgrößen unter Linux. Der Kamerafall verwendet kontrollierte Video-/Worker-Doubles; der Beispieltest verwendet das echte ONNX-Modell. Erfolgreiche Emulation wird nicht als Android-/iPhone-Geräteabnahme bezeichnet.
+`npm run build` erstellt separat den statischen Export unter `docs/` und prüft relative Pfade, Assets, Modellhashes und die gemeinsame Python-/TypeScript-Nachverarbeitung. `npm run check:runtime` führt das echte ONNX-Modell mit WASM unter Node/Linux aus; das ist kein Smartphone-Benchmark.
 
 ## Veröffentlichung
 
-Ziel bleibt ausschließlich **GitHub Pages** über `.github/workflows/pages.yml`. Pull Requests prüfen TypeScript, Tests, Chromium/WebKit und den statischen Build. Nur `main` kann veröffentlichen. Vor der Veröffentlichung kontrolliert `scripts/check-release.mjs` die Modellziele (≥95 % Präzision, ≥80 % Recall) und tatsächliche Android-/iPhone-Nachweise einschließlich mindestens drei vollständiger Auswertungen/s. Diese Abnahme schlägt aktuell erwartungsgemäß fehl. Ein lokaler Build bleibt für die Prüfung des Entwurfs möglich.
+Ziel bleibt ausschließlich **GitHub Pages** über `.github/workflows/pages.yml`. Pull Requests prüfen TypeScript, Tests, Chromium/WebKit und den statischen Build. Nur `main` kann veröffentlichen. Vorher kontrolliert `scripts/check-release.mjs` die Modellziele (≥95 % Präzision, ≥80 % Recall), mindestens 30 reale Büschelszenen und tatsächliche Android-/iPhone-Nachweise einschließlich mindestens drei vollständiger Auswertungen/s. Die offenen Nachweise werden nicht als bestanden ausgegeben. Ein lokaler Build bleibt für die Prüfung des Änderungsstands möglich.
 
-Nach weiterem Training mit überprüften Einzelbananen-Annotationen ist ein **neuer unberührter Prüfbestand** erforderlich; der jetzige Test wurde eingesehen und darf nicht für weiteres Tuning als unabhängiger Nachweis ausgegeben werden. Anschließend sind reale Geräteprüfungen nach dem [Prüfprotokoll](public/evaluation/acceptance.md) nötig.
+Nach testgetriebenem Nachtraining ist ein neuer, vorab festgelegter unberührter Prüfbestand erforderlich. Bereits eingesehene Testfotos dürfen nicht für weiteres Tuning als unabhängiger Nachweis ausgegeben werden. Geräteprüfschritte stehen im [Prüfprotokoll](public/evaluation/acceptance.md).
 
 Die Auswertung bleibt lokal im Browser. Kamerabilder werden weder hochgeladen noch gespeichert. Es gibt keine neue öffentliche API. Die private Sites-Veröffentlichung wurde nicht geändert oder ausgeliefert.
 
-Quellen: Rohit et al. (2026), [Mendeley Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0; [COCO 2017](https://cocodataset.org/) mit den individuellen CC-BY-/CC-BY-SA-2.0-Bildlizenzen und Flickr-Verweisen im Manifest. Büschelbeispiel: [goodiesfirst, „putahracsa fruit plate“](https://www.flickr.com/photos/scaredykat/4430551771/), CC BY 2.0, verkleinert. YOLOX: Megvii, Apache 2.0. Ursprüngliche Herkunft: offizieller Sites-/Vinext-Starter; das Standard-Buildziel ist der statische Pages-Export.
+Quellen: Rohit et al. (2026), [Mendeley Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0; [COCO 2017](https://cocodataset.org/) und Wikimedia Commons mit Quellen und individuellen Lizenzen im Manifest. Tellerbeispiel: [goodiesfirst, „putahracsa fruit plate“](https://www.flickr.com/photos/scaredykat/4430551771/), CC BY 2.0, verkleinert. Gemischter Büschel: [Esther Musasike, „Bunch of banana.jpg“](https://commons.wikimedia.org/wiki/File:Bunch_of_banana.jpg), CC BY-SA 4.0, Ausschnitt und verkleinert. YOLOX: Megvii, Apache 2.0. Ursprüngliche Herkunft: offizieller Sites-/Vinext-Starter; das Standard-Buildziel ist der statische Pages-Export.

@@ -206,18 +206,18 @@ export default function Home() {
     scanner.dimensions.height,
   );
   useEffect(() => {
-    fetch(assetPath("/examples/index.json"))
+    fetch(assetPath("/examples/index.json"), { cache: "no-cache" })
       .then((r) => {
         if (!r.ok) throw new Error();
         return r.json() as Promise<Example[]>;
       })
       .then(setExamples)
       .catch(() => setExampleError(true));
-    fetch(assetPath("/models/model-card.json"))
+    fetch(assetPath("/models/model-card.json"), { cache: "no-cache" })
       .then((r) => (r.ok ? (r.json() as Promise<ModelCard>) : null))
       .then(setModelCard)
       .catch(() => {});
-    fetch(assetPath("/evaluation/test-report.json"))
+    fetch(assetPath("/evaluation/test-report.json"), { cache: "no-cache" })
       .then((r) => (r.ok ? (r.json() as Promise<EvaluationReport>) : null))
       .then(setEvaluation)
       .catch(() => {});
@@ -322,6 +322,15 @@ export default function Home() {
           </div>
         </section>
 
+        {modelCard?.individualBenchmark && !modelCard.individualBenchmark.passed && (
+          <div className="model-limitation" role="note">
+            <CircleHelp size={20} />
+            <p><strong>Büschelerkennung noch unzuverlässig.</strong> Im Fototest wurden die Genauigkeitsziele verfehlt.
+              Einzelne Früchte können fehlen oder falsch bewertet werden.{" "}
+              <button onClick={() => setDialog("quality")}>Prüfergebnis ansehen</button>
+            </p>
+          </div>
+        )}
         <div className="workspace">
           <section
             className={`scanner-card ${fullscreen ? "fullscreen-fallback" : ""}`}

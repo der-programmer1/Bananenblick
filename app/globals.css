@@ -1213,6 +1213,30 @@ footer button {
   font-size: 10px;
   font-weight: 600;
 }
+.model-limitation {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border: 1px solid #dfce9e;
+  border-radius: 10px;
+  background: #faf4e4;
+  color: #675830;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.model-limitation > svg { flex-shrink: 0; margin-top: 2px; }
+.model-limitation p { margin: 0; }
+.model-limitation button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
 .ready-summary {
   margin: 18px 0 12px;
   padding: 13px;

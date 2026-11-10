@@ -1,8 +1,8 @@
 {
-  "status": "draft-acceptance-failed-not-published",
-  "checkedAt": "2026-11-10T16:43:01.155923+00:00",
+  "status": "acceptance-failed-not-published",
+  "checkedAt": "2026-11-10T19:45:34.466415+00:00",
   "scope": "GitHub Pages only; previous public deployment unchanged",
-  "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a",
+  "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
   "verified": {
     "typescript": "passed",
     "unitTests": {
@@ -10,65 +10,112 @@
       "failed": 0
     },
     "pythonPipelineTests": {
-      "passed": 6,
+      "passed": 9,
       "failed": 0
     },
     "browserEmulation": {
-      "context": "Playwright mobile viewport/device emulation on Linux; not physical Android or iPhone",
+      "context": "Production GitHub Pages build at /Bananenblick/, Playwright mobile viewport/device emulation on Linux; not physical Android or iPhone",
       "versions": {
         "chromium": "158.0.8127.18",
         "webkit": "27.2"
       },
-      "passed": 4,
+      "passed": 8,
       "failed": 0,
       "skipped": 0,
       "cases": [
         {
           "project": "chromium-mobile-emulation",
-          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "title": "stopping a pending camera request also stops a stream granted afterwards",
           "status": "expected",
-          "durationMs": 7579
+          "durationMs": 632
         },
         {
           "project": "webkit-mobile-emulation",
-          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "title": "stopping a pending camera request also stops a stream granted afterwards",
           "status": "expected",
-          "durationMs": 4213
+          "durationMs": 1337
         },
         {
           "project": "chromium-mobile-emulation",
-          "title": "real ONNX example runs three passes and stays within both orientations",
+          "title": "a model hash mismatch stops inference and explains the retry",
           "status": "expected",
-          "durationMs": 3655
+          "durationMs": 1017
         },
         {
           "project": "webkit-mobile-emulation",
-          "title": "real ONNX example runs three passes and stays within both orientations",
+          "title": "a model hash mismatch stops inference and explains the retry",
           "status": "expected",
-          "durationMs": 6726
+          "durationMs": 2657
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "status": "expected",
+          "durationMs": 7537
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "status": "expected",
+          "durationMs": 9020
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "slow runtime download and three actual ONNX passes work in both orientations",
+          "status": "expected",
+          "durationMs": 16250
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "slow runtime download and three actual ONNX passes work in both orientations",
+          "status": "expected",
+          "durationMs": 19686
         }
       ],
-      "media": "Controlled video clock and worker; Chromium canvas MediaStream; WebKit simulated media track. Separate examples run the real ONNX worker."
+      "verifiedModels": [
+        {
+          "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+          "inputSize": 448,
+          "browserName": "chromium",
+          "browserVersion": "158.0.8127.18",
+          "provider": "wasm",
+          "url": "http://127.0.0.1:4173/Bananenblick/"
+        },
+        {
+          "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+          "inputSize": 448,
+          "browserName": "webkit",
+          "browserVersion": "27.2",
+          "provider": "wasm",
+          "url": "http://127.0.0.1:4173/Bananenblick/"
+        }
+      ],
+      "media": "Controlled video clock and worker; Chromium canvas MediaStream; WebKit simulated media track. Separate examples run the real hash-verified ONNX worker."
     },
+    "wasmNodeRuntime": "passed; Linux reference only",
     "staticProductionBuild": "passed",
-    "repositorySubpathsModelHashAndSharedPostprocessing": "passed"
+    "repositorySubpathsModelHashAndSharedPostprocessing": "passed",
+    "newSplitSourceAndPerceptualAudit": "passed"
   },
   "acceptance": {
     "passed": false,
-    "precision": 0,
-    "recall": 0,
-    "truePositive": 0,
+    "precision": 0.8571428571428571,
+    "recall": 0.0625,
+    "truePositive": 6,
     "falsePositive": 1,
-    "falseNegative": 169,
+    "falseNegative": 90,
     "positiveScenes": 30,
     "negativeScenes": 30,
-    "verifiedRealBunchScenes": null,
+    "realBunchScenes": 30,
+    "realBunchSceneCountVerified": true,
     "physicalDeviceTestsPerformed": false
   },
   "publication": {
     "publishedThisVersion": false,
-    "reason": "Individual-fruit precision/recall targets failed; 30 independently verified bunch scenes and physical device checks pending.",
+    "reason": "Individual-fruit precision/recall targets failed; physical Android/Chrome and iPhone/Safari tests not available or performed.",
+    "releaseGate": "failed with exit 1: precision >=95% and recall >=80% required",
     "workflow": ".github/workflows/pages.yml",
-    "reviewBranch": "codex/numbered-individual-bananas"
+    "reviewBranch": "codex/numbered-individual-bananas",
+    "pullRequest": "https://github.com/der-programmer1/Bananenblick/pull/1"
   }
 }

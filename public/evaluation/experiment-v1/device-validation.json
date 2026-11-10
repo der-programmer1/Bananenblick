@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-11-10T16:38:51.395Z",
+  "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a",
+  "physicalDeviceTestsPerformed": false,
+  "devices": [],
+  "browserTests": {
+    "context": "Playwright mobile viewport/device emulation on Linux; not physical Android or iPhone",
+    "versions": {
+      "chromium": "158.0.8127.18",
+      "webkit": "27.2"
+    },
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+        "status": "expected",
+        "durationMs": 7579
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+        "status": "expected",
+        "durationMs": 4213
+      },
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "real ONNX example runs three passes and stays within both orientations",
+        "status": "expected",
+        "durationMs": 3655
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "real ONNX example runs three passes and stays within both orientations",
+        "status": "expected",
+        "durationMs": 6726
+      }
+    ],
+    "media": "Controlled video clock and worker; Chromium canvas MediaStream; WebKit simulated media track. Separate examples run the real ONNX worker."
+  },
+  "acceptance": "pending real Android/Chrome and iPhone/Safari, including camera indicator and >=3 complete camera evaluations per second"
+}

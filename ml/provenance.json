@@ -18,7 +18,7 @@
     "python": "3.12.14",
     "torch": "2.15.0+cpu",
     "torchvision": "0.29.2+cpu",
-    "num_threads": 3
+    "num_threads": 2
   },
   "individual_fruit_experiment": {
     "additional_dataset": "COCO 2017",
@@ -31,5 +31,38 @@
     "selected_epoch": 1,
     "accepted": false,
     "model_sha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a"
+  },
+  "individual_fruit_v3": {
+    "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+    "training": {
+      "epochs": 9,
+      "selectedEpoch": 4,
+      "totalRunSeconds": 1320.3338041305542,
+      "seed": 20261113,
+      "initialCheckpointSha256": "f82d6e117b5f0a133ac4eecdfd90795a493715058e6c471d405350019fa87e08",
+      "data": {
+        "train": 575,
+        "val": 117,
+        "test": 101,
+        "acceptance": 60
+      },
+      "pilot": {
+        "completedEpochs": 13,
+        "selectedEpoch": 11,
+        "initialCheckpointSha256": "f82d6e117b5f0a133ac4eecdfd90795a493715058e6c471d405350019fa87e08",
+        "reason": "Stopped pilot after validation plateau to add already-seen real bunch cases to training; unseen v2 holdout unchanged."
+      },
+      "syntheticTrainingScenesPerEpoch": 600,
+      "realPositiveRepeat": 6,
+      "fullBackboneFromEpoch": 1,
+      "benchmarkFrozenCommit": "59efe9e",
+      "continuationFrozenCommit": "18308d4",
+      "trainingPlanSha256": "50f337b1183141bcfbc33ed78c23606034c7f3ccba73af513ab62cd579ac359b"
+    },
+    "benchmark": "individual-benchmark-v2.json",
+    "trainingPlan": "individual-training-v3.json",
+    "acceptedStaticBenchmark": false,
+    "physicalDeviceTestsPerformed": false,
+    "annotationReview": "Coding assistant visible-instance review; independent human adjudication pending."
   }
 }

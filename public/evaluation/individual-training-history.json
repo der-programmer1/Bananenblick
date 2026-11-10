@@ -1,1106 +1,236 @@
 [
   {
     "epoch": 1,
-    "loss": 2.2549313114535425,
+    "loss": 3.6475657807456123,
+    "seconds": 139.02618551254272,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8999521573778999,
-      "precision": 0.908256880733945,
-      "recall": 0.9,
-      "f1": 0.9041095890410958,
-      "visibleRecall": 0.8909090909090909,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 3,
-          "falseNegative": 3,
-          "precision": 0.9117647058823529,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9117647058823529,
-          "ap50": 0.9018901890189019
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 6,
-          "precision": 1.0,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.8108108108108109,
-          "ap50": 0.8573722237088574
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 7,
-          "falseNegative": 2,
-          "precision": 0.8409090909090909,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 34,
+      "falsePositive": 2,
+      "falseNegative": 61,
+      "precision": 0.9444444444444444,
+      "recall": 0.35789473684210527,
+      "uncertainOrUnconfirmed": 24,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 19.089844465255737
+      "passed": false,
+      "f1": 0.5190839694656488
+    }
   },
   {
     "epoch": 2,
-    "loss": 2.3655869537784207,
+    "loss": 3.4799673623508878,
+    "seconds": 167.84374141693115,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8993601114497415,
-      "precision": 0.9,
-      "recall": 0.9,
-      "f1": 0.9,
-      "visibleRecall": 0.8909090909090909,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 3,
-          "falseNegative": 3,
-          "precision": 0.9117647058823529,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9117647058823529,
-          "ap50": 0.9007900790079008
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 1,
-          "falseNegative": 6,
-          "precision": 0.96875,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.8108108108108109,
-          "ap50": 0.856696195935383
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 7,
-          "falseNegative": 2,
-          "precision": 0.8409090909090909,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 37,
+      "falsePositive": 3,
+      "falseNegative": 58,
+      "precision": 0.925,
+      "recall": 0.3894736842105263,
+      "uncertainOrUnconfirmed": 14,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            30,
-            0,
-            1,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 18.99324655532837
+      "passed": false,
+      "f1": 0.548148148148148
+    }
   },
   {
     "epoch": 3,
-    "loss": 2.907502010945351,
+    "loss": 3.373055688540141,
+    "seconds": 176.2891001701355,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8991267547807412,
-      "precision": 0.8918918918918919,
-      "recall": 0.9,
-      "f1": 0.8959276018099547,
-      "visibleRecall": 0.9,
-      "uncertainCount": 0,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 3,
-          "falseNegative": 3,
-          "precision": 0.9117647058823529,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9117647058823529,
-          "ap50": 0.9000900090009001
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 6,
-          "precision": 0.9393939393939394,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.8378378378378378,
-          "ap50": 0.856696195935383
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 7,
-          "falseNegative": 2,
-          "precision": 0.8409090909090909,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 40,
+      "falsePositive": 6,
+      "falseNegative": 55,
+      "precision": 0.8695652173913043,
+      "recall": 0.42105263157894735,
+      "uncertainOrUnconfirmed": 8,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 51.06857132911682
+      "passed": false,
+      "f1": 0.5673758865248227
+    }
   },
   {
     "epoch": 4,
-    "loss": 2.750574767589569,
+    "loss": 3.182168519496918,
+    "seconds": 133.24749565124512,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8987573175922243,
-      "precision": 0.8839285714285714,
-      "recall": 0.9,
-      "f1": 0.8918918918918918,
-      "visibleRecall": 0.9,
-      "uncertainCount": 0,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 3,
-          "falseNegative": 3,
-          "precision": 0.9117647058823529,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.9117647058823529,
-          "ap50": 0.9018901890189019
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 4,
-          "falseNegative": 6,
-          "precision": 0.8857142857142857,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.8378378378378378,
-          "ap50": 0.8537877043518306
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 6,
-          "falseNegative": 2,
-          "precision": 0.8604651162790697,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 46,
+      "falsePositive": 7,
+      "falseNegative": 49,
+      "precision": 0.8679245283018868,
+      "recall": 0.4842105263157895,
+      "uncertainOrUnconfirmed": 7,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 63.61092948913574
+      "passed": false,
+      "f1": 0.6216216216216216
+    }
   },
   {
     "epoch": 5,
-    "loss": 2.5048797399766984,
+    "loss": 3.091602687040965,
+    "seconds": 130.93093919754028,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8974820558978974,
-      "precision": 0.9166666666666666,
-      "recall": 0.9,
-      "f1": 0.908256880733945,
-      "visibleRecall": 0.8909090909090909,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 3,
-          "precision": 0.9393939393939394,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.8823529411764706,
-          "ap50": 0.9018901890189019
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 3,
-          "falseNegative": 6,
-          "precision": 0.9117647058823529,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.8378378378378378,
-          "ap50": 0.8499619192688499
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 4,
-          "falseNegative": 2,
-          "precision": 0.9024390243902439,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 45,
+      "falsePositive": 9,
+      "falseNegative": 50,
+      "precision": 0.8333333333333334,
+      "recall": 0.47368421052631576,
+      "uncertainOrUnconfirmed": 7,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            30,
-            0,
-            0,
-            1,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 35.92007255554199
+      "passed": false,
+      "f1": 0.6040268456375839
+    }
   },
   {
     "epoch": 6,
-    "loss": 2.886090807376369,
+    "loss": 2.9815795567300585,
+    "seconds": 164.77564907073975,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8913891389138914,
-      "precision": 0.9428571428571428,
-      "recall": 0.9,
-      "f1": 0.9209302325581394,
-      "visibleRecall": 0.8909090909090909,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 3,
-          "precision": 0.9393939393939394,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.8823529411764706,
-          "ap50": 0.9018901890189019
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 1,
-          "falseNegative": 6,
-          "precision": 0.96875,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.8378378378378378,
-          "ap50": 0.8316831683168316
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 3,
-          "falseNegative": 2,
-          "precision": 0.925,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 44,
+      "falsePositive": 11,
+      "falseNegative": 51,
+      "precision": 0.8,
+      "recall": 0.4631578947368421,
+      "uncertainOrUnconfirmed": 9,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            30,
-            0,
-            0,
-            1,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 38.06618595123291
+      "passed": false,
+      "f1": 0.5866666666666668
+    }
   },
   {
     "epoch": 7,
-    "loss": 2.6700010722683323,
+    "loss": 2.906970759232839,
+    "seconds": 143.8452775478363,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8913891389138914,
-      "precision": 0.9611650485436893,
-      "recall": 0.9,
-      "f1": 0.9295774647887324,
-      "visibleRecall": 0.8909090909090909,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 3,
-          "precision": 0.9393939393939394,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.8823529411764706,
-          "ap50": 0.9018901890189019
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 6,
-          "precision": 1.0,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.8378378378378378,
-          "ap50": 0.8316831683168316
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 2,
-          "falseNegative": 2,
-          "precision": 0.9487179487179487,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 43,
+      "falsePositive": 14,
+      "falseNegative": 52,
+      "precision": 0.7543859649122807,
+      "recall": 0.45263157894736844,
+      "uncertainOrUnconfirmed": 11,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            30,
-            0,
-            0,
-            1,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 48.39444136619568
+      "passed": false,
+      "f1": 0.5657894736842105
+    }
   },
   {
     "epoch": 8,
-    "loss": 2.5156310489100795,
+    "loss": 2.8292834957440696,
+    "seconds": 131.97999238967896,
     "validation": {
-      "threshold": 0.25,
-      "iouThreshold": 0.5,
-      "nmsIou": 0.45,
-      "apCandidateThreshold": 0.01,
-      "maxDetectionsPerImage": 40,
-      "mAP50": 0.8987573175922243,
-      "precision": 0.9705882352941176,
-      "recall": 0.9,
-      "f1": 0.9339622641509434,
-      "visibleRecall": 0.8909090909090909,
-      "uncertainCount": 1,
-      "perClass": [
-        {
-          "class": "unreif",
-          "support": 34,
-          "truePositive": 31,
-          "falsePositive": 2,
-          "falseNegative": 3,
-          "precision": 0.9393939393939394,
-          "recall": 0.9117647058823529,
-          "localizationRecall": 0.9117647058823529,
-          "wrongRipeness": 0,
-          "missed": 3,
-          "uncertain": 1,
-          "visibleTruePositive": 30,
-          "visibleRecall": 0.8823529411764706,
-          "ap50": 0.9018901890189019
-        },
-        {
-          "class": "reif",
-          "support": 37,
-          "truePositive": 31,
-          "falsePositive": 0,
-          "falseNegative": 6,
-          "precision": 1.0,
-          "recall": 0.8378378378378378,
-          "localizationRecall": 0.8378378378378378,
-          "wrongRipeness": 0,
-          "missed": 6,
-          "uncertain": 0,
-          "visibleTruePositive": 31,
-          "visibleRecall": 0.8378378378378378,
-          "ap50": 0.8537877043518306
-        },
-        {
-          "class": "überreif",
-          "support": 39,
-          "truePositive": 37,
-          "falsePositive": 1,
-          "falseNegative": 2,
-          "precision": 0.9736842105263158,
-          "recall": 0.9487179487179487,
-          "localizationRecall": 0.9487179487179487,
-          "wrongRipeness": 0,
-          "missed": 2,
-          "uncertain": 0,
-          "visibleTruePositive": 37,
-          "visibleRecall": 0.9487179487179487,
-          "ap50": 0.9405940594059405
-        }
-      ],
-      "confusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            31,
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            2
-          ]
-        ]
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 44,
+      "falsePositive": 14,
+      "falseNegative": 51,
+      "precision": 0.7586206896551724,
+      "recall": 0.4631578947368421,
+      "uncertainOrUnconfirmed": 10,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
       },
-      "visibleConfusion": {
-        "rows": [
-          "unreif",
-          "reif",
-          "überreif"
-        ],
-        "columns": [
-          "unreif",
-          "reif",
-          "überreif",
-          "unsicher",
-          "nicht erkannt"
-        ],
-        "counts": [
-          [
-            30,
-            0,
-            0,
-            1,
-            3
-          ],
-          [
-            0,
-            31,
-            0,
-            0,
-            6
-          ],
-          [
-            0,
-            0,
-            37,
-            0,
-            2
-          ]
-        ]
-      }
-    },
-    "seconds": 54.66480374336243
+      "passed": false,
+      "f1": 0.5751633986928104
+    }
+  },
+  {
+    "epoch": 9,
+    "loss": 3.3461190780003864,
+    "seconds": 132.39542317390442,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 112,
+      "negativeScenes": 5,
+      "truePositive": 45,
+      "falsePositive": 11,
+      "falseNegative": 50,
+      "precision": 0.8035714285714286,
+      "recall": 0.47368421052631576,
+      "uncertainOrUnconfirmed": 12,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5960264900662252
+    }
   }
 ]

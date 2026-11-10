@@ -1,0 +1,705 @@
+{
+  "version": 3,
+  "frozenAt": "2026-11-10T19:16:50.416080+00:00",
+  "benchmarkSha256": "3745ee5c1cc3722291ec45cc260c45b209d3db673ee31ff05da843bd7a4dd2eb",
+  "newHoldoutUnchanged": true,
+  "annotationSha256": "84089671e23b493edd2bbc9319f9e0db12bce59f62053f965d3ccc0e4db79c94",
+  "counts": {
+    "train": 575,
+    "val": 117,
+    "test": 101,
+    "acceptance": 60
+  },
+  "movedSeenV1CasesToTraining": [
+    "coco-train-298142",
+    "coco-train-152795",
+    "coco-train-26041",
+    "coco-train-113113",
+    "coco-train-157860",
+    "coco-train-113367",
+    "coco-train-79992",
+    "coco-train-211445",
+    "coco-train-403096",
+    "coco-train-44815",
+    "coco-train-87235",
+    "coco-train-481407",
+    "coco-train-58231",
+    "coco-train-332891",
+    "coco-train-156066",
+    "coco-train-227185",
+    "coco-train-383805",
+    "coco-train-424174",
+    "coco-train-56784",
+    "coco-train-134072",
+    "coco-train-362072",
+    "coco-train-458756",
+    "coco-train-21921",
+    "coco-train-193710",
+    "coco-train-283144",
+    "coco-train-63764",
+    "coco-train-474479",
+    "coco-train-87522",
+    "coco-val-189078"
+  ],
+  "newValidation": [
+    {
+      "id": "validation-v3-357782",
+      "group": "coco-357782",
+      "file": "images/validation-v3-357782.jpg",
+      "width": 110,
+      "height": 166,
+      "boxes": [
+        [
+          1,
+          0.17,
+          0.1,
+          0.34,
+          0.2
+        ],
+        [
+          1,
+          0.185,
+          0.205,
+          0.37,
+          0.19
+        ],
+        [
+          1,
+          0.19,
+          0.32,
+          0.38,
+          0.18
+        ],
+        [
+          1,
+          0.2,
+          0.43,
+          0.4,
+          0.18
+        ],
+        [
+          1,
+          0.205,
+          0.545,
+          0.41,
+          0.17
+        ],
+        [
+          1,
+          0.23,
+          0.67,
+          0.46,
+          0.18
+        ],
+        [
+          1,
+          0.205,
+          0.79,
+          0.41,
+          0.16
+        ],
+        [
+          1,
+          0.215,
+          0.9,
+          0.43,
+          0.16
+        ],
+        [
+          1,
+          0.685,
+          0.17,
+          0.63,
+          0.26
+        ],
+        [
+          1,
+          0.695,
+          0.28,
+          0.61,
+          0.24
+        ],
+        [
+          1,
+          0.7,
+          0.425,
+          0.6,
+          0.23
+        ],
+        [
+          1,
+          0.7,
+          0.555,
+          0.6,
+          0.23
+        ],
+        [
+          1,
+          0.705,
+          0.69,
+          0.59,
+          0.2
+        ],
+        [
+          1,
+          0.695,
+          0.81,
+          0.61,
+          0.16
+        ],
+        [
+          1,
+          0.72,
+          0.915,
+          0.56,
+          0.13
+        ]
+      ],
+      "scene": "real-bunch",
+      "cropPercent": [
+        65,
+        40,
+        88,
+        66
+      ],
+      "source": "https://images.cocodataset.org/train2017/000000357782.jpg",
+      "flickrSource": "http://farm3.staticflickr.com/2516/4341487419_7fdc54484b_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "originalSha256": "a8ff6f051534d5f42b2747f43ac41499d2444e58b0fc806c9c98f135ba3241af",
+      "sha256_file": "a3519d63349510232dc7209d860f20d8e2decef15e96b0c3f6b3244feed3ffc9"
+    },
+    {
+      "id": "validation-v3-521763",
+      "group": "coco-521763",
+      "file": "images/validation-v3-521763.jpg",
+      "width": 237,
+      "height": 256,
+      "boxes": [
+        [
+          1,
+          0.475,
+          0.55,
+          0.57,
+          0.4
+        ],
+        [
+          1,
+          0.415,
+          0.66,
+          0.59,
+          0.4
+        ],
+        [
+          1,
+          0.35,
+          0.75,
+          0.48,
+          0.5
+        ],
+        [
+          1,
+          0.235,
+          0.76,
+          0.33,
+          0.48
+        ],
+        [
+          1,
+          0.13,
+          0.755,
+          0.26,
+          0.49
+        ],
+        [
+          1,
+          0.055,
+          0.755,
+          0.11,
+          0.43
+        ],
+        [
+          1,
+          0.42,
+          0.9,
+          0.24,
+          0.2
+        ],
+        [
+          1,
+          0.605,
+          0.895,
+          0.21,
+          0.21
+        ],
+        [
+          1,
+          0.745,
+          0.93,
+          0.27,
+          0.14
+        ],
+        [
+          1,
+          0.87,
+          0.665,
+          0.26,
+          0.25
+        ],
+        [
+          1,
+          0.845,
+          0.745,
+          0.31,
+          0.25
+        ]
+      ],
+      "scene": "real-bunch",
+      "cropPercent": [
+        48,
+        15,
+        85,
+        75
+      ],
+      "source": "https://images.cocodataset.org/train2017/000000521763.jpg",
+      "flickrSource": "http://farm3.staticflickr.com/2536/3710359398_6b13dc47cc_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+        "id": 5,
+        "name": "Attribution-ShareAlike License"
+      },
+      "originalSha256": "1d92232e96261fa547756a90745876d4c8575821885f62e399c5679577e43f5e",
+      "sha256_file": "6cdebab8e96abb88c9b8000ac1cb0d1df77c9c2a5177286f67a1b98a6d402959"
+    },
+    {
+      "id": "validation-v3-715",
+      "group": "coco-715",
+      "file": "images/validation-v3-715.jpg",
+      "width": 256,
+      "height": 230,
+      "boxes": [
+        [
+          1,
+          0.2,
+          0.33,
+          0.3,
+          0.46
+        ],
+        [
+          1,
+          0.215,
+          0.38,
+          0.15,
+          0.44
+        ],
+        [
+          1,
+          0.05,
+          0.5,
+          0.08,
+          0.22
+        ],
+        [
+          1,
+          0.4,
+          0.36,
+          0.3,
+          0.42
+        ],
+        [
+          1,
+          0.42,
+          0.435,
+          0.34,
+          0.51
+        ],
+        [
+          1,
+          0.46,
+          0.515,
+          0.28,
+          0.51
+        ],
+        [
+          1,
+          0.485,
+          0.555,
+          0.21,
+          0.51
+        ],
+        [
+          1,
+          0.565,
+          0.58,
+          0.23,
+          0.48
+        ],
+        [
+          1,
+          0.69,
+          0.495,
+          0.3,
+          0.31
+        ],
+        [
+          1,
+          0.77,
+          0.655,
+          0.28,
+          0.53
+        ],
+        [
+          1,
+          0.82,
+          0.69,
+          0.16,
+          0.44
+        ],
+        [
+          1,
+          0.895,
+          0.665,
+          0.09,
+          0.35
+        ],
+        [
+          1,
+          0.965,
+          0.45,
+          0.07,
+          0.26
+        ],
+        [
+          1,
+          0.96,
+          0.7,
+          0.08,
+          0.34
+        ]
+      ],
+      "scene": "real-bunch",
+      "cropPercent": [
+        35,
+        45,
+        75,
+        93
+      ],
+      "source": "https://images.cocodataset.org/train2017/000000000715.jpg",
+      "flickrSource": "http://farm4.staticflickr.com/3423/3732947167_879fffd0aa_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "originalSha256": "45e8925104949b569b5280347cb829149dd3e9e9ed51098f3a55847ed7afa294",
+      "sha256_file": "d8b3e2c119bf7b1871acc6dbbb5a4cf4a8b9f616e573318a29394f361f7c177b"
+    },
+    {
+      "id": "validation-v3-146841",
+      "group": "coco-146841",
+      "file": "images/validation-v3-146841.jpg",
+      "width": 237,
+      "height": 201,
+      "boxes": [
+        [
+          1,
+          0.105,
+          0.27,
+          0.15,
+          0.32
+        ],
+        [
+          1,
+          0.165,
+          0.385,
+          0.17,
+          0.45
+        ],
+        [
+          1,
+          0.225,
+          0.37,
+          0.15,
+          0.5
+        ],
+        [
+          1,
+          0.32,
+          0.375,
+          0.14,
+          0.53
+        ],
+        [
+          3,
+          0.425,
+          0.52,
+          0.09,
+          0.24
+        ],
+        [
+          3,
+          0.49,
+          0.54,
+          0.1,
+          0.16
+        ],
+        [
+          3,
+          0.195,
+          0.85,
+          0.17,
+          0.3
+        ],
+        [
+          3,
+          0.31,
+          0.825,
+          0.16,
+          0.35
+        ],
+        [
+          3,
+          0.375,
+          0.84,
+          0.07,
+          0.32
+        ],
+        [
+          3,
+          0.51,
+          0.85,
+          0.12,
+          0.3
+        ],
+        [
+          3,
+          0.585,
+          0.83,
+          0.13,
+          0.34
+        ],
+        [
+          3,
+          0.685,
+          0.815,
+          0.15,
+          0.37
+        ]
+      ],
+      "scene": "real-bunch",
+      "cropPercent": [
+        28,
+        52,
+        65,
+        99
+      ],
+      "source": "https://images.cocodataset.org/train2017/000000146841.jpg",
+      "flickrSource": "http://farm8.staticflickr.com/7169/6410493239_3be363f478_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+        "id": 5,
+        "name": "Attribution-ShareAlike License"
+      },
+      "originalSha256": "4b211c4789e4f4d13db980f415eeeac8097507a5740b6ce76ed881cbcfb5a97d",
+      "sha256_file": "adf84b93898ee4d9c5377369fc3b933dd2aad434b97cae9a91c0ca5df5525a0b"
+    },
+    {
+      "id": "validation-v3-538776",
+      "group": "coco-538776",
+      "file": "images/validation-v3-538776.jpg",
+      "width": 640,
+      "height": 427,
+      "boxes": [
+        [
+          3,
+          0.54,
+          0.605,
+          0.4,
+          0.53
+        ],
+        [
+          3,
+          0.64,
+          0.47,
+          0.4,
+          0.42
+        ]
+      ],
+      "scene": "real-bunch",
+      "cropPercent": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "source": "https://images.cocodataset.org/train2017/000000538776.jpg",
+      "flickrSource": "http://farm6.staticflickr.com/5040/5867127233_41cffbea9a_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "originalSha256": "511c810a39561fc065e6cdb610fe1a8acddae797642d0995e40676a7c740223c",
+      "sha256_file": "438f80d0b86ced5c6dd8666d8e72b819c6771a3a1dfef7e39ea5ae852d78b4ef"
+    },
+    {
+      "id": "validation-v3-305366",
+      "group": "coco-305366",
+      "file": "images/validation-v3-305366.jpg",
+      "width": 173,
+      "height": 250,
+      "boxes": [
+        [
+          1,
+          0.25,
+          0.135,
+          0.24,
+          0.15
+        ],
+        [
+          1,
+          0.345,
+          0.15,
+          0.25,
+          0.2
+        ],
+        [
+          1,
+          0.465,
+          0.175,
+          0.13,
+          0.15
+        ],
+        [
+          1,
+          0.545,
+          0.18,
+          0.13,
+          0.16
+        ],
+        [
+          1,
+          0.63,
+          0.18,
+          0.14,
+          0.16
+        ],
+        [
+          1,
+          0.745,
+          0.17,
+          0.23,
+          0.28
+        ],
+        [
+          1,
+          0.16,
+          0.385,
+          0.28,
+          0.33
+        ],
+        [
+          1,
+          0.25,
+          0.435,
+          0.26,
+          0.35
+        ],
+        [
+          1,
+          0.335,
+          0.49,
+          0.17,
+          0.32
+        ],
+        [
+          1,
+          0.43,
+          0.485,
+          0.16,
+          0.33
+        ],
+        [
+          1,
+          0.545,
+          0.48,
+          0.17,
+          0.32
+        ],
+        [
+          1,
+          0.65,
+          0.47,
+          0.16,
+          0.34
+        ],
+        [
+          1,
+          0.735,
+          0.435,
+          0.13,
+          0.37
+        ],
+        [
+          1,
+          0.82,
+          0.36,
+          0.1,
+          0.24
+        ]
+      ],
+      "scene": "real-bunch",
+      "cropPercent": [
+        30,
+        45,
+        57,
+        97
+      ],
+      "source": "https://images.cocodataset.org/train2017/000000305366.jpg",
+      "flickrSource": "http://farm8.staticflickr.com/7249/7795429150_8437f2d89c_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "originalSha256": "eb682cea2707c1b54d0098a405a4a973ecf887947b4fc98466dca882004a267e",
+      "sha256_file": "0ce30e57650fc2f8ff6ae30ea5765381f3a25910938374bd1c86ed93b03628cd"
+    }
+  ],
+  "splitSha256": {
+    "train": "cb645a32b40ed755a30ebfcbaffabdb08ac9bfbdbbcad8aa41b43efa3fc5fb84",
+    "val": "352b6aec3a931fabecc6b305baf000e90aebdb5dc4b967c01102a89a0976b81f",
+    "test": "1e3e9fe9f1723af863da8245007eeb2df025a1eec70f45f5a6c567b7c4fafa0e",
+    "acceptance": "ac95fe96a47ce5f74254dfb8586b6fc28251b7521cbf5fe844da057522e9b89a"
+  },
+  "protocol": {
+    "inputSize": 448,
+    "maxEpochs": 12,
+    "earlyStoppingPatience": 5,
+    "learningRate": 0.0002,
+    "modelSelection": "highest validation confirmed-ripe F1; v2 test never used for selection",
+    "initialCheckpoint": "best EMA checkpoint of full-backbone pilot selected on its validation F1",
+    "realPositiveSamplingRepeat": 6,
+    "syntheticScenesPerEpoch": 600,
+    "plainBackgroundProbability": 0.3,
+    "fullBackboneFromEpoch": 1,
+    "requiredConfirmations": 3,
+    "precisionTarget": 0.95,
+    "recallTarget": 0.8,
+    "iou": 0.5
+  },
+  "limits": [
+    "Old v1 test was already inspected and is explicitly training data here.",
+    "Generic COCO pretraining included COCO photos; Commons holdout is separate.",
+    "Visible assistant annotation; no independent human adjudication."
+  ],
+  "pilot": {
+    "completedEpochs": 13,
+    "selectedEpoch": 11,
+    "initialCheckpointSha256": "f82d6e117b5f0a133ac4eecdfd90795a493715058e6c471d405350019fa87e08",
+    "reason": "Stopped pilot after validation plateau to add already-seen real bunch cases to training; unseen v2 holdout unchanged."
+  }
+}
