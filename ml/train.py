@@ -26,25 +26,26 @@ def prepare(im,boxes,augment=False,size=SIZE):
     return canvas,b
 
 class BananaDataset(Dataset):
-    def __init__(self,data,split,augment=False,mosaic=.25):
+    def __init__(self,data,split,augment=False,mosaic=.25,size=SIZE):
         self.data=Path(data);self.records=json.loads((self.data/f'{split}.json').read_text());self.augment=augment;self.mosaic=mosaic
         self.images=[cv2.imread(str(self.data/r['file'])) for r in self.records]
+        self.size=size
         if any(im is None for im in self.images):raise ValueError('Cannot decode a prepared image')
     def __len__(self):return len(self.records)
     def __getitem__(self,i):
         if self.augment and random.random()<self.mosaic:
-            im=np.full((SIZE,SIZE,3),114,dtype=np.uint8);bs=[]
+            im=np.full((self.size,self.size,3),114,dtype=np.uint8);bs=[]
             for k,j in enumerate([i]+random.choices(range(len(self)),k=3)):
-                tile,b=prepare(self.images[j],self.records[j]['boxes'],True,SIZE//2)
-                ox=(k%2)*(SIZE//2);oy=(k//2)*(SIZE//2)
-                im[oy:oy+SIZE//2,ox:ox+SIZE//2]=tile
+                tile,b=prepare(self.images[j],self.records[j]['boxes'],True,self.size//2)
+                ox=(k%2)*(self.size//2);oy=(k//2)*(self.size//2)
+                im[oy:oy+self.size//2,ox:ox+self.size//2]=tile
                 if len(b):b[:,1]+=ox;b[:,2]+=oy;bs.append(b)
             b=np.concatenate(bs) if bs else np.zeros((0,5),dtype=np.float32)
-        else:im,b=prepare(self.images[i],self.records[i]['boxes'],self.augment)
+        else:im,b=prepare(self.images[i],self.records[i]['boxes'],self.augment,self.size)
         if self.augment:
             if random.random()<.5:
                 im=im[:,::-1].copy()
-                if len(b):b[:,1]=SIZE-b[:,1]
+                if len(b):b[:,1]=self.size-b[:,1]
             # Hue is kept within +/-2 degrees to preserve the ripeness target.
             hsv=cv2.cvtColor(im,cv2.COLOR_BGR2HSV).astype(np.float32)
             hsv[:,:,0]=(hsv[:,:,0]+random.uniform(-1,1))%180
