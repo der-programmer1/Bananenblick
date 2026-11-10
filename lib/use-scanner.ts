@@ -35,6 +35,10 @@ export function useScanner() {
   const nextTrackRef = useRef(1);
   const readyRef = useRef(false);
   const busyRef = useRef(false);
+  const busySinceRef = useRef(0);
+  const workerStartedRef = useRef(0);
+  const forceWasmRef = useRef(false);
+  const restartWorkerRef = useRef<(forceWasm: boolean) => void>(() => {});
   const sizeRef = useRef(320);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const vfcRef = useRef<number | null>(null);
@@ -100,6 +104,9 @@ export function useScanner() {
     workerRef.current = null;
     readyRef.current = false;
     busyRef.current = false;
+    busySinceRef.current = 0;
+    workerStartedRef.current = 0;
+    forceWasmRef.current = false;
     setModelReady(false);
     setProvider("");
     setModelStatus("Modell startet mit deinem Scan");
@@ -182,6 +189,7 @@ export function useScanner() {
     context.drawImage(source, 0, 0, Math.floor(width * ratio), Math.floor(height * ratio));
     const pixels = context.getImageData(0, 0, size, size);
     busyRef.current = true;
+    busySinceRef.current = performance.now();
     workerRef.current.postMessage(
       {
         type: "frame",
@@ -199,7 +207,9 @@ export function useScanner() {
   useEffect(() => {
     captureRef.current = capture;
   }, [capture]);
-  const prepareWorker = useCallback(() => {
+  const prepareWorker = useCallback((forceWasm = false) => {
+    workerStartedRef.current = performance.now();
+    forceWasmRef.current = forceWasm;
     let worker: Worker;
     try {
       worker = new Worker(new URL("./inference.worker.ts", import.meta.url), { type: "module" });
@@ -238,6 +248,7 @@ export function useScanner() {
       if (data.type !== "result") return;
       const result = data as FrameResult;
       busyRef.current = false;
+      busySinceRef.current = 0;
       if (result.sessionId !== sessionRef.current) return;
       const live = modeRef.current === "live";
       if (!live && modeRef.current !== "example") return;
@@ -297,8 +308,9 @@ export function useScanner() {
       else if (++examplePassesRef.current < 3)
         timerRef.current = setTimeout(() => captureRef.current(), 200);
     };
-    worker.postMessage({ type: "init", assetBase: new URL(assetPath(""), document.baseURI).href });
+    worker.postMessage({ type: "init", assetBase: new URL(assetPath(""), document.baseURI).href, preferGpu: !forceWasm });
   }, [clearTracks, fail, schedule]);
+  useEffect(() => { restartWorkerRef.current = prepareWorker; }, [prepareWorker]);
   const start = useCallback(async () => {
     stop();
     changeMode("starting");
@@ -382,9 +394,26 @@ export function useScanner() {
   );
   useEffect(() => {
     const interval = setInterval(() => {
+      const now = performance.now();
+      if (modeRef.current !== "live" && modeRef.current !== "example") return;
+      const stalled = (busyRef.current && now - busySinceRef.current > (forceWasmRef.current ? 10000 : 2500)) ||
+        (workerRef.current && !readyRef.current && now - workerStartedRef.current > 12000);
+      if (stalled) {
+        if (forceWasmRef.current) { fail("Die lokale Erkennung antwortet nicht. Beende den Scan und starte erneut."); return; }
+        workerRef.current?.terminate();
+        workerRef.current = null;
+        readyRef.current = false;
+        busyRef.current = false;
+        busySinceRef.current = 0;
+        examplePassesRef.current = 0;
+        clearTracks();
+        setModelReady(false);
+        setModelStatus("Lokale Erkennung wird neu vorbereitet …");
+        restartWorkerRef.current(true);
+        return;
+      }
       if (modeRef.current !== "live") return;
       const video = videoRef.current;
-      const now = performance.now();
       if (video && video.currentTime !== lastVideoTimeRef.current.videoTime) {
         lastVideoTimeRef.current = { videoTime: video.currentTime, changedAt: now };
         setNotice("");
@@ -424,7 +453,7 @@ export function useScanner() {
       window.removeEventListener("orientationchange", geometry);
       stop();
     };
-  }, [clearTracks, stop]);
+  }, [clearTracks, fail, stop]);
   const report = useCallback(
     () => ({
       generatedAt: new Date().toISOString(),

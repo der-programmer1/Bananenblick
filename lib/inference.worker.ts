@@ -31,7 +31,7 @@ async function createSession(preferGpu: boolean) {
   });
   provider = "wasm";
 }
-async function initialize(assetBase: string) {
+async function initialize(assetBase: string, preferGpu = true) {
   const base = new URL(assetBase);
   if (base.origin !== scope.location.origin) throw new Error("Modell und Laufzeit müssen von derselben Website stammen.");
   send({ type: "status", message: "Lokale Laufzeit wird geladen …" });
@@ -51,13 +51,13 @@ async function initialize(assetBase: string) {
     throw new Error("Das Bananenmodell konnte nicht geladen werden. Bitte erneut versuchen.");
   modelBytes = await response.arrayBuffer();
   send({ type: "status", message: "Bananenmodell wird vorbereitet …" });
-  await createSession(true);
+  await createSession(preferGpu);
   send({ type: "ready", provider, inputSize, thresholds });
 }
 scope.onmessage = async (event) => {
   if (event.data.type === "init") {
     try {
-      await initialize(event.data.assetBase);
+      await initialize(event.data.assetBase, event.data.preferGpu !== false);
     } catch (error) {
       send({
         type: "error",

@@ -10,6 +10,7 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
     const state = window as any;
     state.testPhase = "ripe";
     state.testStreams = [];
+    state.testForcedWasmStarts = 0;
     // Controlled video clock for the media mock, including WebKit's autoplay policy.
     Object.defineProperties(HTMLVideoElement.prototype, {
       videoWidth: { get: () => 640 },
@@ -68,11 +69,14 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
     state.Worker = class {
       onmessage: ((event: any) => void) | null = null;
       terminated = false;
+      forceWasm = false;
       terminate() {
         this.terminated = true;
       }
       postMessage(message: any) {
         if (message.type === "init") {
+          this.forceWasm = message.preferGpu === false;
+          if (this.forceWasm) state.testForcedWasmStarts++;
           setTimeout(
             () =>
               this.onmessage?.({
@@ -87,6 +91,8 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
           );
           return;
         }
+        // A hanging GPU must be terminated and retried in a fresh WASM worker.
+        if (!this.forceWasm) return;
         const phase = state.testPhase;
         let detections = [0, 1, 2, 3].map((n) => {
           const ripe = n % 2 === 1 && phase !== "uncertain";
@@ -118,7 +124,7 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
   expect(await page.evaluate(() => Array.isArray((window as any).testStreams))).toBe(true);
   await page.getByRole("button", { name: "Kamera starten", exact: true }).first().click();
   expect(await page.evaluate(() => (window as any).testStreams.length)).toBe(1);
-  await expect(page.locator(".ready-summary")).toHaveText("Jetzt essreif: Nr. 2 und 4");
+  await expect(page.locator(".ready-summary")).toHaveText("Jetzt essreif: Nr. 2 und 4", { timeout: 15000 });
   await expect(page.locator(".fruit-results li")).toHaveCount(4);
   await page.locator("#fruit-result-2").click();
   await expect(page.locator("#fruit-box-2")).toHaveAttribute("aria-pressed", "true");
@@ -153,7 +159,8 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
     (window as any).testPhase = "ripe";
   });
   await page.getByRole("button", { name: "Kamera starten", exact: true }).first().click();
-  await expect(page.locator(".ready-summary")).toHaveText("Jetzt essreif: Nr. 2 und 4");
+  await expect(page.locator(".ready-summary")).toHaveText("Jetzt essreif: Nr. 2 und 4", { timeout: 15000 });
+  expect(await page.evaluate(() => (window as any).testForcedWasmStarts)).toBe(2);
   await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
 });
 
