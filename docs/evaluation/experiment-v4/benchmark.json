@@ -1,0 +1,5651 @@
+{
+  "version": 4,
+  "frozenAt": "2026-11-11T08:57:53.597112+00:00",
+  "realBunchScenes": 30,
+  "negativeScenes": 30,
+  "annotationSha256": "d23186c32f7048f5bbae88f7b0e6be70e673fc6a2224572d21ada3cd8f2b88b2",
+  "trainingAnnotationSha256": "82d195d75b4da4f7ca4c78382c262a22173f4c9b65eb7a5521ee6ce618d5517a",
+  "counts": {
+    "train": 592,
+    "val": 177,
+    "test": 101,
+    "acceptance": 60
+  },
+  "splitSha256": {
+    "train": "0f1fcf6812e14fdc55405c661d321bf36795237ee17157a4c9500c780c58a611",
+    "val": "b8c6e4f51218e05bdef1952dfb93a25ac165bbd75185f64124315218cebc3f54",
+    "test": "ebf56e61e8c583b4a4bb8c53e1866b6fb20d804c32594deb5282b9918ee5c24b",
+    "acceptance": "1076f2f1591bd1c8eefe506da06b36ae04c4b1bcdb70c1b3d5563988c959aa85"
+  },
+  "supplemental": {
+    "train": [
+      {
+        "id": "v4-commons-881123",
+        "commonsId": 881123,
+        "group": "commons-881123",
+        "file": "images/v4-commons-881123.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            1,
+            0.35,
+            0.56,
+            0.7,
+            0.88
+          ],
+          [
+            1,
+            0.81,
+            0.53,
+            0.38,
+            0.94
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 881123,
+          "title": "File:Bananas and apples.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Bananas_and_apples.jpg/960px-Bananas_and_apples.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bananas_and_apples.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "artist": "nlitement",
+          "description": "Basket of bananas and apples.",
+          "date": "2006-06-19",
+          "file": "commons-v4/881123.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "518a2d4e44912bdc0875aba867d4b7a55556264f302f8c540ffb2f6b897342d2",
+          "sha256": "10c91883587d901b3340a44ed57addf1a47dd4daf4541361e854adc6401d4b6d"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "a5a6b96363cf2cfe095b9963eb398014069a2022ae71fff21cf3543efbe1d941"
+      },
+      {
+        "id": "v4-commons-18088517",
+        "commonsId": 18088517,
+        "group": "commons-18088517",
+        "file": "images/v4-commons-18088517.jpg",
+        "width": 600,
+        "height": 420,
+        "boxes": [
+          [
+            1,
+            0.155,
+            0.26,
+            0.31,
+            0.3
+          ],
+          [
+            1,
+            0.18,
+            0.16,
+            0.2,
+            0.32
+          ],
+          [
+            1,
+            0.325,
+            0.165,
+            0.19,
+            0.33
+          ],
+          [
+            1,
+            0.485,
+            0.16,
+            0.21,
+            0.32
+          ],
+          [
+            1,
+            0.6,
+            0.19,
+            0.24,
+            0.38
+          ],
+          [
+            1,
+            0.8,
+            0.125,
+            0.2,
+            0.25
+          ],
+          [
+            1,
+            0.82,
+            0.205,
+            0.36,
+            0.21
+          ],
+          [
+            1,
+            0.825,
+            0.435,
+            0.29,
+            0.39
+          ],
+          [
+            1,
+            0.72,
+            0.475,
+            0.24,
+            0.33
+          ],
+          [
+            1,
+            0.45,
+            0.53,
+            0.32,
+            0.48
+          ],
+          [
+            1,
+            0.31,
+            0.525,
+            0.36,
+            0.19
+          ],
+          [
+            1,
+            0.145,
+            0.7,
+            0.29,
+            0.2
+          ],
+          [
+            1,
+            0.275,
+            0.785,
+            0.27,
+            0.21
+          ],
+          [
+            1,
+            0.45,
+            0.8,
+            0.24,
+            0.26
+          ],
+          [
+            1,
+            0.59,
+            0.795,
+            0.18,
+            0.25
+          ],
+          [
+            1,
+            0.795,
+            0.65,
+            0.39,
+            0.28
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          15,
+          20,
+          90,
+          90
+        ],
+        "sourceMetadata": {
+          "id": 18088517,
+          "title": "File:Banana in a plate.JPG",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Banana_in_a_plate.JPG/960px-Banana_in_a_plate.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_in_a_plate.JPG",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "artist": "Rameshng",
+          "description": "Typical Kerala Banana in a plate.",
+          "date": "2012-01-16 13:14:22",
+          "file": "commons-v4/18088517.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "c32899925bbc9052a0ce178577bac937fd5e98cb590ab36a57389e2068d51e39",
+          "sha256": "d18a8abbfcc64ecc26fe49f32980dd31920916789589322e67c6fdefe3058260"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "d9f72cacce70b39f999691ee74a707dbb203dc08a2cf46c09cbba32da72b46fe"
+      },
+      {
+        "id": "v4-commons-50367806",
+        "commonsId": 50367806,
+        "group": "commons-50367806",
+        "file": "images/v4-commons-50367806.jpg",
+        "width": 640,
+        "height": 363,
+        "boxes": [
+          [
+            1,
+            0.16,
+            0.64,
+            0.28,
+            0.72
+          ],
+          [
+            1,
+            0.315,
+            0.62,
+            0.23,
+            0.72
+          ],
+          [
+            1,
+            0.39,
+            0.455,
+            0.32,
+            0.71
+          ],
+          [
+            1,
+            0.515,
+            0.54,
+            0.39,
+            0.54
+          ],
+          [
+            1,
+            0.565,
+            0.645,
+            0.47,
+            0.45
+          ],
+          [
+            1,
+            0.71,
+            0.82,
+            0.56,
+            0.36
+          ],
+          [
+            1,
+            0.8,
+            0.77,
+            0.4,
+            0.28
+          ],
+          [
+            1,
+            0.905,
+            0.4,
+            0.19,
+            0.52
+          ],
+          [
+            1,
+            0.655,
+            0.25,
+            0.19,
+            0.26
+          ],
+          [
+            1,
+            0.845,
+            0.225,
+            0.19,
+            0.27
+          ],
+          [
+            1,
+            0.58,
+            0.09,
+            0.26,
+            0.18
+          ],
+          [
+            1,
+            0.38,
+            0.13,
+            0.22,
+            0.26
+          ],
+          [
+            1,
+            0.135,
+            0.11,
+            0.23,
+            0.22
+          ],
+          [
+            1,
+            0.085,
+            0.26,
+            0.17,
+            0.2
+          ],
+          [
+            1,
+            0.075,
+            0.475,
+            0.15,
+            0.21
+          ],
+          [
+            1,
+            0.07,
+            0.75,
+            0.14,
+            0.26
+          ],
+          [
+            1,
+            0.89,
+            0.09,
+            0.22,
+            0.18
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          18,
+          80,
+          98
+        ],
+        "sourceMetadata": {
+          "id": 50367806,
+          "title": "File:Banana 2.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Banana_2.jpg/960px-Banana_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_2.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "artist": "Koniiica",
+          "description": "banana",
+          "date": "28 July 2016 (according to Exif data)",
+          "file": "commons-v4/50367806.jpg",
+          "width": 800,
+          "height": 454,
+          "sourceSha256": "15eb3f4c3eb00de0e1ac0e73e279ec024ef24531755768e41a0f810fa20bd4d0",
+          "sha256": "80cc008fff3d4ecb8d1505adfad4db28aadd3e76b1d4199899bd373df01da60e"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "9813169ca92fadd13caef1e274454858f11dd5722babc7617f1d745297638e2a"
+      },
+      {
+        "id": "v4-commons-60325098",
+        "commonsId": 60325098,
+        "group": "commons-60325098",
+        "file": "images/v4-commons-60325098.jpg",
+        "width": 450,
+        "height": 800,
+        "boxes": [
+          [
+            1,
+            0.19,
+            0.52,
+            0.38,
+            0.26
+          ],
+          [
+            1,
+            0.4,
+            0.59,
+            0.42,
+            0.26
+          ],
+          [
+            1,
+            0.36,
+            0.375,
+            0.26,
+            0.25
+          ],
+          [
+            1,
+            0.685,
+            0.425,
+            0.51,
+            0.15
+          ],
+          [
+            1,
+            0.41,
+            0.74,
+            0.46,
+            0.12
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 60325098,
+          "title": "File:Fruit plate Berlin.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Fruit_plate_Berlin.jpg/960px-Fruit_plate_Berlin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fruit_plate_Berlin.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Dr. Manavpreet Kaur",
+          "description": "Fruits",
+          "date": "2017-04-01 06:58:20",
+          "file": "commons-v4/60325098.jpg",
+          "width": 450,
+          "height": 800,
+          "sourceSha256": "45bdbb2bd7ccfd97faa82f418c80eafa24baa5652a32528c82c8760325a272b5",
+          "sha256": "29801db9e89f10408edafec1a7f9735977c0d7024cacd124d82e781281860e57"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "b0ec8525fae1b9fc073e13521d5e15b64ba63c91404ece97aa5505b9553988ab"
+      },
+      {
+        "id": "v4-commons-61427900",
+        "commonsId": 61427900,
+        "group": "commons-61427900",
+        "file": "images/v4-commons-61427900.jpg",
+        "width": 440,
+        "height": 378,
+        "boxes": [
+          [
+            1,
+            0.215,
+            0.305,
+            0.29,
+            0.61
+          ],
+          [
+            1,
+            0.285,
+            0.5,
+            0.23,
+            0.64
+          ],
+          [
+            1,
+            0.425,
+            0.395,
+            0.19,
+            0.77
+          ],
+          [
+            1,
+            0.58,
+            0.355,
+            0.24,
+            0.71
+          ],
+          [
+            1,
+            0.795,
+            0.245,
+            0.41,
+            0.49
+          ],
+          [
+            1,
+            0.86,
+            0.545,
+            0.28,
+            0.15
+          ],
+          [
+            1,
+            0.73,
+            0.77,
+            0.32,
+            0.28
+          ],
+          [
+            1,
+            0.81,
+            0.885,
+            0.2,
+            0.23
+          ],
+          [
+            1,
+            0.89,
+            0.9,
+            0.22,
+            0.2
+          ],
+          [
+            1,
+            0.45,
+            0.885,
+            0.34,
+            0.23
+          ],
+          [
+            1,
+            0.125,
+            0.785,
+            0.25,
+            0.31
+          ],
+          [
+            1,
+            0.125,
+            0.13,
+            0.25,
+            0.26
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          20,
+          22,
+          75,
+          85
+        ],
+        "sourceMetadata": {
+          "id": 61427900,
+          "title": "File:0385jfCuisine Desserts Bananas Baliuag Bulacanfvf 04.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/0385jfCuisine_Desserts_Bananas_Baliuag_Bulacanfvf_04.jpg/960px-0385jfCuisine_Desserts_Bananas_Baliuag_Bulacanfvf_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:0385jfCuisine_Desserts_Bananas_Baliuag_Bulacanfvf_04.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "Judgefloro",
+          "description": "List of Philippine dishes Ripe señorita bananas (Musa acuminata 'Señorita') from the Philippines Maja Ube  in Barangay Poblacion 14°57'17\"N 120°54'2\"E beside Pagala 14°58'14\"N   120°53'26\"E Baliuag, Bulacan, Bulacan province (Note: Judge Florentino Floro, the owner, to repeat, Donor Florentino Floro of all these photos hereby donate gratuitously, freely and unconditionally all these photos to and for Wikimedia Commons, exclusively, for public use of the public domain, and again without any condition whatsoever).",
+          "date": "2017-08-01 17:22:10",
+          "file": "commons-v4/61427900.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "b6a390031f5382a475efc9b2e983fec4b2c8e34d3eaadb3dbbc36876ee533951",
+          "sha256": "78c7ef308465006194aa369fa34845f990be30a0cd5d9e9dfd96f5578c1cd250"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "471ec1116b857973a9c2f05e500b255ead974d95d859f04e1129adb1e90c4ca2"
+      },
+      {
+        "id": "v4-commons-76025450",
+        "commonsId": 76025450,
+        "group": "commons-76025450",
+        "file": "images/v4-commons-76025450.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            1,
+            0.29,
+            0.53,
+            0.32,
+            0.82
+          ],
+          [
+            1,
+            0.71,
+            0.535,
+            0.22,
+            0.79
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 76025450,
+          "title": "File:Banana for food.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Banana_for_food.jpg/960px-Banana_for_food.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_for_food.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Gausanchennai",
+          "description": "Banana for food",
+          "date": "2018-04-05 00:58:58",
+          "file": "commons-v4/76025450.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "00e6ef2a81433cb9e241e75a8589e2bd61154efb9df81562ac7db5d085c43b18",
+          "sha256": "8fd179c2a961f52b6de5356d2819c32c212c7949e9153b7700858930a9e67ed0"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "7f9ea09074a186877295ad3d8f85467a9bdb5d28619fc60d692540bd89e51bfc"
+      },
+      {
+        "id": "v4-commons-86104008",
+        "commonsId": 86104008,
+        "group": "commons-86104008",
+        "file": "images/v4-commons-86104008.jpg",
+        "width": 533,
+        "height": 800,
+        "boxes": [
+          [
+            1,
+            0.44,
+            0.625,
+            0.88,
+            0.35
+          ],
+          [
+            1,
+            0.51,
+            0.82,
+            0.86,
+            0.34
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 86104008,
+          "title": "File:Fruit plate with fresh fruits.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Fruit_plate_with_fresh_fruits.jpg/960px-Fruit_plate_with_fresh_fruits.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fruit_plate_with_fresh_fruits.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Marc-Lautenbacher",
+          "description": "Fruit plate with an arrangement of fresh fruits consisting of bananas, kiwis, oranges, lemons and an apple. The consumption of this composition, rich of vitamin C and minerals, is recommended by nutritionists.",
+          "date": "2009-02-18 12:13:00",
+          "file": "commons-v4/86104008.jpg",
+          "width": 533,
+          "height": 800,
+          "sourceSha256": "50c9841b7e861e4e4329a83cbc8769a99be37b4afcaf66abcb1676d9c0d52780",
+          "sha256": "00c56e22e067fba0e6869113fd20b7e093156c3192ded2368b81330447e79690"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "da6c83ea558c592f3965719d712b5c830aeaa14526d4bc43bd022f7ee39d04be"
+      },
+      {
+        "id": "v4-commons-97114890",
+        "commonsId": 97114890,
+        "group": "commons-97114890",
+        "file": "images/v4-commons-97114890.jpg",
+        "width": 560,
+        "height": 346,
+        "boxes": [
+          [
+            1,
+            0.145,
+            0.645,
+            0.27,
+            0.71
+          ],
+          [
+            1,
+            0.195,
+            0.23,
+            0.19,
+            0.44
+          ],
+          [
+            1,
+            0.465,
+            0.295,
+            0.53,
+            0.33
+          ],
+          [
+            1,
+            0.47,
+            0.485,
+            0.26,
+            0.49
+          ],
+          [
+            1,
+            0.735,
+            0.15,
+            0.21,
+            0.3
+          ],
+          [
+            1,
+            0.825,
+            0.415,
+            0.15,
+            0.47
+          ],
+          [
+            1,
+            0.935,
+            0.325,
+            0.13,
+            0.65
+          ],
+          [
+            1,
+            0.085,
+            0.15,
+            0.17,
+            0.3
+          ],
+          [
+            0,
+            0.34,
+            0.875,
+            0.24,
+            0.25
+          ],
+          [
+            0,
+            0.54,
+            0.79,
+            0.22,
+            0.42
+          ],
+          [
+            0,
+            0.69,
+            0.77,
+            0.22,
+            0.46
+          ],
+          [
+            0,
+            0.84,
+            0.69,
+            0.32,
+            0.42
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          20,
+          20,
+          90,
+          85
+        ],
+        "sourceMetadata": {
+          "id": 97114890,
+          "title": "File:Cavendish bananas in Panabo (S. Ciencia) - Flickr.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Cavendish_bananas_in_Panabo_%28S._Ciencia%29_-_Flickr.jpg/960px-Cavendish_bananas_in_Panabo_%28S._Ciencia%29_-_Flickr.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_bananas_in_Panabo_(S._Ciencia)_-_Flickr.jpg",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "artist": "Shubert Ciencia from Nueva Ecija, Philippines",
+          "description": "The Philippines is the world's 4th top banana producer and the world's 2nd top exporter of the cavendish variety which is grown mostly in Mindanao.\n\nNikon D40 (RDC PSRs 3rd National Conference, February 2010)",
+          "date": "2010-02-11 17:14",
+          "file": "commons-v4/97114890.jpg",
+          "width": 800,
+          "height": 532,
+          "sourceSha256": "3936018838aa5ebeb7c06331685153d3e73e719d1d57521ed63bcc92cf4f0e49",
+          "sha256": "f72f4570b73e8ec1ecf8ea4ed6233323fce5845d603c568b186266188c494034"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "3a3a7e875d4f3163e0a7b915f5faddfc760d49d2d3aeb0b71385d0d84a1068e1"
+      },
+      {
+        "id": "v4-commons-136219151",
+        "commonsId": 136219151,
+        "group": "commons-136219151",
+        "file": "images/v4-commons-136219151.jpg",
+        "width": 492,
+        "height": 384,
+        "boxes": [
+          [
+            1,
+            0.31,
+            0.5,
+            0.28,
+            0.38
+          ],
+          [
+            1,
+            0.43,
+            0.485,
+            0.3,
+            0.41
+          ],
+          [
+            1,
+            0.585,
+            0.51,
+            0.33,
+            0.32
+          ],
+          [
+            1,
+            0.705,
+            0.62,
+            0.31,
+            0.48
+          ],
+          [
+            1,
+            0.83,
+            0.66,
+            0.32,
+            0.5
+          ],
+          [
+            1,
+            0.38,
+            0.635,
+            0.38,
+            0.35
+          ],
+          [
+            1,
+            0.5,
+            0.72,
+            0.16,
+            0.14
+          ],
+          [
+            1,
+            0.885,
+            0.34,
+            0.23,
+            0.24
+          ],
+          [
+            1,
+            0.935,
+            0.485,
+            0.13,
+            0.35
+          ],
+          [
+            1,
+            0.945,
+            0.615,
+            0.11,
+            0.49
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          3,
+          17,
+          85,
+          65
+        ],
+        "sourceMetadata": {
+          "id": 136219151,
+          "title": "File:Vegan bananas at Wikimania 2023.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Vegan_bananas_at_Wikimania_2023.jpg/960px-Vegan_bananas_at_Wikimania_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vegan_bananas_at_Wikimania_2023.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Ciell",
+          "description": "A plate of bananas and a sign that says 'vegan' in the front.",
+          "date": "19 August 2023 (according to Exif data)",
+          "file": "commons-v4/136219151.jpg",
+          "width": 600,
+          "height": 800,
+          "sourceSha256": "21c6ada2a4a6b172c1b2a610bb1620fd59bf8f3cecc21b674fd100569e01d81c",
+          "sha256": "30e3bd437e043d9d090ef08fccf96a034a750c21b9f3bcb18bfbcaf2a203e429"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "7d04118d38c2c4ca6a30f351b13330ab9f4fdce1eb1990d1b99f659f542ba339"
+      },
+      {
+        "id": "v4-commons-146956210",
+        "commonsId": 146956210,
+        "group": "commons-146956210",
+        "file": "images/v4-commons-146956210.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            1,
+            0.325,
+            0.485,
+            0.27,
+            0.39
+          ],
+          [
+            1,
+            0.445,
+            0.47,
+            0.29,
+            0.36
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 146956210,
+          "title": "File:Fruit plate at hotel Hyatt place, Gurgaon.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Fruit_plate_at_hotel_Hyatt_place%2C_Gurgaon.jpg/960px-Fruit_plate_at_hotel_Hyatt_place%2C_Gurgaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fruit_plate_at_hotel_Hyatt_place,_Gurgaon.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Suyash Dwivedi",
+          "description": "Fruit plate at hotel Hyatt place, Gurgaon",
+          "date": "2024-03-22 12:16:47",
+          "file": "commons-v4/146956210.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "6cf71e868afeb48b1069eef7ba32c4d9a9fcf7a01e45ae04ab1a1fbc03b2acc0",
+          "sha256": "26ff8de1b71453b7d954d011ca1033fac77736050018ef47cf4db6fcc1a8a20d"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "07295a7d7c4cd89981e85213e73f00319115b6145b7570bdf73f79b36dbe726f"
+      },
+      {
+        "id": "v4-commons-149019973",
+        "commonsId": 149019973,
+        "group": "commons-149019973",
+        "file": "images/v4-commons-149019973.jpg",
+        "width": 800,
+        "height": 533,
+        "boxes": [
+          [
+            1,
+            0.49,
+            0.545,
+            0.74,
+            0.63
+          ]
+        ],
+        "scene": "single-fruit",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 149019973,
+          "title": "File:Banana (14237127470).jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Banana_%2814237127470%29.jpg/960px-Banana_%2814237127470%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_(14237127470).jpg",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "artist": "Tim Reckmann from Hamm, Deutschland",
+          "description": "Dieses Bild von Tim Reckmann kann frei unter der angegebenen Creative Commons Lizenz genutzt werden. Viele Tausend weitere Fotos findest Du auch auf <a href=\"http://www.ccnull.de\" rel=\"noreferrer nofollow\">www.ccnull.de</a>. Darüber hinausgehende Lizenzen (z.B. Nutzung ohne Kennzeichnung oder Social Media Nutzung) werden exklusiv auf <a href=\"http://www.a59.de\" rel=\"noreferrer nofollow\">www.a59.de</a> angeboten. Der Einbindung der Bilder via Framing, Embedding oder Deep-Link wird ausdrücklich widersprochen.",
+          "date": "2014-06-14 22:21",
+          "file": "commons-v4/149019973.jpg",
+          "width": 800,
+          "height": 533,
+          "sourceSha256": "7726677d449e5feca9ba657ccc727f6f4cb236205e4c3dfab2024fc660022910",
+          "sha256": "50575f7d94cf93fbf419b0c47364054c763968afd8fe47efe90adadbba4944f7"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "ed6ef54201c8c97638e7a9e3b0cc3aa8fe0c2949d460f5dfa45d1a6e3b66a9cb"
+      },
+      {
+        "id": "v4-commons-163963438",
+        "commonsId": 163963438,
+        "group": "commons-163963438",
+        "file": "images/v4-commons-163963438.jpg",
+        "width": 368,
+        "height": 234,
+        "boxes": [
+          [
+            0,
+            0.105,
+            0.6,
+            0.17,
+            0.64
+          ],
+          [
+            0,
+            0.19,
+            0.56,
+            0.18,
+            0.72
+          ],
+          [
+            0,
+            0.31,
+            0.615,
+            0.18,
+            0.65
+          ],
+          [
+            0,
+            0.425,
+            0.615,
+            0.19,
+            0.65
+          ],
+          [
+            0,
+            0.53,
+            0.525,
+            0.22,
+            0.75
+          ],
+          [
+            0,
+            0.665,
+            0.435,
+            0.23,
+            0.65
+          ],
+          [
+            0,
+            0.765,
+            0.495,
+            0.23,
+            0.69
+          ],
+          [
+            0,
+            0.88,
+            0.625,
+            0.24,
+            0.69
+          ],
+          [
+            0,
+            0.94,
+            0.665,
+            0.12,
+            0.65
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          54,
+          49,
+          100,
+          88
+        ],
+        "sourceMetadata": {
+          "id": 163963438,
+          "title": "File:Apples and Bananas For Sale At A Local Market.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Apples_and_Bananas_For_Sale_At_A_Local_Market.jpg/960px-Apples_and_Bananas_For_Sale_At_A_Local_Market.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apples_and_Bananas_For_Sale_At_A_Local_Market.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Airypedia",
+          "description": "This is an image with the theme \"Farm to Plate\" from:",
+          "date": "2025-04-22",
+          "file": "commons-v4/163963438.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "8ca439213ec373a542657a71aac397c525663f609fe8741c57f994f40f4a7a43",
+          "sha256": "666fd3e3096e91166a485ac1d2627b21ff3861d375901a1a3f6fd68c04f0f74a"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "ead8efa669a997ab6c3d5b7dbcc86c13388317f777725a03c54355a5278d2088"
+      },
+      {
+        "id": "v4-commons-177061744",
+        "commonsId": 177061744,
+        "group": "commons-177061744",
+        "file": "images/v4-commons-177061744.jpg",
+        "width": 800,
+        "height": 513,
+        "boxes": [
+          [
+            1,
+            0.5,
+            0.33,
+            0.88,
+            0.52
+          ],
+          [
+            1,
+            0.465,
+            0.505,
+            0.77,
+            0.79
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 177061744,
+          "title": "File:Banana - cavendish - ripening.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Banana_-_cavendish_-_ripening.jpg/960px-Banana_-_cavendish_-_ripening.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_-_cavendish_-_ripening.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "Sciencia58",
+          "description": "Bananas in the ripening process, which still have chloroplasts in their skin in places, but these are gradually disappearing.",
+          "date": "2025-10-20",
+          "file": "commons-v4/177061744.jpg",
+          "width": 800,
+          "height": 513,
+          "sourceSha256": "ab74fdd195ddd110c3a5c69d3532d1d2c31837e217c4481d4a71681e4ee3ab54",
+          "sha256": "5ff102b4810a11be4510a0046083e65ccafa589fdb7b2706af9caea56151527a"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "d904f06e3902618ce7629fde4649535a7ffaf958dbaaaf15aef3f78b668a79b7"
+      },
+      {
+        "id": "v4-commons-164753088",
+        "commonsId": 164753088,
+        "group": "commons-164753088",
+        "file": "images/v4-commons-164753088.jpg",
+        "width": 301,
+        "height": 376,
+        "boxes": [
+          [
+            1,
+            0.05,
+            0.085,
+            0.1,
+            0.17
+          ],
+          [
+            1,
+            0.145,
+            0.105,
+            0.09,
+            0.21
+          ],
+          [
+            1,
+            0.255,
+            0.1,
+            0.11,
+            0.2
+          ],
+          [
+            1,
+            0.37,
+            0.105,
+            0.14,
+            0.21
+          ],
+          [
+            1,
+            0.48,
+            0.09,
+            0.14,
+            0.18
+          ],
+          [
+            1,
+            0.63,
+            0.08,
+            0.14,
+            0.16
+          ],
+          [
+            1,
+            0.775,
+            0.075,
+            0.15,
+            0.15
+          ],
+          [
+            1,
+            0.905,
+            0.09,
+            0.17,
+            0.18
+          ],
+          [
+            1,
+            0.095,
+            0.28,
+            0.17,
+            0.22
+          ],
+          [
+            1,
+            0.245,
+            0.275,
+            0.21,
+            0.19
+          ],
+          [
+            1,
+            0.37,
+            0.29,
+            0.14,
+            0.22
+          ],
+          [
+            1,
+            0.505,
+            0.27,
+            0.13,
+            0.2
+          ],
+          [
+            1,
+            0.645,
+            0.25,
+            0.15,
+            0.2
+          ],
+          [
+            1,
+            0.785,
+            0.25,
+            0.15,
+            0.2
+          ],
+          [
+            1,
+            0.92,
+            0.245,
+            0.16,
+            0.21
+          ],
+          [
+            1,
+            0.09,
+            0.48,
+            0.18,
+            0.24
+          ],
+          [
+            1,
+            0.24,
+            0.48,
+            0.18,
+            0.24
+          ],
+          [
+            1,
+            0.41,
+            0.475,
+            0.18,
+            0.25
+          ],
+          [
+            1,
+            0.575,
+            0.47,
+            0.19,
+            0.24
+          ],
+          [
+            1,
+            0.745,
+            0.445,
+            0.21,
+            0.23
+          ],
+          [
+            1,
+            0.915,
+            0.435,
+            0.17,
+            0.21
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          3,
+          45,
+          70,
+          92
+        ],
+        "sourceMetadata": {
+          "id": 164753088,
+          "title": "File:Ripe Bananas ready for consumption.jpg",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Ripe_Bananas_ready_for_consumption.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ripe_Bananas_ready_for_consumption.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Roenashy",
+          "description": "This is an image with the theme \"Farm to Plate\" from:",
+          "date": "2025-05-05 12:27:46",
+          "file": "commons-v4/164753088.jpg",
+          "width": 450,
+          "height": 800,
+          "sourceSha256": "dc7e774c2b3538260d376bf5e12ae8ee01977ac4d4486d6feb702b9657a0a5c7",
+          "sha256": "82363277d202414f927f69e53e2a0f96d664157cf41e6a9afc7371b9f91ed1a4"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "d441b6c7193a16ca4c2c499ed23229c25783ead505d5f7514917fa2e8124c5e7"
+      },
+      {
+        "id": "v4-commons-182654297",
+        "commonsId": 182654297,
+        "group": "commons-182654297",
+        "file": "images/v4-commons-182654297.jpg",
+        "width": 800,
+        "height": 483,
+        "boxes": [
+          [
+            1,
+            0.22,
+            0.78,
+            0.36,
+            0.3
+          ],
+          [
+            1,
+            0.23,
+            0.685,
+            0.4,
+            0.23
+          ],
+          [
+            1,
+            0.235,
+            0.55,
+            0.37,
+            0.34
+          ],
+          [
+            1,
+            0.33,
+            0.435,
+            0.22,
+            0.49
+          ],
+          [
+            1,
+            0.39,
+            0.4,
+            0.16,
+            0.5
+          ],
+          [
+            1,
+            0.485,
+            0.365,
+            0.17,
+            0.59
+          ],
+          [
+            1,
+            0.605,
+            0.35,
+            0.19,
+            0.6
+          ],
+          [
+            1,
+            0.72,
+            0.49,
+            0.24,
+            0.46
+          ],
+          [
+            1,
+            0.82,
+            0.685,
+            0.36,
+            0.25
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 182654297,
+          "title": "File:Banana(Chini Champa) (74424).jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Banana%28Chini_Champa%29_%2874424%29.jpg/960px-Banana%28Chini_Champa%29_%2874424%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana(Chini_Champa)_(74424).jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Janak Bhatta",
+          "description": "Banana(Chini Champa)",
+          "date": "28 January 2026 (according to Exif data)",
+          "file": "commons-v4/182654297.jpg",
+          "width": 800,
+          "height": 483,
+          "sourceSha256": "0df7c9b4585d45caca34397f37fba7e235e3d5182a29feb8027029b38249b02f",
+          "sha256": "e7fc9f2cb726688b5ad52228a7eadb25f557555137ca06615d659fb51bd094c8"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "e51a3c872ebac64ac4fdbd2eca998f3e2e195637f53493b65c6746a9105b49ba"
+      },
+      {
+        "id": "v4-commons-189034806",
+        "commonsId": 189034806,
+        "group": "commons-189034806",
+        "file": "images/v4-commons-189034806.jpg",
+        "width": 528,
+        "height": 304,
+        "boxes": [
+          [
+            1,
+            0.3,
+            0.485,
+            0.4,
+            0.55
+          ],
+          [
+            1,
+            0.38,
+            0.31,
+            0.26,
+            0.62
+          ],
+          [
+            1,
+            0.51,
+            0.345,
+            0.26,
+            0.55
+          ],
+          [
+            1,
+            0.62,
+            0.345,
+            0.22,
+            0.53
+          ],
+          [
+            1,
+            0.745,
+            0.485,
+            0.39,
+            0.19
+          ],
+          [
+            1,
+            0.805,
+            0.62,
+            0.35,
+            0.26
+          ],
+          [
+            1,
+            0.305,
+            0.665,
+            0.43,
+            0.21
+          ],
+          [
+            1,
+            0.395,
+            0.85,
+            0.33,
+            0.3
+          ],
+          [
+            1,
+            0.455,
+            0.92,
+            0.21,
+            0.16
+          ],
+          [
+            0,
+            0.075,
+            0.165,
+            0.15,
+            0.33
+          ],
+          [
+            0,
+            0.09,
+            0.485,
+            0.16,
+            0.37
+          ],
+          [
+            0,
+            0.1,
+            0.79,
+            0.14,
+            0.24
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          32,
+          42,
+          98,
+          99
+        ],
+        "sourceMetadata": {
+          "id": 189034806,
+          "title": "File:DFC 4184 Bunches of ripe bananas neatly arranged at a bustling market stall ready for shoppers.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg/960px-DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "PattayaPatrol",
+          "description": "This photo shows a vibrant display of fresh bananas at what appears to be a local market in Thailand. Several large bunches of bananas are prominently featured in the foreground, showing their characteristic yellow color with some still having a slightly green tint, indicating they're at varying stages of ripeness. The bananas are arranged in their natural clusters as they grow, with the distinctive circular cut stem visible on one bunch. In the background, you can see the blurred lights of the market stalls and possibly other produce or vendors, creating a typical bustling market atmosphere. This is likely a fresh produce section of a traditional Thai market in Sattahip, Chon Buri Province. These types of markets are common throughout Thailand, where fresh tropical fruits like these bananas are staple items for both locals and visitors.",
+          "date": "2026-01-10 18:47:30",
+          "file": "commons-v4/189034806.jpg",
+          "width": 800,
+          "height": 533,
+          "sourceSha256": "3954d4d3af406c8efdfb795349c57876d85847063ac872c4fc80dfe243d0deea",
+          "sha256": "463bb178b3aac97ed9ab83b6b21f42a670f0ba2dfd6cbeeda2f8039db7b53e29"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "d72e6b7097c1f56a26dab874401de0b171a34f5a39368c8918e317a1a15fccf2"
+      },
+      {
+        "id": "v4-commons-202966740",
+        "commonsId": 202966740,
+        "group": "commons-202966740",
+        "file": "images/v4-commons-202966740.jpg",
+        "width": 258,
+        "height": 256,
+        "boxes": [
+          [
+            1,
+            0.15,
+            0.24,
+            0.3,
+            0.24
+          ],
+          [
+            1,
+            0.14,
+            0.4,
+            0.28,
+            0.24
+          ],
+          [
+            1,
+            0.18,
+            0.52,
+            0.34,
+            0.26
+          ],
+          [
+            1,
+            0.24,
+            0.68,
+            0.28,
+            0.34
+          ],
+          [
+            1,
+            0.37,
+            0.7,
+            0.2,
+            0.42
+          ],
+          [
+            1,
+            0.5,
+            0.75,
+            0.2,
+            0.42
+          ],
+          [
+            1,
+            0.665,
+            0.765,
+            0.23,
+            0.43
+          ],
+          [
+            1,
+            0.805,
+            0.615,
+            0.35,
+            0.31
+          ],
+          [
+            1,
+            0.85,
+            0.435,
+            0.3,
+            0.21
+          ],
+          [
+            1,
+            0.84,
+            0.275,
+            0.3,
+            0.15
+          ],
+          [
+            1,
+            0.81,
+            0.155,
+            0.34,
+            0.17
+          ],
+          [
+            1,
+            0.505,
+            0.115,
+            0.25,
+            0.23
+          ],
+          [
+            1,
+            0.325,
+            0.09,
+            0.29,
+            0.18
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          27,
+          40,
+          70,
+          72
+        ],
+        "sourceMetadata": {
+          "id": 202966740,
+          "title": "File:Bunches of Ripe Bananas.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Bunches_of_Ripe_Bananas.jpg/960px-Bunches_of_Ripe_Bananas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bunches_of_Ripe_Bananas.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "Uthman salma",
+          "description": "A basin filled with Banana for sale",
+          "date": "2026-11-08",
+          "file": "commons-v4/202966740.jpg",
+          "width": 600,
+          "height": 800,
+          "sourceSha256": "39904b79cf4ee40ce7405303f83f72006a8a3a67a266a5aea40f4bd7e3f564e0",
+          "sha256": "6ad40adb8cecf2b0e34dd000fabfd6d6f5d18f94bc3bc6e29dcd9dbc1e595f57"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "3303aa3027618f87234f5d11885e2c56413a938ea26d3d02ff763b64c671ea2d"
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "v4-commons-511456",
+        "commonsId": 511456,
+        "group": "commons-511456",
+        "file": "images/v4-commons-511456.jpg",
+        "width": 271,
+        "height": 240,
+        "boxes": [
+          [
+            0,
+            0.13,
+            0.26,
+            0.26,
+            0.52
+          ],
+          [
+            0,
+            0.31,
+            0.385,
+            0.46,
+            0.69
+          ],
+          [
+            0,
+            0.505,
+            0.275,
+            0.23,
+            0.55
+          ],
+          [
+            0,
+            0.68,
+            0.35,
+            0.3,
+            0.64
+          ],
+          [
+            0,
+            0.86,
+            0.445,
+            0.28,
+            0.53
+          ],
+          [
+            0,
+            0.195,
+            0.745,
+            0.35,
+            0.47
+          ],
+          [
+            0,
+            0.445,
+            0.78,
+            0.31,
+            0.38
+          ],
+          [
+            0,
+            0.76,
+            0.745,
+            0.46,
+            0.43
+          ],
+          [
+            0,
+            0.23,
+            0.935,
+            0.34,
+            0.13
+          ],
+          [
+            0,
+            0.55,
+            0.955,
+            0.4,
+            0.09
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          2,
+          30,
+          50,
+          60
+        ],
+        "sourceMetadata": {
+          "id": 511456,
+          "title": "File:Costa Rican banana bunch.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Costa_Rican_banana_bunch.jpg/960px-Costa_Rican_banana_bunch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Costa_Rican_banana_bunch.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "artist": "No machine-readable author provided. Renaissance Man~commonswiki assumed (based on copyright claims).",
+          "description": "Bunches of bananas recently brought in from the fields in a Costa Rican banana facility packing and preparing bananas for Del Monte. Picture taken in Jan. 2006",
+          "date": "13 January 2006 (original upload date)",
+          "file": "commons-v4/511456.jpg",
+          "width": 563,
+          "height": 800,
+          "sourceSha256": "7bf261dc5d433f6dfbde9cf2826c0ef6119043439ec5bfb563b923baa9caa5c9",
+          "sha256": "437276c0c922f2d0f8eed4fc12d5d1f5244c1d4c276887f260391046243ea899"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "e5cf57854ae0f5ea1d2c3d0238e791fdf5fc9e40144b54798c7ebd6addfb06f4"
+      },
+      {
+        "id": "v4-commons-22552194",
+        "commonsId": 22552194,
+        "group": "commons-22552194",
+        "file": "images/v4-commons-22552194.jpg",
+        "width": 448,
+        "height": 340,
+        "boxes": [
+          [
+            1,
+            0.21,
+            0.425,
+            0.42,
+            0.61
+          ],
+          [
+            1,
+            0.33,
+            0.52,
+            0.42,
+            0.84
+          ],
+          [
+            1,
+            0.495,
+            0.535,
+            0.25,
+            0.91
+          ],
+          [
+            1,
+            0.635,
+            0.335,
+            0.27,
+            0.67
+          ],
+          [
+            1,
+            0.8,
+            0.515,
+            0.28,
+            0.83
+          ],
+          [
+            1,
+            0.865,
+            0.88,
+            0.27,
+            0.24
+          ],
+          [
+            0,
+            0.395,
+            0.065,
+            0.29,
+            0.13
+          ],
+          [
+            1,
+            0.915,
+            0.31,
+            0.17,
+            0.62
+          ],
+          [
+            0,
+            0.05,
+            0.65,
+            0.1,
+            0.32
+          ],
+          [
+            0,
+            0.135,
+            0.93,
+            0.27,
+            0.14
+          ],
+          [
+            3,
+            0.955,
+            0.575,
+            0.09,
+            0.37
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          8,
+          26,
+          64,
+          87
+        ],
+        "sourceMetadata": {
+          "id": 22552194,
+          "title": "File:Cavendish banana from Maracaibo.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Cavendish_banana_from_Maracaibo.jpg/960px-Cavendish_banana_from_Maracaibo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_banana_from_Maracaibo.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "artist": "Wilfredor",
+          "description": "Cavendish banana from Maracaibo, Venezuela",
+          "date": "2012-11-03 17:44:26",
+          "file": "commons-v4/22552194.jpg",
+          "width": 800,
+          "height": 558,
+          "sourceSha256": "d17b3662c7b72aef6cbcfb83e091dd4580c9a57b2e3a836530c1c8dd63f5e062",
+          "sha256": "e813521ecde882245dbdbc8c34b401546bbdcbe58b843487b3eb97133d3ed22c"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "cdc74eb56560d09b6e783be1f8da837bc9398bf13cbdb2afb02c5a84b4de0963"
+      },
+      {
+        "id": "v4-commons-41289443",
+        "commonsId": 41289443,
+        "group": "commons-41289443",
+        "file": "images/v4-commons-41289443.jpg",
+        "width": 800,
+        "height": 533,
+        "boxes": [
+          [
+            1,
+            0.325,
+            0.545,
+            0.17,
+            0.67
+          ],
+          [
+            1,
+            0.405,
+            0.56,
+            0.19,
+            0.64
+          ],
+          [
+            1,
+            0.495,
+            0.57,
+            0.21,
+            0.64
+          ],
+          [
+            1,
+            0.555,
+            0.535,
+            0.15,
+            0.57
+          ],
+          [
+            1,
+            0.625,
+            0.545,
+            0.15,
+            0.65
+          ],
+          [
+            1,
+            0.695,
+            0.495,
+            0.15,
+            0.59
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 41289443,
+          "title": "File:Cavendish bananas DS.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Cavendish_bananas_DS.jpg/960px-Cavendish_bananas_DS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_bananas_DS.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "artist": "Augustus Binu : flickr",
+          "description": "Cavendish bananas",
+          "date": "2015-06-30 18:05:42",
+          "file": "commons-v4/41289443.jpg",
+          "width": 800,
+          "height": 533,
+          "sourceSha256": "4f12818154530d8cb9855a33b018e7b7ce9e19e9d08e07ded8ae4f3c2819997b",
+          "sha256": "63817ba2abdc495db77c25497a872e1fffde8c6147f0b786c03f83ec8c8844da"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "c88872f1d8ea6be31db5242e5ad48b5e40ce119d4f97fd3e1a191916bef4977b"
+      },
+      {
+        "id": "v4-commons-54843238",
+        "commonsId": 54843238,
+        "group": "commons-54843238",
+        "file": "images/v4-commons-54843238.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            1,
+            0.345,
+            0.375,
+            0.61,
+            0.43
+          ],
+          [
+            1,
+            0.425,
+            0.465,
+            0.51,
+            0.55
+          ],
+          [
+            1,
+            0.51,
+            0.59,
+            0.36,
+            0.66
+          ],
+          [
+            1,
+            0.645,
+            0.54,
+            0.37,
+            0.74
+          ],
+          [
+            1,
+            0.785,
+            0.55,
+            0.27,
+            0.74
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 54843238,
+          "title": "File:Cavendish Banannas.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Cavendish_Banannas.jpg/960px-Cavendish_Banannas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_Banannas.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Lumeaalex",
+          "description": "Cavendish Bananas",
+          "date": "2017-01-07",
+          "file": "commons-v4/54843238.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "d6709dcf448142da5b7c2d52828b4df40a1b9f532b0e5daea207f93543e0fcf4",
+          "sha256": "f55bf2fd9248deb99f3ab3f856df0ac7983383fcf70dadcbd8373cf5e08c3a0c"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "88e58be427edd0fc493da8429e1fd1030305d4cb5977fa3d7c2b42df671a8e3d"
+      },
+      {
+        "id": "v4-commons-62989002",
+        "commonsId": 62989002,
+        "group": "commons-62989002",
+        "file": "images/v4-commons-62989002.jpg",
+        "width": 800,
+        "height": 703,
+        "boxes": [
+          [
+            2,
+            0.575,
+            0.225,
+            0.65,
+            0.31
+          ],
+          [
+            2,
+            0.575,
+            0.37,
+            0.65,
+            0.46
+          ],
+          [
+            2,
+            0.525,
+            0.48,
+            0.59,
+            0.62
+          ],
+          [
+            2,
+            0.265,
+            0.54,
+            0.29,
+            0.8
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 62989002,
+          "title": "File:4 x Cracked banana 2017.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/4_x_Cracked_banana_2017.jpg/960px-4_x_Cracked_banana_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:4_x_Cracked_banana_2017.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "Fructibus",
+          "description": "4 x Cracked banana",
+          "date": "2017-09-30 19:14:56",
+          "file": "commons-v4/62989002.jpg",
+          "width": 800,
+          "height": 703,
+          "sourceSha256": "b8d1fa71e9381a5a9fce50c207583530da8b4bb48945217b195754e9ba0786f6",
+          "sha256": "8ef922f33a40b18244af43e38080ebd8d9dac8375ddd33f1a27f27d4587b2bca"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "6822912e8f6071c890b72951b1f66e574924c62dda5e5da94de83d7147d678fb"
+      },
+      {
+        "id": "v4-commons-64120873",
+        "commonsId": 64120873,
+        "group": "commons-64120873",
+        "file": "images/v4-commons-64120873.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            1,
+            0.235,
+            0.61,
+            0.39,
+            0.54
+          ],
+          [
+            1,
+            0.33,
+            0.46,
+            0.26,
+            0.76
+          ],
+          [
+            1,
+            0.51,
+            0.45,
+            0.2,
+            0.8
+          ],
+          [
+            1,
+            0.61,
+            0.435,
+            0.12,
+            0.69
+          ],
+          [
+            1,
+            0.675,
+            0.51,
+            0.35,
+            0.66
+          ],
+          [
+            1,
+            0.735,
+            0.595,
+            0.47,
+            0.57
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 64120873,
+          "title": "File:Bananas of Turkey.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Bananas_of_Turkey.jpg/960px-Bananas_of_Turkey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bananas_of_Turkey.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "E4024",
+          "description": "Bananas of Turkey, bought in Ankara. Sold as local produce from Silifke, Mersin. I am not sure, though, if these are the traditional \"Silifke muzu\" or bananas of Silifke, which are smaller than the ones imported from America and have a proper taste and shape. My \"impression\" is that they have crossed local bananas with an imported breed to make these.",
+          "date": "2017-11-16 08:35:08",
+          "file": "commons-v4/64120873.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "a1375fd2e3d6feffad7f8fcd47ea3d906f8758398774b8fc645183ef6b82b574",
+          "sha256": "28e206f5bcac6a8dcc626c26e6c889ff9f57cd94bf508dab809730ea9c3a82f0"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "6fedccd1b7a04eed091166b5c8224c461eb9de4a4eca3328a29eec44d0d8cf75"
+      },
+      {
+        "id": "v4-commons-70474472",
+        "commonsId": 70474472,
+        "group": "commons-70474472",
+        "file": "images/v4-commons-70474472.jpg",
+        "width": 234,
+        "height": 232,
+        "boxes": [
+          [
+            0,
+            0.115,
+            0.245,
+            0.23,
+            0.23
+          ],
+          [
+            0,
+            0.21,
+            0.305,
+            0.3,
+            0.29
+          ],
+          [
+            0,
+            0.33,
+            0.16,
+            0.26,
+            0.32
+          ],
+          [
+            0,
+            0.51,
+            0.165,
+            0.26,
+            0.33
+          ],
+          [
+            0,
+            0.645,
+            0.135,
+            0.21,
+            0.27
+          ],
+          [
+            0,
+            0.765,
+            0.295,
+            0.33,
+            0.29
+          ],
+          [
+            0,
+            0.24,
+            0.41,
+            0.22,
+            0.28
+          ],
+          [
+            0,
+            0.35,
+            0.49,
+            0.26,
+            0.32
+          ],
+          [
+            0,
+            0.52,
+            0.44,
+            0.24,
+            0.28
+          ],
+          [
+            0,
+            0.67,
+            0.545,
+            0.3,
+            0.25
+          ],
+          [
+            0,
+            0.84,
+            0.5,
+            0.32,
+            0.32
+          ],
+          [
+            0,
+            0.16,
+            0.75,
+            0.26,
+            0.36
+          ],
+          [
+            0,
+            0.325,
+            0.745,
+            0.27,
+            0.29
+          ],
+          [
+            0,
+            0.565,
+            0.695,
+            0.33,
+            0.25
+          ],
+          [
+            0,
+            0.775,
+            0.78,
+            0.45,
+            0.24
+          ],
+          [
+            0,
+            0.15,
+            0.91,
+            0.3,
+            0.18
+          ],
+          [
+            0,
+            0.38,
+            0.915,
+            0.26,
+            0.17
+          ],
+          [
+            3,
+            0.715,
+            0.95,
+            0.27,
+            0.1
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          38,
+          31,
+          77,
+          60
+        ],
+        "sourceMetadata": {
+          "id": 70474472,
+          "title": "File:Starr-021122-0073-Musa acuminata-Cavendish perhaps Williams large bunch-Nahiku-Maui (24185626599).jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Starr-021122-0073-Musa_acuminata-Cavendish_perhaps_Williams_large_bunch-Nahiku-Maui_%2824185626599%29.jpg/960px-Starr-021122-0073-Musa_acuminata-Cavendish_perhaps_Williams_large_bunch-Nahiku-Maui_%2824185626599%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr-021122-0073-Musa_acuminata-Cavendish_perhaps_Williams_large_bunch-Nahiku-Maui_(24185626599).jpg",
+          "license": "CC BY 3.0 us",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+          "artist": "Forest and Kim Starr",
+          "description": "Musa acuminata (Banana)\nCavendish perhaps Williams large bunch at Nahiku, Maui, Hawaii.\nNovember 22, 2002\n>#021122-0073 \n\nImage Use Policy",
+          "date": "2002-11-22 16:29",
+          "file": "commons-v4/70474472.jpg",
+          "width": 600,
+          "height": 800,
+          "sourceSha256": "636f4f62efb6cc0db48d8a28c8136d7521d1b7ffb4216b5101a3468ad9037a26",
+          "sha256": "0a6baba3196a7b43e9f9d989d45129256876d92713c5c4f3b6d769549d21b3fc"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "105a6c5c3ba9e34b0c481f17032c834aa744505be01d53967c528377da2711fe"
+      },
+      {
+        "id": "v4-commons-71932294",
+        "commonsId": 71932294,
+        "group": "commons-71932294",
+        "file": "images/v4-commons-71932294.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            0,
+            0.09,
+            0.135,
+            0.18,
+            0.27
+          ],
+          [
+            0,
+            0.1,
+            0.57,
+            0.2,
+            0.7
+          ],
+          [
+            0,
+            0.205,
+            0.53,
+            0.23,
+            0.82
+          ],
+          [
+            0,
+            0.355,
+            0.425,
+            0.19,
+            0.85
+          ],
+          [
+            0,
+            0.435,
+            0.65,
+            0.39,
+            0.54
+          ],
+          [
+            0,
+            0.605,
+            0.41,
+            0.35,
+            0.82
+          ],
+          [
+            0,
+            0.7,
+            0.555,
+            0.38,
+            0.69
+          ],
+          [
+            0,
+            0.685,
+            0.775,
+            0.59,
+            0.43
+          ],
+          [
+            0,
+            0.865,
+            0.685,
+            0.27,
+            0.61
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 71932294,
+          "title": "File:Starr-130120-1476-Musa acuminata-Cavendish Williams bunch-Hawea Pl Olinda-Maui (24837161439).jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Starr-130120-1476-Musa_acuminata-Cavendish_Williams_bunch-Hawea_Pl_Olinda-Maui_%2824837161439%29.jpg/960px-Starr-130120-1476-Musa_acuminata-Cavendish_Williams_bunch-Hawea_Pl_Olinda-Maui_%2824837161439%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr-130120-1476-Musa_acuminata-Cavendish_Williams_bunch-Hawea_Pl_Olinda-Maui_(24837161439).jpg",
+          "license": "CC BY 3.0 us",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+          "artist": "Forest and Kim Starr",
+          "description": "Musa acuminata (Banana)\nCavendish Williams bunch at Hawea Pl Olinda, Maui, Hawaii.\nJanuary 20, 2013\n\n#130120-1476\n\n\nImage Use Policy",
+          "date": "2013-01-20 11:04",
+          "file": "commons-v4/71932294.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "bd435e9a9d6203767aa211768f9610e0867aae0bc221c604e8edbcfd72f68f1c",
+          "sha256": "9bff3ee4340560dda4811cb2dcb0b6662664f7200d1d46aeffb71713f7177d2d"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "087f21f68732fac104c8c96c600511c3ffb6a453efd027bbcfbab99e800a36a5"
+      },
+      {
+        "id": "v4-commons-91255702",
+        "commonsId": 91255702,
+        "group": "commons-91255702",
+        "file": "images/v4-commons-91255702.jpg",
+        "width": 512,
+        "height": 354,
+        "boxes": [
+          [
+            1,
+            0.525,
+            0.32,
+            0.93,
+            0.64
+          ],
+          [
+            1,
+            0.48,
+            0.68,
+            0.92,
+            0.64
+          ],
+          [
+            1,
+            0.09,
+            0.325,
+            0.18,
+            0.65
+          ],
+          [
+            1,
+            0.365,
+            0.895,
+            0.33,
+            0.21
+          ],
+          [
+            1,
+            0.915,
+            0.35,
+            0.17,
+            0.7
+          ],
+          [
+            1,
+            0.085,
+            0.845,
+            0.17,
+            0.31
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          16,
+          0,
+          80,
+          59
+        ],
+        "sourceMetadata": {
+          "id": 91255702,
+          "title": "File:Plátano de Canarias Cavendish.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Pl%C3%A1tano_de_Canarias_Cavendish.jpg/960px-Pl%C3%A1tano_de_Canarias_Cavendish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pl%C3%A1tano_de_Canarias_Cavendish.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Francesc Fort",
+          "description": "Plàtans Cavendish amb D.O. Canàries",
+          "date": "16 June 2020 (according to Exif data)",
+          "file": "commons-v4/91255702.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "01856a4b43991fda043718603c7edf2d3d5aa27d6e4c546c598e41a0eea66b25",
+          "sha256": "89b23119cd31ea02909f9303dfe6695dd9d5d251093025237f01f1f6d0c424ff"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "d49495f8ca96088771627575e3a18a8c4eeafe2bf86e12ad9632ec65117243f1"
+      },
+      {
+        "id": "v4-commons-101300769",
+        "commonsId": 101300769,
+        "group": "commons-101300769",
+        "file": "images/v4-commons-101300769.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            1,
+            0.245,
+            0.545,
+            0.33,
+            0.79
+          ],
+          [
+            1,
+            0.38,
+            0.55,
+            0.32,
+            0.74
+          ],
+          [
+            1,
+            0.515,
+            0.515,
+            0.41,
+            0.65
+          ],
+          [
+            1,
+            0.59,
+            0.485,
+            0.44,
+            0.73
+          ],
+          [
+            1,
+            0.645,
+            0.57,
+            0.49,
+            0.78
+          ],
+          [
+            1,
+            0.575,
+            0.83,
+            0.13,
+            0.18
+          ],
+          [
+            1,
+            0.66,
+            0.845,
+            0.1,
+            0.13
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 101300769,
+          "title": "File:Bananas - Cavendish Bananas (51013511991).jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Bananas_-_Cavendish_Bananas_%2851013511991%29.jpg/960px-Bananas_-_Cavendish_Bananas_%2851013511991%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bananas_-_Cavendish_Bananas_(51013511991).jpg",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "artist": "ajay_suresh",
+          "description": "Banana, Bananas, Cavendish banana, Fruits, Product Photography",
+          "date": "2021-03-06 21:31",
+          "file": "commons-v4/101300769.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "7118b48b81f98f88e59985e2489256c3537bd3f0e42349d4e0d679a5e9102a30",
+          "sha256": "b700227a6d8f541d0ec657e3ad5dc662970486155d10f73e5063f6c24449d28f"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "e44198aaacdc8533b9fd27b4810aa9a13901887e20bb79f774522916d5c2f30a"
+      },
+      {
+        "id": "v4-commons-116412754",
+        "commonsId": 116412754,
+        "group": "commons-116412754",
+        "file": "images/v4-commons-116412754.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            2,
+            0.47,
+            0.41,
+            0.32,
+            0.58
+          ],
+          [
+            2,
+            0.525,
+            0.45,
+            0.41,
+            0.54
+          ],
+          [
+            2,
+            0.54,
+            0.55,
+            0.5,
+            0.48
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 116412754,
+          "title": "File:Overripe kitchen bananas.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Overripe_kitchen_bananas.jpg/960px-Overripe_kitchen_bananas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Overripe_kitchen_bananas.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Meltdown reverter",
+          "description": "Bananas that are overripe in a kitchen",
+          "date": "2022-03-25",
+          "file": "commons-v4/116412754.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "caf4c7f32bb4b53240b3e844d4aa133df82cb7136d78a52d976dbf9b7a9dac81",
+          "sha256": "b1346c19ca0bc436ebff1b95909f6d7bd7904a9a3a717a837689e91f1d3e000a"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "343a9ceb4809636c20c91e52927d1b3a3b7f9f78b97690fb2a1418795f2adca3"
+      },
+      {
+        "id": "v4-commons-126589792",
+        "commonsId": 126589792,
+        "group": "commons-126589792",
+        "file": "images/v4-commons-126589792.jpg",
+        "width": 390,
+        "height": 344,
+        "boxes": [
+          [
+            0,
+            0.235,
+            0.37,
+            0.43,
+            0.66
+          ],
+          [
+            0,
+            0.245,
+            0.49,
+            0.29,
+            0.66
+          ],
+          [
+            0,
+            0.375,
+            0.5,
+            0.25,
+            0.68
+          ],
+          [
+            0,
+            0.51,
+            0.56,
+            0.22,
+            0.7
+          ],
+          [
+            0,
+            0.635,
+            0.525,
+            0.23,
+            0.67
+          ],
+          [
+            0,
+            0.75,
+            0.475,
+            0.32,
+            0.65
+          ],
+          [
+            0,
+            0.835,
+            0.345,
+            0.31,
+            0.59
+          ],
+          [
+            0,
+            0.785,
+            0.09,
+            0.41,
+            0.18
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          25,
+          45,
+          90,
+          88
+        ],
+        "sourceMetadata": {
+          "id": 126589792,
+          "title": "File:Bananas in a kitchen room.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Bananas_in_a_kitchen_room.jpg/960px-Bananas_in_a_kitchen_room.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bananas_in_a_kitchen_room.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Mehediabedin",
+          "description": "Bananas in a kitchen room of a typical Bengali house",
+          "date": "13 December 2022 (according to Exif data)",
+          "file": "commons-v4/126589792.jpg",
+          "width": 600,
+          "height": 800,
+          "sourceSha256": "e229861251d63cc2a8c7124f0729ecea36645fd5199c5304a172f791b8395301",
+          "sha256": "f0ab25f636c04db842f6e626bdf389ab338992da1a9a3e4ca6660abef9998237"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "e3bc214f8608534d1b84c9a9a2bbfb7a34cf260b8b3c9b0bec91e4ff5173cad2"
+      },
+      {
+        "id": "v4-commons-126873731",
+        "commonsId": 126873731,
+        "group": "commons-126873731",
+        "file": "images/v4-commons-126873731.jpg",
+        "width": 376,
+        "height": 294,
+        "boxes": [
+          [
+            1,
+            0.26,
+            0.47,
+            0.18,
+            0.94
+          ],
+          [
+            1,
+            0.37,
+            0.455,
+            0.2,
+            0.91
+          ],
+          [
+            1,
+            0.5,
+            0.495,
+            0.2,
+            0.99
+          ],
+          [
+            1,
+            0.66,
+            0.46,
+            0.2,
+            0.92
+          ],
+          [
+            1,
+            0.78,
+            0.445,
+            0.2,
+            0.89
+          ],
+          [
+            1,
+            0.9,
+            0.495,
+            0.2,
+            0.99
+          ],
+          [
+            1,
+            0.105,
+            0.225,
+            0.21,
+            0.19
+          ],
+          [
+            1,
+            0.095,
+            0.405,
+            0.19,
+            0.19
+          ],
+          [
+            1,
+            0.09,
+            0.545,
+            0.18,
+            0.17
+          ],
+          [
+            1,
+            0.085,
+            0.665,
+            0.17,
+            0.17
+          ],
+          [
+            1,
+            0.08,
+            0.88,
+            0.16,
+            0.24
+          ],
+          [
+            1,
+            0.235,
+            0.96,
+            0.25,
+            0.08
+          ],
+          [
+            1,
+            0.66,
+            0.95,
+            0.28,
+            0.1
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          35,
+          23,
+          82,
+          72
+        ],
+        "sourceMetadata": {
+          "id": 126873731,
+          "title": "File:Cavendish banana (Philippines).jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Cavendish_banana_%28Philippines%29.jpg/960px-Cavendish_banana_%28Philippines%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_banana_(Philippines).jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "SwarmCheng",
+          "description": "Cavendish banana (Philippines)",
+          "date": "2022-12-20 13:49:33",
+          "file": "commons-v4/126873731.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "fa031f03589c8c630eda0c75ada71a7176d3cb01b5782deb51db5453aead1eb1",
+          "sha256": "08f056b96f9980c43b72b73f358526e0d8db38b4f81286def61283f0e187a6c3"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "bea0df9f52da4a8c23a00e621fb12aec180b4b1fbcbc757cbe715c6d30cce82a"
+      },
+      {
+        "id": "v4-commons-137163788",
+        "commonsId": 137163788,
+        "group": "commons-137163788",
+        "file": "images/v4-commons-137163788.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            0,
+            0.225,
+            0.215,
+            0.45,
+            0.23
+          ],
+          [
+            0,
+            0.525,
+            0.16,
+            0.39,
+            0.32
+          ],
+          [
+            1,
+            0.24,
+            0.44,
+            0.44,
+            0.2
+          ],
+          [
+            1,
+            0.555,
+            0.355,
+            0.17,
+            0.47
+          ],
+          [
+            1,
+            0.65,
+            0.325,
+            0.12,
+            0.39
+          ],
+          [
+            1,
+            0.695,
+            0.415,
+            0.31,
+            0.13
+          ],
+          [
+            1,
+            0.705,
+            0.55,
+            0.35,
+            0.18
+          ],
+          [
+            1,
+            0.635,
+            0.72,
+            0.23,
+            0.3
+          ],
+          [
+            1,
+            0.37,
+            0.69,
+            0.36,
+            0.24
+          ],
+          [
+            1,
+            0.27,
+            0.67,
+            0.34,
+            0.2
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 137163788,
+          "title": "File:Cavendish banana 2.jpg",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Cavendish_banana_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_banana_2.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Nativeplants garden",
+          "description": "Cavendish banana",
+          "date": "",
+          "file": "commons-v4/137163788.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "cac674eb0559b5ee0bc116b0dc1e53fa54978c0956d3bc6480986ab0bc18e0ba",
+          "sha256": "bcd953af5cdfbc0c9478595b39bde7a17e70dd408419b627eb39fc4a54f54f26"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "61b8d1a01fb4f6d6bc652bc1e3e28ef15714f589dabf3be9c063e772c951b627"
+      },
+      {
+        "id": "v4-commons-152861121",
+        "commonsId": 152861121,
+        "group": "commons-152861121",
+        "file": "images/v4-commons-152861121.jpg",
+        "width": 800,
+        "height": 629,
+        "boxes": [
+          [
+            0,
+            0.29,
+            0.55,
+            0.4,
+            0.7
+          ],
+          [
+            0,
+            0.365,
+            0.51,
+            0.35,
+            0.76
+          ],
+          [
+            0,
+            0.45,
+            0.415,
+            0.2,
+            0.73
+          ],
+          [
+            0,
+            0.625,
+            0.435,
+            0.23,
+            0.71
+          ],
+          [
+            0,
+            0.74,
+            0.525,
+            0.32,
+            0.69
+          ],
+          [
+            0,
+            0.795,
+            0.62,
+            0.39,
+            0.64
+          ],
+          [
+            0,
+            0.275,
+            0.84,
+            0.39,
+            0.3
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 152861121,
+          "title": "File:Cavendish banana1.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Cavendish_banana1.jpg/960px-Cavendish_banana1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_banana1.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "",
+          "description": "",
+          "date": "",
+          "file": "commons-v4/152861121.jpg",
+          "width": 800,
+          "height": 629,
+          "sourceSha256": "8bedb6fb5b12306cfb4008e6bc988f89227939546f5a540072c7906e72177273",
+          "sha256": "dfac66571d1fac12c16395e9770a126350384056469468bbfec045e4491d0d4b"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "3c455e0cca1d78ab65d0a3b8ff716428e42358963c16ecfa202fb3bd25f16f8c"
+      },
+      {
+        "id": "v4-commons-162259860",
+        "commonsId": 162259860,
+        "group": "commons-162259860",
+        "file": "images/v4-commons-162259860.jpg",
+        "width": 800,
+        "height": 695,
+        "boxes": [
+          [
+            3,
+            0.19,
+            0.27,
+            0.16,
+            0.26
+          ],
+          [
+            3,
+            0.285,
+            0.265,
+            0.21,
+            0.27
+          ],
+          [
+            3,
+            0.515,
+            0.295,
+            0.31,
+            0.21
+          ],
+          [
+            1,
+            0.625,
+            0.22,
+            0.37,
+            0.32
+          ],
+          [
+            3,
+            0.64,
+            0.325,
+            0.22,
+            0.13
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 162259860,
+          "title": "File:Bananas from a superstore.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Bananas_from_a_superstore.jpg/960px-Bananas_from_a_superstore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bananas_from_a_superstore.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Deborah Tjituka",
+          "description": "This is an image with the theme \"Farm to Plate\" from:",
+          "date": "2025-03-17 12:54:56",
+          "file": "commons-v4/162259860.jpg",
+          "width": 800,
+          "height": 695,
+          "sourceSha256": "a16d73c705fce0937856db6a22e8f06c878c77a7e6747cc47b7228be27fe1280",
+          "sha256": "9b4ed411835bf144875457e5e115c71bee80de69cdacbaa1ccbbf504c3c28009"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "8f9d238c41f605d7923dd75074a2c6f42c1519f533426cfeb62b99c11cb80d9a"
+      },
+      {
+        "id": "v4-commons-163334432",
+        "commonsId": 163334432,
+        "group": "commons-163334432",
+        "file": "images/v4-commons-163334432.jpg",
+        "width": 800,
+        "height": 450,
+        "boxes": [
+          [
+            1,
+            0.22,
+            0.605,
+            0.44,
+            0.33
+          ],
+          [
+            1,
+            0.39,
+            0.735,
+            0.7,
+            0.51
+          ],
+          [
+            1,
+            0.815,
+            0.58,
+            0.37,
+            0.38
+          ],
+          [
+            1,
+            0.72,
+            0.825,
+            0.56,
+            0.35
+          ],
+          [
+            1,
+            0.33,
+            0.89,
+            0.52,
+            0.22
+          ],
+          [
+            1,
+            0.88,
+            0.83,
+            0.24,
+            0.34
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 163334432,
+          "title": "File:Bananas well sorted.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Bananas_well_sorted.jpg/960px-Bananas_well_sorted.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bananas_well_sorted.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Jameswasswa",
+          "description": "This is an image with the theme \"Farm to Plate\" from:",
+          "date": "2018-05-22 09:30:13",
+          "file": "commons-v4/163334432.jpg",
+          "width": 800,
+          "height": 450,
+          "sourceSha256": "598767bdfc8638969e45b885b9ed0e4716623e2abfd3ba3c861d1114b42f5ff3",
+          "sha256": "2c2c70b4c3e240adafdeddb3710101bc2ac5c5e673cfc61fa820dc7ca6010d77"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "b161c0e362ae57e4ef27e8331d5fa889c344d1d912cf14950ef6da6ea5828b0c"
+      },
+      {
+        "id": "v4-commons-163391344",
+        "commonsId": 163391344,
+        "group": "commons-163391344",
+        "file": "images/v4-commons-163391344.jpg",
+        "width": 672,
+        "height": 304,
+        "boxes": [
+          [
+            1,
+            0.12,
+            0.52,
+            0.16,
+            0.64
+          ],
+          [
+            1,
+            0.175,
+            0.425,
+            0.13,
+            0.67
+          ],
+          [
+            1,
+            0.22,
+            0.34,
+            0.16,
+            0.68
+          ],
+          [
+            1,
+            0.305,
+            0.325,
+            0.09,
+            0.53
+          ],
+          [
+            1,
+            0.32,
+            0.49,
+            0.1,
+            0.76
+          ],
+          [
+            1,
+            0.375,
+            0.555,
+            0.13,
+            0.71
+          ],
+          [
+            1,
+            0.435,
+            0.57,
+            0.15,
+            0.74
+          ],
+          [
+            1,
+            0.47,
+            0.425,
+            0.14,
+            0.71
+          ],
+          [
+            1,
+            0.515,
+            0.26,
+            0.13,
+            0.5
+          ],
+          [
+            1,
+            0.545,
+            0.61,
+            0.11,
+            0.66
+          ],
+          [
+            1,
+            0.59,
+            0.295,
+            0.16,
+            0.49
+          ],
+          [
+            1,
+            0.605,
+            0.675,
+            0.15,
+            0.57
+          ],
+          [
+            1,
+            0.695,
+            0.34,
+            0.17,
+            0.54
+          ],
+          [
+            1,
+            0.715,
+            0.685,
+            0.13,
+            0.57
+          ],
+          [
+            1,
+            0.79,
+            0.675,
+            0.26,
+            0.45
+          ],
+          [
+            1,
+            0.845,
+            0.57,
+            0.29,
+            0.36
+          ],
+          [
+            1,
+            0.835,
+            0.365,
+            0.17,
+            0.57
+          ],
+          [
+            1,
+            0.915,
+            0.49,
+            0.15,
+            0.54
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          10,
+          27,
+          94,
+          84
+        ],
+        "sourceMetadata": {
+          "id": 163391344,
+          "title": "File:Yellow Banana in a plate.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Yellow_Banana_in_a_plate.jpg/960px-Yellow_Banana_in_a_plate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_Banana_in_a_plate.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "BatureTaraba",
+          "description": "Yellow banana from farm to a plate in Gembu",
+          "date": "2024-09-25 07:39:13",
+          "file": "commons-v4/163391344.jpg",
+          "width": 800,
+          "height": 533,
+          "sourceSha256": "b0a1648304bd88a052da48147e602cb2fad11a3374711cc04283c10357ee8a0f",
+          "sha256": "60b95346d6287249adea06bd7cd0ba00b3b2f5485323800af3987353113cc0c4"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "a7d4da92d767b4eebafa516009b89cb8a26a82e9a1d50852db68649870e18b61"
+      },
+      {
+        "id": "v4-commons-164378323",
+        "commonsId": 164378323,
+        "group": "commons-164378323",
+        "file": "images/v4-commons-164378323.jpg",
+        "width": 366,
+        "height": 472,
+        "boxes": [
+          [
+            1,
+            0.06,
+            0.4,
+            0.12,
+            0.3
+          ],
+          [
+            1,
+            0.17,
+            0.51,
+            0.14,
+            0.44
+          ],
+          [
+            1,
+            0.29,
+            0.51,
+            0.14,
+            0.46
+          ],
+          [
+            1,
+            0.4,
+            0.565,
+            0.16,
+            0.43
+          ],
+          [
+            1,
+            0.49,
+            0.48,
+            0.16,
+            0.48
+          ],
+          [
+            1,
+            0.585,
+            0.46,
+            0.21,
+            0.42
+          ],
+          [
+            1,
+            0.425,
+            0.8,
+            0.15,
+            0.38
+          ],
+          [
+            1,
+            0.54,
+            0.805,
+            0.16,
+            0.37
+          ],
+          [
+            1,
+            0.665,
+            0.81,
+            0.19,
+            0.38
+          ],
+          [
+            1,
+            0.825,
+            0.68,
+            0.35,
+            0.2
+          ],
+          [
+            1,
+            0.825,
+            0.535,
+            0.35,
+            0.21
+          ],
+          [
+            1,
+            0.695,
+            0.285,
+            0.25,
+            0.23
+          ],
+          [
+            1,
+            0.875,
+            0.14,
+            0.25,
+            0.2
+          ],
+          [
+            1,
+            0.695,
+            0.11,
+            0.39,
+            0.22
+          ],
+          [
+            1,
+            0.495,
+            0.105,
+            0.39,
+            0.21
+          ],
+          [
+            0,
+            0.1,
+            0.84,
+            0.18,
+            0.2
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          14,
+          24,
+          75,
+          83
+        ],
+        "sourceMetadata": {
+          "id": 164378323,
+          "title": "File:Ripe bananas from the farm.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Ripe_bananas_from_the_farm.jpg/960px-Ripe_bananas_from_the_farm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ripe_bananas_from_the_farm.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "MaiDenzel",
+          "description": "This is an image with the theme \"Farm to Plate\" from:",
+          "date": "2025-04-28 17:09:03",
+          "file": "commons-v4/164378323.jpg",
+          "width": 600,
+          "height": 800,
+          "sourceSha256": "887cdd11a413ea401f69a5ce83c7393f5c60e3651416448d91efdfde94472930",
+          "sha256": "06bcb0293cba7887c55160eb0202eadf4299d94e9244dc79a22c2e24ad32463b"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "d9db16fdaff969887e97a0b483d62c627deaf2ef453141560efb59781ddf9987"
+      },
+      {
+        "id": "v4-commons-179591719",
+        "commonsId": 179591719,
+        "group": "commons-179591719",
+        "file": "images/v4-commons-179591719.jpg",
+        "width": 456,
+        "height": 408,
+        "boxes": [
+          [
+            1,
+            0.32,
+            0.4,
+            0.32,
+            0.58
+          ],
+          [
+            1,
+            0.47,
+            0.325,
+            0.26,
+            0.61
+          ],
+          [
+            1,
+            0.645,
+            0.27,
+            0.23,
+            0.54
+          ],
+          [
+            1,
+            0.76,
+            0.325,
+            0.2,
+            0.59
+          ],
+          [
+            1,
+            0.865,
+            0.5,
+            0.27,
+            0.54
+          ],
+          [
+            1,
+            0.57,
+            0.585,
+            0.4,
+            0.79
+          ],
+          [
+            1,
+            0.39,
+            0.79,
+            0.28,
+            0.42
+          ],
+          [
+            0,
+            0.195,
+            0.745,
+            0.39,
+            0.51
+          ],
+          [
+            0,
+            0.085,
+            0.375,
+            0.17,
+            0.31
+          ],
+          [
+            1,
+            0.11,
+            0.41,
+            0.22,
+            0.52
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          42,
+          2,
+          99,
+          70
+        ],
+        "sourceMetadata": {
+          "id": 179591719,
+          "title": "File:Ripe and Unripe Cavendish Bananas.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Ripe_and_Unripe_Cavendish_Bananas.jpg/960px-Ripe_and_Unripe_Cavendish_Bananas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ripe_and_Unripe_Cavendish_Bananas.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Bim24",
+          "description": "Cavendish bananas can be found in Carbon Public Market, as it is a popular and widely sold banana variety in many markets across the Philippines.",
+          "date": "2025-12-08",
+          "file": "commons-v4/179591719.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "9461f10c04ece9d213ea86eb5a1ec6fa10817c04af45520af7d91faf5ded8ec6",
+          "sha256": "1f624867125b7a25d5c5095bff49040d3cb860e672bdebad742cc51667f83d9b"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "92483d348383dde49407193d145da752acb043db5c49474698c816154280ffe2"
+      },
+      {
+        "id": "v4-commons-94383799",
+        "commonsId": 94383799,
+        "group": "commons-94383799",
+        "file": "images/v4-commons-94383799.jpg",
+        "width": 800,
+        "height": 600,
+        "boxes": [
+          [
+            1,
+            0.435,
+            0.445,
+            0.59,
+            0.49
+          ],
+          [
+            1,
+            0.45,
+            0.595,
+            0.62,
+            0.45
+          ],
+          [
+            1,
+            0.51,
+            0.72,
+            0.58,
+            0.42
+          ],
+          [
+            1,
+            0.505,
+            0.865,
+            0.45,
+            0.27
+          ],
+          [
+            1,
+            0.485,
+            0.935,
+            0.41,
+            0.13
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 94383799,
+          "title": "File:9259Twin latundan bananas in the Philippines 11.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/9259Twin_latundan_bananas_in_the_Philippines_11.jpg/960px-9259Twin_latundan_bananas_in_the_Philippines_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:9259Twin_latundan_bananas_in_the_Philippines_11.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "Judgefloro",
+          "description": "Twin latundan bananas in the Philippines Latundan banana in Poblacion, Baliuag, Bulacan during Timeline of the 2020 coronavirus pandemic in the Philippines  2020 coronavirus pandemic in the Philippines Bayanihan to Heal as One Act (RA 11469) Bayanihan Act of 2020. Signed on March 24, 2020  Bayanihan to Recover as One Act Template:COVID-19 pandemic in the Philippines September 1 Coronavirus Cases: 224,264 Deaths: 3,597 Recovered: 158,012; September 23-24 Philippines Coronavirus Cases: 291,789 Deaths: 5,049 Recovered: 230,643;Philippines Coronavirus Cases: 294,591 Deaths: 5,091 Recovered: 231,373 Category:Sitios and puroks of the Philippines Subdivisions of the Philippines Barangay  Poblacion 14°57'17\"N 120°54'2\"E, Baliuag, Bulacan, Bulacan province taken under weather conditions of Habagat  Monsoon of South Asia Low Pressure Area (LPA)  Southwest Monsoon and   Tropical Storm Dolphin (Marce) Dolphin Current storm status Tropical storm  (JMA) Category:Tropical Storm Dolphin (2020) (Note: Judge Florentino Floro, the owner, to repeat, Donor FlorentinoFloro of all these photos hereby donate gratuitously, freely and unconditionally Judge Floro all these photos to and for Wikimedia Commons, exclusively, for public use of the public domain, and again without any condition whatsoever).",
+          "date": "2020-09-24 07:00:32",
+          "file": "commons-v4/94383799.jpg",
+          "width": 800,
+          "height": 600,
+          "sourceSha256": "d50dcfdb9242cbb0e72d410297d9526831a5f089a878a8fe5c1fc3e2c6d225a2",
+          "sha256": "261dd9dc4e14c08f7b637d76d129a49787156fbfccc3f967eb7bf46aa998495b"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "643c0690e3fb3170907a8497aa23e6c5ed9467458a49c380fd9790e7865516e8"
+      },
+      {
+        "id": "v4-commons-164358822",
+        "commonsId": 164358822,
+        "group": "commons-164358822",
+        "file": "images/v4-commons-164358822.jpg",
+        "width": 96,
+        "height": 185,
+        "boxes": [
+          [
+            0,
+            0.105,
+            0.25,
+            0.15,
+            0.3
+          ],
+          [
+            0,
+            0.23,
+            0.205,
+            0.18,
+            0.39
+          ],
+          [
+            0,
+            0.35,
+            0.185,
+            0.14,
+            0.35
+          ],
+          [
+            0,
+            0.48,
+            0.185,
+            0.18,
+            0.37
+          ],
+          [
+            0,
+            0.61,
+            0.185,
+            0.18,
+            0.37
+          ],
+          [
+            0,
+            0.745,
+            0.195,
+            0.15,
+            0.35
+          ],
+          [
+            0,
+            0.875,
+            0.25,
+            0.19,
+            0.34
+          ],
+          [
+            0,
+            0.195,
+            0.505,
+            0.17,
+            0.33
+          ],
+          [
+            0,
+            0.345,
+            0.505,
+            0.17,
+            0.35
+          ],
+          [
+            0,
+            0.455,
+            0.535,
+            0.17,
+            0.35
+          ],
+          [
+            0,
+            0.6,
+            0.505,
+            0.18,
+            0.35
+          ],
+          [
+            0,
+            0.76,
+            0.45,
+            0.22,
+            0.32
+          ],
+          [
+            0,
+            0.18,
+            0.705,
+            0.26,
+            0.35
+          ],
+          [
+            0,
+            0.325,
+            0.75,
+            0.23,
+            0.36
+          ],
+          [
+            0,
+            0.51,
+            0.795,
+            0.22,
+            0.35
+          ],
+          [
+            0,
+            0.69,
+            0.74,
+            0.28,
+            0.34
+          ],
+          [
+            0,
+            0.865,
+            0.655,
+            0.27,
+            0.27
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          29,
+          44,
+          49,
+          73
+        ],
+        "sourceMetadata": {
+          "id": 164358822,
+          "title": "File:A bunch of bananas 01.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/A_bunch_of_bananas_01.jpg/960px-A_bunch_of_bananas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_bunch_of_bananas_01.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Colesman25",
+          "description": "Unriped bananas on a banana tree",
+          "date": "2025-04-13 15:14:32",
+          "file": "commons/164358822.jpg",
+          "sourceSha256": "ad894784cb5c57c7377ad9ad4dd7fa9d82fdefa83a136b81343ab7b23854d377",
+          "width": 480,
+          "height": 640,
+          "sha256": "613810584047d230308d5fb6c68e39fff060e10911cda3b6abbf23bad555acec"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "5c7cc1112400fca20a66d5f55874f4785fdaed105d928fc28fdd6a6948e6b39a"
+      },
+      {
+        "id": "v4-commons-164104758",
+        "commonsId": 164104758,
+        "group": "commons-164104758",
+        "file": "images/v4-commons-164104758.jpg",
+        "width": 86,
+        "height": 211,
+        "boxes": [
+          [
+            0,
+            0.115,
+            0.275,
+            0.23,
+            0.25
+          ],
+          [
+            0,
+            0.23,
+            0.27,
+            0.2,
+            0.28
+          ],
+          [
+            0,
+            0.36,
+            0.28,
+            0.2,
+            0.3
+          ],
+          [
+            0,
+            0.5,
+            0.285,
+            0.18,
+            0.29
+          ],
+          [
+            0,
+            0.64,
+            0.295,
+            0.2,
+            0.31
+          ],
+          [
+            0,
+            0.78,
+            0.305,
+            0.22,
+            0.31
+          ],
+          [
+            0,
+            0.87,
+            0.39,
+            0.26,
+            0.24
+          ],
+          [
+            0,
+            0.185,
+            0.54,
+            0.29,
+            0.22
+          ],
+          [
+            0,
+            0.37,
+            0.57,
+            0.2,
+            0.26
+          ],
+          [
+            0,
+            0.525,
+            0.595,
+            0.23,
+            0.31
+          ],
+          [
+            0,
+            0.655,
+            0.585,
+            0.25,
+            0.23
+          ],
+          [
+            0,
+            0.81,
+            0.565,
+            0.24,
+            0.23
+          ],
+          [
+            0,
+            0.31,
+            0.805,
+            0.24,
+            0.21
+          ],
+          [
+            0,
+            0.435,
+            0.825,
+            0.21,
+            0.27
+          ],
+          [
+            0,
+            0.58,
+            0.845,
+            0.22,
+            0.31
+          ],
+          [
+            0,
+            0.725,
+            0.81,
+            0.23,
+            0.26
+          ],
+          [
+            0,
+            0.84,
+            0.8,
+            0.2,
+            0.22
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          35,
+          30,
+          53,
+          63
+        ],
+        "sourceMetadata": {
+          "id": 164104758,
+          "title": "File:A hanging bunch of banana.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/A_hanging_bunch_of_banana.jpg/960px-A_hanging_bunch_of_banana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_hanging_bunch_of_banana.jpg",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "artist": "Iwai-Dialax",
+          "description": "A hanging bunch of banana",
+          "date": "2025-04-18 11:52:45",
+          "file": "commons/164104758.jpg",
+          "sourceSha256": "8779d506f840bb0f235f976dfdd320c8d5d23d621e750364666379f277f6b661",
+          "width": 480,
+          "height": 640,
+          "sha256": "36c766fc977ebdd3756687ed31f2eec2e4b14ba7dee2de0e5b0ebe7f05cddfc2"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "7928baf8260311225ea9a3e82768ba17743eb4a59bd306a26519245e7318a8a1"
+      },
+      {
+        "id": "v4-commons-184397986",
+        "commonsId": 184397986,
+        "group": "commons-184397986",
+        "file": "images/v4-commons-184397986.jpg",
+        "width": 109,
+        "height": 224,
+        "boxes": [
+          [
+            0,
+            0.17,
+            0.31,
+            0.24,
+            0.3
+          ],
+          [
+            0,
+            0.335,
+            0.27,
+            0.25,
+            0.3
+          ],
+          [
+            0,
+            0.485,
+            0.26,
+            0.29,
+            0.32
+          ],
+          [
+            0,
+            0.65,
+            0.29,
+            0.28,
+            0.32
+          ],
+          [
+            0,
+            0.81,
+            0.34,
+            0.3,
+            0.32
+          ],
+          [
+            0,
+            0.26,
+            0.5,
+            0.28,
+            0.22
+          ],
+          [
+            0,
+            0.455,
+            0.515,
+            0.33,
+            0.25
+          ],
+          [
+            0,
+            0.675,
+            0.545,
+            0.33,
+            0.25
+          ],
+          [
+            0,
+            0.235,
+            0.71,
+            0.31,
+            0.24
+          ],
+          [
+            0,
+            0.44,
+            0.745,
+            0.28,
+            0.27
+          ],
+          [
+            0,
+            0.67,
+            0.78,
+            0.32,
+            0.24
+          ],
+          [
+            0,
+            0.205,
+            0.9,
+            0.27,
+            0.2
+          ],
+          [
+            0,
+            0.44,
+            0.91,
+            0.32,
+            0.18
+          ],
+          [
+            0,
+            0.7,
+            0.925,
+            0.34,
+            0.15
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          27,
+          28,
+          65,
+          63
+        ],
+        "sourceMetadata": {
+          "id": 184397986,
+          "title": "File:Banana Bunch on the Tree.jpg",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Banana_Bunch_on_the_Tree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_Bunch_on_the_Tree.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Ainomugisha Brendah",
+          "description": "A healthy bunch of banana growing on a banana tree.",
+          "date": "2026-01-05",
+          "file": "commons/184397986.jpg",
+          "sourceSha256": "f3b6ba5fbf1ca7e09971acf31f2229be989a82cbc652b443bc8ac729bc69a121",
+          "width": 288,
+          "height": 640,
+          "sha256": "5e985e4934206295c61f03dde0ecd1161bdc9b3c8483bcf3837b74d86789d4ea"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "1e9761298b332bc1cc1a316423ef11a3fdc92c2a39b4ff0034218abcc45f1214"
+      },
+      {
+        "id": "v4-commons-35944520",
+        "commonsId": 35944520,
+        "group": "commons-35944520",
+        "file": "images/v4-commons-35944520.jpg",
+        "width": 192,
+        "height": 391,
+        "boxes": [
+          [
+            0,
+            0.165,
+            0.21,
+            0.19,
+            0.18
+          ],
+          [
+            0,
+            0.265,
+            0.185,
+            0.17,
+            0.19
+          ],
+          [
+            0,
+            0.375,
+            0.165,
+            0.17,
+            0.25
+          ],
+          [
+            0,
+            0.49,
+            0.16,
+            0.16,
+            0.28
+          ],
+          [
+            0,
+            0.615,
+            0.19,
+            0.17,
+            0.26
+          ],
+          [
+            0,
+            0.715,
+            0.22,
+            0.15,
+            0.24
+          ],
+          [
+            0,
+            0.825,
+            0.235,
+            0.17,
+            0.21
+          ],
+          [
+            0,
+            0.315,
+            0.385,
+            0.17,
+            0.21
+          ],
+          [
+            0,
+            0.42,
+            0.375,
+            0.18,
+            0.23
+          ],
+          [
+            0,
+            0.535,
+            0.38,
+            0.17,
+            0.24
+          ],
+          [
+            0,
+            0.655,
+            0.4,
+            0.19,
+            0.22
+          ],
+          [
+            0,
+            0.785,
+            0.37,
+            0.19,
+            0.22
+          ],
+          [
+            0,
+            0.9,
+            0.34,
+            0.2,
+            0.2
+          ],
+          [
+            0,
+            0.29,
+            0.59,
+            0.2,
+            0.18
+          ],
+          [
+            0,
+            0.415,
+            0.61,
+            0.19,
+            0.2
+          ],
+          [
+            0,
+            0.52,
+            0.59,
+            0.2,
+            0.22
+          ],
+          [
+            0,
+            0.67,
+            0.575,
+            0.2,
+            0.23
+          ],
+          [
+            0,
+            0.8,
+            0.59,
+            0.2,
+            0.2
+          ],
+          [
+            0,
+            0.905,
+            0.56,
+            0.19,
+            0.18
+          ],
+          [
+            0,
+            0.255,
+            0.77,
+            0.21,
+            0.18
+          ],
+          [
+            0,
+            0.385,
+            0.785,
+            0.19,
+            0.19
+          ],
+          [
+            0,
+            0.53,
+            0.785,
+            0.2,
+            0.23
+          ],
+          [
+            0,
+            0.655,
+            0.775,
+            0.21,
+            0.21
+          ],
+          [
+            0,
+            0.805,
+            0.76,
+            0.21,
+            0.2
+          ],
+          [
+            0,
+            0.89,
+            0.78,
+            0.22,
+            0.18
+          ],
+          [
+            0,
+            0.3,
+            0.93,
+            0.2,
+            0.14
+          ],
+          [
+            0,
+            0.44,
+            0.935,
+            0.22,
+            0.13
+          ],
+          [
+            0,
+            0.615,
+            0.935,
+            0.23,
+            0.13
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          50,
+          23,
+          90,
+          84
+        ],
+        "sourceMetadata": {
+          "id": 35944520,
+          "title": "File:Banana bunch Chinawal.jpg",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Banana_bunch_Chinawal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_bunch_Chinawal.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "artist": "ABHIJEET",
+          "description": "Banana bunch at Chinawal village, India",
+          "date": "2014-10-06",
+          "file": "commons/35944520.jpg",
+          "sourceSha256": "a4a09cbdebc78349fb647800563850d034b83c2f932c5d21ba787d434c4cb911",
+          "width": 480,
+          "height": 640,
+          "sha256": "6f5cdc2a25a74433282e244edc6fbdb9e021ea760c666431d7eca8089b792ad2"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "2152413c8d5f7d148f90a7118b408c36a5a79bc31f65ec8def65812ab6f682f7"
+      },
+      {
+        "id": "v4-commons-195768763",
+        "commonsId": 195768763,
+        "group": "commons-195768763",
+        "file": "images/v4-commons-195768763.jpg",
+        "width": 115,
+        "height": 141,
+        "boxes": [
+          [
+            0,
+            0.32,
+            0.255,
+            0.34,
+            0.19
+          ],
+          [
+            0,
+            0.405,
+            0.4,
+            0.35,
+            0.22
+          ],
+          [
+            0,
+            0.565,
+            0.3,
+            0.37,
+            0.22
+          ],
+          [
+            0,
+            0.725,
+            0.35,
+            0.33,
+            0.24
+          ],
+          [
+            0,
+            0.32,
+            0.57,
+            0.34,
+            0.2
+          ],
+          [
+            0,
+            0.545,
+            0.59,
+            0.35,
+            0.24
+          ],
+          [
+            0,
+            0.73,
+            0.595,
+            0.34,
+            0.25
+          ],
+          [
+            0,
+            0.43,
+            0.78,
+            0.3,
+            0.2
+          ],
+          [
+            0,
+            0.62,
+            0.78,
+            0.32,
+            0.24
+          ],
+          [
+            0,
+            0.815,
+            0.795,
+            0.31,
+            0.29
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          34,
+          27,
+          58,
+          49
+        ],
+        "sourceMetadata": {
+          "id": 195768763,
+          "title": "File:Banana bunch on tree.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Banana_bunch_on_tree.jpg/960px-Banana_bunch_on_tree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_bunch_on_tree.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "Johnnybam",
+          "description": "A small, green bunch of bananas grows under large, leafy green banana leaves.",
+          "date": "2026-07-05 10:27:10",
+          "file": "commons/195768763.jpg",
+          "sourceSha256": "41f7381ed413bdd3ee5168649846663fbb2bd3a64d0ac1c21e9623af11cb9315",
+          "width": 480,
+          "height": 640,
+          "sha256": "1bd624d4d48844738f45e7bad11920b694efdf965260d4fee47792699c53eb4c"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "c8cf1355bbb3bc7202833149d99fa0ff5c99417186ecfd7b3c133f8d57abc79a"
+      },
+      {
+        "id": "v4-commons-113192674",
+        "commonsId": 113192674,
+        "group": "commons-113192674",
+        "file": "images/v4-commons-113192674.jpg",
+        "width": 128,
+        "height": 147,
+        "boxes": [
+          [
+            0,
+            0.315,
+            0.195,
+            0.17,
+            0.39
+          ],
+          [
+            0,
+            0.425,
+            0.215,
+            0.19,
+            0.43
+          ],
+          [
+            0,
+            0.57,
+            0.22,
+            0.18,
+            0.44
+          ],
+          [
+            0,
+            0.73,
+            0.22,
+            0.22,
+            0.44
+          ],
+          [
+            0,
+            0.315,
+            0.405,
+            0.21,
+            0.39
+          ],
+          [
+            0,
+            0.46,
+            0.485,
+            0.24,
+            0.39
+          ],
+          [
+            0,
+            0.625,
+            0.47,
+            0.25,
+            0.4
+          ],
+          [
+            0,
+            0.83,
+            0.42,
+            0.34,
+            0.38
+          ],
+          [
+            0,
+            0.3,
+            0.57,
+            0.26,
+            0.28
+          ],
+          [
+            0,
+            0.465,
+            0.62,
+            0.29,
+            0.28
+          ],
+          [
+            0,
+            0.68,
+            0.605,
+            0.3,
+            0.27
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          31,
+          18,
+          67,
+          41
+        ],
+        "sourceMetadata": {
+          "id": 113192674,
+          "title": "File:Banana tree with banana bunch.jpg",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Banana_tree_with_banana_bunch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banana_tree_with_banana_bunch.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Sowmiya Thangavel",
+          "description": "it's a fruit type and we can also used the banana blossom as a food",
+          "date": "2021-11-17",
+          "file": "commons/113192674.jpg",
+          "sourceSha256": "198b44ca9a6fabfe985ab51db3417b8276a701e9b53a853b6455220a308a4b36",
+          "width": 357,
+          "height": 640,
+          "sha256": "933d2bbeccf86afbf66f472d643577068e65ab389fe4b0406f08fd15b570d2cf"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "128cb86e88c1cc65558a78a6d755d9560d4dffbff367f63aaabe4968b933c8a8"
+      },
+      {
+        "id": "v4-commons-163009673",
+        "commonsId": 163009673,
+        "group": "commons-163009673",
+        "file": "images/v4-commons-163009673.jpg",
+        "width": 479,
+        "height": 640,
+        "boxes": [
+          [
+            0,
+            0.32,
+            0.315,
+            0.22,
+            0.17
+          ],
+          [
+            0,
+            0.37,
+            0.295,
+            0.22,
+            0.21
+          ],
+          [
+            0,
+            0.47,
+            0.26,
+            0.14,
+            0.28
+          ],
+          [
+            0,
+            0.54,
+            0.295,
+            0.12,
+            0.23
+          ],
+          [
+            0,
+            0.625,
+            0.32,
+            0.13,
+            0.2
+          ],
+          [
+            0,
+            0.335,
+            0.425,
+            0.19,
+            0.17
+          ],
+          [
+            0,
+            0.435,
+            0.475,
+            0.15,
+            0.23
+          ],
+          [
+            0,
+            0.54,
+            0.465,
+            0.14,
+            0.23
+          ],
+          [
+            0,
+            0.66,
+            0.48,
+            0.14,
+            0.22
+          ],
+          [
+            0,
+            0.32,
+            0.57,
+            0.22,
+            0.16
+          ],
+          [
+            0,
+            0.425,
+            0.59,
+            0.23,
+            0.18
+          ],
+          [
+            0,
+            0.56,
+            0.585,
+            0.18,
+            0.19
+          ],
+          [
+            0,
+            0.695,
+            0.585,
+            0.15,
+            0.13
+          ],
+          [
+            0,
+            0.33,
+            0.695,
+            0.2,
+            0.13
+          ],
+          [
+            0,
+            0.46,
+            0.7,
+            0.2,
+            0.16
+          ],
+          [
+            0,
+            0.6,
+            0.71,
+            0.18,
+            0.18
+          ],
+          [
+            0,
+            0.715,
+            0.72,
+            0.15,
+            0.16
+          ],
+          [
+            0,
+            0.375,
+            0.79,
+            0.19,
+            0.1
+          ],
+          [
+            0,
+            0.535,
+            0.805,
+            0.21,
+            0.11
+          ],
+          [
+            0,
+            0.695,
+            0.795,
+            0.21,
+            0.11
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 163009673,
+          "title": "File:Bunch of matooke.jpg",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Bunch_of_matooke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bunch_of_matooke.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "NUWAHWERA PHIONAH",
+          "description": "Fresh Bunch of matooke frim the plantation",
+          "date": "2025-03-09 11:40:52",
+          "file": "commons/163009673.jpg",
+          "sourceSha256": "47a1bead95534036fb6bc134ca93468c6c9de40d1512380572f9377ce415b658",
+          "width": 479,
+          "height": 640,
+          "sha256": "fc0f9451913731a4861628081b8ef9468a9ea5ba3f4f6d0ba70395a459563afc"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "9961e558eb42e6025b2d627b6836999bf1942b194ef40a139fcbd02c7fa58ca0"
+      },
+      {
+        "id": "v4-commons-164960953",
+        "commonsId": 164960953,
+        "group": "commons-164960953",
+        "file": "images/v4-commons-164960953.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [
+          [
+            0,
+            0.18,
+            0.31,
+            0.04,
+            0.06
+          ],
+          [
+            0,
+            0.21,
+            0.295,
+            0.04,
+            0.07
+          ],
+          [
+            0,
+            0.25,
+            0.29,
+            0.04,
+            0.08
+          ],
+          [
+            0,
+            0.29,
+            0.31,
+            0.04,
+            0.06
+          ],
+          [
+            0,
+            0.165,
+            0.36,
+            0.05,
+            0.06
+          ],
+          [
+            0,
+            0.205,
+            0.365,
+            0.05,
+            0.07
+          ],
+          [
+            0,
+            0.245,
+            0.36,
+            0.05,
+            0.08
+          ],
+          [
+            0,
+            0.285,
+            0.37,
+            0.05,
+            0.08
+          ],
+          [
+            0,
+            0.31,
+            0.39,
+            0.04,
+            0.08
+          ],
+          [
+            0,
+            0.155,
+            0.43,
+            0.05,
+            0.06
+          ],
+          [
+            0,
+            0.195,
+            0.425,
+            0.05,
+            0.07
+          ],
+          [
+            0,
+            0.235,
+            0.43,
+            0.05,
+            0.08
+          ],
+          [
+            0,
+            0.275,
+            0.44,
+            0.05,
+            0.08
+          ],
+          [
+            0,
+            0.3,
+            0.45,
+            0.04,
+            0.08
+          ],
+          [
+            0,
+            0.485,
+            0.475,
+            0.03,
+            0.07
+          ],
+          [
+            0,
+            0.515,
+            0.48,
+            0.03,
+            0.08
+          ],
+          [
+            0,
+            0.545,
+            0.485,
+            0.03,
+            0.07
+          ],
+          [
+            0,
+            0.495,
+            0.53,
+            0.03,
+            0.06
+          ],
+          [
+            0,
+            0.525,
+            0.54,
+            0.03,
+            0.06
+          ],
+          [
+            0,
+            0.555,
+            0.54,
+            0.03,
+            0.06
+          ],
+          [
+            0,
+            0.505,
+            0.585,
+            0.03,
+            0.05
+          ],
+          [
+            0,
+            0.535,
+            0.59,
+            0.03,
+            0.06
+          ],
+          [
+            0,
+            0.565,
+            0.58,
+            0.03,
+            0.06
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "sourceMetadata": {
+          "id": 164960953,
+          "title": "File:Madeira-Camara de Lobos-Banana Bunch-01ESD.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Madeira-Camara_de_Lobos-Banana_Bunch-01ESD.jpg/960px-Madeira-Camara_de_Lobos-Banana_Bunch-01ESD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madeira-Camara_de_Lobos-Banana_Bunch-01ESD.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "artist": "Rikki Mitterer",
+          "description": "Banana Bunch in Câmara de Lobos, Madeira",
+          "date": "2024-11-13",
+          "file": "commons/164960953.jpg",
+          "sourceSha256": "f0d0970d3b99ef03b91df74116fcf3ec83cb14bc63bdbab9ffdd64b0427b04ce",
+          "width": 480,
+          "height": 640,
+          "sha256": "d7ab4226b7685085f7408a9af390582cf92a6339af372b7a21b074ed60355f62"
+        },
+        "sourceNormalizationMaxSide": 640,
+        "sha256_file": "c2be3cd9fafcfaace7dd95f54b679e26482afe85a9035b36d0ebd5c19b066c04"
+      },
+      {
+        "id": "v4-commons-178720226",
+        "commonsId": 178720226,
+        "group": "commons-178720226",
+        "file": "images/v4-commons-178720226.jpg",
+        "width": 256,
+        "height": 456,
+        "boxes": [
+          [
+            0,
+            0.305,
+            0.15,
+            0.19,
+            0.3
+          ],
+          [
+            0,
+            0.425,
+            0.145,
+            0.17,
+            0.29
+          ],
+          [
+            0,
+            0.55,
+            0.14,
+            0.18,
+            0.28
+          ],
+          [
+            0,
+            0.67,
+            0.145,
+            0.2,
+            0.29
+          ],
+          [
+            0,
+            0.765,
+            0.205,
+            0.23,
+            0.25
+          ],
+          [
+            0,
+            0.285,
+            0.41,
+            0.21,
+            0.22
+          ],
+          [
+            0,
+            0.415,
+            0.42,
+            0.19,
+            0.24
+          ],
+          [
+            0,
+            0.545,
+            0.415,
+            0.21,
+            0.25
+          ],
+          [
+            0,
+            0.68,
+            0.39,
+            0.2,
+            0.28
+          ],
+          [
+            0,
+            0.265,
+            0.645,
+            0.21,
+            0.23
+          ],
+          [
+            0,
+            0.39,
+            0.655,
+            0.2,
+            0.25
+          ],
+          [
+            0,
+            0.515,
+            0.65,
+            0.19,
+            0.26
+          ],
+          [
+            0,
+            0.64,
+            0.635,
+            0.2,
+            0.25
+          ],
+          [
+            0,
+            0.245,
+            0.865,
+            0.19,
+            0.21
+          ],
+          [
+            0,
+            0.385,
+            0.865,
+            0.21,
+            0.23
+          ],
+          [
+            0,
+            0.49,
+            0.85,
+            0.2,
+            0.24
+          ],
+          [
+            0,
+            0.635,
+            0.83,
+            0.21,
+            0.22
+          ]
+        ],
+        "scene": "real-bunch",
+        "cropPercent": [
+          38,
+          18,
+          70,
+          75
+        ],
+        "sourceMetadata": {
+          "id": 178720226,
+          "title": "File:UNRIPE BANANAS.jpg",
+          "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/UNRIPE_BANANAS.jpg/960px-UNRIPE_BANANAS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:UNRIPE_BANANAS.jpg",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "artist": "Ellen Meshack",
+          "description": "This is a bunch of bananas that are not yet ripe",
+          "date": "2025-11-19",
+          "file": "commons-v4/178720226.jpg",
+          "width": 800,
+          "height": 800,
+          "sourceSha256": "eaff575ee205e50ceaf9991fb1bc8ae760f8e9c70b5ad27ce0144c6ae029f7f1",
+          "sha256": "25f5cc2516bcbc15a296995722f96a141244a02687bd901d32143c400dfd1f71"
+        },
+        "sourceNormalizationMaxSide": 800,
+        "sha256_file": "9b442b18203165d1731f5d616323b69f2715067ba054fce61d9abe17baeb0c77"
+      },
+      {
+        "id": "v4-negative-286553",
+        "group": "coco-286553",
+        "file": "images/v4-negative-000000286553.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000286553.jpg",
+        "flickrSource": "http://farm3.staticflickr.com/2710/4252543190_2e6b88828f_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "f37863b16e8789da5ed5f768a16f651883ac31cdcd8a965d1795e0d5456b2314",
+        "sha256_file": "721ec706e33968f24bead08248a2c861e334fc2cb198d9a0c4d35bbc0ebc099e"
+      },
+      {
+        "id": "v4-negative-402720",
+        "group": "coco-402720",
+        "file": "images/v4-negative-000000402720.jpg",
+        "width": 612,
+        "height": 612,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000402720.jpg",
+        "flickrSource": "http://farm8.staticflickr.com/7245/7276665146_20af39bbaf_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "94d78b7c6ded336af99a5d48fcd507ddeb7b43e93d1d7e7c1bdc62aa3d0b6fd6",
+        "sha256_file": "81a7b2a976a3628a1c5b987aab76743544fc4172bee5f3e95da339f8f3eb48e7"
+      },
+      {
+        "id": "v4-negative-540502",
+        "group": "coco-540502",
+        "file": "images/v4-negative-000000540502.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000540502.jpg",
+        "flickrSource": "http://farm9.staticflickr.com/8319/7947351576_5f05ff91f1_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "7ef4ffab3b5669c369836d31d5e6443b59ce41a3506fbc2de448ca573d95775c",
+        "sha256_file": "f41f412bb553211b7a991a56490d38580c59310ad383ce447f6aa18f79649737"
+      },
+      {
+        "id": "v4-negative-571857",
+        "group": "coco-571857",
+        "file": "images/v4-negative-000000571857.jpg",
+        "width": 640,
+        "height": 426,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000571857.jpg",
+        "flickrSource": "http://farm7.staticflickr.com/6179/6199221017_d5f37ecb01_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "d8771d52ba37b5ebfff1a5dee278d11dfed9c4b3e67a19c89e21fc8000a148c0",
+        "sha256_file": "b03c27be29f1999dd4a85e929d4f9fa8bc156890e94e0af53ab8181311f1c700"
+      },
+      {
+        "id": "v4-negative-559842",
+        "group": "coco-559842",
+        "file": "images/v4-negative-000000559842.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000559842.jpg",
+        "flickrSource": "http://farm7.staticflickr.com/6039/6248453792_987793d2f0_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "3508dca3aae80f0658068368fd674fef7871ee48d56263b64be2ca868c769832",
+        "sha256_file": "4c9b5c4863e0da58e00cf86ae567662a2479694bb8f69504a79429da85ccf4f6"
+      },
+      {
+        "id": "v4-negative-266768",
+        "group": "coco-266768",
+        "file": "images/v4-negative-000000266768.jpg",
+        "width": 612,
+        "height": 612,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000266768.jpg",
+        "flickrSource": "http://farm4.staticflickr.com/3712/9631334222_f91803a60d_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "9bf52870172cba87d8917809be3ddd2432862adfd5c8aff310fb4851f50c1ac4",
+        "sha256_file": "235feb2d31fdd4e18f316c6030e68391a3e5f0f12e86429f4ce565a9c09c0104"
+      },
+      {
+        "id": "v4-negative-365385",
+        "group": "coco-365385",
+        "file": "images/v4-negative-000000365385.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000365385.jpg",
+        "flickrSource": "http://farm6.staticflickr.com/5044/5244459701_e310f8ceec_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "1d7b7413da56ab2982ea90bd6fb0875bb90c06042e4c678a0bee7a8160c344af",
+        "sha256_file": "2d7204f7cb2aacbe28d33f76ed0d26047e78ee82b151eae7577ab868d15d7856"
+      },
+      {
+        "id": "v4-negative-100582",
+        "group": "coco-100582",
+        "file": "images/v4-negative-000000100582.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000100582.jpg",
+        "flickrSource": "http://farm5.staticflickr.com/4006/4707927889_a5a966361e_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "670b8c6c5a125c68a9a4c7d446504338561f2b4cac3e6240f776b086a6090a20",
+        "sha256_file": "08e744d9fcca3b880df630c8b314c50a3d4ad2d0dd206866beb7a421d7cfbc53"
+      },
+      {
+        "id": "v4-negative-374083",
+        "group": "coco-374083",
+        "file": "images/v4-negative-000000374083.jpg",
+        "width": 426,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000374083.jpg",
+        "flickrSource": "http://farm3.staticflickr.com/2882/9264083800_fc3b02577d_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "e791cc62e1429d7ba4f3a2b882165e8ca025162491aa4fdaec2d7fbf968af67c",
+        "sha256_file": "9331a42d4c1b26b70a73b20e0a4911ecbed454e9876ccdfeda1802a6b95996e2"
+      },
+      {
+        "id": "v4-negative-105014",
+        "group": "coco-105014",
+        "file": "images/v4-negative-000000105014.jpg",
+        "width": 427,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000105014.jpg",
+        "flickrSource": "http://farm8.staticflickr.com/7068/6933079123_192a8798bf_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "f35e364bb8237ad5609f4e3a11220996b8417bd5241216aae82510f8ea368c14",
+        "sha256_file": "95ac72330a085f69f49143cabee3c31f0616cc7bd94784222f73f11d02350310"
+      },
+      {
+        "id": "v4-negative-399296",
+        "group": "coco-399296",
+        "file": "images/v4-negative-000000399296.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000399296.jpg",
+        "flickrSource": "http://farm1.staticflickr.com/121/300255030_3fc8102597_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "6133875605b1a9d5dbdd985324e75b69cfd5f21dfdf84031492400f58ee04114",
+        "sha256_file": "d1a7c068b7b45fd91e3bef923dea2c9c2fe912504ade6dd47acd507f81886d6d"
+      },
+      {
+        "id": "v4-negative-303893",
+        "group": "coco-303893",
+        "file": "images/v4-negative-000000303893.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000303893.jpg",
+        "flickrSource": "http://farm8.staticflickr.com/7378/9383802677_0dc943b387_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "e809831e253ff07b4f8f810445c39cab27eab15e1d2a86f90189e35084538468",
+        "sha256_file": "25612b57387920a96eb5f8b187e1e9940162b9bb64d984f9e1a5ca5d6ddafdaf"
+      },
+      {
+        "id": "v4-negative-577584",
+        "group": "coco-577584",
+        "file": "images/v4-negative-000000577584.jpg",
+        "width": 418,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000577584.jpg",
+        "flickrSource": "http://farm7.staticflickr.com/6016/6206725101_edc356109b_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "9e47eaaf563d2ae9bfebcea80f2616ceb7eaf6c99a0390f0274cfb0068686d77",
+        "sha256_file": "21c5936f56f4a886288cb14f46521a00d4bbd94675c5a175083ec9f1ddfdbeb1"
+      },
+      {
+        "id": "v4-negative-252219",
+        "group": "coco-252219",
+        "file": "images/v4-negative-000000252219.jpg",
+        "width": 640,
+        "height": 428,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000252219.jpg",
+        "flickrSource": "http://farm4.staticflickr.com/3446/3232237447_13d84bd0a1_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "1cf48bddb1bcab80d9f4d18514ae438c3e4f57d18e80c4fbea9d5d22396f514a",
+        "sha256_file": "868a8b645f879a27b3e14edb4fdd3ac0214bb437504228982e80bb8364934784"
+      },
+      {
+        "id": "v4-negative-507081",
+        "group": "coco-507081",
+        "file": "images/v4-negative-000000507081.jpg",
+        "width": 640,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000507081.jpg",
+        "flickrSource": "http://farm8.staticflickr.com/7149/6603084771_262db5f7a8_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "b8e13828ed5a8b34552854684bd8fb1f2b4f621a0a8729fa5693a20e4d166dde",
+        "sha256_file": "b8b49b45bc414d080cf89c94dd79d1ec2ff2323d511b49bed495c9d834145dbd"
+      },
+      {
+        "id": "v4-negative-479248",
+        "group": "coco-479248",
+        "file": "images/v4-negative-000000479248.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000479248.jpg",
+        "flickrSource": "http://farm8.staticflickr.com/7296/9019745657_c8776db96f_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "7568f9ca909b10cb1ff733e79ed2661e310d8018261e5d8b4f4e6621e404508b",
+        "sha256_file": "38c666a992689849713acb9a52bbea6ee101b3562e22dc60934cb53b36023670"
+      },
+      {
+        "id": "v4-negative-279541",
+        "group": "coco-279541",
+        "file": "images/v4-negative-000000279541.jpg",
+        "width": 478,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000279541.jpg",
+        "flickrSource": "http://farm6.staticflickr.com/5096/5465485177_db70efc12f_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "8ab879660b4c6c2cac0ab32cec3745f3b96ee419050a739c37d29e221adecee4",
+        "sha256_file": "3113c51f5bea237006b921d774fd888c5f6f0f80896e2d7cf9cab09597ea1a74"
+      },
+      {
+        "id": "v4-negative-323355",
+        "group": "coco-323355",
+        "file": "images/v4-negative-000000323355.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000323355.jpg",
+        "flickrSource": "http://farm6.staticflickr.com/5165/5241297935_1dcda049cf_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "3f3cf2287d73bc198fb7c1503cf2ccac77b33d772ff89318b8b83546add5924b",
+        "sha256_file": "96150eaab3748fe5e567f053bee2dfb19933239fee1165c77e131d167feaae73"
+      },
+      {
+        "id": "v4-negative-138856",
+        "group": "coco-138856",
+        "file": "images/v4-negative-000000138856.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000138856.jpg",
+        "flickrSource": "http://farm5.staticflickr.com/4075/4872855743_1066676766_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "f117909a82792ca630defc62adca57f8a0770d9d64808ed847d4adddd1c14a63",
+        "sha256_file": "771962dc7ce9ad95cb7a611f066b29415898fd8a538b562d57d04cb3b6c6c671"
+      },
+      {
+        "id": "v4-negative-142620",
+        "group": "coco-142620",
+        "file": "images/v4-negative-000000142620.jpg",
+        "width": 640,
+        "height": 426,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000142620.jpg",
+        "flickrSource": "http://farm8.staticflickr.com/7375/9756491185_311b0b2b7d_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "0f3dd713a8c98734879b3108ac6a160877b031831048330a0fc09cedfdf1dd80",
+        "sha256_file": "08ec26abf8706434edd13560d4baea0f14cb9d286f48ffae2fff971d85e27711"
+      },
+      {
+        "id": "v4-negative-555009",
+        "group": "coco-555009",
+        "file": "images/v4-negative-000000555009.jpg",
+        "width": 500,
+        "height": 375,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000555009.jpg",
+        "flickrSource": "http://farm1.staticflickr.com/22/30339463_78c837ba54_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "01d975300362169fe1d5bbdf664f28873201678c9e6679080e69aba4deb1ca27",
+        "sha256_file": "1baf6503b8e9e13e79156ea45276a6ee01ebdfa26f136be0319498ce2e4543e8"
+      },
+      {
+        "id": "v4-negative-80932",
+        "group": "coco-80932",
+        "file": "images/v4-negative-000000080932.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000080932.jpg",
+        "flickrSource": "http://farm5.staticflickr.com/4075/5487804660_f06d600b35_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "c5bdb620680ad74c2bb788cabbf3374d68285bec3a2023fadf0ffc7eb257ba72",
+        "sha256_file": "ce12473112e5d12cd0322f2073df1773412fe9af2665646832522795f628e7c2"
+      },
+      {
+        "id": "v4-negative-287667",
+        "group": "coco-287667",
+        "file": "images/v4-negative-000000287667.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000287667.jpg",
+        "flickrSource": "http://farm1.staticflickr.com/171/456552994_f4f3aba601_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "30162d36befb49158ad704f299e42c28afa1117fbb295ac271691676100d29bd",
+        "sha256_file": "29e9ff7f88340c3818dc92ebd5f43c09bcddbe83609f94b8083a7910df7ccb8a"
+      },
+      {
+        "id": "v4-negative-91654",
+        "group": "coco-91654",
+        "file": "images/v4-negative-000000091654.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000091654.jpg",
+        "flickrSource": "http://farm9.staticflickr.com/8516/8594175012_b521635ac6_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "da28681c7ffbb7b414f60c4f9116a2aa70c6ae23d1b66e9b96319c7b7cbd8d21",
+        "sha256_file": "da9c1fcf76450c716415dbe5125b4e9da378820d859450a4f72f185311385d05"
+      },
+      {
+        "id": "v4-negative-544565",
+        "group": "coco-544565",
+        "file": "images/v4-negative-000000544565.jpg",
+        "width": 640,
+        "height": 640,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000544565.jpg",
+        "flickrSource": "http://farm9.staticflickr.com/8385/8637201534_da86391cc8_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "2ac6b4e9e1b53277db20fab701366dbfa6271d5f0749fade0c3b8cf115d085bf",
+        "sha256_file": "dff96d24f3cde6311644de02d490b51e63dab92a4806cf6215cff9d961fbf1a3"
+      },
+      {
+        "id": "v4-negative-430056",
+        "group": "coco-430056",
+        "file": "images/v4-negative-000000430056.jpg",
+        "width": 500,
+        "height": 375,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000430056.jpg",
+        "flickrSource": "http://farm4.staticflickr.com/3152/2286746912_8954bfabea_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "9753b0001fe8bf21bcb0271569e438188fcc2112f80e9efbf1cbce51fa8e7d7f",
+        "sha256_file": "481746caf66ae5bec4fe59aaed750c3f1e4d23b31db686d7afcce5046a3465ba"
+      },
+      {
+        "id": "v4-negative-85157",
+        "group": "coco-85157",
+        "file": "images/v4-negative-000000085157.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000085157.jpg",
+        "flickrSource": "http://farm3.staticflickr.com/2620/3776048035_fb7c6fc8d5_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "027adfd5c8d13be607a05da2098af34e7350b5f70a5bfd16f266e8c802a3a59b",
+        "sha256_file": "0cb5321495e3ecc68b8a6406265f3e5ba8c6ccc3f9ec46e326b28f387d8dd123"
+      },
+      {
+        "id": "v4-negative-533206",
+        "group": "coco-533206",
+        "file": "images/v4-negative-000000533206.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000533206.jpg",
+        "flickrSource": "http://farm4.staticflickr.com/3048/2344619541_817c0410df_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "0f7b42299e6074f89934510299a6d68490a3ac304089f84701424539cbc58c0a",
+        "sha256_file": "8515214d725147d8d5c8ee675d50c8676e6391c56a8edf28d1d86a9c96792cf8"
+      },
+      {
+        "id": "v4-negative-80949",
+        "group": "coco-80949",
+        "file": "images/v4-negative-000000080949.jpg",
+        "width": 640,
+        "height": 438,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000080949.jpg",
+        "flickrSource": "http://farm3.staticflickr.com/2221/2232846153_5eee9c75fc_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "originalSha256": "b61281d7ad2ca043eb4a6066becd42586ab66394757171ee2f31277241b4bc51",
+        "sha256_file": "1d5238c55ea9fa430161f12b5a28f7ac12ba44b0a15708ffd38005fb55364356"
+      },
+      {
+        "id": "v4-negative-382125",
+        "group": "coco-382125",
+        "file": "images/v4-negative-000000382125.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "scene": "no-banana",
+        "source": "https://images.cocodataset.org/val2017/000000382125.jpg",
+        "flickrSource": "http://farm6.staticflickr.com/5239/7053693277_0d21e419e0_z.jpg",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "originalSha256": "d83f8b6bbbef41c27da7cc759e139b983c5025bc30da9f23f6c9402d29cfb22f",
+        "sha256_file": "18ef4f497d00422917f17127dd21f764a750926d99feb2652461c744daf23149"
+      }
+    ]
+  },
+  "protocol": {
+    "inputSize": 448,
+    "maxEpochs": 24,
+    "minimumEpochs": 10,
+    "earlyStoppingPatience": 7,
+    "learningRate": 0.00015,
+    "seed": 20261114,
+    "fullBackboneFromEpoch": 1,
+    "realPositiveSamplingRepeat": 8,
+    "syntheticScenesPerEpoch": 150,
+    "plainBackgroundProbability": 0.3,
+    "realBunchCropProbability": 0.5,
+    "cropMinScale": 0.55,
+    "minVisibleBoxFraction": 0.25,
+    "initialCheckpoint": "artifacts/banana-individual-v4-initial.pt",
+    "initialCheckpointSha256": "a0324678588958b72b4cfe5adaba77866d5d29a23e26ad1a563ceb6e4da017e7",
+    "modelSelection": "highest confirmed-ripe validation F1 at fixed .25/.6/.15/.65 thresholds; no holdout inference before checkpoint/threshold selection",
+    "calibration": "validation only, >=95% precision then highest recall; otherwise highest F1 and explicit failure",
+    "requiredConfirmations": 3,
+    "precisionTarget": 0.95,
+    "recallTarget": 0.8,
+    "iou": 0.5
+  },
+  "previouslyInspectedBenchmarkUsedAs": "validation, not an independent test",
+  "limits": [
+    "Coding-assistant visible-instance annotations; no independent expert adjudication.",
+    "Selected real photo crops approximate a closer camera view; this does not establish full-photo or live-camera generalization.",
+    "Public source identity and duplicate checks do not guarantee distinct physical fruits in all internet photographs.",
+    "COCO negatives were within generic COCO pretraining; Commons positives were not part of that dataset.",
+    "No physical Android/Chrome or iPhone/Safari evidence is created by this dataset or training."
+  ]
+}

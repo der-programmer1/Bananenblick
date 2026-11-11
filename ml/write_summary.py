@@ -23,7 +23,7 @@ augmentation_intro=("150 zusätzliche Trainingsmontagen je Epoche und achtfache 
 additional_experiment=''
 if not is_v4 and (SITE/'public/evaluation/individual-v4-report.json').exists():
     experiment=load('public/evaluation/individual-v4-report.json')
-    additional_experiment=(f"Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `{experiment['frozenCommit'][:7]}` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **{experiment['truePositive']} TP, {experiment['falsePositive']} FP, {experiment['falseNegative']} FN; Präzision {pct(experiment['precision'])}, Recall {pct(experiment['recall'])}**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die App-Gewichte 0.3 nicht. [Bericht mit Grenzen](./experiment-v4/report.md), [Ergebnisse](./individual-v4-report.json), [Validierungswahl](./experiment-v4/validation-selection.json), [Trainingsverlauf](./experiment-v4/training-history.json), [Beispiele aus gespeicherten Ausgaben](./experiment-v4/examples.md).")
+    additional_experiment=(f"Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `{experiment['frozenCommit'][:7]}` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **{experiment['truePositive']} TP, {experiment['falsePositive']} FP, {experiment['falseNegative']} FN; Präzision {pct(experiment['precision'])}, Recall {pct(experiment['recall'])}**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die Gewichte 0.3 im Änderungsstand nicht. Die öffentliche Pages-Version bleibt 0.1.0. [Bericht mit Grenzen](./experiment-v4/report.md), [Ergebnisse](./individual-v4-report.json), [Validierungswahl](./experiment-v4/validation-selection.json), [Trainingsverlauf](./experiment-v4/training-history.json), [Beispiele aus gespeicherten Ausgaben](./experiment-v4/examples.md).")
 lines=[
 f"# Bananenblick {card['version']}: Modellprüfung",'',
 f'**{status} Echte Android-/iPhone-Prüfungen und die Veröffentlichungsabnahme stehen aus.**','',
@@ -192,7 +192,7 @@ if (SITE/'public/evaluation/individual-v4-report.json').exists():
     baseline=trial['baselineValidation'];selected=trial['selectedEpochValidation']
     trial_text=f'''# Trainingsversuch 0.4 · tatsächliche Ergebnisse
 
-**{'Die statischen Zielwerte sind erreicht; die Geräteabnahme bleibt offen.' if trial['passed'] else 'Die statischen Zielwerte sind verfehlt. Die App-Gewichte 0.3 bleiben unverändert.'}** Dieser Bericht ist keine abgeschlossene Veröffentlichung oder echte Smartphone-Prüfung.
+**{'Die statischen Zielwerte sind erreicht; die Geräteabnahme bleibt offen.' if trial['passed'] else 'Die statischen Zielwerte sind verfehlt. Der Änderungsstand behält Modell 0.3; öffentlich bleibt Version 0.1.0.'}** Dieser Bericht ist keine abgeschlossene Veröffentlichung oder echte Smartphone-Prüfung.
 
 ## Unabhängiger neuer Fotobestand
 

@@ -1,0 +1,3007 @@
+{
+  "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+  "iou": 0.5,
+  "requiredConfirmations": 3,
+  "positiveScenes": 142,
+  "negativeScenes": 35,
+  "truePositive": 78,
+  "falsePositive": 38,
+  "falseNegative": 113,
+  "precision": 0.6724137931034483,
+  "recall": 0.4083769633507853,
+  "uncertainOrUnconfirmed": 21,
+  "negativeFalseRecommendations": 0,
+  "negativeFalseDetections": 5,
+  "targets": {
+    "precision": 0.95,
+    "recall": 0.8
+  },
+  "passed": false,
+  "scenes": [
+    {
+      "id": "2",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "3",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "8",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "10",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "14",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "15",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "18",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "24",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.3809206911495754,
+            "y": 0.0921318357204218,
+            "width": 0.27246160166604183,
+            "height": 0.7981529755923052
+          },
+          "confidence": 0.946664616269473
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.2557620093936012,
+            "y": 0.2644142763955253,
+            "width": 0.4780142647879464,
+            "height": 0.5152394430977958
+          },
+          "confidence": 0.715891378284006
+        }
+      ]
+    },
+    {
+      "id": "52",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "66",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "67",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "68",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "83",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "85",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "97",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "103",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "127",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "135",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "161",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "166",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "172",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "173",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "174",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "175",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "176",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "177",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "178",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "181",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "182",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "189",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "193",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "198",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "199",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "213",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "217",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "221",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "242",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "282",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.17105160440717426,
+            "y": 0.3029074214753651,
+            "width": 0.6367182050432478,
+            "height": 0.31907640184674946
+          },
+          "confidence": 0.8777350702155786
+        }
+      ]
+    },
+    {
+      "id": "297",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.221566949571882,
+            "y": 0.29387281054542175,
+            "width": 0.701662608555385,
+            "height": 0.28123669397263307
+          },
+          "confidence": 0.866106880157762
+        }
+      ]
+    },
+    {
+      "id": "299",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.10719547952924458,
+            "y": 0.396329402923584,
+            "width": 0.6193237985883441,
+            "height": 0.2902578172229585
+          },
+          "confidence": 0.8641514663604966
+        }
+      ]
+    },
+    {
+      "id": "300",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.12102273532322476,
+            "y": 0.24115362621489028,
+            "width": 0.5964991024562292,
+            "height": 0.2768135070800781
+          },
+          "confidence": 0.8429776157272002
+        }
+      ]
+    },
+    {
+      "id": "301",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.10594940185546875,
+            "y": 0.3299468926021031,
+            "width": 0.6292939186096191,
+            "height": 0.3069712093898228
+          },
+          "confidence": 0.8557275683424095
+        }
+      ]
+    },
+    {
+      "id": "303",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.047699894223894396,
+            "y": 0.397046861194429,
+            "width": 0.6835475649152484,
+            "height": 0.2887247176397415
+          },
+          "confidence": 0.840756449258862
+        }
+      ]
+    },
+    {
+      "id": "304",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.033923796245029995,
+            "y": 0.3744425660087949,
+            "width": 0.7990162713187082,
+            "height": 0.357601869673956
+          },
+          "confidence": 0.627211534043461
+        }
+      ]
+    },
+    {
+      "id": "335",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.16541685376848497,
+            "y": 0.34184818233903796,
+            "width": 0.7029506138392858,
+            "height": 0.43099381334342113
+          },
+          "confidence": 0.7952096828330042
+        }
+      ]
+    },
+    {
+      "id": "352",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.09097694215320407,
+            "y": 0.3301568031311035,
+            "width": 0.7277603149414062,
+            "height": 0.325601509639195
+          },
+          "confidence": 0.7964226527372276
+        }
+      ]
+    },
+    {
+      "id": "353",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.26321202232724145,
+            "y": 0.277459979057312,
+            "width": 0.4592270624069941,
+            "height": 0.4791296890803746
+          },
+          "confidence": 0.730287504220513
+        }
+      ]
+    },
+    {
+      "id": "356",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.07368137722923643,
+            "y": 0.3808222838810512,
+            "width": 0.8343643915085565,
+            "height": 0.2418759209769113
+          },
+          "confidence": 0.9140315888799755
+        }
+      ]
+    },
+    {
+      "id": "357",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.07742577507382348,
+            "y": 0.37786602122443064,
+            "width": 0.8191472916376024,
+            "height": 0.23577221802302772
+          },
+          "confidence": 0.9137182058469406
+        }
+      ]
+    },
+    {
+      "id": "361",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.1381415299006871,
+            "y": 0.3318386645544143,
+            "width": 0.6943211555480957,
+            "height": 0.2952801613580613
+          },
+          "confidence": 0.8206562743781802
+        }
+      ]
+    },
+    {
+      "id": "362",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.12731289863586426,
+            "y": 0.32756191208249047,
+            "width": 0.7204327583312988,
+            "height": 0.2913007509140741
+          },
+          "confidence": 0.8123384612016551
+        }
+      ]
+    },
+    {
+      "id": "368",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.16846758978707452,
+            "y": 0.18284647805350168,
+            "width": 0.3894759132748558,
+            "height": 0.6362658228193011
+          },
+          "confidence": 0.9133040994016568
+        }
+      ]
+    },
+    {
+      "id": "370",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.4072314444042388,
+            "y": 0.09990470749991281,
+            "width": 0.4297275089082264,
+            "height": 0.792736257825579
+          },
+          "confidence": 0.9085808594481826
+        }
+      ]
+    },
+    {
+      "id": "371",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.17479624067034044,
+            "y": 0.16601812271844774,
+            "width": 0.7099481310163226,
+            "height": 0.42923418680826825
+          },
+          "confidence": 0.8594794115816171
+        }
+      ]
+    },
+    {
+      "id": "372",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.1935973167419434,
+            "y": 0.1693374542962937,
+            "width": 0.6799135889325825,
+            "height": 0.3995701471964519
+          },
+          "confidence": 0.8700546506825901
+        }
+      ]
+    },
+    {
+      "id": "373",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.22061961037772043,
+            "y": 0.30831455124435025,
+            "width": 0.7025804519653323,
+            "height": 0.3709026307273916
+          },
+          "confidence": 0.8968059289638219
+        }
+      ]
+    },
+    {
+      "id": "387",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.22911137353052524,
+            "y": 0.17680277143205916,
+            "width": 0.5070283501969334,
+            "height": 0.6331850460597448
+          },
+          "confidence": 0.7823163584090125
+        }
+      ]
+    },
+    {
+      "id": "395",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.33577462802925406,
+            "y": 0.13165930339268278,
+            "width": 0.3813338717837693,
+            "height": 0.5941248621259417
+          },
+          "confidence": 0.904287568365568
+        }
+      ]
+    },
+    {
+      "id": "399",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.2705082552773612,
+            "y": 0.2819572543702185,
+            "width": 0.5826100621904645,
+            "height": 0.34472467211060226
+          },
+          "confidence": 0.8700720104666431
+        }
+      ]
+    },
+    {
+      "id": "407",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.20338211740766252,
+            "y": 0.174108029259827,
+            "width": 0.6299132619585313,
+            "height": 0.5839566613487328
+          },
+          "confidence": 0.7750993826800112
+        }
+      ]
+    },
+    {
+      "id": "417",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.23496975217546737,
+            "y": 0.29187352260189364,
+            "width": 0.549218041556222,
+            "height": 0.39449482608562253
+          },
+          "confidence": 0.8756198715983174
+        }
+      ]
+    },
+    {
+      "id": "424",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.2853871578992155,
+            "y": 0.08478985513959612,
+            "width": 0.4355096279974159,
+            "height": 0.81511504309518
+          },
+          "confidence": 0.8736115400420417
+        }
+      ]
+    },
+    {
+      "id": "433",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.4127716127767602,
+            "y": 0.004457712173461914,
+            "width": 0.4539538136444363,
+            "height": 0.9443188394818988
+          },
+          "confidence": 0.7919819322769825
+        }
+      ]
+    },
+    {
+      "id": "445",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "449",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "451",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "456",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "462",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "463",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "506",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "507",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "508",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "521",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "542",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "543",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "557",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "560",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "561",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "566",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "570",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "574",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "575",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "577",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "583",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "588",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "589",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "592",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "593",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "596",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "598",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "614",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "618",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "619",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "621",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "639",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.06899774642217728,
+            "y": 0.33618635790688656,
+            "width": 0.7345882597423736,
+            "height": 0.326444183077131
+          },
+          "confidence": 0.7978946240351092
+        }
+      ]
+    },
+    {
+      "id": "640",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.14033817109607513,
+            "y": 0.18263980320521764,
+            "width": 0.41054357801164904,
+            "height": 0.6388763019016811
+          },
+          "confidence": 0.9184412786547043
+        }
+      ]
+    },
+    {
+      "id": "644",
+      "scene": "single-fruit",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.2274718625204904,
+            "y": 0.28874022478737915,
+            "width": 0.6865824290684291,
+            "height": 0.38265936036892884
+          },
+          "confidence": 0.8821292744209828
+        }
+      ]
+    },
+    {
+      "id": "659",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "670",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "672",
+      "scene": "single-fruit",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-576517",
+      "scene": "multiple-real-fruits",
+      "support": 1,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 1,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-409754",
+      "scene": "multiple-real-fruits",
+      "support": 2,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 2,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-372058",
+      "scene": "multiple-real-fruits",
+      "support": 3,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 2,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.6751359190259661,
+            "y": 0.2877407301039923,
+            "width": 0.28575413567679264,
+            "height": 0.28100981031145367
+          },
+          "confidence": 0.6864574786852415
+        }
+      ]
+    },
+    {
+      "id": "coco-train-556399",
+      "scene": "multiple-real-fruits",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-410735",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-234779",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-242946",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-520871",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-val-534041",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "coco-train-157192",
+      "scene": "multiple-real-fruits",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "validation-v3-357782",
+      "scene": "real-bunch",
+      "support": 15,
+      "truePositive": 4,
+      "falsePositive": 4,
+      "falseNegative": 11,
+      "uncertainOrUnconfirmed": 2,
+      "confirmed": [
+        {
+          "id": 10,
+          "box": {
+            "x": 0.4070474082773382,
+            "y": 0.3053360751696996,
+            "width": 0.5929525917226618,
+            "height": 0.1956377540315901
+          },
+          "confidence": 0.8387927567300579
+        },
+        {
+          "id": 14,
+          "box": {
+            "x": 0.4486323960415729,
+            "y": 0.5292970708438328,
+            "width": 0.5513676039584271,
+            "height": 0.18926976408277238
+          },
+          "confidence": 0.7814595016830346
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0,
+            "y": 0.29779274123055594,
+            "width": 0.3943657543752101,
+            "height": 0.16232654026576454
+          },
+          "confidence": 0.7317852987427216
+        },
+        {
+          "id": 13,
+          "box": {
+            "x": 0.4458131941882047,
+            "y": 0.6738060883113317,
+            "width": 0.5541868058117954,
+            "height": 0.14971263068062915
+          },
+          "confidence": 0.7147292398416845
+        },
+        {
+          "id": 15,
+          "box": {
+            "x": 0.4496530325381787,
+            "y": 0.4281478737081801,
+            "width": 0.5503469674618213,
+            "height": 0.13436798538480485
+          },
+          "confidence": 0.6894256953453812
+        },
+        {
+          "id": 7,
+          "box": {
+            "x": 0.013172389005685783,
+            "y": 0.5600645882742746,
+            "width": 0.484091380354646,
+            "height": 0.16802542550223218
+          },
+          "confidence": 0.6808992301793069
+        },
+        {
+          "id": 12,
+          "box": {
+            "x": 0.41620150045915083,
+            "y": 0.38375570092882433,
+            "width": 0.5837984995408492,
+            "height": 0.1560484681810652
+          },
+          "confidence": 0.6194087382173166
+        },
+        {
+          "id": 4,
+          "box": {
+            "x": 0.005879389465629281,
+            "y": 0.7617104734693255,
+            "width": 0.4058007432268811,
+            "height": 0.14130163192749023
+          },
+          "confidence": 0.6144940479192726
+        }
+      ]
+    },
+    {
+      "id": "validation-v3-521763",
+      "scene": "real-bunch",
+      "support": 11,
+      "truePositive": 4,
+      "falsePositive": 0,
+      "falseNegative": 7,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": [
+        {
+          "id": 2,
+          "box": {
+            "x": 0.11575666890940514,
+            "y": 0.5223855120795113,
+            "width": 0.22930643312754295,
+            "height": 0.4333234855106899
+          },
+          "confidence": 0.7695304959064373
+        },
+        {
+          "id": 11,
+          "box": {
+            "x": 0.7120682875602773,
+            "y": 0.5313855324472699,
+            "width": 0.25649010840491254,
+            "height": 0.17896820817674908
+          },
+          "confidence": 0.6595788194449739
+        },
+        {
+          "id": 10,
+          "box": {
+            "x": 0.6550044082172525,
+            "y": 0.6783425893102374,
+            "width": 0.3284227441347385,
+            "height": 0.20909341744014198
+          },
+          "confidence": 0.625834468612549
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0.00022396112939835743,
+            "y": 0.5351334129061017,
+            "width": 0.2221401368659113,
+            "height": 0.41016432217189236
+          },
+          "confidence": 0.6059178727008003
+        }
+      ]
+    },
+    {
+      "id": "validation-v3-715",
+      "scene": "real-bunch",
+      "support": 14,
+      "truePositive": 4,
+      "falsePositive": 2,
+      "falseNegative": 10,
+      "uncertainOrUnconfirmed": 3,
+      "confirmed": [
+        {
+          "id": 15,
+          "box": {
+            "x": 0.6560441511017936,
+            "y": 0.521692861237141,
+            "width": 0.1890161888939994,
+            "height": 0.3449718025160132
+          },
+          "confidence": 0.7730844459136819
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.1560382672718593,
+            "y": 0.19672104734811724,
+            "width": 0.15295342036655973,
+            "height": 0.3637076620729813
+          },
+          "confidence": 0.7559417729467377
+        },
+        {
+          "id": 11,
+          "box": {
+            "x": 0.5405190161296299,
+            "y": 0.5012270625333608,
+            "width": 0.15194651058741981,
+            "height": 0.31181369568250195
+          },
+          "confidence": 0.7159146881194793
+        },
+        {
+          "id": 2,
+          "box": {
+            "x": 0.05583942787987845,
+            "y": 0.15009117363402563,
+            "width": 0.17412844726017543,
+            "height": 0.43709292204483696
+          },
+          "confidence": 0.7070919926938757
+        },
+        {
+          "id": 6,
+          "box": {
+            "x": 0.2662450926644461,
+            "y": 0.2137304649589965,
+            "width": 0.19177395956856863,
+            "height": 0.4777432080381405
+          },
+          "confidence": 0.6237826798432451
+        },
+        {
+          "id": 7,
+          "box": {
+            "x": 0.37458776576178415,
+            "y": 0.26158403669084823,
+            "width": 0.16774587971823557,
+            "height": 0.5228661578634511
+          },
+          "confidence": 0.6101934260278341
+        }
+      ]
+    },
+    {
+      "id": "validation-v3-146841",
+      "scene": "real-bunch",
+      "support": 4,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 4,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "validation-v3-538776",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "validation-v3-305366",
+      "scene": "real-bunch",
+      "support": 14,
+      "truePositive": 2,
+      "falsePositive": 1,
+      "falseNegative": 12,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 7,
+          "box": {
+            "x": 0.5826144475369882,
+            "y": 0.21654396397726877,
+            "width": 0.24923076814703463,
+            "height": 0.3762527533939907
+          },
+          "confidence": 0.7501465204929758
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0.036347340592463875,
+            "y": 0.22206369468144008,
+            "width": 0.28718957519058746,
+            "height": 0.32602892603193007
+          },
+          "confidence": 0.6972202922219637
+        },
+        {
+          "id": 5,
+          "box": {
+            "x": 0.3572822441550742,
+            "y": 0.30292725563049316,
+            "width": 0.1966753570035309,
+            "height": 0.2466481753758021
+          },
+          "confidence": 0.6136121536218653
+        }
+      ]
+    },
+    {
+      "id": "commons-77250019",
+      "scene": "real-bunch",
+      "support": 4,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 3,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.038277200290134976,
+            "y": 0.3180084682646252,
+            "width": 0.3088827133178711,
+            "height": 0.628118605840774
+          },
+          "confidence": 0.6619104674726373
+        }
+      ]
+    },
+    {
+      "id": "commons-106238960",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-54850409",
+      "scene": "real-bunch",
+      "support": 5,
+      "truePositive": 4,
+      "falsePositive": 0,
+      "falseNegative": 1,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": [
+        {
+          "id": 9,
+          "box": {
+            "x": 0.4504886950765338,
+            "y": 0.21925149645124165,
+            "width": 0.2522927863257272,
+            "height": 0.48764240930950836
+          },
+          "confidence": 0.7742311113557143
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.2707441619464329,
+            "y": 0.1979010445731027,
+            "width": 0.12797837597983225,
+            "height": 0.7008166842990453
+          },
+          "confidence": 0.6901452799489256
+        },
+        {
+          "id": 5,
+          "box": {
+            "x": 0.32736544949667795,
+            "y": 0.22146016075497582,
+            "width": 0.1447498117174421,
+            "height": 0.6824185204884364
+          },
+          "confidence": 0.6538889718123571
+        },
+        {
+          "id": 7,
+          "box": {
+            "x": 0.38422664574214394,
+            "y": 0.25664341638958643,
+            "width": 0.16725836481366838,
+            "height": 0.5782591199117995
+          },
+          "confidence": 0.6463683078814313
+        }
+      ]
+    },
+    {
+      "id": "commons-39644562",
+      "scene": "real-bunch",
+      "support": 12,
+      "truePositive": 2,
+      "falsePositive": 3,
+      "falseNegative": 10,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": [
+        {
+          "id": 12,
+          "box": {
+            "x": 0.8001412153244019,
+            "y": 0.015719262380448597,
+            "width": 0.19841326986040392,
+            "height": 0.48398193480476503
+          },
+          "confidence": 0.6770963337692564
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0.025045373610087806,
+            "y": 0.16358903854612322,
+            "width": 0.12950938940048218,
+            "height": 0.32215793549068394
+          },
+          "confidence": 0.6477791698902422
+        },
+        {
+          "id": 11,
+          "box": {
+            "x": 0.6905175021716528,
+            "y": 0.014493730333116319,
+            "width": 0.21031786714281359,
+            "height": 0.4443464127797929
+          },
+          "confidence": 0.6354838484534575
+        },
+        {
+          "id": 4,
+          "box": {
+            "x": 0.28655459199632916,
+            "y": 0.45989322662353516,
+            "width": 0.1574276856013707,
+            "height": 0.3783193013024708
+          },
+          "confidence": 0.6143291348262423
+        },
+        {
+          "id": 6,
+          "box": {
+            "x": 0.31824945552008493,
+            "y": 0.31227705213758683,
+            "width": 0.2603009939193725,
+            "height": 0.2505230979313926
+          },
+          "confidence": 0.6111177571451947
+        }
+      ]
+    },
+    {
+      "id": "commons-386421",
+      "scene": "real-bunch",
+      "support": 6,
+      "truePositive": 5,
+      "falsePositive": 3,
+      "falseNegative": 1,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": [
+        {
+          "id": 2,
+          "box": {
+            "x": 0.0843082070350647,
+            "y": 0.29137015618340817,
+            "width": 0.22544651372092117,
+            "height": 0.5767165380110926
+          },
+          "confidence": 0.7929133844915093
+        },
+        {
+          "id": 7,
+          "box": {
+            "x": 0.5013204642704555,
+            "y": 0.12763415344680862,
+            "width": 0.4537264278956821,
+            "height": 0.47798477067719003
+          },
+          "confidence": 0.7340247073303914
+        },
+        {
+          "id": 4,
+          "box": {
+            "x": 0.26351603439876015,
+            "y": 0.3598745021812194,
+            "width": 0.16797171320234033,
+            "height": 0.5853605679890818
+          },
+          "confidence": 0.7130176473112968
+        },
+        {
+          "id": 10,
+          "box": {
+            "x": 0.5646319559642247,
+            "y": 0.297611823808448,
+            "width": 0.24056785447256912,
+            "height": 0.5066628195253116
+          },
+          "confidence": 0.6824684246988824
+        },
+        {
+          "id": 6,
+          "box": {
+            "x": 0.4255296247346061,
+            "y": 0.3482900135385213,
+            "width": 0.1767898797988891,
+            "height": 0.6095090325857173
+          },
+          "confidence": 0.6646350700524692
+        },
+        {
+          "id": 5,
+          "box": {
+            "x": 0.3617128304072789,
+            "y": 0.34449234464560335,
+            "width": 0.15379626410348077,
+            "height": 0.6094632439136899
+          },
+          "confidence": 0.6522696109446429
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0.06198293396404811,
+            "y": 0.32870328510033997,
+            "width": 0.13710782357624599,
+            "height": 0.5425712128102926
+          },
+          "confidence": 0.6221213769300249
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.20910006761550903,
+            "y": 0.31271112624718866,
+            "width": 0.14718023368290495,
+            "height": 0.5662302514130572
+          },
+          "confidence": 0.6181996531767346
+        }
+      ]
+    },
+    {
+      "id": "commons-50369757",
+      "scene": "real-bunch",
+      "support": 3,
+      "truePositive": 3,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 4,
+          "box": {
+            "x": 0.40849537508828304,
+            "y": 0.25235435602238376,
+            "width": 0.5141936370304654,
+            "height": 0.1668807941071699
+          },
+          "confidence": 0.8157488583570327
+        },
+        {
+          "id": 2,
+          "box": {
+            "x": 0.3271804026194981,
+            "y": 0.5105137342222852,
+            "width": 0.5478509834834508,
+            "height": 0.1773705661048836
+          },
+          "confidence": 0.7278054368510993
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.34194884981427875,
+            "y": 0.3764942819963051,
+            "width": 0.5512851987566267,
+            "height": 0.1843968152007845
+          },
+          "confidence": 0.7130332294725292
+        }
+      ]
+    },
+    {
+      "id": "commons-163182255",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 5,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 5,
+          "box": {
+            "x": 0.32929589918681557,
+            "y": 0.2967143285842169,
+            "width": 0.1663781745093209,
+            "height": 0.5367754981631324
+          },
+          "confidence": 0.8255776496945444
+        },
+        {
+          "id": 4,
+          "box": {
+            "x": 0.21324505976268227,
+            "y": 0.31097398485456196,
+            "width": 0.1756800072533744,
+            "height": 0.5149471646263486
+          },
+          "confidence": 0.7742141815010655
+        },
+        {
+          "id": 2,
+          "box": {
+            "x": 0.10209319421223233,
+            "y": 0.26721220924740746,
+            "width": 0.17586069447653635,
+            "height": 0.5655712400163924
+          },
+          "confidence": 0.7504102153900334
+        },
+        {
+          "id": 11,
+          "box": {
+            "x": 0.715725805078234,
+            "y": 0.28291434333437965,
+            "width": 0.17080543722425184,
+            "height": 0.5856191544305711
+          },
+          "confidence": 0.627163778915719
+        },
+        {
+          "id": 12,
+          "box": {
+            "x": 0.8231535383633206,
+            "y": 0.3201266697474888,
+            "width": 0.1674483673913139,
+            "height": 0.5177695864722842
+          },
+          "confidence": 0.6088010092635017
+        }
+      ]
+    },
+    {
+      "id": "commons-190708389",
+      "scene": "real-bunch",
+      "support": 28,
+      "truePositive": 2,
+      "falsePositive": 5,
+      "falseNegative": 26,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 10,
+          "box": {
+            "x": 0.5081087097698198,
+            "y": 0.2859108192580087,
+            "width": 0.4890102769417192,
+            "height": 0.13868384701865066
+          },
+          "confidence": 0.7657232146375605
+        },
+        {
+          "id": 5,
+          "box": {
+            "x": 0.374908852301049,
+            "y": 0.13461277314594816,
+            "width": 0.350608457469572,
+            "height": 0.15041441576821465
+          },
+          "confidence": 0.7091354647664687
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0.0034793831666924315,
+            "y": 0.022787707192557204,
+            "width": 0.19333305506172327,
+            "height": 0.2407045023781913
+          },
+          "confidence": 0.6898938581290324
+        },
+        {
+          "id": 4,
+          "box": {
+            "x": 0.2331315780698563,
+            "y": 0.3161890080996922,
+            "width": 0.3311192575108591,
+            "height": 0.2553189311708723
+          },
+          "confidence": 0.672396560741344
+        },
+        {
+          "id": 13,
+          "box": {
+            "x": 0.649717360389739,
+            "y": 0.13036754301616124,
+            "width": 0.350282639610261,
+            "height": 0.1645253215517317
+          },
+          "confidence": 0.6620374555662778
+        },
+        {
+          "id": 2,
+          "box": {
+            "x": 0.005908362193457408,
+            "y": 0.36240917444229137,
+            "width": 0.3645851253082394,
+            "height": 0.1802260705402919
+          },
+          "confidence": 0.6214872485781484
+        },
+        {
+          "id": 14,
+          "box": {
+            "x": 0.6572889084981676,
+            "y": 0.0010379808289664133,
+            "width": 0.33373725920570413,
+            "height": 0.157732401575361
+          },
+          "confidence": 0.6007125639815669
+        }
+      ]
+    },
+    {
+      "id": "commons-136165948",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-162278286",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 2,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 5,
+          "box": {
+            "x": 0.1593730534826006,
+            "y": 0.24010165532430017,
+            "width": 0.12564698287418913,
+            "height": 0.3009400594802131
+          },
+          "confidence": 0.7675755376886322
+        },
+        {
+          "id": 9,
+          "box": {
+            "x": 0.33582007033484323,
+            "y": 0.12893254416329522,
+            "width": 0.13002114636557444,
+            "height": 0.39497171129499165
+          },
+          "confidence": 0.6650121006795544
+        }
+      ]
+    },
+    {
+      "id": "commons-32361376",
+      "scene": "real-bunch",
+      "support": 3,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 3,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": []
+    },
+    {
+      "id": "commons-4249686",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-40372560",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 1,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 3,
+          "box": {
+            "x": 0.5018947238013858,
+            "y": 0.16157317161560059,
+            "width": 0.297722407749721,
+            "height": 0.3854763848440988
+          },
+          "confidence": 0.6696686014804385
+        }
+      ]
+    },
+    {
+      "id": "commons-35911558",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-187042063",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 3,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 13,
+          "box": {
+            "x": 0.7090319395065308,
+            "y": 0.1668534278869629,
+            "width": 0.1690941424596878,
+            "height": 0.40113898686000277
+          },
+          "confidence": 0.7569338539486168
+        },
+        {
+          "id": 7,
+          "box": {
+            "x": 0.34708288170042495,
+            "y": 0.12575217655726842,
+            "width": 0.17699229149591358,
+            "height": 0.35510662623814176
+          },
+          "confidence": 0.7047099968283845
+        },
+        {
+          "id": 11,
+          "box": {
+            "x": 0.5920442229225523,
+            "y": 0.15939278262002127,
+            "width": 0.15010873476664224,
+            "height": 0.3948430674416678
+          },
+          "confidence": 0.6304524380623668
+        }
+      ]
+    },
+    {
+      "id": "commons-23552139",
+      "scene": "real-bunch",
+      "support": 4,
+      "truePositive": 0,
+      "falsePositive": 1,
+      "falseNegative": 4,
+      "uncertainOrUnconfirmed": 4,
+      "confirmed": [
+        {
+          "id": 4,
+          "box": {
+            "x": 0.5401323352541243,
+            "y": 0.2190263507746849,
+            "width": 0.3984012263161795,
+            "height": 0.7011517693014706
+          },
+          "confidence": 0.7479369106240483
+        }
+      ]
+    },
+    {
+      "id": "commons-40876507",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-33528433",
+      "scene": "real-bunch",
+      "support": 4,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 4,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": []
+    },
+    {
+      "id": "commons-187319835",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 1,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 4,
+          "box": {
+            "x": 0.4066411086491176,
+            "y": 0.5068016052246094,
+            "width": 0.2625559625171479,
+            "height": 0.4764302117483957
+          },
+          "confidence": 0.6767857959715151
+        }
+      ]
+    },
+    {
+      "id": "commons-84532949",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 2,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 3,
+          "box": {
+            "x": 0.5042759094919478,
+            "y": 0.197209221976144,
+            "width": 0.2360212291990008,
+            "height": 0.554389893062531
+          },
+          "confidence": 0.7284159038147209
+        },
+        {
+          "id": 2,
+          "box": {
+            "x": 0.396616986819676,
+            "y": 0.26333224584185894,
+            "width": 0.14679878098624094,
+            "height": 0.509460691421751
+          },
+          "confidence": 0.6138621332381149
+        }
+      ]
+    },
+    {
+      "id": "commons-49628748",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-104973327",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 2,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 5,
+          "box": {
+            "x": 0.11944979429244995,
+            "y": 0.3269876979646229,
+            "width": 0.17689120769500732,
+            "height": 0.6052737917218889
+          },
+          "confidence": 0.6735150452071537
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.03611356019973755,
+            "y": 0.0030222393217540925,
+            "width": 0.15301637990134104,
+            "height": 0.3315851801917667
+          },
+          "confidence": 0.6347650919873082
+        }
+      ]
+    },
+    {
+      "id": "commons-170573707",
+      "scene": "real-bunch",
+      "support": 5,
+      "truePositive": 5,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.03585166590554374,
+            "y": 0.1959228515625,
+            "width": 0.2602407591683524,
+            "height": 0.726023628598168
+          },
+          "confidence": 0.8932080510090259
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.28615120479038786,
+            "y": 0.21780733835129512,
+            "width": 0.29202454430716385,
+            "height": 0.7262363887968518
+          },
+          "confidence": 0.8721052016188757
+        },
+        {
+          "id": 6,
+          "box": {
+            "x": 0.46650697503771105,
+            "y": 0.05426270621163505,
+            "width": 0.522507361003331,
+            "height": 0.35299936930338544
+          },
+          "confidence": 0.8715368698873505
+        },
+        {
+          "id": 4,
+          "box": {
+            "x": 0.407559871673584,
+            "y": 0.18446833746773858,
+            "width": 0.3879322324480329,
+            "height": 0.670598030090332
+          },
+          "confidence": 0.8046382870584665
+        },
+        {
+          "id": 5,
+          "box": {
+            "x": 0.43220387186322895,
+            "y": 0.13588691893078034,
+            "width": 0.5234949248177666,
+            "height": 0.4977753048851376
+          },
+          "confidence": 0.8034251449271572
+        }
+      ]
+    },
+    {
+      "id": "commons-109673182",
+      "scene": "real-bunch",
+      "support": 9,
+      "truePositive": 5,
+      "falsePositive": 2,
+      "falseNegative": 4,
+      "uncertainOrUnconfirmed": 2,
+      "confirmed": [
+        {
+          "id": 11,
+          "box": {
+            "x": 0.5279303448540824,
+            "y": 0.07992736876957,
+            "width": 0.40381659780229845,
+            "height": 0.27019627888997394
+          },
+          "confidence": 0.8403749500925457
+        },
+        {
+          "id": 5,
+          "box": {
+            "x": 0.45831456354686195,
+            "y": 0.3076570601690383,
+            "width": 0.14699402877262663,
+            "height": 0.5906783209906685
+          },
+          "confidence": 0.757498951762372
+        },
+        {
+          "id": 4,
+          "box": {
+            "x": 0.4042712450027466,
+            "y": 0.3014498816596137,
+            "width": 0.1489258834293911,
+            "height": 0.5874332851833768
+          },
+          "confidence": 0.7467084187033493
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0.05854264327457973,
+            "y": 0.2656773915366521,
+            "width": 0.37647421019417904,
+            "height": 0.32664916628883006
+          },
+          "confidence": 0.742344782050818
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.2738411937441145,
+            "y": 0.3329115973578559,
+            "width": 0.19841109003339494,
+            "height": 0.5562974233475942
+          },
+          "confidence": 0.7018877902935685
+        },
+        {
+          "id": 12,
+          "box": {
+            "x": 0.5449318885803223,
+            "y": 0.26050641801622176,
+            "width": 0.396556990487235,
+            "height": 0.2712961529928541
+          },
+          "confidence": 0.6919772315929684
+        },
+        {
+          "id": 2,
+          "box": {
+            "x": 0.1042275769369943,
+            "y": 0.333954099624876,
+            "width": 0.3316023349761963,
+            "height": 0.4945761059957837
+          },
+          "confidence": 0.636183806812042
+        }
+      ]
+    },
+    {
+      "id": "commons-66197367",
+      "scene": "real-bunch",
+      "support": 4,
+      "truePositive": 3,
+      "falsePositive": 0,
+      "falseNegative": 1,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 4,
+          "box": {
+            "x": 0.5464999789283389,
+            "y": 0.17481374740600586,
+            "width": 0.35719617207845056,
+            "height": 0.5973512785775321
+          },
+          "confidence": 0.7906179044651367
+        },
+        {
+          "id": 1,
+          "box": {
+            "x": 0.18623532567705428,
+            "y": 0.21228432655334473,
+            "width": 0.34446922938028973,
+            "height": 0.6778117588588171
+          },
+          "confidence": 0.7703997023469498
+        },
+        {
+          "id": 2,
+          "box": {
+            "x": 0.32847254616873606,
+            "y": 0.1954327310834612,
+            "width": 0.3737940107073103,
+            "height": 0.6968314307076591
+          },
+          "confidence": 0.7422954597807632
+        }
+      ]
+    },
+    {
+      "id": "commons-50313498",
+      "scene": "real-bunch",
+      "support": 4,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 4,
+      "uncertainOrUnconfirmed": 2,
+      "confirmed": []
+    },
+    {
+      "id": "commons-102348664",
+      "scene": "real-bunch",
+      "support": 4,
+      "truePositive": 2,
+      "falsePositive": 1,
+      "falseNegative": 2,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": [
+        {
+          "id": 7,
+          "box": {
+            "x": 0.537684440612793,
+            "y": 0.04054473127637591,
+            "width": 0.29820732843308223,
+            "height": 0.4478669507162912
+          },
+          "confidence": 0.7756518686914404
+        },
+        {
+          "id": 3,
+          "box": {
+            "x": 0.2480330126626151,
+            "y": 0.01417132786342076,
+            "width": 0.3255301203046527,
+            "height": 0.3811881542205811
+          },
+          "confidence": 0.7524302049344911
+        },
+        {
+          "id": 5,
+          "box": {
+            "x": 0.45639567148117793,
+            "y": 0.020600523267473494,
+            "width": 0.20928469158354268,
+            "height": 0.41748588425772537
+          },
+          "confidence": 0.6362058324846878
+        }
+      ]
+    },
+    {
+      "id": "commons-121297521",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-163561963",
+      "scene": "real-bunch",
+      "support": 1,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 1,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "commons-54850396",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-143998",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-345469",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-492362",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-127182",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-174123",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-369771",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-127476",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-117425",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-166277",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-287347",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-34873",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-551780",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-347335",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-529568",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-7991",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-2149",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-540414",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-250901",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-30213",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-562059",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-581206",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-210230",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-311303",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-275198",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-231097",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-226130",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-336356",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-389109",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-104612",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "negative-v2-117719",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    }
+  ],
+  "f1": 0.50814332247557
+}

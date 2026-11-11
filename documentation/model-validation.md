@@ -24,7 +24,7 @@ YOLOX-Nano, 448 × 448 BGR/Float32, vollständiges Backbone ab der ersten Epoche
 
 Die endgültigen Splits enthalten **575 Training / 117 Validierung / 101 bisheriger Test / 60 neuer Test**. 471 Mendeley-Trainingsfotos werden durch echte COCO- und Commons-Fotos ergänzt. Aus dem zuvor fehlgeschlagenen und bereits eingesehenen v1-Test wurden 29 positive Fotos ausdrücklich Trainingsdaten und 30 Negativfotos ebenfalls Trainingsdaten; das visuell unbestimmbare positive Foto blieb in der Validierung. Sechs zusätzliche COCO-Ausschnitte erhielten vor der Fortsetzung neue Einzelboxen ausschließlich für die Validierung. Es gibt keine Überlappung der Bildgruppen zwischen Training, Validierung und dem neuen Test.
 
-600 zusätzliche Trainingsmontagen pro Epoche verwenden ausschließlich aus ursprünglichen Trainingsfotos gewonnene Fruchtmasken. Überdeckungen verkleinern die sichtbaren Zielboxen; fast vollständig verdeckte Früchte werden ausgelassen. Echte Trainingshintergründe und zu 30 % einfarbige Hintergründe, Drehungen und Beleuchtungsänderungen ergänzen die realen Fotos. Positive reale Zusatzfotos werden sechsmal je Epoche gezogen. Diese Montagen sind Trainingsaugmentation und kein Nachweis von realer Erkennungsleistung.
+600 zusätzliche Trainingsmontagen je Epoche und sechsfache Gewichtung echter positiver Zusatzfotos. Die Montagen verwenden ausschließlich aus ursprünglichen Trainingsfotos gewonnene Fruchtmasken. Überdeckungen verkleinern die sichtbaren Zielboxen; fast vollständig verdeckte Früchte werden ausgelassen. Echte Trainingshintergründe und zu 30 % einfarbige Hintergründe, Drehungen und Beleuchtungsänderungen ergänzen die realen Fotos. Diese Montagen sind Trainingsaugmentation und kein Nachweis von realer Erkennungsleistung.
 
 Das erste Experiment 0.2 mit einem früh ausgewählten Head-Checkpoint verfehlte die Ziele (0 richtige Empfehlungen, 1 falsche, 169 ausgelassene reife Früchte). Seine Originalberichte bleiben unter `experiment-v1/` erhalten. Dieser bereits gesehene Bestand wird nicht als unabhängiger neuer Test ausgegeben. COCO-Trainingsfotos waren im generischen Vortraining enthalten; die 30 Commons-Prüffotos sind davon getrennt. Physische Frucht- und Aufnahmeserien-IDs sind bei den öffentlichen Quellen nicht verfügbar.
 
@@ -32,7 +32,7 @@ Das erste Experiment 0.2 mit einem früh ausgewählten Head-Checkpoint verfehlte
 
 Python und Browser lesen dieselbe versionierte Konfiguration. Ein direkter automatisierter Vergleich prüft beide Decoder auf identischen Daten einschließlich Clipping, Gleichständen, Überlappung und Unsicherheit. Die globale eindeutige Zuordnung nutzt IoU und Bewegung; zweifelhafte Zuordnungen übertragen keine bestätigte Reife. Fehlende oder unsichere Treffer verlieren die Empfehlung sofort. Ein Neustart setzt die Nummern auf 1 zurück. Die App prüft den SHA-256 der geladenen Gewichte gegen die Modellbeschreibung.
 
-Kompakte Nummernschilder vermeiden überdeckte Beschriftungen auf schmalen Bildschirmen. Freie Rahmenpositionen und bei Bedarf Zuordnungslinien halten die Zahlen lesbar; der vollständige Status steht je Frucht in der Ergebnisliste. Ein Mobilfall prüft zwanzig dicht überlappende Rahmen. Die Startüberwachung nutzt den tatsächlichen Laufzeitprovider: Eine kalte WebAssembly-Sitzung erhält ein eigenes Zeitlimit und wird nicht als hängende GPU behandelt.
+Kompakte Nummernschilder vermeiden überdeckte Beschriftungen auf schmalen Bildschirmen. Freie Rahmenpositionen und bei Bedarf Zuordnungslinien halten die Zahlen lesbar; der vollständige Status steht je Frucht in der Ergebnisliste. Ein Mobilfall prüft zwanzig dicht überlappende Rahmen. Die Startüberwachung nutzt den tatsächlichen Laufzeitprovider: Eine kalte WebAssembly-Sitzung erhält auch beim Wechsel von WebGPU während Start oder Auswertung ihr eigenes Zeitlimit. Sitzungsaufbau und laufende Auswertung haben getrennte Zeitbudgets; während des Wechsels werden alte Empfehlungen gelöscht.
 
 ## Bisheriger Einzelbildtest mit neuem Modell
 
@@ -59,6 +59,10 @@ Chromium- und WebKit-Prüfungen verwenden mobile Ansichtsgrößen in Linux. Kame
 - [Ergebnis des fehlgeschlagenen ersten Experiments](../public/evaluation/experiment-v1/individual-report.json)
 
 Modell-SHA-256: `18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2`. Benchmark-SHA-256: `3745ee5c1cc3722291ec45cc260c45b209d3db673ee31ff05da843bd7a4dd2eb`. Trainingsplan-SHA-256: `50f337b1183141bcfbc33ed78c23606034c7f3ccba73af513ab62cd579ac359b`.
+
+## Weiterer Trainingsversuch
+
+Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `b1de06f` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **2 TP, 0 FP, 109 FN; Präzision 100,0 %, Recall 1,8 %**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die Gewichte 0.3 im Änderungsstand nicht. Die öffentliche Pages-Version bleibt 0.1.0. [Bericht mit Grenzen](../public/evaluation/experiment-v4/report.md), [Ergebnisse](../public/evaluation/individual-v4-report.json), [Validierungswahl](../public/evaluation/experiment-v4/validation-selection.json), [Trainingsverlauf](../public/evaluation/experiment-v4/training-history.json), [Beispiele aus gespeicherten Ausgaben](../public/evaluation/experiment-v4/examples.md).
 
 ## Quellen
 

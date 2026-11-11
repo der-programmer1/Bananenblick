@@ -8,20 +8,24 @@
 |---|---|
 | TypeScript | Bestanden |
 | Automatisierte Tests | 22 bestanden: Überlappung, globale eindeutige Zuordnung, Bewegung, Unsicherheit, drei Bestätigungen, fehlende Treffer, lesbare Nummern in dichten Büscheln, Liste/Rahmen, Python-/TypeScript-Parität |
-| Python-Pipeline | 9 Tests bestanden, einschließlich Verdeckung, sichtbarer Zielboxen, 448-Pixel-Spiegelung, ursprünglicher Split-Integrität und Metriksemantik |
-| Chromium unter Linux, mobile Pixel-7-Ansichtsgröße | Fünf Browserfälle bestanden am Produktionsbuild unter `/Bananenblick/`: kalter WASM-Start, verspätete Kamerafreigabe nach Stopp, falscher Modellhash, kontrollierte Kamera/Worker mit Auswahl/Bewegung/Unsicherheit/Verschwinden/Hoch-/Querformat/Stopp/Nummernreset/GPU-Hang und zwanzig dicht überlappenden Nummernschildern, zusätzlich echtes ONNX-Beispiel mit verzögertem Download und drei Durchläufen |
-| WebKit unter Linux, mobile iPhone-13-Ansichtsgröße | Dieselben fünf Browserfälle bestanden; WebKit-WPE ist kein echtes iPhone/Safari |
+| Python-Pipeline | 12 Tests bestanden, einschließlich Verdeckung, sichtbarer Zielboxen, echter Fotoausschnitte mit erhaltenen Klassen, 448-Pixel-Spiegelung, ursprünglicher Split-Integrität und Metriksemantik |
+| Chromium unter Linux, mobile Pixel-7-Ansichtsgröße | Sieben Browserfälle bestanden am Produktionsbuild unter `/Bananenblick/`: kalter WASM-Start, GPU-/WASM-Wechsel beim Start und während Auswertung (kontrollierte Uhr), verspätete Kamerafreigabe nach Stopp, falscher Modellhash, kontrollierte Kamera/Worker mit Auswahl/Bewegung/Unsicherheit/Verschwinden/Hoch-/Querformat/Stopp/Nummernreset/GPU-Hang und zwanzig dicht überlappenden Nummernschildern, zusätzlich echtes ONNX-Beispiel mit verzögertem Download und drei Durchläufen |
+| WebKit unter Linux, mobile iPhone-13-Ansichtsgröße | Dieselben sieben Browserfälle bestanden; WebKit-WPE ist kein echtes iPhone/Safari |
 | Tatsächliche physische Geräte | **Keine** Android-/Chrome- oder iPhone-/Safari-Geräte geprüft |
 | WASM unter Node/Linux | Echter ONNX-Aufruf, endliche `[1,4116,8]`-Ausgabe und bildabhängige Ergebnisse; Werte in `web-runtime.json` |
 | Statischer Pages-Build | Bestanden; relative Assets, Worker, Modellhashes und gemeinsame Schwellwerte geprüft; Browser laufen auf diesem Build |
 | Neue Datenprüfung | Keine Bildgruppenüberschneidung, identischen Quellbilder oder pHash-Nahduplikatkandidaten zwischen neuem Test und übrigen Splits |
 | Neuer realer Büscheltest | 30 reale Commons-Büschelszenen und 30 COCO-Negativszenen vor Training eingefroren; **6 TP, 1 FP, 90 FN**, Präzision **85,7 %**, Recall **6,3 %** |
 
-Der neue Prüfbestand wurde in Commit `59efe9e` eingefroren und bei der Fortsetzung in Commit `18308d4` unverändert gelassen. Bilder, Annotationen, Lizenzen und Hashes stehen in `individual-benchmark.json`. Die zusätzliche Einzelannotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. Öffentliche Quellen liefern keine physischen Frucht-/Aufnahmeserien-IDs. Das alte fehlgeschlagene Experiment wurde ausdrücklich Training/Validierung und ist unter `experiment-v1/` archiviert.
+Der neue Bestand wurde am 2026-11-10T18:48:59.307322+00:00 in Commit `59efe9e` vor dem vollständigen Nachtraining festgelegt: **30 reale Büschelfotos von Wikimedia Commons und 30 reale Fotos ohne Bananen aus COCO 2017**. Die 60 Fotos und ihre Annotationen blieben auch bei der Trainingsfortsetzung in Commit `18308d4` unverändert. Bilder, Annotationen, Lizenzen und Hashes stehen in `individual-benchmark.json`. Die zusätzliche Einzelannotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. Öffentliche Quellen liefern keine physischen Frucht-/Aufnahmeserien-IDs. Das alte fehlgeschlagene Experiment wurde ausdrücklich Training/Validierung und ist unter `experiment-v1/` archiviert.
 
 Die Empfehlungsmetrik nutzt den echten TypeScript-Tracker mit drei identischen Ergebnissen je statischem Foto. Unsichere Ergebnisse zählen als ausgelassene Empfehlungen. Auf den 30 Negativfotos entstanden 0 falsche Empfehlungen. Zu große Gesamtrahmen ohne passende Einzelbox zählen nicht als richtige Erkennung. Nach Sichtung des neuen Tests erfolgte kein Nachjustieren.
 
 Browser-Kameratests verwenden kontrollierte Video-/Worker-Doubles. Chromium verwendet einen lokalen Canvas-Medienstream; WebKit simuliert Medienquelle und Trackzustände. Das zusätzliche Beispiel verwendet unveränderte Bildpixel und den echten Worker. Modellhash und Browserversion werden vom Lauf erfasst und in `device-validation.json` dokumentiert. Ein künstlich um 13 Sekunden verzögerter WASM-Download prüft, dass Netzwerklatenz keinen unnötigen GPU-Neustart auslöst. Kein solcher Test belegt den physischen Kameraindikator, echte Smartphone-Leistung oder echten Kamera-Netzwerkverkehr.
+
+## Weiterer Trainingsversuch
+
+Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `b1de06f` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **2 TP, 0 FP, 109 FN; Präzision 100,0 %, Recall 1,8 %**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die Gewichte 0.3 im Änderungsstand nicht. Die öffentliche Pages-Version bleibt 0.1.0. [Bericht mit Grenzen](./experiment-v4/report.md), [Ergebnisse](./individual-v4-report.json), [Validierungswahl](./experiment-v4/validation-selection.json), [Trainingsverlauf](./experiment-v4/training-history.json), [Beispiele aus gespeicherten Ausgaben](./experiment-v4/examples.md).
 
 ## Modellabnahme
 

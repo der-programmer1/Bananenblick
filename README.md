@@ -10,7 +10,7 @@ Ausschließlich drei aufeinanderfolgende sichere Bewertungen als „reif“ erge
 
 Die bestehende YOLOX-Nano-Pipeline wurde mit engen Einzelboxen vollständig nachtrainiert. 13 abgeschlossene Pilotepochen und 9 Fortsetzungsepochen, 448 × 448, zwei CPU-Threads. Datensätze der Fortsetzung: **575 Training / 117 Validierung / 101 bisheriger Test / 60 neue Prüffotos**. Überlappung, wechselndes Licht, gemischte Schalenreife und echte Negativfotos sind ergänzt; Trainingsmontagen verwenden ausschließlich ursprüngliche Trainingsfrüchte.
 
-Der neue Test enthält **30 reale Commons-Büschelszenen und 30 reale COCO-Negativszenen**, vor Training in Commit `59efe9e` festgelegt und bei der Fortsetzung in Commit `18308d4` unverändert. Ergebnis nach drei Bestätigungen: **6 richtige Empfehlungen, 1 falsche Empfehlungen, 90 ausgelassene reife Einzelbananen; Präzision 85,7 %, Recall 6,3 %**. Ziel: ≥95 % Präzision, ≥80 % Recall. Unsicherheit zählt als ausgelassene Empfehlung.
+Der neue Bestand wurde am 2026-11-10T18:48:59.307322+00:00 in Commit `59efe9e` vor dem vollständigen Nachtraining festgelegt: **30 reale Büschelfotos von Wikimedia Commons und 30 reale Fotos ohne Bananen aus COCO 2017**. Die 60 Fotos und ihre Annotationen blieben auch bei der Trainingsfortsetzung in Commit `18308d4` unverändert. Ergebnis nach drei Bestätigungen: **6 richtige Empfehlungen, 1 falsche Empfehlungen, 90 ausgelassene reife Einzelbananen; Präzision 85,7 %, Recall 6,3 %**. Ziel: ≥95 % Präzision, ≥80 % Recall. Unsicherheit zählt als ausgelassene Empfehlung.
 
 Die Annotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. COCO-Trainingsfotos waren im generischen Vortraining enthalten. Das frühere fehlgeschlagene Experiment bleibt archiviert; seine bereits eingesehenen Szenen sind ausdrücklich Trainings-/Validierungsdaten und kein neuer unabhängiger Test.
 
@@ -19,6 +19,10 @@ Die Annotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige 
 - [Eingefrorene Szenen, Boxen, Hashes und Quellen](ml/individual-benchmark-v2.json)
 - [Tatsächliche Browserprüfungen und offene Geräteabnahme](public/evaluation/acceptance.md)
 - [Trainingspipeline und Reproduktion](ml/README.md)
+
+## Weiterer Trainingsversuch
+
+Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `b1de06f` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **2 TP, 0 FP, 109 FN; Präzision 100,0 %, Recall 1,8 %**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die Gewichte 0.3 im Änderungsstand nicht. Die öffentliche Pages-Version bleibt 0.1.0. [Bericht mit Grenzen](public/evaluation/experiment-v4/report.md), [Ergebnisse](public/evaluation/individual-v4-report.json), [Validierungswahl](public/evaluation/experiment-v4/validation-selection.json), [Trainingsverlauf](public/evaluation/experiment-v4/training-history.json), [Beispiele aus gespeicherten Ausgaben](public/evaluation/experiment-v4/examples.md).
 
 ## Lokal prüfen
 

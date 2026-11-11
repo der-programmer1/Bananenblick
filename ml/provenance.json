@@ -64,5 +64,54 @@
     "acceptedStaticBenchmark": false,
     "physicalDeviceTestsPerformed": false,
     "annotationReview": "Coding assistant visible-instance review; independent human adjudication pending."
+  },
+  "individual_fruit_v4_experiment": {
+    "modelSha256": "9aa2bb21476b8b7b4e6fd8d79444e8971f15773e34204a8ae51f65c3a420f5d4",
+    "checkpointSha256": "a008ea1f3a14cbbe23d074a68648677100368b45e106886c08b24b6c8b58aa5d",
+    "benchmarkSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+    "benchmarkFrozenCommit": "b1de06fd32e1759957b709bc1a40bbb972928890",
+    "refinementPlanSha256": "8fb7ebc88096cd082ac08ee1036a1f0e16d4e7e25aca5b17e0f2c3e53ed17b78",
+    "refinementFrozenCommit": "db04e9b4c6ee592a39a7e20ff871d3402ce07944",
+    "training": {
+      "epochs": 24,
+      "selectedEpoch": 13,
+      "totalRunSeconds": 2795.0962340831757,
+      "seed": 20261114,
+      "initialCheckpointSha256": "a0324678588958b72b4cfe5adaba77866d5d29a23e26ad1a563ceb6e4da017e7",
+      "data": {
+        "train": 592,
+        "val": 177,
+        "test": 101,
+        "acceptance": 60
+      },
+      "syntheticTrainingScenesPerEpoch": 150,
+      "realPositiveRepeat": 8,
+      "realBunchCropProbability": 0.5,
+      "fullBackboneFromEpoch": 1,
+      "benchmarkFrozenCommit": "b1de06fd32e1759957b709bc1a40bbb972928890",
+      "trainingPlanSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+      "refinement": {
+        "planSha256": "8fb7ebc88096cd082ac08ee1036a1f0e16d4e7e25aca5b17e0f2c3e53ed17b78",
+        "initialCheckpointSha256": "8c3ea02239fbeaca73a3e1235a0e39597642c61e0a9be937073463858c18fec2",
+        "stage1CompletedEpochs": 20,
+        "epochs": 4,
+        "selectedFromRefinement": false
+      }
+    },
+    "acceptedStaticBenchmark": false,
+    "adoptedByApp": false,
+    "publishedThisVersion": false,
+    "physicalDeviceTestsPerformed": false,
+    "results": {
+      "truePositive": 2,
+      "falsePositive": 0,
+      "falseNegative": 109,
+      "precision": 1,
+      "recall": 0.018018018018018018,
+      "negativeFalseRecommendations": 0
+    },
+    "report": "public/evaluation/experiment-v4/report.md",
+    "annotationReview": "Coding-assistant visible-instance review before inference; no independent expert adjudication.",
+    "sourcesAndLicenses": "ml/individual-benchmark-v4.json; base dataset provenance is retained in the report."
   }
 }
