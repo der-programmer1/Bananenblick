@@ -1,6 +1,6 @@
 """Check source groups and perceptual near-duplicates without running a model."""
 from pathlib import Path
-import hashlib,json
+import argparse,hashlib,json
 import numpy as np
 from PIL import Image,ImageOps
 from prepare_data import phash
@@ -15,6 +15,11 @@ def signature(record):
     return {'id':record['id'],'group':record['group'],'sourcePixelSha256':hashlib.sha256(str(im.size).encode()+im.tobytes()).hexdigest(),'hashes':hashes}
 
 def main():
+    global DATA
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--data',type=Path,default=DATA)
+    parser.add_argument('--output',type=Path,default=ROOT.parent/'public/evaluation/individual-split-audit.json')
+    args=parser.parse_args();DATA=args.data
     sets={s:json.loads((DATA/f'{s}.json').read_text()) for s in ['train','val','test','acceptance']}
     groups={s:{r['group'] for r in rs} for s,rs in sets.items()};group_overlaps=[]
     for a,b in [('train','val'),('train','test'),('train','acceptance'),('val','acceptance')]:
@@ -30,7 +35,7 @@ def main():
         'scope':'No model predictions. Public sources do not supply physical-fruit or camera-session IDs; this audit cannot establish independent fruit populations.',
         'counts':{s:len(rs) for s,rs in sets.items()},'groupOverlaps':group_overlaps,'exactSourceDuplicates':exact,'nearDuplicateCandidates':near,
         'passedAutomaticChecks':not group_overlaps and not exact and not near}
-    target=ROOT.parent/'public/evaluation/individual-split-audit.json';target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(report,ensure_ascii=False),flush=True)
     assert not group_overlaps and not exact,'Actual source overlap invalidates the held-out claim.'
 

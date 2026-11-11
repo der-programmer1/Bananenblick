@@ -25,11 +25,30 @@ def prepare(im,boxes,augment=False,size=SIZE):
         b[:,3]*=w*ratio;b[:,4]*=h*ratio
     return canvas,b
 
+def crop_visible_fruits(image, boxes, crop, minimum_visible=.25):
+    """Clip real-photo instances to a crop without keeping hidden full boxes."""
+    height,width=image.shape[:2]
+    x1,y1,x2,y2=map(int,crop)
+    if not (0<=x1<x2<=width and 0<=y1<y2<=height):
+        raise ValueError('Crop must be a nonempty region inside the photo')
+    cw,ch=x2-x1,y2-y1
+    visible=[]
+    for cls,cx,cy,bw,bh in boxes:
+        left,top=(cx-bw/2)*width,(cy-bh/2)*height
+        right,bottom=(cx+bw/2)*width,(cy+bh/2)*height
+        a,b=max(x1,left),max(y1,top)
+        c,d=min(x2,right),min(y2,bottom)
+        if c-a<3 or d-b<3 or (c-a)*(d-b)<minimum_visible*bw*width*bh*height:
+            continue
+        visible.append([cls,((a+c)/2-x1)/cw,((b+d)/2-y1)/ch,(c-a)/cw,(d-b)/ch])
+    return image[y1:y2,x1:x2].copy(),visible
+
 class BananaDataset(Dataset):
-    def __init__(self,data,split,augment=False,mosaic=.25,size=SIZE):
+    def __init__(self,data,split,augment=False,mosaic=.25,size=SIZE,crop_probability=0):
         self.data=Path(data);self.records=json.loads((self.data/f'{split}.json').read_text());self.augment=augment;self.mosaic=mosaic
         self.images=[cv2.imread(str(self.data/r['file'])) for r in self.records]
         self.size=size
+        self.crop_probability=crop_probability
         if any(im is None for im in self.images):raise ValueError('Cannot decode a prepared image')
     def __len__(self):return len(self.records)
     def __getitem__(self,i):
@@ -41,7 +60,15 @@ class BananaDataset(Dataset):
                 im[oy:oy+self.size//2,ox:ox+self.size//2]=tile
                 if len(b):b[:,1]+=ox;b[:,2]+=oy;bs.append(b)
             b=np.concatenate(bs) if bs else np.zeros((0,5),dtype=np.float32)
-        else:im,b=prepare(self.images[i],self.records[i]['boxes'],self.augment,self.size)
+        else:
+            photo,boxes=self.images[i],self.records[i]['boxes']
+            if self.augment and self.crop_probability>0 and len(boxes)>1 and random.random()<self.crop_probability:
+                h,w=photo.shape[:2];side=max(4,int(min(w,h)*random.uniform(.55,1.)))
+                center=random.choice(boxes)
+                x=min(w-side,max(0,int(center[1]*w-side/2)))
+                y=min(h-side,max(0,int(center[2]*h-side/2)))
+                photo,boxes=crop_visible_fruits(photo,boxes,(x,y,x+side,y+side))
+            im,b=prepare(photo,boxes,self.augment,self.size)
         if self.augment:
             if random.random()<.5:
                 im=im[:,::-1].copy()

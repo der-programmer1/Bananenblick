@@ -4,13 +4,31 @@ from pathlib import Path
 import json,unittest,tempfile
 from unittest.mock import patch
 import numpy as np
-from train import prepare,metrics,iou,BananaDataset
+from train import prepare,metrics,iou,BananaDataset,crop_visible_fruits
 from scene_augmentation import visible_targets
 from prepare_data import normalize_display_image
 from PIL import Image
 ROOT=Path(__file__).resolve().parent
 
 class PipelineChecks(unittest.TestCase):
+    def test_real_crop_keeps_visible_extents_and_classes(self):
+        photo=np.zeros((100,200,3),np.uint8)
+        boxes=[[1,.5,.5,.5,.8],[0,.8,.5,.1,.4]]
+        crop,visible=crop_visible_fruits(photo,boxes,(100,10,180,90))
+        self.assertEqual(crop.shape,(80,80,3))
+        np.testing.assert_allclose(visible,[[1,.3125,.5,.625,1],[0,.75,.5,.25,.5]])
+        self.assertEqual(boxes,[[1,.5,.5,.5,.8],[0,.8,.5,.1,.4]])
+
+    def test_real_crop_drops_hidden_and_tiny_fragments(self):
+        photo=np.zeros((100,100,3),np.uint8)
+        _,visible=crop_visible_fruits(photo,[[1,.2,.5,.4,.8],[0,.9,.5,.2,.8]],(35,0,70,100))
+        self.assertEqual(visible,[])
+
+    def test_real_crop_rejects_outside_or_empty_regions(self):
+        photo=np.zeros((100,100,3),np.uint8)
+        for crop in [(0,0,101,100),(10,10,10,50),(-1,0,50,50)]:
+            with self.assertRaises(ValueError):crop_visible_fruits(photo,[],crop)
+
     def test_visible_boxes_shrink_after_occlusion(self):
         first=np.zeros((20,20),bool);first[:,:10]=True
         second=np.zeros((20,20),bool);second[:,10:]=True

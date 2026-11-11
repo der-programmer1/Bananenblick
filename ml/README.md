@@ -68,4 +68,21 @@ Eingang `images`: Float32 `[1,3,448,448]`, BGR, 0…255, links oben eingeordnet,
 
 Die Empfehlung ist ein Trackingzustand: drei sichere, eindeutig zugeordnete Reifebewertungen; bei Unsicherheit, fehlender Frucht, Unterbrechung oder zu alten Liveframes wird sie gelöscht. Ein statisches Beispiel benötigt ebenfalls drei tatsächliche Modellaufrufe, bleibt aber unabhängig von der Rechenzeit dasselbe Foto.
 
+## Nächstes Experiment: mehr echte Fotos und Ausschnitte
+
+Der neue Prüfbestand in `individual-benchmark-v4.json` wird vor dem nächsten Training committed. Er enthält **30 weitere reale Commons-Büschelfotos und 30 weitere COCO-Negativfotos**. Die ausgewählten Ausschnitte bilden eine nähere Kameraansicht nach; sie belegen keine Genauigkeit auf dem gesamten ursprünglichen Foto. Alle sichtbaren reifen Instanzen bleiben Ziele, auch wenn sie teilweise verdeckt sind. Unsichere Modellantworten zählen weiterhin als ausgelassene Empfehlungen. Bildquellen, Autoren, Lizenzen, Einzelboxen und Dateihashes sind im Manifest enthalten. Die Codex-Annotationen besitzen keine unabhängige Expertenabnahme.
+
+17 zusätzliche echte Trainingsfotos ergänzen den bisherigen Bestand. Die bereits eingesehenen alten 60 Prüffotos werden ausdrücklich zu Validierungsdaten. Neuer Stand: **592 Training / 177 Validierung / 101 alter Einzelbildtest / 60 neuer Holdout**. Verwandte Ansichten bleiben aus anderen Splits ausgeschlossen; der Quellen-, Pixel- und pHash-Audit vergleicht die unbeschnittenen Quellen.
+
+Das Modell verwendet weiter YOLOX-Nano mit 448 Pixeln. Die Fortsetzung reduziert die Montage-Slots von 600 auf 150 je Epoche, gewichtet echte positive Fotos achtfach und zeigt in der Hälfte der echten Mehrfruchtfälle einen zufälligen Ausschnitt. Zielboxen werden auf sichtbare Bereiche begrenzt; fast vollständig entfernte Früchte bleiben nicht als volle Zielbox stehen. Der unveränderte Startcheckpoint liegt unter `artifacts/banana-individual-v4-initial.pt`. Der neue Holdout wird während Training und Schwellwertwahl nicht inferiert.
+
+```bash
+ml/.venv/bin/python ml/build_data_v4.py
+ml/.venv/bin/python ml/audit_individual_data.py --data ml/work/individual-v4 --output ml/work/v4-split-audit.json
+ml/.venv/bin/python ml/verify.py
+ml/.venv/bin/python ml/train_individual_v4.py
+```
+
+Dieses Experiment allein gibt keine Veröffentlichung frei. Die bestehende Modellprüfung 0.3 und alle fehlgeschlagenen Ergebnisse bleiben erhalten, bis ein neuer Modellstand tatsächlich geprüft ist. Die echten Android-/Chrome- und iPhone-/Safari-Prüfungen bleiben erforderlich.
+
 `npm run test:browser` baut den Produktionsstand und prüft ihn unter dem Pages-Unterpfad `/Bananenblick/`, einschließlich langsamen Laufzeitdownloads, verspäteter Kamerafreigabe nach Stopp, Modellhashfehlern und GPU-Hang mit WASM-Neustart. Chromium/WebKit verwenden mobile Linux-Emulation; echte Geräteprüfungen werden dadurch nicht ersetzt. Physische Android-/Chrome- und iPhone-/Safari-Nachweise bleiben gesondert in `public/evaluation/device-validation.json` dokumentiert. Die private Sites-Veröffentlichung gehört nicht zu dieser Änderung.

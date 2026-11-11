@@ -41,10 +41,10 @@ def compose_scene(sprites,background,rng=random,size=320):
     return canvas,visible_targets(masks,classes,areas)
 
 class SceneDataset(Dataset):
-    def __init__(self,data,sprites,synthetic_count=600,real_repeat=6,size=448,plain_background_probability=0):
+    def __init__(self,data,sprites,synthetic_count=600,real_repeat=6,size=448,plain_background_probability=0,real_crop_probability=0):
         self.size=size
         self.plain_background_probability=plain_background_probability
-        self.base=BananaDataset(data,'train',True,mosaic=0,size=size)
+        self.base=BananaDataset(data,'train',True,mosaic=0,size=size,crop_probability=real_crop_probability)
         self.indices=[]
         for i,r in enumerate(self.base.records):
             self.indices.extend([i]*(real_repeat if isinstance(r['id'],str) and r['boxes'] else 1))
