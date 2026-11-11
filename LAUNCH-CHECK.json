@@ -1,12 +1,12 @@
 {
   "status": "acceptance-failed-not-published",
-  "checkedAt": "2026-11-10T19:45:34.466415+00:00",
+  "checkedAt": "2026-11-11T06:31:10.776818+00:00",
   "scope": "GitHub Pages only; previous public deployment unchanged",
   "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
   "verified": {
     "typescript": "passed",
     "unitTests": {
-      "passed": 20,
+      "passed": 22,
       "failed": 0
     },
     "pythonPipelineTests": {
@@ -19,57 +19,69 @@
         "chromium": "158.0.8127.18",
         "webkit": "27.2"
       },
-      "passed": 8,
+      "passed": 10,
       "failed": 0,
       "skipped": 0,
       "cases": [
         {
           "project": "chromium-mobile-emulation",
+          "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+          "status": "expected",
+          "durationMs": 15249
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+          "status": "expected",
+          "durationMs": 16010
+        },
+        {
+          "project": "chromium-mobile-emulation",
           "title": "stopping a pending camera request also stops a stream granted afterwards",
           "status": "expected",
-          "durationMs": 632
+          "durationMs": 650
         },
         {
           "project": "webkit-mobile-emulation",
           "title": "stopping a pending camera request also stops a stream granted afterwards",
           "status": "expected",
-          "durationMs": 1337
+          "durationMs": 1424
         },
         {
           "project": "chromium-mobile-emulation",
           "title": "a model hash mismatch stops inference and explains the retry",
           "status": "expected",
-          "durationMs": 1017
+          "durationMs": 1191
         },
         {
           "project": "webkit-mobile-emulation",
           "title": "a model hash mismatch stops inference and explains the retry",
           "status": "expected",
-          "durationMs": 2657
+          "durationMs": 2943
         },
         {
           "project": "chromium-mobile-emulation",
           "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
           "status": "expected",
-          "durationMs": 7537
+          "durationMs": 8031
         },
         {
           "project": "webkit-mobile-emulation",
           "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
           "status": "expected",
-          "durationMs": 9020
+          "durationMs": 11232
         },
         {
           "project": "chromium-mobile-emulation",
           "title": "slow runtime download and three actual ONNX passes work in both orientations",
           "status": "expected",
-          "durationMs": 16250
+          "durationMs": 17272
         },
         {
           "project": "webkit-mobile-emulation",
           "title": "slow runtime download and three actual ONNX passes work in both orientations",
           "status": "expected",
-          "durationMs": 19686
+          "durationMs": 22740
         }
       ],
       "verifiedModels": [
@@ -95,7 +107,9 @@
     "wasmNodeRuntime": "passed; Linux reference only",
     "staticProductionBuild": "passed",
     "repositorySubpathsModelHashAndSharedPostprocessing": "passed",
-    "newSplitSourceAndPerceptualAudit": "passed"
+    "newSplitSourceAndPerceptualAudit": "passed",
+    "numberLabelsOnDenseMobileBunch": "passed; 20 overlapping frames, unique non-overlapping number badges",
+    "coldWasmInitialization": "passed; actual provider gets its own timeout"
   },
   "acceptance": {
     "passed": false,
@@ -116,6 +130,8 @@
     "releaseGate": "failed with exit 1: precision >=95% and recall >=80% required",
     "workflow": ".github/workflows/pages.yml",
     "reviewBranch": "codex/numbered-individual-bananas",
-    "pullRequest": "https://github.com/der-programmer1/Bananenblick/pull/1"
+    "pullRequest": "https://github.com/der-programmer1/Bananenblick/pull/1",
+    "catalogUrl": "https://der-programmer1.github.io/AppShelf/apps/bananenblick/",
+    "cataloguedPublicVersion": "0.1.0 prototype; this update remains unpublished"
   }
 }

@@ -7,10 +7,10 @@
 | Prüfung | Ergebnis und Grenze |
 |---|---|
 | TypeScript | Bestanden |
-| Automatisierte Tests | 20 bestanden: Überlappung, globale eindeutige Zuordnung, Bewegung, Unsicherheit, drei Bestätigungen, fehlende Treffer, Nummern, Liste/Rahmen, Python-/TypeScript-Parität |
+| Automatisierte Tests | 22 bestanden: Überlappung, globale eindeutige Zuordnung, Bewegung, Unsicherheit, drei Bestätigungen, fehlende Treffer, lesbare Nummern in dichten Büscheln, Liste/Rahmen, Python-/TypeScript-Parität |
 | Python-Pipeline | 9 Tests bestanden, einschließlich Verdeckung, sichtbarer Zielboxen, 448-Pixel-Spiegelung, ursprünglicher Split-Integrität und Metriksemantik |
-| Chromium unter Linux, mobile Pixel-7-Ansichtsgröße | Vier Browserfälle bestanden am Produktionsbuild unter `/Bananenblick/`: verspätete Kamerafreigabe nach Stopp, falscher Modellhash, kontrollierte Kamera/Worker mit Auswahl/Bewegung/Unsicherheit/Verschwinden/Hoch-/Querformat/Stopp/Nummernreset/GPU-Hang, zusätzlich echtes ONNX-Beispiel mit verzögertem Download und drei Durchläufen |
-| WebKit unter Linux, mobile iPhone-13-Ansichtsgröße | Dieselben vier Browserfälle bestanden; WebKit-WPE ist kein echtes iPhone/Safari |
+| Chromium unter Linux, mobile Pixel-7-Ansichtsgröße | Fünf Browserfälle bestanden am Produktionsbuild unter `/Bananenblick/`: kalter WASM-Start, verspätete Kamerafreigabe nach Stopp, falscher Modellhash, kontrollierte Kamera/Worker mit Auswahl/Bewegung/Unsicherheit/Verschwinden/Hoch-/Querformat/Stopp/Nummernreset/GPU-Hang und zwanzig dicht überlappenden Nummernschildern, zusätzlich echtes ONNX-Beispiel mit verzögertem Download und drei Durchläufen |
+| WebKit unter Linux, mobile iPhone-13-Ansichtsgröße | Dieselben fünf Browserfälle bestanden; WebKit-WPE ist kein echtes iPhone/Safari |
 | Tatsächliche physische Geräte | **Keine** Android-/Chrome- oder iPhone-/Safari-Geräte geprüft |
 | WASM unter Node/Linux | Echter ONNX-Aufruf, endliche `[1,4116,8]`-Ausgabe und bildabhängige Ergebnisse; Werte in `web-runtime.json` |
 | Statischer Pages-Build | Bestanden; relative Assets, Worker, Modellhashes und gemeinsame Schwellwerte geprüft; Browser laufen auf diesem Build |

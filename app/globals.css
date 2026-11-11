@@ -1155,6 +1155,7 @@ footer button {
   z-index: 4;
 }
 .detection-box {
+  --frame-border: 2px;
   position: absolute;
   border: 2px solid #d9bc5e;
   border-radius: 6px;
@@ -1170,6 +1171,7 @@ footer button {
   cursor: pointer;
 }
 .detection-box.ready {
+  --frame-border: 3px;
   border: 3px solid #43df86;
   color: #c5ffda;
   background: #43df8610;
@@ -1196,18 +1198,30 @@ footer button {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(-1px);
-  flex-wrap: wrap;
-  white-space: normal;
-  max-width: 140px;
+  transform: translate(calc(-1 * var(--frame-border)), calc(-1 * var(--frame-border)));
+  z-index: 4;
+  justify-content: center;
+  white-space: nowrap;
   background: #20342eea;
   box-shadow: 0 1px 7px #0003;
   border-radius: 0 0 5px 0;
-  padding: 4px 7px;
+  padding: 2px 4px;
   font-size: 11px;
   font-weight: 600;
   text-shadow: none;
   line-height: 1.4;
+}
+.detection-box.ready .detection-label { background: #195735; }
+.fruit-label-connectors {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  stroke: white;
+  stroke-width: 1.5px;
+  filter: drop-shadow(0 1px 1px #000);
 }
 .detection-label > span {
   font-size: 10px;

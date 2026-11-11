@@ -21,13 +21,13 @@
     },
     {
       "path": "LAUNCH-CHECK.json",
-      "bytes": 4438,
-      "sha256": "3b85846ade6bcfb0d5913fda21c734a519989062f2f637d016a48ecd151cc88a"
+      "bytes": 5257,
+      "sha256": "9e710bf98640a83a351c5023a16bdd7daf10f225e886a6f0f1a44a177cab15a8"
     },
     {
       "path": "README.md",
-      "bytes": 5609,
-      "sha256": "ff256d7d236d15cf966a84cd5ec773a2e95758d83e96720257b8504fb1869e61"
+      "bytes": 5856,
+      "sha256": "0d7a61b8b514c6087bf15b272b66650bc5f3404605a3de9432e8145f27f161ad"
     },
     {
       "path": "START-HIER.md",
@@ -36,13 +36,13 @@
     },
     {
       "path": "app/fruit-results.tsx",
-      "bytes": 2638,
-      "sha256": "a968618984ad978993ca73a8b86aac222a862c0f0c2da1068516bb92e890eff5"
+      "bytes": 3365,
+      "sha256": "90a956957e5a4ad8d49b4e6d334de78bf3c060775ee3f91fd29433982879fbc2"
     },
     {
       "path": "app/globals.css",
-      "bytes": 50285,
-      "sha256": "cd8d6ab31759d16bb1a4a710f6715a5a79d41276415cee97ab98b5624115c9fa"
+      "bytes": 50670,
+      "sha256": "88f328f4d6e94dca2baec6a60f8491bfbed605299baaf1e74311524a45782110"
     },
     {
       "path": "app/layout.tsx",
@@ -65,19 +65,19 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     {
-      "path": "docs/assets/index-Bd-1JQsk.js",
-      "bytes": 240921,
-      "sha256": "8343f88693625ab814c138a29a6cc4bed4d44585fa89f5eca04222ecaca94562"
+      "path": "docs/assets/index-CHyzWYcv.css",
+      "bytes": 46396,
+      "sha256": "49d56c19dc9359fd091073d046f4d923378e630f5d750e9b3a877633e8a12aaf"
     },
     {
-      "path": "docs/assets/index-DgAxo33-.css",
-      "bytes": 46066,
-      "sha256": "190ce7ab0e87edb2145e9f1484c9982f36f2c51c075b690eb8f006cc39147831"
+      "path": "docs/assets/index-Db0Dw7Xn.js",
+      "bytes": 242551,
+      "sha256": "31a9758e47e2569b1ab59dfd24126893a756f58f8a67893b4c0690b55da708dc"
     },
     {
-      "path": "docs/assets/inference.worker-Bc4sMtQ9.js",
-      "bytes": 4687,
-      "sha256": "5379b95f27f40347ae658aa606e37be8029fb0b9e723b759ece4fceb2923e0f1"
+      "path": "docs/assets/inference.worker-BZvcmkOj.js",
+      "bytes": 4889,
+      "sha256": "5281047cb70f3022f004c3b1f76ece3a3d288d664d654b84b2a773c6d3a80b10"
     },
     {
       "path": "docs/assets/ort.all.min-DOAHANBe.js",
@@ -86,8 +86,8 @@
     },
     {
       "path": "docs/evaluation/acceptance.md",
-      "bytes": 6427,
-      "sha256": "1ee9ddda8c7646c7a05cef86b6248470c58f46c973989d6ec25f7d6385053063"
+      "bytes": 6527,
+      "sha256": "9a4291ebf157816c4e4c74b32ab6547b285afb87782789c7c179c68c251ccdee"
     },
     {
       "path": "docs/evaluation/annotation-orientation-qa.jpg",
@@ -96,8 +96,8 @@
     },
     {
       "path": "docs/evaluation/device-validation.json",
-      "bytes": 3151,
-      "sha256": "c65937b2286039598ff2cee971500e3d85c9f3bfd5dae7cbb0ef52bf68ce6c04"
+      "bytes": 3593,
+      "sha256": "1c91ba67ff8319d9d9ee4452ebd480912c6c3a58b3b4faaa252e0493cd753d0b"
     },
     {
       "path": "docs/evaluation/experiment-v1/acceptance.md",
@@ -241,8 +241,8 @@
     },
     {
       "path": "docs/evaluation/model-report.md",
-      "bytes": 8142,
-      "sha256": "931b715a58afe8d46971fd431029e50ed683de6a69dbf6bfc053bb25a21cd660"
+      "bytes": 8603,
+      "sha256": "0e65fa398099fd8d7ae9da618244d9e1ff1193797014c72f83cff7392584bb33"
     },
     {
       "path": "docs/evaluation/pilot-v2/training-history.json",
@@ -372,7 +372,7 @@
     {
       "path": "docs/index.html",
       "bytes": 1085,
-      "sha256": "d9bd04116b689c3f40b4be28cd1f0f7a9fadbb35bc48f74d6ce05d9b0ba026e0"
+      "sha256": "fd9ba7ebcde28284bf6f50561035ec48fd74d2ee4fbfc74e4741077f06099c12"
     },
     {
       "path": "docs/models/banana-yolox-nano.onnx",
@@ -396,8 +396,8 @@
     },
     {
       "path": "documentation/model-validation.md",
-      "bytes": 8351,
-      "sha256": "3c69486d95e2c87b3168200f78296d42038f79ed3ffee020efa693f2b6b2466e"
+      "bytes": 8812,
+      "sha256": "5ca5aaf1445f1c2800beaca76a3d9bb3adc234ffe3f9eeae02e93b098e7248d5"
     },
     {
       "path": "index.html",
@@ -415,9 +415,14 @@
       "sha256": "ab723a133f60078f2ecaa356b02f2b3417443b5e9a7de31669161f411aab8cfe"
     },
     {
+      "path": "lib/fruit-labels.ts",
+      "bytes": 2794,
+      "sha256": "64ee0dbc0c91b08b0f326cf6161a62eb9d19b154b2a1da01c7c06609d5514cc1"
+    },
+    {
       "path": "lib/inference.worker.ts",
-      "bytes": 6249,
-      "sha256": "ec231263b96362a08dbc6e5c485b553e04563844b2add4979d45874860f37093"
+      "bytes": 6481,
+      "sha256": "5c4ec7d94c25f8583ba6da7933213b48dd1eaa6f5ca6d5bce849007cccff52b2"
     },
     {
       "path": "lib/model-types.ts",
@@ -436,8 +441,8 @@
     },
     {
       "path": "lib/use-scanner.ts",
-      "bytes": 19428,
-      "sha256": "4112f89da7b4c4b6f0865517601aa90e7a9312ec6b2c346e29faf48bd37a1ecb"
+      "bytes": 19769,
+      "sha256": "0f8e91a2d113cc7c56ab5899c633c9bc2f8361952a8f178082b28b77538fadf1"
     },
     {
       "path": "ml/.gitignore",
@@ -651,8 +656,8 @@
     },
     {
       "path": "ml/write_summary.py",
-      "bytes": 21229,
-      "sha256": "e336a10069368447e0298943a8584ef6dac4bb4094a433e87e8d6423bfd8eefd"
+      "bytes": 22042,
+      "sha256": "eecb01a1c6a26da26c6542fb076a5c09f16351db87af0d7acf433317bcf5ec29"
     },
     {
       "path": "next.config.ts",
@@ -686,8 +691,8 @@
     },
     {
       "path": "public/evaluation/acceptance.md",
-      "bytes": 6427,
-      "sha256": "1ee9ddda8c7646c7a05cef86b6248470c58f46c973989d6ec25f7d6385053063"
+      "bytes": 6527,
+      "sha256": "9a4291ebf157816c4e4c74b32ab6547b285afb87782789c7c179c68c251ccdee"
     },
     {
       "path": "public/evaluation/annotation-orientation-qa.jpg",
@@ -696,8 +701,8 @@
     },
     {
       "path": "public/evaluation/device-validation.json",
-      "bytes": 3151,
-      "sha256": "c65937b2286039598ff2cee971500e3d85c9f3bfd5dae7cbb0ef52bf68ce6c04"
+      "bytes": 3593,
+      "sha256": "1c91ba67ff8319d9d9ee4452ebd480912c6c3a58b3b4faaa252e0493cd753d0b"
     },
     {
       "path": "public/evaluation/experiment-v1/acceptance.md",
@@ -841,8 +846,8 @@
     },
     {
       "path": "public/evaluation/model-report.md",
-      "bytes": 8142,
-      "sha256": "931b715a58afe8d46971fd431029e50ed683de6a69dbf6bfc053bb25a21cd660"
+      "bytes": 8603,
+      "sha256": "0e65fa398099fd8d7ae9da618244d9e1ff1193797014c72f83cff7392584bb33"
     },
     {
       "path": "public/evaluation/pilot-v2/training-history.json",
@@ -1026,13 +1031,18 @@
     },
     {
       "path": "tests/browser/scanner.spec.ts",
-      "bytes": 13049,
-      "sha256": "56db1c2a6c2d96936c99cc412af62876e681b2be7241f63d2600c4444094d33b"
+      "bytes": 15710,
+      "sha256": "d6cc8f0c872b571eb4d5362e4ea5a5af2105275f36041deb10ffc32c32f6680e"
     },
     {
       "path": "tests/detection.test.ts",
       "bytes": 8987,
       "sha256": "55200de147bea35a5ba3e9cf48ec530128c4956d7038478536d1c3bde19bddc0"
+    },
+    {
+      "path": "tests/fruit-labels.test.ts",
+      "bytes": 1587,
+      "sha256": "202ad84944733b5d771dd6467affc6ef15afb9883ae672ee17a7e35a0cb9c523"
     },
     {
       "path": "tests/results.test.ts",

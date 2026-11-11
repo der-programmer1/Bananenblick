@@ -46,4 +46,6 @@ Nach testgetriebenem Nachtraining ist ein neuer, vorab festgelegter unberührter
 
 Die Auswertung bleibt lokal im Browser. Kamerabilder werden weder hochgeladen noch gespeichert. Es gibt keine neue öffentliche API. Die private Sites-Veröffentlichung wurde nicht geändert oder ausgeliefert.
 
+Der [AppShelf-Eintrag](https://der-programmer1.github.io/AppShelf/apps/bananenblick/) verlinkt die bestehende öffentliche Version 0.1.0 als Prototyp. Das noch nicht abgenommene Büschel-Update ist damit nicht als veröffentlicht gekennzeichnet.
+
 Quellen: Rohit et al. (2026), [Mendeley Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0; [COCO 2017](https://cocodataset.org/) und Wikimedia Commons mit Quellen und individuellen Lizenzen im Manifest. Tellerbeispiel: [goodiesfirst, „putahracsa fruit plate“](https://www.flickr.com/photos/scaredykat/4430551771/), CC BY 2.0, verkleinert. Gemischter Büschel: [Esther Musasike, „Bunch of banana.jpg“](https://commons.wikimedia.org/wiki/File:Bunch_of_banana.jpg), CC BY-SA 4.0, Ausschnitt und verkleinert. YOLOX: Megvii, Apache 2.0. Ursprüngliche Herkunft: offizieller Sites-/Vinext-Starter; das Standard-Buildziel ist der statische Pages-Export.

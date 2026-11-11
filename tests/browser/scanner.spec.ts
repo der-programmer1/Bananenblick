@@ -1,5 +1,43 @@
 import { test, expect } from "@playwright/test";
 
+test("a cold WASM session gets its own initialization timeout without a GPU restart", async ({ page }) => {
+  await page.addInitScript(() => {
+    const state = window as any;
+    state.wasmStarts = 0;
+    state.wasmAborts = 0;
+    state.wasmResults = 0;
+    state.Worker = class {
+      onmessage: ((event: any) => void) | null = null;
+      terminated = false;
+      terminate() { this.terminated = true; state.wasmAborts++; }
+      postMessage(message: any) {
+        if (message.type === "init") {
+          state.wasmStarts++;
+          setTimeout(() => this.onmessage?.({ data: { type: "status", phase: "session", provider: "wasm", message: "Lokale Erkennung wird vorbereitet …" } }), 10);
+          setTimeout(() => { if (!this.terminated) this.onmessage?.({ data: {
+            type: "ready", inputSize: 320, provider: "wasm", thresholds: { classification: .8 },
+          } }); }, 13000);
+          return;
+        }
+        setTimeout(() => {
+          if (!this.terminated) {
+            state.wasmResults++;
+            this.onmessage?.({ data: { ...message, type: "result", detections: [], inferenceMs: 20 } });
+          }
+        }, 20);
+      }
+    };
+  });
+  await page.goto("./");
+  await page.getByRole("button", { name: "Erst mal ein Beispiel ansehen" }).click();
+  await page.locator(".example-tile").filter({ hasText: "Gelbe Banane" }).click();
+  await expect.poll(() => page.evaluate(() => (window as any).wasmResults), { timeout: 20000 }).toBe(3);
+  expect(await page.evaluate(() => (window as any).wasmStarts)).toBe(1);
+  expect(await page.evaluate(() => (window as any).wasmAborts)).toBe(0);
+  await expect(page.locator(".runtime-indicator")).toContainText("WebAssembly");
+  await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
+});
+
 test("stopping a pending camera request also stops a stream granted afterwards", async ({ page }) => {
   await page.addInitScript(() => {
     const state = window as any;
@@ -120,7 +158,7 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
                 data: {
                   type: "ready",
                   inputSize: 320,
-                  provider: "wasm",
+                  provider: this.forceWasm ? "wasm" : "webgpu",
                   thresholds: { classification: 0.6 },
                 },
               }),
@@ -131,14 +169,15 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
         // A hanging GPU must be terminated and retried in a fresh WASM worker.
         if (!this.forceWasm) return;
         const phase = state.testPhase;
-        let detections = [0, 1, 2, 3].map((n) => {
+        const dense = phase === "dense";
+        let detections = Array.from({ length: dense ? 20 : 4 }, (_, n) => {
           const ripe = n % 2 === 1 && phase !== "uncertain";
           return {
             box: {
-              x: 0.06 + n * 0.21 + Math.sin(message.frameId) * 0.005,
-              y: 0.25,
+              x: (dense ? .3 + (n % 4) * .015 : 0.06 + n * 0.21) + Math.sin(message.frameId) * 0.005,
+              y: dense ? .2 + (n % 3) * .02 : 0.25,
               width: 0.25,
-              height: 0.45,
+              height: dense ? .6 : 0.45,
             },
             ripeness: ripe ? "reif" : phase === "uncertain" ? "unsicher" : "unreif",
             predictedClass: ripe ? 1 : 0,
@@ -184,6 +223,16 @@ test("number selection, motion, uncertainty, disappearance, orientation and came
   });
   await expect(page.locator(".detection-box")).toHaveCount(0);
   await expect(page.locator(".fruit-results li")).toHaveCount(0);
+  await page.evaluate(() => { (window as any).testPhase = "dense"; });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator(".detection-label")).toHaveCount(20);
+  const badges = await page.locator(".detection-label").evaluateAll((nodes) => nodes.map((node) => {
+    const r = node.getBoundingClientRect();
+    return { x: r.x, y: r.y, right: r.right, bottom: r.bottom, text: node.textContent };
+  }));
+  for (const [index, a] of badges.entries()) for (const b of badges.slice(index + 1))
+    expect(a.right <= b.x + .5 || b.right <= a.x + .5 || a.bottom <= b.y + .5 || b.bottom <= a.y + .5,
+      `Number badges ${a.text} and ${b.text} must remain readable`).toBe(true);
   await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
   expect(
     await page.evaluate(() =>

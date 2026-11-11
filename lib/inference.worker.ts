@@ -15,6 +15,7 @@ const send = (message: unknown) => scope.postMessage(message);
 
 async function createSession(preferGpu: boolean) {
   if (preferGpu && "gpu" in navigator) {
+    send({ type: "status", phase: "session", provider: "webgpu", message: "Lokale Erkennung wird vorbereitet …" });
     try {
       session = await ort.InferenceSession.create(modelBytes, {
         executionProviders: ["webgpu"],
@@ -26,6 +27,7 @@ async function createSession(preferGpu: boolean) {
       send({ type: "status", message: "WebGPU nicht verfügbar. WebAssembly wird vorbereitet." });
     }
   }
+  send({ type: "status", phase: "session", provider: "wasm", message: "Lokale Erkennung wird vorbereitet …" });
   session = await ort.InferenceSession.create(modelBytes, {
     executionProviders: ["wasm"],
     graphOptimizationLevel: "all",

@@ -39,6 +39,7 @@ export function useScanner() {
   const workerStartedRef = useRef(0);
   const workerPhaseRef = useRef("download");
   const forceWasmRef = useRef(false);
+  const activeProviderRef = useRef("");
   const restartWorkerRef = useRef<(forceWasm: boolean) => void>(() => {});
   const sizeRef = useRef(320);
   const modelSha256Ref = useRef<string | undefined>(undefined);
@@ -110,6 +111,7 @@ export function useScanner() {
     busySinceRef.current = 0;
     workerStartedRef.current = 0;
     forceWasmRef.current = false;
+    activeProviderRef.current = "";
     modelSha256Ref.current = undefined;
     setModelReady(false);
     setProvider("");
@@ -212,6 +214,7 @@ export function useScanner() {
     captureRef.current = capture;
   }, [capture]);
   const prepareWorker = useCallback((forceWasm = false) => {
+    activeProviderRef.current = "";
     workerStartedRef.current = performance.now();
     workerPhaseRef.current = "download";
     forceWasmRef.current = forceWasm;
@@ -234,17 +237,22 @@ export function useScanner() {
       const data = event.data;
       if (data.type === "status") {
         setModelStatus(data.message);
+        if (data.provider) activeProviderRef.current = data.provider;
         if (data.phase && data.phase !== workerPhaseRef.current) {
           workerPhaseRef.current = data.phase;
           workerStartedRef.current = performance.now();
         }
       }
-      if (data.type === "provider") setProvider(data.provider);
+      if (data.type === "provider") {
+        activeProviderRef.current = data.provider;
+        setProvider(data.provider);
+      }
       if (data.type === "error") {
         fail(data.message);
         return;
       }
       if (data.type === "ready") {
+        activeProviderRef.current = data.provider;
         readyRef.current = true;
         sizeRef.current = data.inputSize;
         modelSha256Ref.current = data.modelSha256;
@@ -409,8 +417,9 @@ export function useScanner() {
     const interval = setInterval(() => {
       const now = performance.now();
       if (modeRef.current !== "live" && modeRef.current !== "example") return;
-      const initTimeout = workerPhaseRef.current === "download" ? 120000 : forceWasmRef.current ? 30000 : 12000;
-      const stalled = (busyRef.current && now - busySinceRef.current > (forceWasmRef.current ? 10000 : 2500)) ||
+      const usingGpu = activeProviderRef.current === "webgpu";
+      const initTimeout = workerPhaseRef.current === "download" ? 120000 : usingGpu ? 12000 : 30000;
+      const stalled = (busyRef.current && now - busySinceRef.current > (usingGpu ? 2500 : 10000)) ||
         (workerRef.current && !readyRef.current && now - workerStartedRef.current > initTimeout);
       if (stalled) {
         if (!readyRef.current && workerPhaseRef.current === "download") {

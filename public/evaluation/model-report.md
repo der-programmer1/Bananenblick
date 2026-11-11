@@ -32,6 +32,8 @@ Das erste Experiment 0.2 mit einem früh ausgewählten Head-Checkpoint verfehlte
 
 Python und Browser lesen dieselbe versionierte Konfiguration. Ein direkter automatisierter Vergleich prüft beide Decoder auf identischen Daten einschließlich Clipping, Gleichständen, Überlappung und Unsicherheit. Die globale eindeutige Zuordnung nutzt IoU und Bewegung; zweifelhafte Zuordnungen übertragen keine bestätigte Reife. Fehlende oder unsichere Treffer verlieren die Empfehlung sofort. Ein Neustart setzt die Nummern auf 1 zurück. Die App prüft den SHA-256 der geladenen Gewichte gegen die Modellbeschreibung.
 
+Kompakte Nummernschilder vermeiden überdeckte Beschriftungen auf schmalen Bildschirmen. Freie Rahmenpositionen und bei Bedarf Zuordnungslinien halten die Zahlen lesbar; der vollständige Status steht je Frucht in der Ergebnisliste. Ein Mobilfall prüft zwanzig dicht überlappende Rahmen. Die Startüberwachung nutzt den tatsächlichen Laufzeitprovider: Eine kalte WebAssembly-Sitzung erhält ein eigenes Zeitlimit und wird nicht als hängende GPU behandelt.
+
 ## Bisheriger Einzelbildtest mit neuem Modell
 
 Die 101 bisherigen Testbilder wurden separat ausgewertet: rohe Präzision 91,1 %, roher Recall 91,1 %, sicher richtig beschriftet 77,2 %. Diese Werte sind keine Aussage über bestätigte Einzelbananen in Büscheln. Die alte Einzelaufnahme-Metrik wird nicht mit dem neuen Büscheltest vermischt.

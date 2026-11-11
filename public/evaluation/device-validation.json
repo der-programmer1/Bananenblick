@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T19:44:31.875Z",
+  "generatedAt": "2026-11-11T06:29:36.216Z",
   "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
   "physicalDeviceTestsPerformed": false,
   "devices": [],
@@ -9,57 +9,69 @@
       "chromium": "158.0.8127.18",
       "webkit": "27.2"
     },
-    "passed": 8,
+    "passed": 10,
     "failed": 0,
     "skipped": 0,
     "cases": [
       {
         "project": "chromium-mobile-emulation",
+        "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+        "status": "expected",
+        "durationMs": 15249
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+        "status": "expected",
+        "durationMs": 16010
+      },
+      {
+        "project": "chromium-mobile-emulation",
         "title": "stopping a pending camera request also stops a stream granted afterwards",
         "status": "expected",
-        "durationMs": 632
+        "durationMs": 650
       },
       {
         "project": "webkit-mobile-emulation",
         "title": "stopping a pending camera request also stops a stream granted afterwards",
         "status": "expected",
-        "durationMs": 1337
+        "durationMs": 1424
       },
       {
         "project": "chromium-mobile-emulation",
         "title": "a model hash mismatch stops inference and explains the retry",
         "status": "expected",
-        "durationMs": 1017
+        "durationMs": 1191
       },
       {
         "project": "webkit-mobile-emulation",
         "title": "a model hash mismatch stops inference and explains the retry",
         "status": "expected",
-        "durationMs": 2657
+        "durationMs": 2943
       },
       {
         "project": "chromium-mobile-emulation",
         "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
         "status": "expected",
-        "durationMs": 7537
+        "durationMs": 8031
       },
       {
         "project": "webkit-mobile-emulation",
         "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
         "status": "expected",
-        "durationMs": 9020
+        "durationMs": 11232
       },
       {
         "project": "chromium-mobile-emulation",
         "title": "slow runtime download and three actual ONNX passes work in both orientations",
         "status": "expected",
-        "durationMs": 16250
+        "durationMs": 17272
       },
       {
         "project": "webkit-mobile-emulation",
         "title": "slow runtime download and three actual ONNX passes work in both orientations",
         "status": "expected",
-        "durationMs": 19686
+        "durationMs": 22740
       }
     ],
     "verifiedModels": [
