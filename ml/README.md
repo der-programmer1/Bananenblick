@@ -83,6 +83,8 @@ ml/.venv/bin/python ml/verify.py
 ml/.venv/bin/python ml/train_individual_v4.py
 ml/.venv/bin/python ml/refine_individual_v4.py
 ml/.venv/bin/python ml/evaluate_individual_v4.py
+node --import tsx scripts/prepare-benchmark-examples.ts
+ml/.venv/bin/python ml/render_benchmark_examples.py
 ```
 
 Die erste Phase endete nach 20 Epochen; Validierungs-F1 wählte Epoche 13. Weil der Frühstopp vor den spät geplanten L1-Epochen lag und Lokalisierungsfehler überwiegen, ist eine gesondert vor der Ausführung festgelegte Feinabstimmung mit vier L1-Epochen ergänzt. Plan: `individual-refinement-v4.json`; unveränderter Startcheckpoint: `artifacts/banana-individual-v4-stage1.pt`. Auch dieser Plan wird vor Ausführung committed; die Fotos und Annotationen des neuen Holdouts bleiben unverändert und weiterhin nicht inferiert. Der alte ausgewählte Checkpoint bleibt zusätzlich zu den vier neuen Epochen wählbar. Die Feinabstimmung darf direkt vom mitgelieferten Checkpoint und dem aufgezeichneten Erstverlauf aus reproduziert werden; ein erneuter Pilotlauf ist dafür nicht nötig. Laufzeiten sind Messwerte des tatsächlichen Laufs und keine bitweise reproduzierbaren Zeitangaben.

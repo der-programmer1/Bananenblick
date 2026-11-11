@@ -120,6 +120,7 @@ def main():
         'frozenCommit':frozen_commit,'realBunchScenes':30,'realBunchSceneCountVerified':True,
         'thresholds':thresholds,'inputSize':size,'selectedEpoch':checkpoint['epoch'],
         'limitations':plan['limits'],'physicalDeviceTestsPerformed':False,
+        **({'refinement':checkpoint['refinement']} if 'refinement' in checkpoint else {}),
         'baselineValidation':{k:v for k,v in json.loads((TRAINING/'baseline-validation.json').read_text()).items() if k!='scenes'},
         'selectedEpochValidation':checkpoint['validation'],
         'baseDatasetProvenance':[{'file':str(path.relative_to(SITE)),'sha256':sha(path)} for path in

@@ -16,12 +16,14 @@ benchmark_intro=(f"Der neue Bestand wurde am {report['frozenAt']} in Commit `{re
     if is_v4 else f"Der neue Bestand wurde am {report['frozenAt']} in Commit `59efe9e` vor dem vollständigen Nachtraining festgelegt: **30 reale Büschelfotos von Wikimedia Commons und 30 reale Fotos ohne Bananen aus COCO 2017**. Die 60 Fotos und ihre Annotationen blieben auch bei der Trainingsfortsetzung in Commit `18308d4` unverändert.")
 training_brief=(f"{training['pilot']['completedEpochs']} abgeschlossene Pilotepochen und {training['epochs']} Fortsetzungsepochen" if 'pilot' in training else f"{training['epochs']} abgeschlossene Fortsetzungsepochen")
 training_intro=(f"Der Pilot wurde nach {training['pilot']['completedEpochs']} vollständigen Epochen beendet; Validierungs-F1 wählte Pilotepoche {training['pilot']['selectedEpoch']}. Darauf folgten {training['epochs']} Fortsetzungsepochen" if 'pilot' in training else f"Der unveränderte Startcheckpoint 0.3 wurde in {training['epochs']} vollständigen Epochen weitertrainiert")
+if 'refinement' in training:
+    training_intro+=f" ({training['refinement']['stage1CompletedEpochs']} im ersten Lauf; {training['refinement']['epochs']} weitere L1-Epochen ab dem ausgewählten Erstcheckpoint, mit unverändertem Holdout)"
 data_intro=("17 weitere reale Commons-Fotos ergänzen das Training. Die zuvor eingesehenen 60 Prüffotos der Version 0.3 sind ausdrücklich Validierungsdaten; sie werden nicht als unabhängiger neuer Test ausgegeben." if is_v4 else "Aus dem zuvor fehlgeschlagenen und bereits eingesehenen v1-Test wurden 29 positive Fotos ausdrücklich Trainingsdaten und 30 Negativfotos ebenfalls Trainingsdaten; das visuell unbestimmbare positive Foto blieb in der Validierung. Sechs zusätzliche COCO-Ausschnitte erhielten vor der Fortsetzung neue Einzelboxen ausschließlich für die Validierung.")
 augmentation_intro=("150 zusätzliche Trainingsmontagen je Epoche und achtfache Gewichtung echter positiver Fotos. Die Hälfte der realen Mehrfruchtfälle erhält einen zufälligen Ausschnitt mit auf den sichtbaren Bereich begrenzten Einzelboxen." if is_v4 else "600 zusätzliche Trainingsmontagen je Epoche und sechsfache Gewichtung echter positiver Zusatzfotos.")
 additional_experiment=''
 if not is_v4 and (SITE/'public/evaluation/individual-v4-report.json').exists():
     experiment=load('public/evaluation/individual-v4-report.json')
-    additional_experiment=(f"Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `{experiment['frozenCommit'][:7]}` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **{experiment['truePositive']} TP, {experiment['falsePositive']} FP, {experiment['falseNegative']} FN; Präzision {pct(experiment['precision'])}, Recall {pct(experiment['recall'])}**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die App-Gewichte 0.3 nicht. [Ergebnisse](./individual-v4-report.json), [Validierungswahl](./experiment-v4/validation-selection.json), [Trainingsverlauf](./experiment-v4/training-history.json).")
+    additional_experiment=(f"Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `{experiment['frozenCommit'][:7]}` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **{experiment['truePositive']} TP, {experiment['falsePositive']} FP, {experiment['falseNegative']} FN; Präzision {pct(experiment['precision'])}, Recall {pct(experiment['recall'])}**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die App-Gewichte 0.3 nicht. [Bericht mit Grenzen](./experiment-v4/report.md), [Ergebnisse](./individual-v4-report.json), [Validierungswahl](./experiment-v4/validation-selection.json), [Trainingsverlauf](./experiment-v4/training-history.json), [Beispiele aus gespeicherten Ausgaben](./experiment-v4/examples.md).")
 lines=[
 f"# Bananenblick {card['version']}: Modellprüfung",'',
 f'**{status} Echte Android-/iPhone-Prüfungen und die Veröffentlichungsabnahme stehen aus.**','',
@@ -181,3 +183,59 @@ Ziel: ≥95 % Präzision und ≥80 % Recall für bestätigte Empfehlungen sichtb
 if additional_experiment:
     acceptance=acceptance.replace('## Modellabnahme','## Weiterer Trainingsversuch\n\n'+additional_experiment+'\n\n## Modellabnahme')
 acceptance_path.write_text(acceptance)
+
+if (SITE/'public/evaluation/individual-v4-report.json').exists():
+    trial=load('public/evaluation/individual-v4-report.json')
+    trial_card=load('public/evaluation/experiment-v4/model-card.json')
+    trial_selection=load('public/evaluation/experiment-v4/validation-selection.json')['selected']
+    trial_training=trial_card['training']
+    baseline=trial['baselineValidation'];selected=trial['selectedEpochValidation']
+    trial_text=f'''# Trainingsversuch 0.4 · tatsächliche Ergebnisse
+
+**{'Die statischen Zielwerte sind erreicht; die Geräteabnahme bleibt offen.' if trial['passed'] else 'Die statischen Zielwerte sind verfehlt. Die App-Gewichte 0.3 bleiben unverändert.'}** Dieser Bericht ist keine abgeschlossene Veröffentlichung oder echte Smartphone-Prüfung.
+
+## Unabhängiger neuer Fotobestand
+
+Vor dem Training in Commit `{trial['frozenCommit']}` festgelegt: 30 reale Commons-Büschelfotos und 30 weitere reale COCO-Negativfotos. Die dokumentierten Ausschnitte bilden nähere Ansichten nach. Der Bestand enthält {trial['truePositive']+trial['falseNegative']} annotierte reife Einzelbananen. Er wurde nach Checkpoint- und Schwellwertwahl einmal ausgewertet. Keine Montage zählt als Prüfszene.
+
+| Bestätigte essreife Einzelbananen | Ergebnis | Ziel |
+|---|---:|---:|
+| Präzision | {pct(trial['precision'])} | mindestens 95 % |
+| Recall | {pct(trial['recall'])} | mindestens 80 % |
+| Richtige Empfehlungen | {trial['truePositive']} | |
+| Falsche Empfehlungen | {trial['falsePositive']} | |
+| Ausgelassene reife Früchte | {trial['falseNegative']} | |
+| Falsche Empfehlungen auf Negativfotos | {trial['negativeFalseRecommendations']} | |
+
+Passende Einzelbox: IoU ≥0,5 und eindeutige Zuordnung. Die tatsächliche TypeScript-Objektverfolgung bewertet je Foto drei identische gespeicherte Inferenzergebnisse. Enthaltungen und fehlende Bestätigungen zählen als ausgelassene Empfehlungen. Dies belegt weder zeitliche Kamerastabilität noch Smartphone-Durchsatz.
+
+## Training und Auswahl
+
+592 Trainingsfotos, 177 Validierungsfotos und 101 separat ausgewiesene bisherige Einzelbild-Testfotos. Die bereits eingesehenen alten 60 Prüffotos sind jetzt ausdrücklich Validierungsdaten. 17 weitere echte Trainingsfotos, achtfache Gewichtung realer Zusatzfotos, 150 statt 600 Montage-Slots je Epoche, echte Fotoausschnitte mit auf den sichtbaren Bereich begrenzten Zielboxen. YOLOX-Nano, 448 × 448, zwei CPU-Threads.
+
+20 vollständige Epochen im ersten Lauf, danach vier gesondert vorab festgelegte L1-Epochen ab dem ausgewählten Erstcheckpoint. Der Holdout blieb bei beiden Phasen unverändert und nicht inferiert. Der Erstcheckpoint blieb zusätzlich zu den vier neuen Checkpoints wählbar. Insgesamt {trial_training['epochs']} Epochen tatsächlich gerechnet; die Validierung wählte Epoche {trial_training['selectedEpoch']}.
+
+Beim festen Validierungspunkt (Detektion 0,25; Klassifikation 0,6; Marge 0,15; NMS 0,65) änderte sich F1 von {baseline['f1']:.3f} auf {selected['f1']:.3f}. Diese Zahlen betreffen dieselbe erweiterte Validierung und sind keine Ergebnisse des neuen Tests.
+
+Die abschließende Schwellwertwahl untersuchte 1320 Kombinationen ausschließlich auf der Validierung. Gewählt: `{json.dumps(trial['thresholds'],ensure_ascii=False)}`. Validierungspräzision {pct(trial_selection['precision'])}, Validierungsrecall {pct(trial_selection['recall'])}. Das Kriterium verlangt mindestens 95 % Präzision und maximiert danach Recall; erst danach wurde der neue Test inferiert. Nach Einsicht des Tests erfolgte keine Anpassung.
+
+## Nachweise und Grenzen
+
+- [Eingefrorene Fotos, Einzelboxen, Quellen, Lizenzen und Hashes](benchmark.json)
+- [Quellen- und Duplikatprüfung](split-audit.json)
+- [Tatsächlicher Trainingsverlauf](training-history.json)
+- [Plan der zusätzlichen Lokalisierungsphase](refinement-plan.json)
+- [Ergebnis und Checkpointwahl dieser Phase](refinement-summary.json)
+- [Vollständige Validierungswahl](validation-selection.json)
+- [Ergebnisse pro Prüffoto](individual-report.json)
+- [Gespeicherte Vorhersagen](individual-predictions.json)
+- [Drei vorab ausgewählte Beispiele mit tatsächlichen Nummern und Statuszeilen](examples.md)
+- [Separater bisheriger Einzelbildtest](test-report.json)
+
+Die Einzelannotation stammt vom Coding-Assistenten; eine unabhängige Expertenprüfung fehlt. Einzelne Internetfotos besitzen keine verlässlichen physischen Frucht- oder Aufnahmeserien-IDs. Der automatische Audit findet keine Quellgruppen-, Pixel- oder pHash-Überschneidung mit dem neuen Holdout. Ausschnitte belegen keine Genauigkeit auf den gesamten ursprünglichen Fotos. COCO-Negativfotos waren im generischen COCO-Vortraining enthalten.
+
+Tatsächlich geprüfte physische Android-/Chrome- und iPhone-/Safari-Geräte: **keine**. Linux-Browseremulation ersetzt diese Prüfung nicht. Die reine ONNX-CPU-Inferenz im Fototest brauchte im Median {trial['inferenceMs']['median']:.1f} ms und p95 {trial['inferenceMs']['p95']:.1f} ms; Aufnahme, Vorverarbeitung und Darstellung sind nicht enthalten. Das belegt keine drei vollständigen Smartphone-Auswertungen pro Sekunde.
+
+Modell-SHA-256: `{trial['modelSha256']}`. Benchmark-SHA-256: `{trial['benchmarkSha256']}`.
+'''
+    (SITE/'public/evaluation/experiment-v4/report.md').write_text(trial_text)
