@@ -1,0 +1,522 @@
+[
+  {
+    "epoch": 1,
+    "loss": 4.34089627049186,
+    "seconds": 130.89381766319275,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 60,
+      "falsePositive": 20,
+      "falseNegative": 131,
+      "precision": 0.75,
+      "recall": 0.31413612565445026,
+      "uncertainOrUnconfirmed": 45,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 5,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.4428044280442804
+    }
+  },
+  {
+    "epoch": 2,
+    "loss": 4.092696631109559,
+    "seconds": 120.16194415092468,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 64,
+      "falsePositive": 15,
+      "falseNegative": 127,
+      "precision": 0.810126582278481,
+      "recall": 0.33507853403141363,
+      "uncertainOrUnconfirmed": 36,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 3,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.47407407407407404
+    }
+  },
+  {
+    "epoch": 3,
+    "loss": 3.9063684739075697,
+    "seconds": 104.36743927001953,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 65,
+      "falsePositive": 10,
+      "falseNegative": 126,
+      "precision": 0.8666666666666667,
+      "recall": 0.3403141361256545,
+      "uncertainOrUnconfirmed": 44,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 2,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.48872180451127817
+    }
+  },
+  {
+    "epoch": 4,
+    "loss": 3.806081418867235,
+    "seconds": 106.01704430580139,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 65,
+      "falsePositive": 13,
+      "falseNegative": 126,
+      "precision": 0.8333333333333334,
+      "recall": 0.3403141361256545,
+      "uncertainOrUnconfirmed": 43,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.483271375464684
+    }
+  },
+  {
+    "epoch": 5,
+    "loss": 3.60833342973288,
+    "seconds": 108.39963746070862,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 64,
+      "falsePositive": 13,
+      "falseNegative": 127,
+      "precision": 0.8311688311688312,
+      "recall": 0.33507853403141363,
+      "uncertainOrUnconfirmed": 47,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 3,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.47761194029850745
+    }
+  },
+  {
+    "epoch": 6,
+    "loss": 3.570466642255907,
+    "seconds": 108.60271430015564,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 65,
+      "falsePositive": 19,
+      "falseNegative": 126,
+      "precision": 0.7738095238095238,
+      "recall": 0.3403141361256545,
+      "uncertainOrUnconfirmed": 44,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 1,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.4727272727272728
+    }
+  },
+  {
+    "epoch": 7,
+    "loss": 3.430576607778475,
+    "seconds": 110.35434055328369,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 71,
+      "falsePositive": 20,
+      "falseNegative": 120,
+      "precision": 0.7802197802197802,
+      "recall": 0.3717277486910995,
+      "uncertainOrUnconfirmed": 38,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 2,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5035460992907801
+    }
+  },
+  {
+    "epoch": 8,
+    "loss": 3.2915995244856004,
+    "seconds": 106.68889236450195,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 76,
+      "falsePositive": 24,
+      "falseNegative": 115,
+      "precision": 0.76,
+      "recall": 0.39790575916230364,
+      "uncertainOrUnconfirmed": 30,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 3,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5223367697594501
+    }
+  },
+  {
+    "epoch": 9,
+    "loss": 3.322564030622507,
+    "seconds": 108.11240863800049,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 81,
+      "falsePositive": 25,
+      "falseNegative": 110,
+      "precision": 0.7641509433962265,
+      "recall": 0.42408376963350786,
+      "uncertainOrUnconfirmed": 25,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 3,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5454545454545454
+    }
+  },
+  {
+    "epoch": 10,
+    "loss": 3.2104314023798164,
+    "seconds": 111.85207843780518,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 79,
+      "falsePositive": 30,
+      "falseNegative": 112,
+      "precision": 0.7247706422018348,
+      "recall": 0.41361256544502617,
+      "uncertainOrUnconfirmed": 25,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 5,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5266666666666667
+    }
+  },
+  {
+    "epoch": 11,
+    "loss": 3.1883928001701056,
+    "seconds": 120.99379181861877,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 78,
+      "falsePositive": 26,
+      "falseNegative": 113,
+      "precision": 0.75,
+      "recall": 0.4083769633507853,
+      "uncertainOrUnconfirmed": 28,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 7,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5288135593220338
+    }
+  },
+  {
+    "epoch": 12,
+    "loss": 3.0554167512175323,
+    "seconds": 119.45716381072998,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 82,
+      "falsePositive": 31,
+      "falseNegative": 109,
+      "precision": 0.7256637168141593,
+      "recall": 0.4293193717277487,
+      "uncertainOrUnconfirmed": 25,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 8,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5394736842105263
+    }
+  },
+  {
+    "epoch": 13,
+    "loss": 3.0247088918438205,
+    "seconds": 138.44370293617249,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 84,
+      "falsePositive": 31,
+      "falseNegative": 107,
+      "precision": 0.7304347826086957,
+      "recall": 0.4397905759162304,
+      "uncertainOrUnconfirmed": 21,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 7,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5490196078431373
+    }
+  },
+  {
+    "epoch": 14,
+    "loss": 2.9001610813202796,
+    "seconds": 116.127512216568,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 83,
+      "falsePositive": 40,
+      "falseNegative": 108,
+      "precision": 0.6747967479674797,
+      "recall": 0.43455497382198954,
+      "uncertainOrUnconfirmed": 20,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 7,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5286624203821656
+    }
+  },
+  {
+    "epoch": 15,
+    "loss": 2.872994288221582,
+    "seconds": 113.34821891784668,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 79,
+      "falsePositive": 41,
+      "falseNegative": 112,
+      "precision": 0.6583333333333333,
+      "recall": 0.41361256544502617,
+      "uncertainOrUnconfirmed": 24,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 4,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5080385852090032
+    }
+  },
+  {
+    "epoch": 16,
+    "loss": 2.8639635505614343,
+    "seconds": 115.45784902572632,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 81,
+      "falsePositive": 41,
+      "falseNegative": 110,
+      "precision": 0.6639344262295082,
+      "recall": 0.42408376963350786,
+      "uncertainOrUnconfirmed": 21,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 6,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5175718849840255
+    }
+  },
+  {
+    "epoch": 17,
+    "loss": 2.868203869113674,
+    "seconds": 120.08963012695312,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 79,
+      "falsePositive": 43,
+      "falseNegative": 112,
+      "precision": 0.6475409836065574,
+      "recall": 0.41361256544502617,
+      "uncertainOrUnconfirmed": 23,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 6,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5047923322683707
+    }
+  },
+  {
+    "epoch": 18,
+    "loss": 2.800808925133247,
+    "seconds": 163.3622281551361,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 80,
+      "falsePositive": 45,
+      "falseNegative": 111,
+      "precision": 0.64,
+      "recall": 0.418848167539267,
+      "uncertainOrUnconfirmed": 23,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 8,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5063291139240507
+    }
+  },
+  {
+    "epoch": 19,
+    "loss": 2.7354304658902158,
+    "seconds": 108.4818046092987,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 78,
+      "falsePositive": 43,
+      "falseNegative": 113,
+      "precision": 0.6446280991735537,
+      "recall": 0.4083769633507853,
+      "uncertainOrUnconfirmed": 23,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 9,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5
+    }
+  },
+  {
+    "epoch": 20,
+    "loss": 2.692074373170927,
+    "seconds": 110.17079472541809,
+    "validation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 76,
+      "falsePositive": 48,
+      "falseNegative": 115,
+      "precision": 0.6129032258064516,
+      "recall": 0.39790575916230364,
+      "uncertainOrUnconfirmed": 24,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 7,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.48253968253968244
+    }
+  }
+]

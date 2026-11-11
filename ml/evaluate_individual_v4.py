@@ -44,6 +44,11 @@ def main():
     checkpoint=torch.load(TRAINING/'best.pt',map_location='cpu',weights_only=False)
     history=json.loads((TRAINING/'history.json').read_text())
     protocol=plan['protocol']
+    if (ROOT/'individual-refinement-v4.json').exists():
+        refinement=json.loads((TRAINING/'refinement-summary.json').read_text())
+        assert refinement['planSha256']==sha(ROOT/'individual-refinement-v4.json')
+        assert refinement['selectedCheckpointSha256']==sha(TRAINING/'best.pt')
+        assert refinement['totalCompletedEpochs']==len(history)
     assert len(history)==protocol['maxEpochs'] or (
         len(history)>=protocol['minimumEpochs'] and
         len(history)-checkpoint['epoch']>=protocol['earlyStoppingPatience']
@@ -115,6 +120,10 @@ def main():
         'frozenCommit':frozen_commit,'realBunchScenes':30,'realBunchSceneCountVerified':True,
         'thresholds':thresholds,'inputSize':size,'selectedEpoch':checkpoint['epoch'],
         'limitations':plan['limits'],'physicalDeviceTestsPerformed':False,
+        'baselineValidation':{k:v for k,v in json.loads((TRAINING/'baseline-validation.json').read_text()).items() if k!='scenes'},
+        'selectedEpochValidation':checkpoint['validation'],
+        'baseDatasetProvenance':[{'file':str(path.relative_to(SITE)),'sha256':sha(path)} for path in
+            [ROOT/'individual-benchmark.json',ROOT/'individual-benchmark-v2.json',ROOT/'individual-training-v3.json']],
         'inferenceMs':{'median':float(np.median(times)),'p95':float(np.percentile(times,95)),
             'context':'ONNX Runtime CPU, Linux, two threads; inference only, not phone throughput'}})
     target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
@@ -124,6 +133,9 @@ def main():
     shutil.copyfile(TRAINING/'baseline-validation.json',ARCHIVE/'baseline-validation.json')
     shutil.copyfile(ROOT/'work/v4-split-audit.json',ARCHIVE/'split-audit.json')
     shutil.copyfile(frozen,ARCHIVE/'benchmark.json')
+    if (ROOT/'individual-refinement-v4.json').exists():
+        shutil.copyfile(ROOT/'individual-refinement-v4.json',ARCHIVE/'refinement-plan.json')
+        shutil.copyfile(TRAINING/'refinement-summary.json',ARCHIVE/'refinement-summary.json')
     candidate_checkpoint=ROOT/'artifacts/banana-individual-v4-candidate.pt'
     shutil.copyfile(TRAINING/'best.pt',candidate_checkpoint)
     legacy=BananaDataset(DATA,'test',size=size);legacy_predictions=[];legacy_rows=[]
@@ -147,8 +159,13 @@ def main():
             'seed':checkpoint['seed'],'initialCheckpointSha256':checkpoint['initialCheckpointSha256'],
             'data':plan['counts'],'syntheticTrainingScenesPerEpoch':150,'realPositiveRepeat':8,
             'realBunchCropProbability':.5,'fullBackboneFromEpoch':1,'benchmarkFrozenCommit':frozen_commit,
-            'trainingPlanSha256':sha(frozen)},
+            'trainingPlanSha256':sha(frozen),
+            **({'refinement':checkpoint['refinement']} if 'refinement' in checkpoint else {})},
         'limitations':plan['limits']+['Static individual-fruit acceptance '+('passed.' if report['passed'] else 'NOT met.')],
+        'additionalDatasets':[{'name':'COCO 2017','url':'https://cocodataset.org/',
+            'sourcesAndLicenses':f'https://github.com/der-programmer1/Bananenblick/blob/{frozen_commit}/ml/individual-benchmark-v4.json'},
+            {'name':'Wikimedia Commons photographs','url':'https://commons.wikimedia.org/',
+            'sourcesAndLicenses':f'https://github.com/der-programmer1/Bananenblick/blob/{frozen_commit}/ml/individual-benchmark-v4.json'}],
         'recommendationPolicy':{'requiredConsecutiveConfirmations':3,'resetOnUncertainOrMissing':True,
             'minimumJointConfidence':thresholds['classification'],'meaning':'visible peel ripeness only'}})
     (ARCHIVE/'model-card.json').write_text(json.dumps(card,ensure_ascii=False,indent=2)+'\n')

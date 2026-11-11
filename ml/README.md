@@ -81,10 +81,13 @@ ml/.venv/bin/python ml/build_data_v4.py
 ml/.venv/bin/python ml/audit_individual_data.py --data ml/work/individual-v4 --output ml/work/v4-split-audit.json
 ml/.venv/bin/python ml/verify.py
 ml/.venv/bin/python ml/train_individual_v4.py
+ml/.venv/bin/python ml/refine_individual_v4.py
 ml/.venv/bin/python ml/evaluate_individual_v4.py
 ```
 
-Die Auswertung wartet auf den vollständigen, vorab festgelegten Trainingslauf. Sie wählt Schwellwerte ausschließlich auf der Validierung und inferiert danach den neuen Holdout genau einmal. Das Skript verweigert ein erneutes Überschreiben des Tests. Fehlgeschlagene Kandidaten bleiben unter `public/evaluation/experiment-v4/` archiviert und ersetzen die App-Gewichte nicht. Nur ein statisch abgenommener Kandidat wird für die weiteren App- und Geräteprüfungen übernommen.
+Die erste Phase endete nach 20 Epochen; Validierungs-F1 wählte Epoche 13. Weil der Frühstopp vor den spät geplanten L1-Epochen lag und Lokalisierungsfehler überwiegen, ist eine gesondert vor der Ausführung festgelegte Feinabstimmung mit vier L1-Epochen ergänzt. Plan: `individual-refinement-v4.json`; unveränderter Startcheckpoint: `artifacts/banana-individual-v4-stage1.pt`. Auch dieser Plan wird vor Ausführung committed; die Fotos und Annotationen des neuen Holdouts bleiben unverändert und weiterhin nicht inferiert. Der alte ausgewählte Checkpoint bleibt zusätzlich zu den vier neuen Epochen wählbar. Die Feinabstimmung darf direkt vom mitgelieferten Checkpoint und dem aufgezeichneten Erstverlauf aus reproduziert werden; ein erneuter Pilotlauf ist dafür nicht nötig. Laufzeiten sind Messwerte des tatsächlichen Laufs und keine bitweise reproduzierbaren Zeitangaben.
+
+Die Auswertung wartet auf den vollständigen Trainingslauf einschließlich dieser vier Epochen. Sie wählt Schwellwerte ausschließlich auf der Validierung und inferiert danach den neuen Holdout genau einmal. Das Skript verweigert ein erneutes Überschreiben des Tests. Fehlgeschlagene Kandidaten bleiben unter `public/evaluation/experiment-v4/` archiviert und ersetzen die App-Gewichte nicht. Nur ein statisch abgenommener Kandidat wird für die weiteren App- und Geräteprüfungen übernommen.
 
 Dieses Experiment allein gibt keine Veröffentlichung frei. Die bestehende Modellprüfung 0.3 und alle fehlgeschlagenen Ergebnisse bleiben erhalten. Die echten Android-/Chrome- und iPhone-/Safari-Prüfungen bleiben erforderlich.
 
