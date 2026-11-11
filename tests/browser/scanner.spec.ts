@@ -38,6 +38,78 @@ test("a cold WASM session gets its own initialization timeout without a GPU rest
   await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
 });
 
+for (const phase of ["startup", "inference"] as const) {
+  test(`GPU fallback during ${phase} gives WASM its full session budget`, async ({ page }) => {
+    await page.addInitScript((fallbackPhase) => {
+      const state = window as any;
+      state.testNow = 0;
+      state.workerStarts = 0;
+      state.workerAborts = 0;
+      state.workerResults = 0;
+      state.inWasmSession = false;
+      Object.defineProperty(performance, "now", { value: () => state.testNow });
+      state.Worker = class {
+        onmessage: ((event: any) => void) | null = null;
+        pending: any = null;
+        terminated = false;
+        constructor() { state.testWorker = this; }
+        terminate() { this.terminated = true; state.workerAborts++; }
+        send(data: any) { if (!this.terminated) this.onmessage?.({ data }); }
+        enterWasm() {
+          state.testNow = 11000;
+          state.inWasmSession = true;
+          this.send({ type: "status", phase: "session", provider: "wasm", message: "Lokale Erkennung wird vorbereitet …" });
+        }
+        ready(provider: string) {
+          this.send({ type: "ready", provider, inputSize: 320, thresholds: { classification: .8 } });
+        }
+        finishWasm() {
+          if (fallbackPhase === "startup") this.ready("wasm");
+          else {
+            this.send({ type: "provider", provider: "wasm" });
+            this.result(this.pending);
+          }
+        }
+        result(message: any) {
+          if (this.terminated) return;
+          state.workerResults++;
+          this.send({ ...message, type: "result", inferenceMs: 20, detections: [] });
+        }
+        postMessage(message: any) {
+          if (message.type === "init") {
+            state.workerStarts++;
+            this.send({ type: "status", phase: "session", provider: "webgpu", message: "Lokale Erkennung wird vorbereitet …" });
+            if (fallbackPhase === "inference") this.ready("webgpu");
+            return;
+          }
+          if (fallbackPhase === "inference" && !state.inWasmSession) {
+            this.pending = message;
+            this.enterWasm();
+            return;
+          }
+          setTimeout(() => this.result(message), 20);
+        }
+      };
+    }, phase);
+    await page.goto("./");
+    await page.getByRole("button", { name: "Erst mal ein Beispiel ansehen" }).click();
+    await page.locator(".example-tile").filter({ hasText: "Gelbe Banane" }).click();
+    await expect.poll(() => page.evaluate(() => (window as any).workerStarts)).toBe(1);
+    if (phase === "startup") await page.evaluate(() => (window as any).testWorker.enterWasm());
+    await expect.poll(() => page.evaluate(() => (window as any).inWasmSession)).toBe(true);
+    // Simulate 24 seconds inside WASM after 11 seconds in WebGPU. The real
+    // watchdog ticks normally; no 35-second wall-clock wait is necessary.
+    await page.evaluate(() => { (window as any).testNow = 35000; });
+    await page.waitForTimeout(300);
+    expect(await page.evaluate(() => (window as any).workerStarts)).toBe(1);
+    expect(await page.evaluate(() => (window as any).workerAborts)).toBe(0);
+    await page.evaluate(() => (window as any).testWorker.finishWasm());
+    await expect.poll(() => page.evaluate(() => (window as any).workerResults)).toBeGreaterThanOrEqual(3);
+    await expect(page.locator(".runtime-indicator")).toContainText("WebAssembly");
+    await page.getByRole("button", { name: "Scan beenden", exact: true }).click();
+  });
+}
+
 test("stopping a pending camera request also stops a stream granted afterwards", async ({ page }) => {
   await page.addInitScript(() => {
     const state = window as any;

@@ -237,15 +237,26 @@ export function useScanner() {
       const data = event.data;
       if (data.type === "status") {
         setModelStatus(data.message);
+        const providerChanged = data.provider && data.provider !== activeProviderRef.current;
         if (data.provider) activeProviderRef.current = data.provider;
-        if (data.phase && data.phase !== workerPhaseRef.current) {
+        if (data.phase && (data.phase !== workerPhaseRef.current || providerChanged)) {
           workerPhaseRef.current = data.phase;
           workerStartedRef.current = performance.now();
+        }
+        if (data.phase === "session" && readyRef.current) {
+          // An inference-time GPU failure may initialize WASM before completing
+          // the pending frame. Session preparation gets its own timeout budget.
+          clearTracks();
+          setModelReady(false);
         }
       }
       if (data.type === "provider") {
         activeProviderRef.current = data.provider;
+        workerPhaseRef.current = "ready";
+        if (busyRef.current) busySinceRef.current = performance.now();
+        setModelReady(readyRef.current);
         setProvider(data.provider);
+        setModelStatus("YOLOX-Nano bereit");
       }
       if (data.type === "error") {
         fail(data.message);
@@ -253,6 +264,7 @@ export function useScanner() {
       }
       if (data.type === "ready") {
         activeProviderRef.current = data.provider;
+        workerPhaseRef.current = "ready";
         readyRef.current = true;
         sizeRef.current = data.inputSize;
         modelSha256Ref.current = data.modelSha256;
@@ -418,9 +430,10 @@ export function useScanner() {
       const now = performance.now();
       if (modeRef.current !== "live" && modeRef.current !== "example") return;
       const usingGpu = activeProviderRef.current === "webgpu";
+      const preparing = workerPhaseRef.current === "download" || workerPhaseRef.current === "session";
       const initTimeout = workerPhaseRef.current === "download" ? 120000 : usingGpu ? 12000 : 30000;
-      const stalled = (busyRef.current && now - busySinceRef.current > (usingGpu ? 2500 : 10000)) ||
-        (workerRef.current && !readyRef.current && now - workerStartedRef.current > initTimeout);
+      const stalled = (busyRef.current && !preparing && now - busySinceRef.current > (usingGpu ? 2500 : 10000)) ||
+        (workerRef.current && preparing && now - workerStartedRef.current > initTimeout);
       if (stalled) {
         if (!readyRef.current && workerPhaseRef.current === "download") {
           fail("Das Laden der lokalen Erkennung dauert zu lange. Prüfe deine Verbindung und starte den Scan erneut.");
