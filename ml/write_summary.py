@@ -7,14 +7,26 @@ ROOT=Path(__file__).resolve().parent;SITE=ROOT.parent
 load=lambda p:json.loads((SITE/p).read_text())
 card=load('public/models/model-card.json');report=load('public/evaluation/individual-report.json')
 legacy=load('public/evaluation/test-report.json')['test'];training=card['training'];thresholds=card['thresholds']
-plan=load('ml/individual-training-v3.json');selection=load('public/evaluation/individual-validation-selection.json')
+is_v4=card['version']=='0.4.0'
+plan=load('ml/individual-benchmark-v4.json' if is_v4 else 'ml/individual-training-v3.json');selection=load('public/evaluation/individual-validation-selection.json')
 pct=lambda x:f"{Decimal(str(x*100)).quantize(Decimal('0.1'),rounding=ROUND_HALF_UP)} %".replace('.',',')
 status='Die Zielwerte im statischen Fototest sind erreicht.' if report['passed'] else 'Die Zielwerte für essreife Einzelbananen sind nicht erreicht.'
+benchmark_file='individual-benchmark-v4.json' if is_v4 else 'individual-benchmark-v2.json'
+benchmark_intro=(f"Der neue Bestand wurde am {report['frozenAt']} in Commit `{report['frozenCommit'][:7]}` vor Training festgelegt: **30 reale Commons-Büschelfotos und 30 COCO-Negativfotos**. Die dokumentierten Fotoausschnitte bilden nähere Ansichten nach; das Ergebnis belegt keine Genauigkeit auf den vollständigen Quellfotos."
+    if is_v4 else f"Der neue Bestand wurde am {report['frozenAt']} in Commit `59efe9e` vor dem vollständigen Nachtraining festgelegt: **30 reale Büschelfotos von Wikimedia Commons und 30 reale Fotos ohne Bananen aus COCO 2017**. Die 60 Fotos und ihre Annotationen blieben auch bei der Trainingsfortsetzung in Commit `18308d4` unverändert.")
+training_brief=(f"{training['pilot']['completedEpochs']} abgeschlossene Pilotepochen und {training['epochs']} Fortsetzungsepochen" if 'pilot' in training else f"{training['epochs']} abgeschlossene Fortsetzungsepochen")
+training_intro=(f"Der Pilot wurde nach {training['pilot']['completedEpochs']} vollständigen Epochen beendet; Validierungs-F1 wählte Pilotepoche {training['pilot']['selectedEpoch']}. Darauf folgten {training['epochs']} Fortsetzungsepochen" if 'pilot' in training else f"Der unveränderte Startcheckpoint 0.3 wurde in {training['epochs']} vollständigen Epochen weitertrainiert")
+data_intro=("17 weitere reale Commons-Fotos ergänzen das Training. Die zuvor eingesehenen 60 Prüffotos der Version 0.3 sind ausdrücklich Validierungsdaten; sie werden nicht als unabhängiger neuer Test ausgegeben." if is_v4 else "Aus dem zuvor fehlgeschlagenen und bereits eingesehenen v1-Test wurden 29 positive Fotos ausdrücklich Trainingsdaten und 30 Negativfotos ebenfalls Trainingsdaten; das visuell unbestimmbare positive Foto blieb in der Validierung. Sechs zusätzliche COCO-Ausschnitte erhielten vor der Fortsetzung neue Einzelboxen ausschließlich für die Validierung.")
+augmentation_intro=("150 zusätzliche Trainingsmontagen je Epoche und achtfache Gewichtung echter positiver Fotos. Die Hälfte der realen Mehrfruchtfälle erhält einen zufälligen Ausschnitt mit auf den sichtbaren Bereich begrenzten Einzelboxen." if is_v4 else "600 zusätzliche Trainingsmontagen je Epoche und sechsfache Gewichtung echter positiver Zusatzfotos.")
+additional_experiment=''
+if not is_v4 and (SITE/'public/evaluation/individual-v4-report.json').exists():
+    experiment=load('public/evaluation/individual-v4-report.json')
+    additional_experiment=(f"Der weitere, getrennt dokumentierte Trainingsversuch 0.4 prüfte einen neuen, in Commit `{experiment['frozenCommit'][:7]}` vor Training festgelegten Bestand mit 30 echten Büschelfotos (dokumentierte Ausschnitte) und 30 neuen Negativfotos. Ergebnis: **{experiment['truePositive']} TP, {experiment['falsePositive']} FP, {experiment['falseNegative']} FN; Präzision {pct(experiment['precision'])}, Recall {pct(experiment['recall'])}**. Er hat die Zielwerte ebenfalls nicht erreicht und ersetzt die App-Gewichte 0.3 nicht. [Ergebnisse](./individual-v4-report.json), [Validierungswahl](./experiment-v4/validation-selection.json), [Trainingsverlauf](./experiment-v4/training-history.json).")
 lines=[
 f"# Bananenblick {card['version']}: Modellprüfung",'',
 f'**{status} Echte Android-/iPhone-Prüfungen und die Veröffentlichungsabnahme stehen aus.**','',
 '## Unberührter Prüfbestand und Ergebnis','',
-f"Der neue Bestand wurde am {report['frozenAt']} in Commit `59efe9e` vor dem vollständigen Nachtraining festgelegt: **30 reale Büschelfotos von Wikimedia Commons und 30 reale Fotos ohne Bananen aus COCO 2017**. Die 60 Fotos und ihre Annotationen blieben auch bei der Trainingsfortsetzung in Commit `18308d4` unverändert. Keine Montage zählt als Prüfszene. Modell und Schwellwerte wurden ausschließlich mit Trainings- und Validierungsdaten gewählt, danach wurde der neue Bestand einmal ausgewertet.",'',
+benchmark_intro+' Keine Montage zählt als Prüfszene. Modell und Schwellwerte wurden ausschließlich mit Trainings- und Validierungsdaten gewählt, danach wurde der neue Bestand einmal ausgewertet.','',
 '| Empfehlung nach drei Bestätigungen | Ergebnis | Ziel |','|---|---:|---:|',
 f"| Präzision | {pct(report['precision'])} | ≥ 95 % |",
 f"| Recall sichtbarer reifer Einzelbananen | {pct(report['recall'])} | ≥ 80 % |",
@@ -24,9 +36,9 @@ f"| Falsche Empfehlungen auf Negativfotos | {report['negativeFalseRecommendation
 'IoU ≥ 0,50 definiert eine passende Einzelbox. Unsichere, nicht dreimal bestätigte oder nicht lokalisierte reife Früchte zählen als ausgelassene Empfehlungen. Die exakte TypeScript-Objektverfolgung erhält je Foto drei identische Inferenzergebnisse in 200-ms-Abständen. Dies prüft die Empfehlung auf statischen Fotos; es belegt keine zeitliche Stabilität einer echten Kamera. Zweifelhafte Zuordnungen dürfen auch bei statischen überlappenden Boxen keine Bestätigungen ansammeln.','',
 'Die sichtbaren Einzelboxen und Reifestufen wurden vom Coding-Assistenten visuell annotiert und geprüft. Eine unabhängige menschliche Gegenprüfung fehlt. Ungewöhnliche oder nicht sicher erkennbare Schalen sind als nicht beurteilbar markiert. Verdeckte Früchte zählen nach sichtbarem Umfang, vollständig verdeckte Früchte nicht als sichtbare Instanzen. Quellen, Einzelboxen, Ausschnitte, Dateihashes und Lizenzen sind im eingefrorenen Manifest dokumentiert.','',
 '## Training und Auswahl','',
-f"YOLOX-Nano, {card['inputSize']} × {card['inputSize']} BGR/Float32, vollständiges Backbone ab der ersten Epoche. Der Pilot wurde nach {training['pilot']['completedEpochs']} vollständigen Epochen beendet; Validierungs-F1 wählte Pilotepoche {training['pilot']['selectedEpoch']}. Darauf folgten {training['epochs']} Fortsetzungsepochen mit Seed {training['seed']}; höchstes bestätigtes Reife-F1 auf der Validierung wählte Epoche {training['selectedEpoch']}. CPU/PyTorch, zwei Threads, keine Bild- oder Inferenz-API.",'',
-f"Die endgültigen Splits enthalten **{training['data']['train']} Training / {training['data']['val']} Validierung / {training['data']['test']} bisheriger Test / {training['data']['acceptance']} neuer Test**. 471 Mendeley-Trainingsfotos werden durch echte COCO- und Commons-Fotos ergänzt. Aus dem zuvor fehlgeschlagenen und bereits eingesehenen v1-Test wurden 29 positive Fotos ausdrücklich Trainingsdaten und 30 Negativfotos ebenfalls Trainingsdaten; das visuell unbestimmbare positive Foto blieb in der Validierung. Sechs zusätzliche COCO-Ausschnitte erhielten vor der Fortsetzung neue Einzelboxen ausschließlich für die Validierung. Es gibt keine Überlappung der Bildgruppen zwischen Training, Validierung und dem neuen Test.",'',
-'600 zusätzliche Trainingsmontagen pro Epoche verwenden ausschließlich aus ursprünglichen Trainingsfotos gewonnene Fruchtmasken. Überdeckungen verkleinern die sichtbaren Zielboxen; fast vollständig verdeckte Früchte werden ausgelassen. Echte Trainingshintergründe und zu 30 % einfarbige Hintergründe, Drehungen und Beleuchtungsänderungen ergänzen die realen Fotos. Positive reale Zusatzfotos werden sechsmal je Epoche gezogen. Diese Montagen sind Trainingsaugmentation und kein Nachweis von realer Erkennungsleistung.','',
+f"YOLOX-Nano, {card['inputSize']} × {card['inputSize']} BGR/Float32, vollständiges Backbone ab der ersten Epoche. {training_intro} mit Seed {training['seed']}; höchstes bestätigtes Reife-F1 auf der Validierung wählte Epoche {training['selectedEpoch']}. CPU/PyTorch, zwei Threads, keine Bild- oder Inferenz-API.",'',
+f"Die endgültigen Splits enthalten **{training['data']['train']} Training / {training['data']['val']} Validierung / {training['data']['test']} bisheriger Test / {training['data']['acceptance']} neuer Test**. 471 Mendeley-Trainingsfotos werden durch echte COCO- und Commons-Fotos ergänzt. {data_intro} Es gibt keine Überlappung der Bildgruppen zwischen Training, Validierung und dem neuen Test.",'',
+augmentation_intro+' Die Montagen verwenden ausschließlich aus ursprünglichen Trainingsfotos gewonnene Fruchtmasken. Überdeckungen verkleinern die sichtbaren Zielboxen; fast vollständig verdeckte Früchte werden ausgelassen. Echte Trainingshintergründe und zu 30 % einfarbige Hintergründe, Drehungen und Beleuchtungsänderungen ergänzen die realen Fotos. Diese Montagen sind Trainingsaugmentation und kein Nachweis von realer Erkennungsleistung.','',
 'Das erste Experiment 0.2 mit einem früh ausgewählten Head-Checkpoint verfehlte die Ziele (0 richtige Empfehlungen, 1 falsche, 169 ausgelassene reife Früchte). Seine Originalberichte bleiben unter `experiment-v1/` erhalten. Dieser bereits gesehene Bestand wird nicht als unabhängiger neuer Test ausgegeben. COCO-Trainingsfotos waren im generischen Vortraining enthalten; die 30 Commons-Prüffotos sind davon getrennt. Physische Frucht- und Aufnahmeserien-IDs sind bei den öffentlichen Quellen nicht verfügbar.','',
 f"{len(selection['candidates'])} Kombinationen wurden ausschließlich auf der Validierung geprüft: NMS-IoU 0,45/0,55/0,65/0,75/0,85/0,90, Detektion 0,20–0,50, sichere Klassifikation 0,40–0,90 und Klassenmarge 0,10–0,40. Die Auswahl verlangt ≥95 % Präzision und maximiert dann Recall; falls kein Punkt genügt, wählt sie höchstes F1 und dokumentiert das Verfehlen. Gewählt: Detektion **{thresholds['detection']}**, sichere Klassifikation **{thresholds['classification']}**, Klassenmarge **{thresholds['margin']}**, klassenübergreifende NMS-IoU **{thresholds['nmsIou']}**. Nach Einsicht des neuen Tests wurde nichts nachjustiert.",'',
 'Python und Browser lesen dieselbe versionierte Konfiguration. Ein direkter automatisierter Vergleich prüft beide Decoder auf identischen Daten einschließlich Clipping, Gleichständen, Überlappung und Unsicherheit. Die globale eindeutige Zuordnung nutzt IoU und Bewegung; zweifelhafte Zuordnungen übertragen keine bestätigte Reife. Fehlende oder unsichere Treffer verlieren die Empfehlung sofort. Ein Neustart setzt die Nummern auf 1 zurück. Die App prüft den SHA-256 der geladenen Gewichte gegen die Modellbeschreibung.','',
@@ -53,6 +65,9 @@ f"Modell-SHA-256: `{card['sha256']}`. Benchmark-SHA-256: `{report['benchmarkSha2
 'Mendeley: Rohit et al. (2026), [Annotated Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0. COCO: [Common Objects in Context 2017](https://cocodataset.org/), Bildautoren und individuelle CC-BY-/CC-BY-SA-2.0-Lizenzen mit Flickr-Verweisen im eingefrorenen Manifest. Wikimedia Commons: individuelle CC-BY-/CC-BY-SA-/gemeinfreie Quellen mit Autor und Lizenz je Foto im Manifest. Quellfotos sind lokal heruntergeladen; nur ausdrücklich gekennzeichnete Beispiele werden mit Lizenzhinweisen mitgeliefert. YOLOX: Megvii, Apache 2.0.','',
 '„Jetzt essreif“ beschreibt ausschließlich die sichtbare Schalenreife; Verderb und innere Qualität werden nicht beurteilt.',''
 ]
+if additional_experiment:
+    index=lines.index('## Quellen')
+    lines[index:index]=['## Weiterer Trainingsversuch', '', additional_experiment, '']
 text='\n'.join(lines)
 (SITE/'public/evaluation/model-report.md').write_text(text)
 (SITE/'documentation/model-validation.md').write_text(text.replace('](./', '](../public/evaluation/'))
@@ -68,15 +83,15 @@ Ausschließlich drei aufeinanderfolgende sichere Bewertungen als „reif“ erge
 
 ## Tatsächlicher Modellstand
 
-Die bestehende YOLOX-Nano-Pipeline wurde mit engen Einzelboxen vollständig nachtrainiert. {training['pilot']['completedEpochs']} abgeschlossene Pilotepochen und {training['epochs']} Fortsetzungsepochen, {card['inputSize']} × {card['inputSize']}, zwei CPU-Threads. Datensätze der Fortsetzung: **{training['data']['train']} Training / {training['data']['val']} Validierung / 101 bisheriger Test / 60 neue Prüffotos**. Überlappung, wechselndes Licht, gemischte Schalenreife und echte Negativfotos sind ergänzt; Trainingsmontagen verwenden ausschließlich ursprüngliche Trainingsfrüchte.
+Die bestehende YOLOX-Nano-Pipeline wurde mit engen Einzelboxen vollständig nachtrainiert. {training_brief}, {card['inputSize']} × {card['inputSize']}, zwei CPU-Threads. Datensätze der Fortsetzung: **{training['data']['train']} Training / {training['data']['val']} Validierung / 101 bisheriger Test / 60 neue Prüffotos**. Überlappung, wechselndes Licht, gemischte Schalenreife und echte Negativfotos sind ergänzt; Trainingsmontagen verwenden ausschließlich ursprüngliche Trainingsfrüchte.
 
-Der neue Test enthält **30 reale Commons-Büschelszenen und 30 reale COCO-Negativszenen**, vor Training in Commit `59efe9e` festgelegt und bei der Fortsetzung in Commit `18308d4` unverändert. Ergebnis nach drei Bestätigungen: **{report['truePositive']} richtige Empfehlungen, {report['falsePositive']} falsche Empfehlungen, {report['falseNegative']} ausgelassene reife Einzelbananen; Präzision {pct(report['precision'])}, Recall {pct(report['recall'])}**. Ziel: ≥95 % Präzision, ≥80 % Recall. Unsicherheit zählt als ausgelassene Empfehlung.
+{benchmark_intro} Ergebnis nach drei Bestätigungen: **{report['truePositive']} richtige Empfehlungen, {report['falsePositive']} falsche Empfehlungen, {report['falseNegative']} ausgelassene reife Einzelbananen; Präzision {pct(report['precision'])}, Recall {pct(report['recall'])}**. Ziel: ≥95 % Präzision, ≥80 % Recall. Unsicherheit zählt als ausgelassene Empfehlung.
 
 Die Annotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. COCO-Trainingsfotos waren im generischen Vortraining enthalten. Das frühere fehlgeschlagene Experiment bleibt archiviert; seine bereits eingesehenen Szenen sind ausdrücklich Trainings-/Validierungsdaten und kein neuer unabhängiger Test.
 
 - [Modellbericht](documentation/model-validation.md)
 - [Neue Empfehlungsmetriken](public/evaluation/individual-report.json)
-- [Eingefrorene Szenen, Boxen, Hashes und Quellen](ml/individual-benchmark-v2.json)
+- [Eingefrorene Szenen, Boxen, Hashes und Quellen](ml/{benchmark_file})
 - [Tatsächliche Browserprüfungen und offene Geräteabnahme](public/evaluation/acceptance.md)
 - [Trainingspipeline und Reproduktion](ml/README.md)
 
@@ -110,6 +125,8 @@ Der [AppShelf-Eintrag](https://der-programmer1.github.io/AppShelf/apps/bananenbl
 
 Quellen: Rohit et al. (2026), [Mendeley Banana Ripeness Stage Dataset](https://data.mendeley.com/datasets/56c75hvm7r/1), CC BY 4.0; [COCO 2017](https://cocodataset.org/) und Wikimedia Commons mit Quellen und individuellen Lizenzen im Manifest. Tellerbeispiel: [goodiesfirst, „putahracsa fruit plate“](https://www.flickr.com/photos/scaredykat/4430551771/), CC BY 2.0, verkleinert. Gemischter Büschel: [Esther Musasike, „Bunch of banana.jpg“](https://commons.wikimedia.org/wiki/File:Bunch_of_banana.jpg), CC BY-SA 4.0, Ausschnitt und verkleinert. YOLOX: Megvii, Apache 2.0. Ursprüngliche Herkunft: offizieller Sites-/Vinext-Starter; das Standard-Buildziel ist der statische Pages-Export.
 '''
+if additional_experiment:
+    readme=readme.replace('## Lokal prüfen', '## Weiterer Trainingsversuch\n\n'+additional_experiment.replace('](./', '](public/evaluation/')+'\n\n## Lokal prüfen')
 (SITE/'README.md').write_text(readme)
 (SITE/'START-HIER.md').write_text(f'''# Bananenblick {card['version']} prüfen
 
@@ -141,7 +158,7 @@ acceptance=f'''# Prüfprotokoll · Bananenblick {card['version']}
 |---|---|
 | TypeScript | Bestanden |
 | Automatisierte Tests | 22 bestanden: Überlappung, globale eindeutige Zuordnung, Bewegung, Unsicherheit, drei Bestätigungen, fehlende Treffer, lesbare Nummern in dichten Büscheln, Liste/Rahmen, Python-/TypeScript-Parität |
-| Python-Pipeline | 9 Tests bestanden, einschließlich Verdeckung, sichtbarer Zielboxen, 448-Pixel-Spiegelung, ursprünglicher Split-Integrität und Metriksemantik |
+| Python-Pipeline | 12 Tests bestanden, einschließlich Verdeckung, sichtbarer Zielboxen, echter Fotoausschnitte mit erhaltenen Klassen, 448-Pixel-Spiegelung, ursprünglicher Split-Integrität und Metriksemantik |
 | Chromium unter Linux, mobile Pixel-7-Ansichtsgröße | Fünf Browserfälle bestanden am Produktionsbuild unter `/Bananenblick/`: kalter WASM-Start, verspätete Kamerafreigabe nach Stopp, falscher Modellhash, kontrollierte Kamera/Worker mit Auswahl/Bewegung/Unsicherheit/Verschwinden/Hoch-/Querformat/Stopp/Nummernreset/GPU-Hang und zwanzig dicht überlappenden Nummernschildern, zusätzlich echtes ONNX-Beispiel mit verzögertem Download und drei Durchläufen |
 | WebKit unter Linux, mobile iPhone-13-Ansichtsgröße | Dieselben fünf Browserfälle bestanden; WebKit-WPE ist kein echtes iPhone/Safari |
 | Tatsächliche physische Geräte | **Keine** Android-/Chrome- oder iPhone-/Safari-Geräte geprüft |
@@ -150,7 +167,7 @@ acceptance=f'''# Prüfprotokoll · Bananenblick {card['version']}
 | Neue Datenprüfung | Keine Bildgruppenüberschneidung, identischen Quellbilder oder pHash-Nahduplikatkandidaten zwischen neuem Test und übrigen Splits |
 | Neuer realer Büscheltest | 30 reale Commons-Büschelszenen und 30 COCO-Negativszenen vor Training eingefroren; **{report['truePositive']} TP, {report['falsePositive']} FP, {report['falseNegative']} FN**, Präzision **{pct(report['precision'])}**, Recall **{pct(report['recall'])}** |
 
-Der neue Prüfbestand wurde in Commit `59efe9e` eingefroren und bei der Fortsetzung in Commit `18308d4` unverändert gelassen. Bilder, Annotationen, Lizenzen und Hashes stehen in `individual-benchmark.json`. Die zusätzliche Einzelannotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. Öffentliche Quellen liefern keine physischen Frucht-/Aufnahmeserien-IDs. Das alte fehlgeschlagene Experiment wurde ausdrücklich Training/Validierung und ist unter `experiment-v1/` archiviert.
+{benchmark_intro} Bilder, Annotationen, Lizenzen und Hashes stehen in `individual-benchmark.json`. Die zusätzliche Einzelannotation wurde vom Coding-Assistenten visuell geprüft; eine unabhängige menschliche Gegenprüfung fehlt. Öffentliche Quellen liefern keine physischen Frucht-/Aufnahmeserien-IDs. Das alte fehlgeschlagene Experiment wurde ausdrücklich Training/Validierung und ist unter `experiment-v1/` archiviert.
 
 Die Empfehlungsmetrik nutzt den echten TypeScript-Tracker mit drei identischen Ergebnissen je statischem Foto. Unsichere Ergebnisse zählen als ausgelassene Empfehlungen. Auf den 30 Negativfotos entstanden {report['negativeFalseRecommendations']} falsche Empfehlungen. Zu große Gesamtrahmen ohne passende Einzelbox zählen nicht als richtige Erkennung. Nach Sichtung des neuen Tests erfolgte kein Nachjustieren.
 
@@ -161,4 +178,6 @@ Browser-Kameratests verwenden kontrollierte Video-/Worker-Doubles. Chromium verw
 Ziel: ≥95 % Präzision und ≥80 % Recall für bestätigte Empfehlungen sichtbarer reifer Einzelbananen bei IoU ≥0,5; Enthaltungen zählen als ausgelassene Empfehlungen. {status} Der Bericht enthält die tatsächlich gemessenen Werte. Nach weiterem testgetriebenem Tuning muss ein neuer Holdout vor Training festgelegt werden; der jetzige Test ist nun eingesehen.
 
 ## Noch erforderlich: echte Geräte'''+old_protocol
+if additional_experiment:
+    acceptance=acceptance.replace('## Modellabnahme','## Weiterer Trainingsversuch\n\n'+additional_experiment+'\n\n## Modellabnahme')
 acceptance_path.write_text(acceptance)

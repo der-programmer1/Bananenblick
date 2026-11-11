@@ -81,8 +81,11 @@ ml/.venv/bin/python ml/build_data_v4.py
 ml/.venv/bin/python ml/audit_individual_data.py --data ml/work/individual-v4 --output ml/work/v4-split-audit.json
 ml/.venv/bin/python ml/verify.py
 ml/.venv/bin/python ml/train_individual_v4.py
+ml/.venv/bin/python ml/evaluate_individual_v4.py
 ```
 
-Dieses Experiment allein gibt keine Veröffentlichung frei. Die bestehende Modellprüfung 0.3 und alle fehlgeschlagenen Ergebnisse bleiben erhalten, bis ein neuer Modellstand tatsächlich geprüft ist. Die echten Android-/Chrome- und iPhone-/Safari-Prüfungen bleiben erforderlich.
+Die Auswertung wartet auf den vollständigen, vorab festgelegten Trainingslauf. Sie wählt Schwellwerte ausschließlich auf der Validierung und inferiert danach den neuen Holdout genau einmal. Das Skript verweigert ein erneutes Überschreiben des Tests. Fehlgeschlagene Kandidaten bleiben unter `public/evaluation/experiment-v4/` archiviert und ersetzen die App-Gewichte nicht. Nur ein statisch abgenommener Kandidat wird für die weiteren App- und Geräteprüfungen übernommen.
+
+Dieses Experiment allein gibt keine Veröffentlichung frei. Die bestehende Modellprüfung 0.3 und alle fehlgeschlagenen Ergebnisse bleiben erhalten. Die echten Android-/Chrome- und iPhone-/Safari-Prüfungen bleiben erforderlich.
 
 `npm run test:browser` baut den Produktionsstand und prüft ihn unter dem Pages-Unterpfad `/Bananenblick/`, einschließlich langsamen Laufzeitdownloads, verspäteter Kamerafreigabe nach Stopp, Modellhashfehlern und GPU-Hang mit WASM-Neustart. Chromium/WebKit verwenden mobile Linux-Emulation; echte Geräteprüfungen werden dadurch nicht ersetzt. Physische Android-/Chrome- und iPhone-/Safari-Nachweise bleiben gesondert in `public/evaluation/device-validation.json` dokumentiert. Die private Sites-Veröffentlichung gehört nicht zu dieser Änderung.
