@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T15:22:02.961Z",
+  "generatedAt": "2026-11-10T19:41:42.091Z",
   "status": "passed",
   "provisional": false,
   "scope": "Actual onnxruntime-web/all 1.24.3 JSEP WASM on Node/Linux, not a browser, camera, Android or iPhone test.",
@@ -8,79 +8,252 @@
     "platform": "linux",
     "arch": "x64",
     "threads": 1,
-    "modelSha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419"
+    "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2"
   },
-  "loadMs": 744.5013180000001,
+  "loadMs": 1330.578423,
   "outputShape": [
     1,
-    2100,
+    4116,
     8
   ],
   "imageSensitivityPassed": true,
   "timing": {
-    "measurements": 15,
-    "medianMs": 54.30814199999986,
-    "p95Ms": 374.6395520000003,
-    "inferencePerSecond": 18.413445262038287,
+    "measurements": 25,
+    "medianMs": 103.46331800000007,
+    "p95Ms": 190.67059100000006,
+    "inferencePerSecond": 9.665261266799885,
     "includes": "WASM model run only; excludes image decode/resize, camera, drawing, worker transfer and scheduling"
   },
   "examples": [
     {
       "id": "unreif",
-      "inferenceMs": 50.21309599999995,
+      "inferenceMs": 104.1250329999998,
       "detections": [
         {
           "box": {
-            "x": 0.1336740016937256,
-            "y": 0.03601837158203125,
-            "width": 0.5010131518046061,
-            "height": 0.8413825035095215
+            "x": 0.0973272550673712,
+            "y": 0.043341841016496935,
+            "width": 0.4665532339186896,
+            "height": 0.8470691953386579
           },
           "predictedClass": 0,
-          "ripeness": "unreif",
-          "confidence": 0.7088408380307243,
-          "capturedAt": 1794237722058
+          "ripeness": "unsicher",
+          "confidence": 0.6714731596136119,
+          "capturedAt": 1794339698906,
+          "ripeEvidence": false
         }
       ],
-      "outputSignature": 6717139.339945674
+      "outputSignature": 16875823.37001416
     },
     {
       "id": "reif",
-      "inferenceMs": 56.285484,
+      "inferenceMs": 99.8295560000006,
       "detections": [
         {
           "box": {
-            "x": 0.2814475411696058,
-            "y": 0.3140740156173706,
-            "width": 0.5922019610266468,
-            "height": 0.4033512592315674
+            "x": 0.22959753826799376,
+            "y": 0.26148148945399696,
+            "width": 0.6478880479198699,
+            "height": 0.45726503644670763
           },
           "predictedClass": 1,
-          "ripeness": "reif",
-          "confidence": 0.7410505043648925,
-          "capturedAt": 1794237722405
+          "ripeness": "unsicher",
+          "confidence": 0.7887344999544617,
+          "capturedAt": 1794339699643,
+          "ripeEvidence": false
         }
       ],
-      "outputSignature": 6538417.150970608
+      "outputSignature": 16773480.145304948
     },
     {
       "id": "ueberreif",
-      "inferenceMs": 53.14775700000018,
+      "inferenceMs": 94.17006700000002,
       "detections": [
         {
           "box": {
-            "x": 0.19019930362701415,
-            "y": 0.3948375384012858,
-            "width": 0.6235682010650635,
-            "height": 0.318333371480306
+            "x": 0.18938626561846053,
+            "y": 0.3818675676981608,
+            "width": 0.6135777064732142,
+            "height": 0.33696833110990976
           },
           "predictedClass": 2,
           "ripeness": "überreif",
-          "confidence": 0.9256200024880741,
-          "capturedAt": 1794237722776
+          "confidence": 0.925998848542875,
+          "capturedAt": 1794339700393,
+          "ripeEvidence": false
         }
       ],
-      "outputSignature": 6526803.004330248
+      "outputSignature": 16510856.927647024
+    },
+    {
+      "id": "bueschel",
+      "inferenceMs": 87.74446900000021,
+      "detections": [
+        {
+          "box": {
+            "x": 0.1608784794807434,
+            "y": 0.28223989864411364,
+            "width": 0.23163674558912004,
+            "height": 0.23743624968647034
+          },
+          "predictedClass": 1,
+          "ripeness": "unsicher",
+          "confidence": 0.6618719822542083,
+          "capturedAt": 1794339701013,
+          "ripeEvidence": false
+        }
+      ],
+      "outputSignature": 16981317.98143798
+    },
+    {
+      "id": "gemischter-bueschel",
+      "inferenceMs": 86.76983400000063,
+      "detections": [
+        {
+          "box": {
+            "x": 0.6134945835386003,
+            "y": 0.46471568403327956,
+            "width": 0.17638046400887622,
+            "height": 0.5319272898788296
+          },
+          "predictedClass": 1,
+          "ripeness": "reif",
+          "confidence": 0.8534132243188921,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": true
+        },
+        {
+          "box": {
+            "x": 0.7461283717836652,
+            "y": 0.39190523069132477,
+            "width": 0.246920279094151,
+            "height": 0.5278313127658459
+          },
+          "predictedClass": 1,
+          "ripeness": "reif",
+          "confidence": 0.8348018467762586,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": true
+        },
+        {
+          "box": {
+            "x": 0.19705969095230103,
+            "y": 0.0038601402584248967,
+            "width": 0.12190159729548865,
+            "height": 0.20079685371311115
+          },
+          "predictedClass": 0,
+          "ripeness": "unreif",
+          "confidence": 0.8311490930140053,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": false
+        },
+        {
+          "box": {
+            "x": 0.33105816159929546,
+            "y": 0.3988126947335803,
+            "width": 0.15759570258004327,
+            "height": 0.38771294788807414
+          },
+          "predictedClass": 1,
+          "ripeness": "reif",
+          "confidence": 0.8247526468137849,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": true
+        },
+        {
+          "box": {
+            "x": 0.3664861236299787,
+            "y": 0.008004758514579923,
+            "width": 0.1210106100354876,
+            "height": 0.26744973562662877
+          },
+          "predictedClass": 0,
+          "ripeness": "unreif",
+          "confidence": 0.8237936457403521,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": false
+        },
+        {
+          "box": {
+            "x": 0.4093404582568577,
+            "y": 0.42516585129212914,
+            "width": 0.1743315117699759,
+            "height": 0.5369094391488998
+          },
+          "predictedClass": 1,
+          "ripeness": "reif",
+          "confidence": 0.821545901756302,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": true
+        },
+        {
+          "box": {
+            "x": 0.4735518225601741,
+            "y": 0.005258670229321004,
+            "width": 0.1181076509611947,
+            "height": 0.22840926432496564
+          },
+          "predictedClass": 0,
+          "ripeness": "unreif",
+          "confidence": 0.8176633385990328,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": false
+        },
+        {
+          "box": {
+            "x": 0.5418680906295776,
+            "y": 0.48955660376422855,
+            "width": 0.1502509457724435,
+            "height": 0.5104433962357715
+          },
+          "predictedClass": 1,
+          "ripeness": "reif",
+          "confidence": 0.8057980810131085,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": true
+        },
+        {
+          "box": {
+            "x": 0.0738252912248884,
+            "y": 0.003316520272515154,
+            "width": 0.12269389629364014,
+            "height": 0.20729836452305922
+          },
+          "predictedClass": 0,
+          "ripeness": "unreif",
+          "confidence": 0.8030108702355108,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": false
+        },
+        {
+          "box": {
+            "x": 0.18947032519749232,
+            "y": 0.21230854653957007,
+            "width": 0.23028741564069471,
+            "height": 0.3936796835652056
+          },
+          "predictedClass": 1,
+          "ripeness": "unsicher",
+          "confidence": 0.7707332850940247,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": false
+        },
+        {
+          "box": {
+            "x": 0.007552155426570347,
+            "y": 0.2665135906044502,
+            "width": 0.2501435790743146,
+            "height": 0.3171703725871639
+          },
+          "predictedClass": 1,
+          "ripeness": "unsicher",
+          "confidence": 0.7515225263750835,
+          "capturedAt": 1794339701779,
+          "ripeEvidence": false
+        }
+      ],
+      "outputSignature": 16591265.153832316
     }
   ],
   "syntheticBlankControls": [
@@ -96,8 +269,22 @@
     },
     {
       "syntheticColor": "#1d382b",
-      "falseDetections": 0,
-      "detections": []
+      "falseDetections": 1,
+      "detections": [
+        {
+          "box": {
+            "x": 0.3977162667683193,
+            "y": 0.41548183986118864,
+            "width": 0.18502708843776156,
+            "height": 0.2361824398949033
+          },
+          "predictedClass": 0,
+          "ripeness": "unsicher",
+          "confidence": 0.653445992604361,
+          "capturedAt": 1794339702087,
+          "ripeEvidence": false
+        }
+      ]
     }
   ],
   "realDeviceTests": "not performed",

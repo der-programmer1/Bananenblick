@@ -1,0 +1,736 @@
+{
+  "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+  "iou": 0.5,
+  "requiredConfirmations": 3,
+  "positiveScenes": 30,
+  "negativeScenes": 30,
+  "truePositive": 2,
+  "falsePositive": 0,
+  "falseNegative": 109,
+  "precision": 1,
+  "recall": 0.018018018018018018,
+  "uncertainOrUnconfirmed": 55,
+  "negativeFalseRecommendations": 0,
+  "negativeFalseDetections": 5,
+  "targets": {
+    "precision": 0.95,
+    "recall": 0.8
+  },
+  "passed": false,
+  "scenes": [
+    {
+      "id": "v4-commons-511456",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-22552194",
+      "scene": "real-bunch",
+      "support": 7,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 7,
+      "uncertainOrUnconfirmed": 5,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-41289443",
+      "scene": "real-bunch",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 5,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-54843238",
+      "scene": "real-bunch",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 4,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-62989002",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-64120873",
+      "scene": "real-bunch",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 5,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-70474472",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-71932294",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-91255702",
+      "scene": "real-bunch",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 2,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-101300769",
+      "scene": "real-bunch",
+      "support": 7,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 3,
+      "confirmed": [
+        {
+          "id": 1,
+          "box": {
+            "x": 0.08529833384922572,
+            "y": 0.12543687366303943,
+            "width": 0.41104303087506977,
+            "height": 0.7683225359235492
+          },
+          "confidence": 0.854672189391124
+        }
+      ]
+    },
+    {
+      "id": "v4-commons-116412754",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-126589792",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-126873731",
+      "scene": "real-bunch",
+      "support": 13,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 13,
+      "uncertainOrUnconfirmed": 6,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-137163788",
+      "scene": "real-bunch",
+      "support": 8,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 8,
+      "uncertainOrUnconfirmed": 6,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-152861121",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-162259860",
+      "scene": "real-bunch",
+      "support": 1,
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": [
+        {
+          "id": 2,
+          "box": {
+            "x": 0.5329198241233825,
+            "y": 0.061624542659747754,
+            "width": 0.2622405290603637,
+            "height": 0.3039392586969765
+          },
+          "confidence": 0.8606758672679291
+        }
+      ]
+    },
+    {
+      "id": "v4-commons-163334432",
+      "scene": "real-bunch",
+      "support": 6,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 6,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-163391344",
+      "scene": "real-bunch",
+      "support": 18,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 18,
+      "uncertainOrUnconfirmed": 8,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-164378323",
+      "scene": "real-bunch",
+      "support": 15,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 15,
+      "uncertainOrUnconfirmed": 7,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-179591719",
+      "scene": "real-bunch",
+      "support": 8,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 8,
+      "uncertainOrUnconfirmed": 1,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-94383799",
+      "scene": "real-bunch",
+      "support": 5,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 5,
+      "uncertainOrUnconfirmed": 3,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-164358822",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-164104758",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-184397986",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-35944520",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-195768763",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-113192674",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-163009673",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-164960953",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-commons-178720226",
+      "scene": "real-bunch",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-286553",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-402720",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-540502",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-571857",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-559842",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-266768",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-365385",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-100582",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-374083",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-105014",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-399296",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-303893",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-577584",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-252219",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-507081",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-479248",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-279541",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-323355",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-138856",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-142620",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-555009",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-80932",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-287667",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-91654",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-544565",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-430056",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-85157",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-533206",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-80949",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    },
+    {
+      "id": "v4-negative-382125",
+      "scene": "no-banana",
+      "support": 0,
+      "truePositive": 0,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "uncertainOrUnconfirmed": 0,
+      "confirmed": []
+    }
+  ],
+  "generatedAt": "2026-11-11T09:47:45.580472+00:00",
+  "modelSha256": "9aa2bb21476b8b7b4e6fd8d79444e8971f15773e34204a8ae51f65c3a420f5d4",
+  "benchmarkSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+  "trainingPlanSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+  "frozenAt": "2026-11-11T08:57:53.597112+00:00",
+  "frozenCommit": "b1de06fd32e1759957b709bc1a40bbb972928890",
+  "realBunchScenes": 30,
+  "realBunchSceneCountVerified": true,
+  "thresholds": {
+    "detection": 0.5,
+    "classification": 0.85,
+    "margin": 0.1,
+    "nmsIou": 0.45
+  },
+  "inputSize": 448,
+  "selectedEpoch": 13,
+  "limitations": [
+    "Coding-assistant visible-instance annotations; no independent expert adjudication.",
+    "Selected real photo crops approximate a closer camera view; this does not establish full-photo or live-camera generalization.",
+    "Public source identity and duplicate checks do not guarantee distinct physical fruits in all internet photographs.",
+    "COCO negatives were within generic COCO pretraining; Commons positives were not part of that dataset.",
+    "No physical Android/Chrome or iPhone/Safari evidence is created by this dataset or training."
+  ],
+  "physicalDeviceTestsPerformed": false,
+  "refinement": {
+    "planSha256": "8fb7ebc88096cd082ac08ee1036a1f0e16d4e7e25aca5b17e0f2c3e53ed17b78",
+    "initialCheckpointSha256": "8c3ea02239fbeaca73a3e1235a0e39597642c61e0a9be937073463858c18fec2",
+    "stage1CompletedEpochs": 20,
+    "epochs": 4,
+    "selectedFromRefinement": false
+  },
+  "baselineValidation": {
+    "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+    "iou": 0.5,
+    "requiredConfirmations": 3,
+    "positiveScenes": 142,
+    "negativeScenes": 35,
+    "truePositive": 78,
+    "falsePositive": 38,
+    "falseNegative": 113,
+    "precision": 0.6724137931034483,
+    "recall": 0.4083769633507853,
+    "uncertainOrUnconfirmed": 21,
+    "negativeFalseRecommendations": 0,
+    "negativeFalseDetections": 5,
+    "targets": {
+      "precision": 0.95,
+      "recall": 0.8
+    },
+    "passed": false,
+    "f1": 0.50814332247557
+  },
+  "selectedEpochValidation": {
+    "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+    "iou": 0.5,
+    "requiredConfirmations": 3,
+    "positiveScenes": 142,
+    "negativeScenes": 35,
+    "truePositive": 84,
+    "falsePositive": 31,
+    "falseNegative": 107,
+    "precision": 0.7304347826086957,
+    "recall": 0.4397905759162304,
+    "uncertainOrUnconfirmed": 21,
+    "negativeFalseRecommendations": 0,
+    "negativeFalseDetections": 7,
+    "targets": {
+      "precision": 0.95,
+      "recall": 0.8
+    },
+    "passed": false,
+    "f1": 0.5490196078431373
+  },
+  "baseDatasetProvenance": [
+    {
+      "file": "ml/individual-benchmark.json",
+      "sha256": "76eb42130dee722ccb2c2dc884fb4d27827ddc28fa21749a16b717e3cee0fcf3"
+    },
+    {
+      "file": "ml/individual-benchmark-v2.json",
+      "sha256": "3745ee5c1cc3722291ec45cc260c45b209d3db673ee31ff05da843bd7a4dd2eb"
+    },
+    {
+      "file": "ml/individual-training-v3.json",
+      "sha256": "50f337b1183141bcfbc33ed78c23606034c7f3ccba73af513ab62cd579ac359b"
+    }
+  ],
+  "inferenceMs": {
+    "median": 10.895408499891346,
+    "p95": 30.451358900063497,
+    "context": "ONNX Runtime CPU, Linux, two threads; inference only, not phone throughput"
+  }
+}

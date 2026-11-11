@@ -1,13 +1,14 @@
-# Bananenblick starten
+# Bananenblick 0.3.0 prüfen
 
-**Die App ist bereits online: https://der-programmer1.github.io/Bananenblick/**
+Die Nummerierung, Rahmen-/Listenauswahl und Reifebestätigung sind umgesetzt. Die Zielwerte für essreife Einzelbananen sind nicht erreicht. Echte Android-/iPhone-Prüfungen und die Veröffentlichungsabnahme sind noch offen. Dieser Stand wurde nicht auf GitHub Pages veröffentlicht.
 
-Für eine eigene Kopie:
+Mit Node.js 24 lokal starten:
 
-1. Die ZIP entpacken. Den **Inhalt** des Ordners `bananenblick` in ein neues **öffentliches GitHub-Repository** mit Branch **main** übernehmen. `.github` gehört dazu.
-2. **Settings → Pages → Source → GitHub Actions** auswählen.
-3. **Actions → Bananenblick auf GitHub Pages → Run workflow → main** starten.
+```bash
+npm ci
+npm run dev
+```
 
-Nach dem erfolgreichen Lauf steht die HTTPS-Adresse im Workflow-Schritt „Veröffentlichen“ und unter Settings → Pages. Jeder kann die App dort ohne Anmeldung verwenden. Kamerabilder bleiben auf dem jeweiligen Handy.
+`npm run check`, `npm test` und `npm run test:browser` prüfen den Stand. Der Browserbefehl baut zuerst den statischen Pages-Export. Browserinstallation und Ergebnisse stehen in [README.md](README.md).
 
-Die vollständige Anleitung, Git-Befehle und Lösungen für Startprobleme stehen in **README.md**. Website, Modell und Trainingsskripte sind enthalten. Es werden weder ein API-Schlüssel noch ein eigener Modellserver benötigt.
+Bestehende öffentliche Version: https://der-programmer1.github.io/Bananenblick/. Die private Sites-Veröffentlichung ist nicht Teil dieser Änderung.

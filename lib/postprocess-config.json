@@ -1,0 +1,6 @@
+{
+  "detection": 0.5,
+  "classification": 0.8,
+  "margin": 0.1,
+  "nmsIou": 0.45
+}

@@ -1,0 +1,363 @@
+{
+  "name": "Bananenblick YOLOX-Nano",
+  "architecture": "YOLOX-Nano",
+  "version": "0.4.0",
+  "path": "/models/banana-yolox-nano.onnx",
+  "inputSize": 448,
+  "inputName": "images",
+  "outputName": "predictions",
+  "classes": [
+    "unreif",
+    "reif",
+    "überreif"
+  ],
+  "trainedAt": "2026-11-11T09:47:45.580472+00:00",
+  "dataset": {
+    "title": "Annotated Banana Ripeness Stage Dataset",
+    "url": "https://data.mendeley.com/datasets/56c75hvm7r/1",
+    "license": "CC BY 4.0"
+  },
+  "preprocessing": {
+    "channelOrder": "BGR",
+    "range": [
+      0,
+      255
+    ],
+    "layout": "NCHW",
+    "padding": 114,
+    "letterbox": "top-left"
+  },
+  "output": {
+    "shape": [
+      1,
+      4116,
+      8
+    ],
+    "columns": [
+      "cx",
+      "cy",
+      "width",
+      "height",
+      "objectness",
+      "unreif",
+      "reif",
+      "überreif"
+    ],
+    "decoded": true
+  },
+  "thresholds": {
+    "detection": 0.5,
+    "classification": 0.85,
+    "margin": 0.1,
+    "nmsIou": 0.45
+  },
+  "sha256": "9aa2bb21476b8b7b4e6fd8d79444e8971f15773e34204a8ae51f65c3a420f5d4",
+  "bytes": 3704752,
+  "metrics": {
+    "threshold": 0.5,
+    "iouThreshold": 0.5,
+    "nmsIou": 0.45,
+    "apCandidateThreshold": 0.01,
+    "maxDetectionsPerImage": 40,
+    "mAP50": 0.9268382984767527,
+    "precision": 0.9405940594059405,
+    "recall": 0.9405940594059405,
+    "f1": 0.9405940594059405,
+    "visibleRecall": 0.7821782178217822,
+    "uncertainCount": 16,
+    "perClass": [
+      {
+        "class": "unreif",
+        "support": 33,
+        "truePositive": 31,
+        "falsePositive": 2,
+        "falseNegative": 2,
+        "precision": 0.9393939393939394,
+        "recall": 0.9393939393939394,
+        "localizationRecall": 0.9393939393939394,
+        "wrongRipeness": 0,
+        "missed": 2,
+        "uncertain": 10,
+        "visibleTruePositive": 21,
+        "visibleRecall": 0.6363636363636364,
+        "ap50": 0.9191719171917192
+      },
+      {
+        "class": "reif",
+        "support": 31,
+        "truePositive": 30,
+        "falsePositive": 1,
+        "falseNegative": 1,
+        "precision": 0.967741935483871,
+        "recall": 0.967741935483871,
+        "localizationRecall": 0.967741935483871,
+        "wrongRipeness": 0,
+        "missed": 1,
+        "uncertain": 2,
+        "visibleTruePositive": 28,
+        "visibleRecall": 0.9032258064516129,
+        "ap50": 0.9584797189396359
+      },
+      {
+        "class": "überreif",
+        "support": 37,
+        "truePositive": 34,
+        "falsePositive": 3,
+        "falseNegative": 3,
+        "precision": 0.918918918918919,
+        "recall": 0.918918918918919,
+        "localizationRecall": 0.918918918918919,
+        "wrongRipeness": 0,
+        "missed": 3,
+        "uncertain": 4,
+        "visibleTruePositive": 30,
+        "visibleRecall": 0.8108108108108109,
+        "ap50": 0.9028632592989029
+      }
+    ],
+    "confusion": {
+      "rows": [
+        "unreif",
+        "reif",
+        "überreif"
+      ],
+      "columns": [
+        "unreif",
+        "reif",
+        "überreif",
+        "nicht erkannt"
+      ],
+      "counts": [
+        [
+          31,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          30,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          34,
+          3
+        ]
+      ]
+    },
+    "visibleConfusion": {
+      "rows": [
+        "unreif",
+        "reif",
+        "überreif"
+      ],
+      "columns": [
+        "unreif",
+        "reif",
+        "überreif",
+        "unsicher",
+        "nicht erkannt"
+      ],
+      "counts": [
+        [
+          21,
+          0,
+          0,
+          10,
+          2
+        ],
+        [
+          0,
+          28,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          30,
+          4,
+          3
+        ]
+      ]
+    },
+    "testImages": 101
+  },
+  "evaluationUrl": "/evaluation/test-report.json",
+  "status": "prototype",
+  "limitations": [
+    "Coding-assistant visible-instance annotations; no independent expert adjudication.",
+    "Selected real photo crops approximate a closer camera view; this does not establish full-photo or live-camera generalization.",
+    "Public source identity and duplicate checks do not guarantee distinct physical fruits in all internet photographs.",
+    "COCO negatives were within generic COCO pretraining; Commons positives were not part of that dataset.",
+    "No physical Android/Chrome or iPhone/Safari evidence is created by this dataset or training.",
+    "Static individual-fruit acceptance NOT met."
+  ],
+  "checkpointSha256": "a008ea1f3a14cbbe23d074a68648677100368b45e106886c08b24b6c8b58aa5d",
+  "recommendationPolicy": {
+    "requiredConsecutiveConfirmations": 3,
+    "resetOnUncertainOrMissing": true,
+    "minimumJointConfidence": 0.85,
+    "meaning": "visible peel ripeness only"
+  },
+  "individualBenchmark": {
+    "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+    "iou": 0.5,
+    "requiredConfirmations": 3,
+    "positiveScenes": 30,
+    "negativeScenes": 30,
+    "truePositive": 2,
+    "falsePositive": 0,
+    "falseNegative": 109,
+    "precision": 1,
+    "recall": 0.018018018018018018,
+    "uncertainOrUnconfirmed": 55,
+    "negativeFalseRecommendations": 0,
+    "negativeFalseDetections": 5,
+    "targets": {
+      "precision": 0.95,
+      "recall": 0.8
+    },
+    "passed": false,
+    "generatedAt": "2026-11-11T09:47:45.580472+00:00",
+    "modelSha256": "9aa2bb21476b8b7b4e6fd8d79444e8971f15773e34204a8ae51f65c3a420f5d4",
+    "benchmarkSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+    "trainingPlanSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+    "frozenAt": "2026-11-11T08:57:53.597112+00:00",
+    "frozenCommit": "b1de06fd32e1759957b709bc1a40bbb972928890",
+    "realBunchScenes": 30,
+    "realBunchSceneCountVerified": true,
+    "thresholds": {
+      "detection": 0.5,
+      "classification": 0.85,
+      "margin": 0.1,
+      "nmsIou": 0.45
+    },
+    "inputSize": 448,
+    "selectedEpoch": 13,
+    "limitations": [
+      "Coding-assistant visible-instance annotations; no independent expert adjudication.",
+      "Selected real photo crops approximate a closer camera view; this does not establish full-photo or live-camera generalization.",
+      "Public source identity and duplicate checks do not guarantee distinct physical fruits in all internet photographs.",
+      "COCO negatives were within generic COCO pretraining; Commons positives were not part of that dataset.",
+      "No physical Android/Chrome or iPhone/Safari evidence is created by this dataset or training."
+    ],
+    "physicalDeviceTestsPerformed": false,
+    "refinement": {
+      "planSha256": "8fb7ebc88096cd082ac08ee1036a1f0e16d4e7e25aca5b17e0f2c3e53ed17b78",
+      "initialCheckpointSha256": "8c3ea02239fbeaca73a3e1235a0e39597642c61e0a9be937073463858c18fec2",
+      "stage1CompletedEpochs": 20,
+      "epochs": 4,
+      "selectedFromRefinement": false
+    },
+    "baselineValidation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 78,
+      "falsePositive": 38,
+      "falseNegative": 113,
+      "precision": 0.6724137931034483,
+      "recall": 0.4083769633507853,
+      "uncertainOrUnconfirmed": 21,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 5,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.50814332247557
+    },
+    "selectedEpochValidation": {
+      "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+      "iou": 0.5,
+      "requiredConfirmations": 3,
+      "positiveScenes": 142,
+      "negativeScenes": 35,
+      "truePositive": 84,
+      "falsePositive": 31,
+      "falseNegative": 107,
+      "precision": 0.7304347826086957,
+      "recall": 0.4397905759162304,
+      "uncertainOrUnconfirmed": 21,
+      "negativeFalseRecommendations": 0,
+      "negativeFalseDetections": 7,
+      "targets": {
+        "precision": 0.95,
+        "recall": 0.8
+      },
+      "passed": false,
+      "f1": 0.5490196078431373
+    },
+    "baseDatasetProvenance": [
+      {
+        "file": "ml/individual-benchmark.json",
+        "sha256": "76eb42130dee722ccb2c2dc884fb4d27827ddc28fa21749a16b717e3cee0fcf3"
+      },
+      {
+        "file": "ml/individual-benchmark-v2.json",
+        "sha256": "3745ee5c1cc3722291ec45cc260c45b209d3db673ee31ff05da843bd7a4dd2eb"
+      },
+      {
+        "file": "ml/individual-training-v3.json",
+        "sha256": "50f337b1183141bcfbc33ed78c23606034c7f3ccba73af513ab62cd579ac359b"
+      }
+    ],
+    "inferenceMs": {
+      "median": 10.895408499891346,
+      "p95": 30.451358900063497,
+      "context": "ONNX Runtime CPU, Linux, two threads; inference only, not phone throughput"
+    }
+  },
+  "training": {
+    "epochs": 24,
+    "selectedEpoch": 13,
+    "totalRunSeconds": 2795.0962340831757,
+    "seed": 20261114,
+    "initialCheckpointSha256": "a0324678588958b72b4cfe5adaba77866d5d29a23e26ad1a563ceb6e4da017e7",
+    "data": {
+      "train": 592,
+      "val": 177,
+      "test": 101,
+      "acceptance": 60
+    },
+    "syntheticTrainingScenesPerEpoch": 150,
+    "realPositiveRepeat": 8,
+    "realBunchCropProbability": 0.5,
+    "fullBackboneFromEpoch": 1,
+    "benchmarkFrozenCommit": "b1de06fd32e1759957b709bc1a40bbb972928890",
+    "trainingPlanSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+    "refinement": {
+      "planSha256": "8fb7ebc88096cd082ac08ee1036a1f0e16d4e7e25aca5b17e0f2c3e53ed17b78",
+      "initialCheckpointSha256": "8c3ea02239fbeaca73a3e1235a0e39597642c61e0a9be937073463858c18fec2",
+      "stage1CompletedEpochs": 20,
+      "epochs": 4,
+      "selectedFromRefinement": false
+    }
+  },
+  "additionalDataset": {
+    "name": "COCO 2017",
+    "url": "https://cocodataset.org/",
+    "imageLicenses": "Individual CC BY / CC BY-SA 2.0, with source links in individual-benchmark.json",
+    "annotationReview": "Coding-assistant visual review; independent human review pending"
+  },
+  "additionalDatasets": [
+    {
+      "name": "COCO 2017",
+      "url": "https://cocodataset.org/",
+      "sourcesAndLicenses": "https://github.com/der-programmer1/Bananenblick/blob/b1de06fd32e1759957b709bc1a40bbb972928890/ml/individual-benchmark-v4.json"
+    },
+    {
+      "name": "Wikimedia Commons photographs",
+      "url": "https://commons.wikimedia.org/",
+      "sourcesAndLicenses": "https://github.com/der-programmer1/Bananenblick/blob/b1de06fd32e1759957b709bc1a40bbb972928890/ml/individual-benchmark-v4.json"
+    }
+  ]
+}

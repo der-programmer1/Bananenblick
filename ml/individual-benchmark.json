@@ -1,0 +1,4011 @@
+{
+  "version": 1,
+  "frozenAt": "2026-11-10T16:17:40.559961+00:00",
+  "annotationSha256": "d37d6667b8cce71b80721568e49b1dba339f75f0ae2959177c6b902b39b5ecfb",
+  "trainingStarted": false,
+  "positiveScenes": 30,
+  "negativeScenes": 30,
+  "criteria": {
+    "precision": 0.95,
+    "recall": 0.8,
+    "iou": 0.5,
+    "consecutiveConfirmations": 3,
+    "uncertainCountsAsMissedRecommendation": true
+  },
+  "limitations": [
+    "COCO train photographs were exposed to the original COCO pretrained detector; this is a holdout from banana fine tuning, not from generic COCO pretraining.",
+    "Single coding-assistant annotation review; independent human ripeness/box adjudication is still required.",
+    "Static real photographs cannot establish live-camera temporal or device performance."
+  ],
+  "candidateOrdering": [
+    521064,
+    357782,
+    298142,
+    541343,
+    121769,
+    128258,
+    93947,
+    448402,
+    152795,
+    464937,
+    98478,
+    313710,
+    26041,
+    411455,
+    238187,
+    113113,
+    157860,
+    160260,
+    576517,
+    113367,
+    512658,
+    79992,
+    291665,
+    321079,
+    339816,
+    211445,
+    80337,
+    521763,
+    403096,
+    715,
+    409754,
+    44815,
+    57138,
+    528756,
+    507318,
+    114259,
+    87235,
+    266310,
+    557360,
+    324308,
+    97841,
+    146841,
+    481407,
+    58231,
+    332891,
+    497855,
+    156066,
+    538776,
+    550414,
+    511554,
+    227185,
+    383341,
+    555020,
+    383805,
+    460559,
+    463555,
+    424174,
+    372058,
+    56784,
+    134072,
+    394801,
+    89033,
+    452414,
+    362072,
+    476910,
+    100343,
+    305366,
+    202742,
+    99642,
+    458756,
+    262748,
+    80495,
+    556399,
+    149196,
+    132019,
+    510985,
+    21921,
+    105620,
+    193710,
+    364797,
+    283144,
+    63764,
+    157192,
+    96554,
+    271416,
+    176758,
+    351062,
+    331505,
+    474479,
+    10303,
+    87522
+  ],
+  "splits": {
+    "train": [
+      {
+        "id": "coco-train-521064",
+        "file": "images/coco-train-000000521064.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000521064.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.62,
+            0.695,
+            0.76,
+            0.51
+          ],
+          [
+            1,
+            0.77,
+            0.79,
+            0.46,
+            0.4
+          ]
+        ],
+        "group": "coco-521064",
+        "sha256_file": "0e44b70723dff9f249bd5f361f13d9e1fc6e16721a5d5ae4faa07d0615deb4fa",
+        "originalSha256": "7be632ba0bc482b82ca82bf6c4b2b8930ba8fa8fa988f1560c8bd70c66dc17f6",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4369563094",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-98478",
+        "file": "images/coco-train-000000098478.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000098478.jpg",
+        "width": 640,
+        "height": 640,
+        "boxes": [
+          [
+            0,
+            0.29,
+            0.545,
+            0.26,
+            0.55
+          ],
+          [
+            2,
+            0.575,
+            0.26,
+            0.49,
+            0.26
+          ],
+          [
+            2,
+            0.545,
+            0.715,
+            0.47,
+            0.25
+          ]
+        ],
+        "group": "coco-98478",
+        "sha256_file": "e6daa618680c87b54ff177e009f7fb8ec6a7fd4ed49a847aee98a4c44f5e0cdd",
+        "originalSha256": "6d7e48f4f74d8cb18bbda165202b7793843b8cdee6eda55aa8cf025f5860de92",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=6915856890",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-160260",
+        "file": "images/coco-train-000000160260.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000160260.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [
+          [
+            0,
+            0.365,
+            0.33,
+            0.21,
+            0.38
+          ],
+          [
+            0,
+            0.46,
+            0.345,
+            0.22,
+            0.33
+          ],
+          [
+            0,
+            0.54,
+            0.32,
+            0.18,
+            0.22
+          ],
+          [
+            0,
+            0.345,
+            0.695,
+            0.19,
+            0.33
+          ],
+          [
+            0,
+            0.42,
+            0.65,
+            0.18,
+            0.34
+          ],
+          [
+            0,
+            0.52,
+            0.505,
+            0.12,
+            0.27
+          ],
+          [
+            0,
+            0.595,
+            0.525,
+            0.17,
+            0.27
+          ],
+          [
+            0,
+            0.675,
+            0.525,
+            0.19,
+            0.19
+          ],
+          [
+            0,
+            0.345,
+            0.855,
+            0.11,
+            0.21
+          ],
+          [
+            0,
+            0.41,
+            0.82,
+            0.12,
+            0.24
+          ]
+        ],
+        "group": "coco-160260",
+        "sha256_file": "6eb036a9cf559df48834243252c9930b79d268b90e87ca33bce1b9527adb75b9",
+        "originalSha256": "c6c942a9a65215a54177b98d1965ea696eb398ec34e5f1b07b4ffdbd9f4420f6",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9437608445",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-291665",
+        "file": "images/coco-train-000000291665.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000291665.jpg",
+        "width": 640,
+        "height": 481,
+        "boxes": [
+          [
+            0,
+            0.28,
+            0.135,
+            0.52,
+            0.19
+          ],
+          [
+            0,
+            0.315,
+            0.25,
+            0.53,
+            0.2
+          ],
+          [
+            0,
+            0.325,
+            0.38,
+            0.49,
+            0.24
+          ],
+          [
+            0,
+            0.285,
+            0.505,
+            0.35,
+            0.21
+          ],
+          [
+            0,
+            0.32,
+            0.665,
+            0.3,
+            0.17
+          ],
+          [
+            0,
+            0.46,
+            0.785,
+            0.22,
+            0.19
+          ],
+          [
+            0,
+            0.555,
+            0.845,
+            0.19,
+            0.21
+          ],
+          [
+            0,
+            0.72,
+            0.66,
+            0.22,
+            0.28
+          ],
+          [
+            0,
+            0.78,
+            0.44,
+            0.26,
+            0.2
+          ]
+        ],
+        "group": "coco-291665",
+        "sha256_file": "ed61d8320055611386638bc76ed4cfd82de77445784329cc34432a38f4e907fa",
+        "originalSha256": "31a75e554e2f3ae89739e29d42d86729650722d9bbf864a1d82a107ebc05a232",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=2501766552",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-324308",
+        "file": "images/coco-train-000000324308.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000324308.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            0,
+            0.165,
+            0.205,
+            0.29,
+            0.39
+          ],
+          [
+            0,
+            0.315,
+            0.195,
+            0.27,
+            0.39
+          ],
+          [
+            0,
+            0.39,
+            0.18,
+            0.2,
+            0.36
+          ],
+          [
+            0,
+            0.44,
+            0.12,
+            0.16,
+            0.24
+          ],
+          [
+            0,
+            0.125,
+            0.48,
+            0.21,
+            0.36
+          ],
+          [
+            0,
+            0.185,
+            0.495,
+            0.17,
+            0.35
+          ],
+          [
+            0,
+            0.275,
+            0.5,
+            0.15,
+            0.28
+          ],
+          [
+            0,
+            0.665,
+            0.33,
+            0.35,
+            0.3
+          ],
+          [
+            0,
+            0.655,
+            0.45,
+            0.33,
+            0.22
+          ],
+          [
+            0,
+            0.635,
+            0.51,
+            0.29,
+            0.22
+          ],
+          [
+            0,
+            0.66,
+            0.78,
+            0.34,
+            0.26
+          ],
+          [
+            0,
+            0.57,
+            0.805,
+            0.34,
+            0.25
+          ],
+          [
+            0,
+            0.44,
+            0.57,
+            0.16,
+            0.2
+          ]
+        ],
+        "group": "coco-324308",
+        "sha256_file": "e0f097404fa72141e457fc64da01348ffd07996825a4f141b3c383017d4debd5",
+        "originalSha256": "3d9b9c9bae7397ba9c72fe542ed3f9f8f445b98467d3c4b494cc21953657dad3",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8013366166",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-383341",
+        "file": "images/coco-train-000000383341.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000383341.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            2,
+            0.32,
+            0.51,
+            0.32,
+            0.68
+          ],
+          [
+            2,
+            0.67,
+            0.545,
+            0.26,
+            0.71
+          ]
+        ],
+        "group": "coco-383341",
+        "sha256_file": "40234239341e96768df6e95ed16ad857b4ff30ee9a6de9874b5b15a37037fddb",
+        "originalSha256": "3b6ec5023572a077e9d3d93cbba84e6b53496883e272a2db68d4c9804eccd717",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=401174299",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-80495",
+        "file": "images/coco-train-000000080495.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000080495.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.405,
+            0.17,
+            0.21,
+            0.34
+          ],
+          [
+            1,
+            0.49,
+            0.17,
+            0.18,
+            0.34
+          ]
+        ],
+        "group": "coco-80495",
+        "sha256_file": "eff6c77f99b636d34a962abf8e51201ef22004a2e03fbf5ddfcbc56b690a16da",
+        "originalSha256": "56c5996b06251a89454be1ad229ab422effedcfed8d82df5ee9fb7f6d9dbda43",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7446582430",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-331505",
+        "file": "images/coco-train-000000331505.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000331505.jpg",
+        "width": 640,
+        "height": 428,
+        "boxes": [
+          [
+            1,
+            0.83,
+            0.44,
+            0.32,
+            0.84
+          ],
+          [
+            1,
+            0.92,
+            0.48,
+            0.16,
+            0.78
+          ]
+        ],
+        "group": "coco-331505",
+        "sha256_file": "cedfaefa21bc19f92f734f57d46013f5b4d887f284bbea86cea8e651f58e18cc",
+        "originalSha256": "a08802ad40b9c7fa92f370581106d2ef7aa05107f8395346bc329d5f03156e9e",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=2817728629",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-10303",
+        "file": "images/coco-train-000000010303.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000010303.jpg",
+        "width": 640,
+        "height": 468,
+        "boxes": [
+          [
+            1,
+            0.59,
+            0.675,
+            0.6,
+            0.23
+          ]
+        ],
+        "group": "coco-10303",
+        "sha256_file": "10e035004ccd1edb171e0c61c1a1ee72c2c8bc52b4654889603ecd1005d5403b",
+        "originalSha256": "41d716df8e39fc7f094523272595b0819dce8e9a21889d514fc06607e9c77272",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4198054407",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-val-6012",
+        "file": "images/coco-val-000000006012.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000006012.jpg",
+        "width": 640,
+        "height": 531,
+        "boxes": [
+          [
+            0,
+            0.33,
+            0.47,
+            0.28,
+            0.66
+          ],
+          [
+            0,
+            0.665,
+            0.48,
+            0.25,
+            0.68
+          ]
+        ],
+        "group": "coco-6012",
+        "sha256_file": "b80524e13ec72bfda43b3c8c870aa0966be2cdc5bc4448546c4567ec4aa918a7",
+        "originalSha256": "7cd0d627b15c09f373aa613d013fb2d8ae6bd20bcce0d98aa31b963e6bcca495",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4281955635",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-79651",
+        "file": "images/coco-val-000000079651.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000079651.jpg",
+        "width": 640,
+        "height": 478,
+        "boxes": [
+          [
+            2,
+            0.585,
+            0.78,
+            0.57,
+            0.2
+          ],
+          [
+            2,
+            0.69,
+            0.7,
+            0.48,
+            0.16
+          ]
+        ],
+        "group": "coco-79651",
+        "sha256_file": "faf4f86243c2b1efddf0e684c3c20ee82ed1df70e969bd35a34eb3c74fca8b14",
+        "originalSha256": "05107da6f72e8e495bbfaa0e8d638433cb5fd9c35d43bf193ff2b12db0c684bb",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9659844494",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-548506",
+        "file": "images/coco-val-000000548506.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000548506.jpg",
+        "width": 640,
+        "height": 425,
+        "boxes": [
+          [
+            1,
+            0.675,
+            0.255,
+            0.33,
+            0.51
+          ],
+          [
+            1,
+            0.775,
+            0.19,
+            0.39,
+            0.38
+          ],
+          [
+            1,
+            0.85,
+            0.165,
+            0.3,
+            0.33
+          ]
+        ],
+        "group": "coco-548506",
+        "sha256_file": "625810b19be41c7732335da01aa9d77481eed48cb61f580f43998f13a07c28e0",
+        "originalSha256": "6587aa7e069e1aec1ef2bac033583a7173db33619ba2cecdd4e52e8cf17e4ad3",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7172313601",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-train-489029",
+        "file": "images/coco-train-000000489029.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000489029.jpg",
+        "width": 640,
+        "height": 490,
+        "boxes": [],
+        "group": "coco-489029",
+        "sha256_file": "d0c440bf0145e538a0c82f2374c052958d1a4f3b1be2190c129677fcd8f667a9",
+        "originalSha256": "102bceff65fa8c7d31348ad4d22514beeb3cf1d661f216f3636599e3f6d3a06f",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3963896829",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-65504",
+        "file": "images/coco-train-000000065504.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000065504.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-65504",
+        "sha256_file": "f963ca7d5ed95a5d39cecaf413104ade0398eff142ad67720a00b827ab23bf8f",
+        "originalSha256": "1ead8a580ef69b7d533ad637664d938cb51b485c724b7adba504ce476f06b164",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9612830539",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-500904",
+        "file": "images/coco-train-000000500904.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000500904.jpg",
+        "width": 640,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-500904",
+        "sha256_file": "3773c287d0ed6d384e685fe1d365f0547a47455363d50e56637f73166d98c156",
+        "originalSha256": "cf771d0d68a050fe6894b55b3d9db052a7a7baefc1bea487b36809919c9a8d38",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5705023825",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-178208",
+        "file": "images/coco-train-000000178208.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000178208.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-178208",
+        "sha256_file": "552da2b0f57422dcc3adb46a0e05000bb0b69cee193dd38cf048cde0e4081e78",
+        "originalSha256": "b24bd7dbd9a3a7d2cd2262b125d2969a7a6fc2bd4aefcb6bebe17d167afbaa24",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3508635569",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-48707",
+        "file": "images/coco-train-000000048707.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000048707.jpg",
+        "width": 640,
+        "height": 429,
+        "boxes": [],
+        "group": "coco-48707",
+        "sha256_file": "9d57a8b3015380a0d30d4675a7eb975885e267d55ba4927f0bcb4efcd793b5a2",
+        "originalSha256": "e9f3fab876673dbe686751b9537b9cc511d86f17948b653aced73fa0bc5e63c9",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4085672622",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-563723",
+        "file": "images/coco-train-000000563723.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000563723.jpg",
+        "width": 426,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-563723",
+        "sha256_file": "5e3141204416912cbe7ea486dc73dea24dfbcf2f82ea5241c4f40790e78f2544",
+        "originalSha256": "d8176927954044ad7942e4411a3dd036e28b542cf14719827b2e9ca0bed1efb7",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=543967835",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-518510",
+        "file": "images/coco-train-000000518510.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000518510.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-518510",
+        "sha256_file": "5fd091846723be609e7e091fdecbd44cc357ec76e2f8b951b155345601386678",
+        "originalSha256": "e38c66ae6c3e512c33bd58a88b1981967ce59846f3794c4e7de09d949959e04c",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3359133322",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-318906",
+        "file": "images/coco-train-000000318906.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000318906.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-318906",
+        "sha256_file": "dac4f07ad71b808e027ebea4760f9aa65053aaae64e7190db6590b1bec8fd8e1",
+        "originalSha256": "beb35467e7c42db9ade743068e569a37e880f96a3f61cf617a1d5edcec8b481c",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4300159564",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-324953",
+        "file": "images/coco-train-000000324953.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000324953.jpg",
+        "width": 640,
+        "height": 424,
+        "boxes": [],
+        "group": "coco-324953",
+        "sha256_file": "fcd60191c832b1355370b778cefb9c1e18dc51d5313b9e5029b01f991ece20bf",
+        "originalSha256": "41c354b607be2edd4ec42d0179992c90bf72f9034661fea09cf3ad82c240d60a",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9728405000",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-342100",
+        "file": "images/coco-train-000000342100.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000342100.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-342100",
+        "sha256_file": "0ec9634d36a1bfe065190b0d652df7b0d8d22113ab5f35ac0f5c5a804a6f5a47",
+        "originalSha256": "c04195c5812e4dd300b80f3fad705a05d8b8ae0ca4502ad96dea5691b4041c23",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7868411368",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-279199",
+        "file": "images/coco-train-000000279199.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000279199.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-279199",
+        "sha256_file": "60132da04757519dff0d4e35d1043f15ed6b3ae73c3ae906f5e98e66c76530a8",
+        "originalSha256": "098181b6942d67718ed5a9524f699726ef8f750739d38e8f84a6d71d4bc89a51",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9698220861",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-68801",
+        "file": "images/coco-train-000000068801.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000068801.jpg",
+        "width": 640,
+        "height": 424,
+        "boxes": [],
+        "group": "coco-68801",
+        "sha256_file": "5af117689ed1f909d356d3a2f6b732fee766498976c9aed93a9c48624e09103f",
+        "originalSha256": "7cfc77959e06503b84efeaf8b5fc2158c0e7ab742d9e4b90eeabbfc658c941ca",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8416946034",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-549780",
+        "file": "images/coco-train-000000549780.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000549780.jpg",
+        "width": 640,
+        "height": 426,
+        "boxes": [],
+        "group": "coco-549780",
+        "sha256_file": "4714ecdcce57bc71b210a289f16127ecadced72dd2451f9778633fbed0d1bcb7",
+        "originalSha256": "1aa4b7a25c9949c3d7df4b7fbb952e529001fdd02576d46382e8961db950520e",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3305562252",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-53608",
+        "file": "images/coco-train-000000053608.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000053608.jpg",
+        "width": 640,
+        "height": 452,
+        "boxes": [],
+        "group": "coco-53608",
+        "sha256_file": "23182116934b12b160faa5c0cce97809983ddd1df351fa09021a71d7d053241d",
+        "originalSha256": "8d7d217c3ae34cf75df6503b4cc154a867a80d3905e495467e399a8cd1da7a23",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9688289839",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-288506",
+        "file": "images/coco-train-000000288506.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000288506.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-288506",
+        "sha256_file": "f850878abc84f82409a2da06f478deced836999fc73adb542fc3d83ab8d24af6",
+        "originalSha256": "e150cd2abdd91621e3b3d7a2513f29ef023af2604c666e6d93c4c910f00af8ca",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=459002313",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-73620",
+        "file": "images/coco-train-000000073620.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000073620.jpg",
+        "width": 640,
+        "height": 425,
+        "boxes": [],
+        "group": "coco-73620",
+        "sha256_file": "f2ba3db848236f4d421dd8c2cd08510e723e14a7c87a04819b1e489b5572cbdc",
+        "originalSha256": "a76b2da707a710641b6cdec1bebc538f643b985561d62798920b7434b4891b19",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7556390508",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-447197",
+        "file": "images/coco-train-000000447197.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000447197.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-447197",
+        "sha256_file": "cd5b0c6ab5920880b8cda865a6a86fed8dda6c17db102da6264a37a8adf7945d",
+        "originalSha256": "fe7ff61b95ad7885d2db935d2bec3bc8f4ab6cdc4c2c287dc981ab16b1d04f93",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5186308",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-69969",
+        "file": "images/coco-train-000000069969.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000069969.jpg",
+        "width": 640,
+        "height": 402,
+        "boxes": [],
+        "group": "coco-69969",
+        "sha256_file": "87ef4b33661528099ea8eae0f8b11904ff2556fa5c6f4257c503e93b45e17c38",
+        "originalSha256": "c041147fa88c96c1d205cd7f2ac8f7afddd925ea4d7d4d6b0dc43ce3137eb449",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=6485457913",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-457394",
+        "file": "images/coco-train-000000457394.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000457394.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-457394",
+        "sha256_file": "8f92547f23695d9f7b2fb835184a32c1f51576d628802bdd0bd6fb134dfc4614",
+        "originalSha256": "bbacf75f191f2a74552439cc9832f2d2bc8026a746eff932a16b2f65521d0d34",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4585070187",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-96539",
+        "file": "images/coco-train-000000096539.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000096539.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-96539",
+        "sha256_file": "ac6784a5f49137323ae012b422bb49eb869d3d91b83b76495f6fbf1ab5d040c8",
+        "originalSha256": "78bc9c0f27b26708f014acc7188df2b24fda0a9082fcefa8e73af57a2f7afdc2",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3298086596",
+        "scene": "no-banana",
+        "sourceSet": "train"
+      }
+    ],
+    "val": [
+      {
+        "id": "coco-train-576517",
+        "file": "images/coco-train-000000576517.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000576517.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [
+          [
+            1,
+            0.465,
+            0.525,
+            0.65,
+            0.77
+          ]
+        ],
+        "group": "coco-576517",
+        "sha256_file": "14b800ff81f76d4a5f465d2da9dccdda25f4debf9667bf101b5ece6cdc08c02c",
+        "originalSha256": "03e0468947efc32924d8322a831cc6f5286948eea3c430ee70211ce6e346e53f",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=6576976861",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-409754",
+        "file": "images/coco-train-000000409754.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000409754.jpg",
+        "width": 500,
+        "height": 500,
+        "boxes": [
+          [
+            0,
+            0.625,
+            0.275,
+            0.39,
+            0.39
+          ],
+          [
+            1,
+            0.81,
+            0.445,
+            0.12,
+            0.17
+          ],
+          [
+            1,
+            0.805,
+            0.54,
+            0.11,
+            0.22
+          ]
+        ],
+        "group": "coco-409754",
+        "sha256_file": "851b214b90f691d7fe8bb0b34c359f63485b8e3ceeb59cae02e39fc8512fbdfc",
+        "originalSha256": "4a1da216c6ee1fc5cc70718161097d13f6d8141e2e6f0f78fce70480533855d6",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4249611044",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-372058",
+        "file": "images/coco-train-000000372058.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000372058.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.22,
+            0.57,
+            0.24,
+            0.58
+          ],
+          [
+            1,
+            0.825,
+            0.34,
+            0.27,
+            0.2
+          ],
+          [
+            1,
+            0.78,
+            0.385,
+            0.28,
+            0.21
+          ]
+        ],
+        "group": "coco-372058",
+        "sha256_file": "1648948817f5c3ba651eea26f6d10fa651ddd994ce30aaf6249690f9bdb2a8d8",
+        "originalSha256": "64cbf44f6f36a31e5678fa89ca45c09ce8bc0b1df6db09e1a1ed6a174f09b7f6",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4288477204",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-556399",
+        "file": "images/coco-train-000000556399.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000556399.jpg",
+        "width": 640,
+        "height": 490,
+        "boxes": [
+          [
+            2,
+            0.24,
+            0.455,
+            0.42,
+            0.45
+          ],
+          [
+            2,
+            0.785,
+            0.49,
+            0.43,
+            0.32
+          ]
+        ],
+        "group": "coco-556399",
+        "sha256_file": "ba2f1be57bf981a0fb393fd87c98703fbb878e494b7c639b2b317e044dbdad79",
+        "originalSha256": "4b8fe8b389488c6b8581183103ae01cff36b290c11baa04ca2cc5fc54e4780c3",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9454106748",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-val-410735",
+        "file": "images/coco-val-000000410735.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000410735.jpg",
+        "width": 640,
+        "height": 512,
+        "boxes": [],
+        "group": "coco-410735",
+        "sha256_file": "1b51ac47ab78ea419a17656118fe48a2c961cbfd87a7061566ed5962d1f43eb6",
+        "originalSha256": "100e3482a768dddcdccb9603682ae0b00921a31854d86b8924e7fc723bcbacac",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8459265911",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-234779",
+        "file": "images/coco-val-000000234779.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000234779.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-234779",
+        "sha256_file": "da2858a0e42313dba4683380ccfa48f22b5d3bda658b133183b14bfca289b3d6",
+        "originalSha256": "e970cc6cf1f21dbcda6dc8475bf06375e91948f7de358c25dcfd58025e102ba9",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4440872984",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-242946",
+        "file": "images/coco-val-000000242946.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000242946.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-242946",
+        "sha256_file": "530fdbb372ed6a28441d4efc7839171fc3e2224525ea57942b9e7b3b2408b23e",
+        "originalSha256": "79a2d1d40ed9e58bc559fcc15b0028c1aa91d22711787934e5a3f8c67109df37",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=2650118269",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-520871",
+        "file": "images/coco-val-000000520871.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000520871.jpg",
+        "width": 640,
+        "height": 425,
+        "boxes": [],
+        "group": "coco-520871",
+        "sha256_file": "167fd1b51383fa8a0deabfb00d45a82a4038ddb984de9918fe123539051e0c6a",
+        "originalSha256": "0217449170fd69f767bf97b95ff76ad5b5151204916d94151d9539aa829099be",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3711888643",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-534041",
+        "file": "images/coco-val-000000534041.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000534041.jpg",
+        "width": 500,
+        "height": 375,
+        "boxes": [],
+        "group": "coco-534041",
+        "sha256_file": "499e0d5e8588bb228a65d7a0c159b409b99ab580e36ace34db7a74496e850f9f",
+        "originalSha256": "226e705f51910ad527f9dc73a4c11ed2b5601aae82ea7f523da689ca243cdddc",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=526831619",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "coco-train-298142",
+        "file": "images/coco-train-000000298142.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000298142.jpg",
+        "width": 640,
+        "height": 428,
+        "boxes": [
+          [
+            1,
+            0.425,
+            0.565,
+            0.27,
+            0.13
+          ],
+          [
+            1,
+            0.42,
+            0.645,
+            0.26,
+            0.11
+          ],
+          [
+            1,
+            0.37,
+            0.76,
+            0.24,
+            0.22
+          ],
+          [
+            1,
+            0.615,
+            0.68,
+            0.35,
+            0.2
+          ],
+          [
+            1,
+            0.64,
+            0.74,
+            0.34,
+            0.18
+          ],
+          [
+            1,
+            0.665,
+            0.84,
+            0.35,
+            0.14
+          ],
+          [
+            1,
+            0.455,
+            0.86,
+            0.11,
+            0.16
+          ]
+        ],
+        "group": "coco-298142",
+        "sha256_file": "d351e3b44af1f60be9c92a37a93ec359da7ff4818f96d6d8efb7e102ea410ec2",
+        "originalSha256": "682802a01d8e5f14a59725fa6c09d5dc019666fdaa12f650274c2fa0706766a2",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9586754762",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-152795",
+        "file": "images/coco-train-000000152795.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000152795.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [
+          [
+            1,
+            0.64,
+            0.345,
+            0.4,
+            0.23
+          ],
+          [
+            1,
+            0.605,
+            0.495,
+            0.37,
+            0.27
+          ],
+          [
+            1,
+            0.62,
+            0.61,
+            0.26,
+            0.32
+          ],
+          [
+            1,
+            0.815,
+            0.62,
+            0.37,
+            0.2
+          ],
+          [
+            1,
+            0.835,
+            0.72,
+            0.33,
+            0.24
+          ],
+          [
+            1,
+            0.815,
+            0.855,
+            0.37,
+            0.25
+          ]
+        ],
+        "group": "coco-152795",
+        "sha256_file": "e38d567b234d91ce2221208096ea6d2791c81f5ef02fdfc12d8d854566aca17f",
+        "originalSha256": "23118e389d572e739df99939058b443f6f4798ba07823943cca035235f28bd0b",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8679043350",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-26041",
+        "file": "images/coco-train-000000026041.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000026041.jpg",
+        "width": 640,
+        "height": 426,
+        "boxes": [
+          [
+            1,
+            0.255,
+            0.45,
+            0.17,
+            0.34
+          ],
+          [
+            1,
+            0.33,
+            0.42,
+            0.14,
+            0.42
+          ],
+          [
+            1,
+            0.38,
+            0.425,
+            0.1,
+            0.41
+          ],
+          [
+            1,
+            0.44,
+            0.285,
+            0.1,
+            0.21
+          ],
+          [
+            1,
+            0.525,
+            0.28,
+            0.19,
+            0.22
+          ],
+          [
+            1,
+            0.61,
+            0.255,
+            0.2,
+            0.19
+          ]
+        ],
+        "group": "coco-26041",
+        "sha256_file": "9ae51ad2c13899054217145c7cb0577ffb56f7b529479d5ed3f1ceee219e2f94",
+        "originalSha256": "876c53c96aea5cb1aba8716f513dfdc5f73bc6a2ee8706ab5f94c85e9af1aa1b",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4122858624",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-113113",
+        "file": "images/coco-train-000000113113.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000113113.jpg",
+        "width": 640,
+        "height": 426,
+        "boxes": [
+          [
+            2,
+            0.455,
+            0.19,
+            0.39,
+            0.38
+          ],
+          [
+            2,
+            0.49,
+            0.09,
+            0.3,
+            0.18
+          ],
+          [
+            1,
+            0.655,
+            0.275,
+            0.19,
+            0.55
+          ],
+          [
+            1,
+            0.735,
+            0.285,
+            0.17,
+            0.57
+          ],
+          [
+            1,
+            0.8,
+            0.335,
+            0.16,
+            0.67
+          ],
+          [
+            1,
+            0.87,
+            0.33,
+            0.18,
+            0.66
+          ],
+          [
+            1,
+            0.9,
+            0.22,
+            0.12,
+            0.44
+          ]
+        ],
+        "group": "coco-113113",
+        "sha256_file": "8f1dc1204e0d85117c9d418a7e5d7f6a560bcd81fa1010cf998699d2ed9d2a3f",
+        "originalSha256": "a65c067296d90b70cd7e22a7850c2efde143666c58b245a7873a9c9b92380e03",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5521331645",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-157860",
+        "file": "images/coco-train-000000157860.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000157860.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            0,
+            0.28,
+            0.695,
+            0.54,
+            0.59
+          ],
+          [
+            0,
+            0.245,
+            0.605,
+            0.43,
+            0.73
+          ],
+          [
+            0,
+            0.32,
+            0.545,
+            0.28,
+            0.73
+          ],
+          [
+            0,
+            0.42,
+            0.495,
+            0.26,
+            0.75
+          ],
+          [
+            0,
+            0.5,
+            0.375,
+            0.22,
+            0.71
+          ],
+          [
+            1,
+            0.56,
+            0.325,
+            0.16,
+            0.57
+          ],
+          [
+            1,
+            0.61,
+            0.295,
+            0.12,
+            0.59
+          ],
+          [
+            1,
+            0.7,
+            0.3,
+            0.14,
+            0.52
+          ],
+          [
+            1,
+            0.765,
+            0.35,
+            0.19,
+            0.42
+          ]
+        ],
+        "group": "coco-157860",
+        "sha256_file": "5e0daac2da8bc194c32289cca334d9a40adc1c01a42a426014c563f5efc3e42c",
+        "originalSha256": "26960dc8e04be633b928c99a2dce9e12d7afd1f931acf6592a1e0af142800833",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4629745141",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-113367",
+        "file": "images/coco-train-000000113367.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000113367.jpg",
+        "width": 640,
+        "height": 425,
+        "boxes": [
+          [
+            1,
+            0.37,
+            0.235,
+            0.18,
+            0.41
+          ],
+          [
+            1,
+            0.47,
+            0.23,
+            0.22,
+            0.38
+          ],
+          [
+            1,
+            0.535,
+            0.28,
+            0.27,
+            0.28
+          ],
+          [
+            1,
+            0.65,
+            0.44,
+            0.34,
+            0.18
+          ]
+        ],
+        "group": "coco-113367",
+        "sha256_file": "d6c18c1d6017f0b5707e3b37b2b5a7488cae231d97f7ee545070a65dc21b95a2",
+        "originalSha256": "b3479dd9c4c72a8e48d97c61a3f8546c2a9da54d44e545ff186f581d3faafc55",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5790287747",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-79992",
+        "file": "images/coco-train-000000079992.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000079992.jpg",
+        "width": 428,
+        "height": 640,
+        "boxes": [
+          [
+            1,
+            0.535,
+            0.375,
+            0.25,
+            0.21
+          ],
+          [
+            1,
+            0.545,
+            0.42,
+            0.27,
+            0.2
+          ],
+          [
+            1,
+            0.63,
+            0.485,
+            0.34,
+            0.17
+          ],
+          [
+            1,
+            0.585,
+            0.515,
+            0.31,
+            0.15
+          ],
+          [
+            1,
+            0.765,
+            0.37,
+            0.25,
+            0.24
+          ],
+          [
+            1,
+            0.415,
+            0.495,
+            0.15,
+            0.11
+          ]
+        ],
+        "group": "coco-79992",
+        "sha256_file": "e028729527edafc9a46b461becbba6b862fb8988e9ab4911b184d8f8ab1f08c3",
+        "originalSha256": "15b88880aa93cf0434cedf368610dd846240342e3983fa042e2eaca01569af43",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5363137097",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-211445",
+        "file": "images/coco-train-000000211445.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000211445.jpg",
+        "width": 612,
+        "height": 612,
+        "boxes": [
+          [
+            1,
+            0.265,
+            0.65,
+            0.53,
+            0.24
+          ],
+          [
+            1,
+            0.26,
+            0.75,
+            0.52,
+            0.2
+          ],
+          [
+            1,
+            0.24,
+            0.83,
+            0.48,
+            0.18
+          ],
+          [
+            1,
+            0.425,
+            0.12,
+            0.33,
+            0.22
+          ],
+          [
+            1,
+            0.405,
+            0.165,
+            0.31,
+            0.19
+          ]
+        ],
+        "group": "coco-211445",
+        "sha256_file": "e4ff1f532d1dd6544197a3994ab0ae631bd394410b9960c1c7ce0c13c5753189",
+        "originalSha256": "96a168a75d0e24c07f2e00c5f1e746302a256f0c65003aa1b101b1bb7296c309",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=6102875511",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-403096",
+        "file": "images/coco-train-000000403096.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000403096.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.455,
+            0.37,
+            0.19,
+            0.58
+          ],
+          [
+            1,
+            0.51,
+            0.355,
+            0.16,
+            0.57
+          ],
+          [
+            1,
+            0.73,
+            0.36,
+            0.32,
+            0.56
+          ],
+          [
+            1,
+            0.625,
+            0.435,
+            0.19,
+            0.49
+          ],
+          [
+            1,
+            0.44,
+            0.745,
+            0.18,
+            0.33
+          ],
+          [
+            1,
+            0.54,
+            0.79,
+            0.12,
+            0.34
+          ],
+          [
+            1,
+            0.66,
+            0.775,
+            0.14,
+            0.23
+          ]
+        ],
+        "group": "coco-403096",
+        "sha256_file": "897e69a476b40c9cd9734ee1c9a8ea8175b07b83251d31c612dc2ecec3e47b1c",
+        "originalSha256": "ab2e61f2df7e0dc167591e3042f15335213f22c2d97f2e115175d8b7f12f69e3",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8169558298",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-44815",
+        "file": "images/coco-train-000000044815.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000044815.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.105,
+            0.63,
+            0.19,
+            0.24
+          ],
+          [
+            1,
+            0.2,
+            0.595,
+            0.18,
+            0.29
+          ],
+          [
+            1,
+            0.245,
+            0.6,
+            0.19,
+            0.32
+          ],
+          [
+            1,
+            0.315,
+            0.635,
+            0.15,
+            0.35
+          ],
+          [
+            1,
+            0.39,
+            0.61,
+            0.1,
+            0.32
+          ],
+          [
+            1,
+            0.47,
+            0.625,
+            0.1,
+            0.29
+          ],
+          [
+            1,
+            0.585,
+            0.64,
+            0.17,
+            0.38
+          ],
+          [
+            1,
+            0.69,
+            0.675,
+            0.18,
+            0.41
+          ],
+          [
+            1,
+            0.78,
+            0.625,
+            0.16,
+            0.41
+          ],
+          [
+            1,
+            0.69,
+            0.31,
+            0.14,
+            0.36
+          ],
+          [
+            1,
+            0.775,
+            0.32,
+            0.15,
+            0.32
+          ],
+          [
+            1,
+            0.78,
+            0.25,
+            0.12,
+            0.28
+          ],
+          [
+            1,
+            0.525,
+            0.35,
+            0.09,
+            0.28
+          ],
+          [
+            1,
+            0.45,
+            0.39,
+            0.12,
+            0.32
+          ],
+          [
+            0,
+            0.905,
+            0.405,
+            0.19,
+            0.37
+          ],
+          [
+            0,
+            0.94,
+            0.455,
+            0.12,
+            0.35
+          ]
+        ],
+        "group": "coco-44815",
+        "sha256_file": "8a7890f224c6b1972eae465661f0c65452059a8072355197f21ba4d0553c9ee7",
+        "originalSha256": "0eddf55c8a51e6a21b94af758d07dbcb611e2f6df41b83b2a32b73d92ea41185",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=1083959526",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-87235",
+        "file": "images/coco-train-000000087235.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000087235.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [
+          [
+            1,
+            0.06,
+            0.365,
+            0.12,
+            0.31
+          ],
+          [
+            1,
+            0.095,
+            0.435,
+            0.19,
+            0.39
+          ],
+          [
+            1,
+            0.125,
+            0.455,
+            0.19,
+            0.41
+          ],
+          [
+            1,
+            0.145,
+            0.465,
+            0.19,
+            0.41
+          ],
+          [
+            1,
+            0.26,
+            0.44,
+            0.16,
+            0.32
+          ],
+          [
+            1,
+            0.245,
+            0.505,
+            0.13,
+            0.33
+          ],
+          [
+            1,
+            0.29,
+            0.515,
+            0.14,
+            0.33
+          ],
+          [
+            1,
+            0.32,
+            0.485,
+            0.16,
+            0.35
+          ],
+          [
+            1,
+            0.355,
+            0.485,
+            0.15,
+            0.35
+          ],
+          [
+            1,
+            0.39,
+            0.53,
+            0.12,
+            0.48
+          ],
+          [
+            1,
+            0.445,
+            0.54,
+            0.13,
+            0.44
+          ],
+          [
+            1,
+            0.505,
+            0.57,
+            0.11,
+            0.36
+          ]
+        ],
+        "group": "coco-87235",
+        "sha256_file": "1618566e093ca9263cfffba629217f00e974af79930c769cc92c46be72a5347e",
+        "originalSha256": "b30543fe6faa83b150ed254d6a5e4d6e67c183391cd40bfdee03dff840cf2e15",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=2214345240",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-481407",
+        "file": "images/coco-train-000000481407.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000481407.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.23,
+            0.34,
+            0.34,
+            0.18
+          ],
+          [
+            1,
+            0.255,
+            0.395,
+            0.31,
+            0.17
+          ],
+          [
+            1,
+            0.295,
+            0.445,
+            0.25,
+            0.13
+          ],
+          [
+            1,
+            0.28,
+            0.635,
+            0.32,
+            0.13
+          ],
+          [
+            1,
+            0.265,
+            0.68,
+            0.33,
+            0.14
+          ],
+          [
+            1,
+            0.305,
+            0.74,
+            0.33,
+            0.22
+          ]
+        ],
+        "group": "coco-481407",
+        "sha256_file": "66480cd7ac8280cd626e50e7c11fa38e130db2732967b011c19799a46cdcc14a",
+        "originalSha256": "7e209a6f3c69296a2babc178ec0ad5581d1a0a5329903175d73ef0b65fbd5f03",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4673467101",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-58231",
+        "file": "images/coco-train-000000058231.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000058231.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            2,
+            0.215,
+            0.615,
+            0.33,
+            0.69
+          ],
+          [
+            2,
+            0.285,
+            0.65,
+            0.33,
+            0.68
+          ],
+          [
+            2,
+            0.4,
+            0.655,
+            0.26,
+            0.67
+          ],
+          [
+            2,
+            0.575,
+            0.655,
+            0.23,
+            0.67
+          ],
+          [
+            2,
+            0.725,
+            0.66,
+            0.27,
+            0.66
+          ],
+          [
+            2,
+            0.86,
+            0.49,
+            0.28,
+            0.56
+          ],
+          [
+            2,
+            0.51,
+            0.145,
+            0.46,
+            0.27
+          ],
+          [
+            2,
+            0.435,
+            0.205,
+            0.53,
+            0.25
+          ]
+        ],
+        "group": "coco-58231",
+        "sha256_file": "ab61a9e830691e9fa27d6edf40cb86c3641032a5a2e2686466d2531f0388e513",
+        "originalSha256": "ccea15ba29e4b25b84dd71f78fb71b2b7f6bdbe6b50b1a91c2916007b98b8215",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7589836224",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-332891",
+        "file": "images/coco-train-000000332891.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000332891.jpg",
+        "width": 640,
+        "height": 383,
+        "boxes": [
+          [
+            1,
+            0.145,
+            0.22,
+            0.29,
+            0.36
+          ],
+          [
+            1,
+            0.21,
+            0.285,
+            0.2,
+            0.45
+          ],
+          [
+            1,
+            0.265,
+            0.325,
+            0.13,
+            0.51
+          ],
+          [
+            1,
+            0.305,
+            0.2,
+            0.13,
+            0.3
+          ],
+          [
+            1,
+            0.36,
+            0.205,
+            0.14,
+            0.27
+          ],
+          [
+            1,
+            0.36,
+            0.17,
+            0.16,
+            0.26
+          ],
+          [
+            1,
+            0.57,
+            0.21,
+            0.2,
+            0.3
+          ],
+          [
+            1,
+            0.595,
+            0.245,
+            0.19,
+            0.29
+          ],
+          [
+            1,
+            0.585,
+            0.3,
+            0.21,
+            0.24
+          ],
+          [
+            2,
+            0.56,
+            0.875,
+            0.28,
+            0.19
+          ]
+        ],
+        "group": "coco-332891",
+        "sha256_file": "b32c666e16433e8634a931662459459e14e7f1c18f709ee16c593012314089ff",
+        "originalSha256": "9c475053706e160a0a76846eab65d0ccf2f7f604eeb288620c53c10b351ee017",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9621330877",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-156066",
+        "file": "images/coco-train-000000156066.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000156066.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.085,
+            0.74,
+            0.09,
+            0.22
+          ],
+          [
+            1,
+            0.155,
+            0.765,
+            0.09,
+            0.25
+          ],
+          [
+            1,
+            0.23,
+            0.765,
+            0.1,
+            0.25
+          ],
+          [
+            1,
+            0.335,
+            0.81,
+            0.09,
+            0.26
+          ],
+          [
+            1,
+            0.395,
+            0.82,
+            0.09,
+            0.26
+          ],
+          [
+            1,
+            0.48,
+            0.835,
+            0.12,
+            0.23
+          ],
+          [
+            1,
+            0.6,
+            0.87,
+            0.18,
+            0.2
+          ],
+          [
+            1,
+            0.765,
+            0.825,
+            0.19,
+            0.21
+          ]
+        ],
+        "group": "coco-156066",
+        "sha256_file": "05bee40e681eb1448dd4526c271ced065eca03308b64503aff2053a75db3f69a",
+        "originalSha256": "636ed5cb5692d6711db6060462a5c9ab501f8946cdb2cdc69a79e94a5f8f3290",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8687257944",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-227185",
+        "file": "images/coco-train-000000227185.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000227185.jpg",
+        "width": 612,
+        "height": 612,
+        "boxes": [
+          [
+            1,
+            0.415,
+            0.405,
+            0.29,
+            0.39
+          ],
+          [
+            1,
+            0.485,
+            0.455,
+            0.17,
+            0.27
+          ],
+          [
+            1,
+            0.505,
+            0.565,
+            0.47,
+            0.23
+          ],
+          [
+            1,
+            0.465,
+            0.835,
+            0.39,
+            0.33
+          ],
+          [
+            1,
+            0.59,
+            0.78,
+            0.42,
+            0.24
+          ]
+        ],
+        "group": "coco-227185",
+        "sha256_file": "8966dddfcd895f4aee613ecc3e3d9829093948bc553c5331b0a366d0bcb924ae",
+        "originalSha256": "4edb605ee0bd87e6a88661c94d3a82c82c1042a6c28365798dd05e32471f6138",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=6861033250",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-383805",
+        "file": "images/coco-train-000000383805.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000383805.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.37,
+            0.51,
+            0.56,
+            0.22
+          ],
+          [
+            1,
+            0.365,
+            0.615,
+            0.55,
+            0.31
+          ],
+          [
+            1,
+            0.44,
+            0.64,
+            0.44,
+            0.18
+          ],
+          [
+            1,
+            0.58,
+            0.645,
+            0.26,
+            0.49
+          ],
+          [
+            1,
+            0.56,
+            0.335,
+            0.22,
+            0.19
+          ]
+        ],
+        "group": "coco-383805",
+        "sha256_file": "224e42c0c492f0c3eff017f9a9ae72c74d3c372bc6a9edb7265ab0fd0f62a410",
+        "originalSha256": "848b2091456da705420d19a9ff2efc2590994af364f2a9c0653a1085a138d2a0",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9225620208",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-424174",
+        "file": "images/coco-train-000000424174.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000424174.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [
+          [
+            1,
+            0.165,
+            0.305,
+            0.27,
+            0.15
+          ],
+          [
+            1,
+            0.195,
+            0.335,
+            0.25,
+            0.11
+          ],
+          [
+            1,
+            0.09,
+            0.335,
+            0.12,
+            0.11
+          ],
+          [
+            1,
+            0.385,
+            0.205,
+            0.25,
+            0.09
+          ],
+          [
+            1,
+            0.405,
+            0.18,
+            0.27,
+            0.1
+          ],
+          [
+            1,
+            0.42,
+            0.145,
+            0.28,
+            0.11
+          ],
+          [
+            1,
+            0.65,
+            0.16,
+            0.22,
+            0.14
+          ],
+          [
+            1,
+            0.71,
+            0.125,
+            0.2,
+            0.13
+          ],
+          [
+            1,
+            0.605,
+            0.47,
+            0.27,
+            0.26
+          ],
+          [
+            1,
+            0.695,
+            0.44,
+            0.37,
+            0.24
+          ],
+          [
+            1,
+            0.75,
+            0.425,
+            0.36,
+            0.23
+          ],
+          [
+            1,
+            0.785,
+            0.415,
+            0.35,
+            0.19
+          ],
+          [
+            1,
+            0.735,
+            0.405,
+            0.31,
+            0.17
+          ]
+        ],
+        "group": "coco-424174",
+        "sha256_file": "9ddee1e3d066ccf4c7b50a4a57ffe641e99621a7d3b199325f0830c7a1216afd",
+        "originalSha256": "05aad4d74d2fcb9782eabcdf8ed41d7b0b95bc8e4bcaa19a7d9a4894a1a6e197",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3581960003",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-56784",
+        "file": "images/coco-train-000000056784.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000056784.jpg",
+        "width": 612,
+        "height": 612,
+        "boxes": [
+          [
+            2,
+            0.51,
+            0.235,
+            0.98,
+            0.31
+          ],
+          [
+            2,
+            0.5,
+            0.47,
+            1.0,
+            0.36
+          ],
+          [
+            2,
+            0.56,
+            0.71,
+            0.88,
+            0.4
+          ]
+        ],
+        "group": "coco-56784",
+        "sha256_file": "39ae06ce5c71c72779542cd4bc41788376aa6f4f8965cf49f8e73be53e190152",
+        "originalSha256": "a83dbc19376ab0715cdeadf239c9da583a88728e14dcbba645fc135fbbc53ce7",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7987257099",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-134072",
+        "file": "images/coco-train-000000134072.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000134072.jpg",
+        "width": 356,
+        "height": 373,
+        "boxes": [
+          [
+            1,
+            0.24,
+            0.335,
+            0.26,
+            0.67
+          ],
+          [
+            1,
+            0.59,
+            0.32,
+            0.24,
+            0.4
+          ],
+          [
+            1,
+            0.595,
+            0.54,
+            0.25,
+            0.42
+          ]
+        ],
+        "group": "coco-134072",
+        "sha256_file": "77bc6b3f9e9b53fc6dd0d514c400fff71ce68e6d1acad99b404b0322a4a0ff3b",
+        "originalSha256": "1ae747f310323f43091063ccd983e00a44e0d34394336a1d0576e3aa8edd2144",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8760042920",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-362072",
+        "file": "images/coco-train-000000362072.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000362072.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.36,
+            0.675,
+            0.18,
+            0.35
+          ],
+          [
+            1,
+            0.43,
+            0.685,
+            0.08,
+            0.27
+          ],
+          [
+            1,
+            0.555,
+            0.695,
+            0.15,
+            0.23
+          ],
+          [
+            1,
+            0.605,
+            0.64,
+            0.21,
+            0.2
+          ],
+          [
+            1,
+            0.68,
+            0.63,
+            0.22,
+            0.2
+          ],
+          [
+            1,
+            0.71,
+            0.56,
+            0.18,
+            0.18
+          ],
+          [
+            1,
+            0.69,
+            0.43,
+            0.12,
+            0.16
+          ],
+          [
+            2,
+            0.13,
+            0.395,
+            0.1,
+            0.17
+          ],
+          [
+            1,
+            0.11,
+            0.465,
+            0.18,
+            0.25
+          ]
+        ],
+        "group": "coco-362072",
+        "sha256_file": "654a17674f3caf182d4e7cb740b48c0f0d84e3e7752524f3e6a0394db9a0412b",
+        "originalSha256": "19591b8918e6f6b75a8145c0ae9b87be556f24e09a34d2f5f0120f9475d64d17",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5122395551",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-458756",
+        "file": "images/coco-train-000000458756.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000458756.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.42,
+            0.365,
+            0.3,
+            0.29
+          ],
+          [
+            1,
+            0.555,
+            0.24,
+            0.39,
+            0.24
+          ],
+          [
+            1,
+            0.625,
+            0.24,
+            0.31,
+            0.26
+          ],
+          [
+            1,
+            0.6,
+            0.295,
+            0.32,
+            0.23
+          ],
+          [
+            1,
+            0.63,
+            0.4,
+            0.28,
+            0.18
+          ],
+          [
+            1,
+            0.495,
+            0.6,
+            0.59,
+            0.1
+          ]
+        ],
+        "group": "coco-458756",
+        "sha256_file": "36d713342cccaaf8ccbcc9b6af2eae53e0b071f2c38d1d507072dc1a77fc2aa6",
+        "originalSha256": "942c7cfc98341b0c78c6eb5a1f4a9fb22b9ac7d800798e49f37ce3da70d47a9a",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3679968895",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-21921",
+        "file": "images/coco-train-000000021921.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000021921.jpg",
+        "width": 427,
+        "height": 640,
+        "boxes": [
+          [
+            1,
+            0.515,
+            0.46,
+            0.73,
+            0.34
+          ],
+          [
+            1,
+            0.495,
+            0.37,
+            0.69,
+            0.24
+          ],
+          [
+            1,
+            0.7,
+            0.35,
+            0.32,
+            0.28
+          ],
+          [
+            1,
+            0.545,
+            0.375,
+            0.13,
+            0.27
+          ],
+          [
+            1,
+            0.7,
+            0.55,
+            0.6,
+            0.52
+          ]
+        ],
+        "group": "coco-21921",
+        "sha256_file": "e3d8e8912a9d961c38d8ae6741ae0c1bae76806acd00b5fc675e527b98b7640e",
+        "originalSha256": "edf6b368a54a8a30efb5932a26e9a2276af8405e410aff1a534bd6ff2146c808",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5660163035",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-193710",
+        "file": "images/coco-train-000000193710.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000193710.jpg",
+        "width": 640,
+        "height": 360,
+        "boxes": [
+          [
+            1,
+            0.105,
+            0.38,
+            0.19,
+            0.76
+          ],
+          [
+            1,
+            0.225,
+            0.365,
+            0.13,
+            0.73
+          ],
+          [
+            1,
+            0.29,
+            0.445,
+            0.12,
+            0.89
+          ],
+          [
+            1,
+            0.4,
+            0.42,
+            0.16,
+            0.84
+          ],
+          [
+            1,
+            0.545,
+            0.37,
+            0.19,
+            0.74
+          ],
+          [
+            1,
+            0.6,
+            0.28,
+            0.16,
+            0.56
+          ],
+          [
+            1,
+            0.78,
+            0.275,
+            0.34,
+            0.55
+          ],
+          [
+            1,
+            0.83,
+            0.205,
+            0.34,
+            0.41
+          ]
+        ],
+        "group": "coco-193710",
+        "sha256_file": "5e5aa0559e97af5cebf4470a79fa7bff414f4329288a8ec0d935113d9b3140bd",
+        "originalSha256": "25feca4584c59ede701a3aa95ceebcf49b698283025b89210beee384d31e4bb0",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5335679037",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-283144",
+        "file": "images/coco-train-000000283144.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000283144.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [
+          [
+            1,
+            0.32,
+            0.225,
+            0.28,
+            0.45
+          ],
+          [
+            1,
+            0.495,
+            0.135,
+            0.15,
+            0.27
+          ],
+          [
+            1,
+            0.655,
+            0.265,
+            0.27,
+            0.51
+          ],
+          [
+            1,
+            0.745,
+            0.315,
+            0.25,
+            0.49
+          ],
+          [
+            1,
+            0.685,
+            0.55,
+            0.59,
+            0.36
+          ],
+          [
+            1,
+            0.66,
+            0.67,
+            0.56,
+            0.38
+          ],
+          [
+            1,
+            0.685,
+            0.795,
+            0.35,
+            0.27
+          ],
+          [
+            1,
+            0.26,
+            0.55,
+            0.42,
+            0.2
+          ],
+          [
+            1,
+            0.275,
+            0.675,
+            0.29,
+            0.15
+          ]
+        ],
+        "group": "coco-283144",
+        "sha256_file": "206c9d7178270746315cd3ba8dbfb5dd8fbcb71fca4d24a28deb98da9a3ca59b",
+        "originalSha256": "6170321664693813057009d0927372ba02e699c52e55a2fee0e8996e43659c94",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8642237102",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-63764",
+        "file": "images/coco-train-000000063764.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000063764.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [
+          [
+            2,
+            0.305,
+            0.58,
+            0.25,
+            0.48
+          ],
+          [
+            2,
+            0.405,
+            0.575,
+            0.23,
+            0.53
+          ],
+          [
+            2,
+            0.51,
+            0.64,
+            0.2,
+            0.42
+          ],
+          [
+            2,
+            0.67,
+            0.585,
+            0.16,
+            0.55
+          ],
+          [
+            2,
+            0.725,
+            0.225,
+            0.21,
+            0.45
+          ],
+          [
+            2,
+            0.815,
+            0.235,
+            0.27,
+            0.47
+          ],
+          [
+            2,
+            0.37,
+            0.245,
+            0.22,
+            0.45
+          ]
+        ],
+        "group": "coco-63764",
+        "sha256_file": "625f382a43752bb06e9e51736c509c874954c62730548ea90c3b1f8b8c8b5875",
+        "originalSha256": "6c4aa2c095ea0ebbab9a03a4f841b64a8b0565cf41feb9ee44b12d039018b9ac",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5830242664",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-157192",
+        "file": "images/coco-train-000000157192.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000157192.jpg",
+        "width": 640,
+        "height": 428,
+        "boxes": [
+          [
+            3,
+            0.35,
+            0.545,
+            0.24,
+            0.67
+          ],
+          [
+            3,
+            0.455,
+            0.56,
+            0.23,
+            0.72
+          ],
+          [
+            3,
+            0.52,
+            0.475,
+            0.2,
+            0.61
+          ],
+          [
+            3,
+            0.58,
+            0.495,
+            0.24,
+            0.53
+          ]
+        ],
+        "group": "coco-157192",
+        "sha256_file": "54dcdafdb828b954d1260c240328bf9090030b4d40c81a2b19bf325a749364ac",
+        "originalSha256": "b36a2201c92401af23a8eb6bceb958fcf7ab4e9a28a742f6c535c531b6b2b32c",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7239924686",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-474479",
+        "file": "images/coco-train-000000474479.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000474479.jpg",
+        "width": 640,
+        "height": 481,
+        "boxes": [
+          [
+            2,
+            0.29,
+            0.165,
+            0.14,
+            0.33
+          ],
+          [
+            2,
+            0.4,
+            0.165,
+            0.14,
+            0.33
+          ],
+          [
+            2,
+            0.495,
+            0.145,
+            0.13,
+            0.29
+          ],
+          [
+            2,
+            0.57,
+            0.145,
+            0.12,
+            0.29
+          ],
+          [
+            2,
+            0.64,
+            0.145,
+            0.14,
+            0.29
+          ],
+          [
+            2,
+            0.355,
+            0.655,
+            0.17,
+            0.51
+          ],
+          [
+            2,
+            0.485,
+            0.675,
+            0.19,
+            0.63
+          ],
+          [
+            2,
+            0.6,
+            0.615,
+            0.2,
+            0.57
+          ],
+          [
+            2,
+            0.615,
+            0.62,
+            0.09,
+            0.36
+          ],
+          [
+            1,
+            0.05,
+            0.545,
+            0.1,
+            0.35
+          ],
+          [
+            1,
+            0.095,
+            0.54,
+            0.15,
+            0.32
+          ],
+          [
+            1,
+            0.13,
+            0.515,
+            0.14,
+            0.29
+          ],
+          [
+            1,
+            0.07,
+            0.295,
+            0.14,
+            0.15
+          ],
+          [
+            1,
+            0.06,
+            0.23,
+            0.12,
+            0.18
+          ]
+        ],
+        "group": "coco-474479",
+        "sha256_file": "879a433ad6a6c257099e9addc818e26259b089c48800a44137604b9a2479bba2",
+        "originalSha256": "eeb30eb0aceab3a4223147afef4609e8c5f5e96e253581842341504ef6447402",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=431806579",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-train-87522",
+        "file": "images/coco-train-000000087522.jpg",
+        "source": "https://images.cocodataset.org/train2017/000000087522.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [
+          [
+            0,
+            0.42,
+            0.21,
+            0.3,
+            0.22
+          ],
+          [
+            0,
+            0.565,
+            0.23,
+            0.21,
+            0.26
+          ],
+          [
+            0,
+            0.715,
+            0.37,
+            0.15,
+            0.26
+          ],
+          [
+            0,
+            0.745,
+            0.4,
+            0.17,
+            0.24
+          ]
+        ],
+        "group": "coco-87522",
+        "sha256_file": "35af392643742cd9d0995990bfcd1cdea34004d259573df8bd3f5d23f33a98d1",
+        "originalSha256": "77e4458e199b581747b8ab8ee4304df998516d87cfb08ca8ed42d2e55bd6cac5",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3481104770",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "train"
+      },
+      {
+        "id": "coco-val-189078",
+        "file": "images/coco-val-000000189078.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000189078.jpg",
+        "width": 500,
+        "height": 334,
+        "boxes": [
+          [
+            1,
+            0.29,
+            0.365,
+            0.26,
+            0.17
+          ],
+          [
+            1,
+            0.3,
+            0.425,
+            0.26,
+            0.15
+          ],
+          [
+            1,
+            0.315,
+            0.48,
+            0.25,
+            0.14
+          ]
+        ],
+        "group": "coco-189078",
+        "sha256_file": "6870cc7466c7818c3d093b823fcfe2a645d14bd2fb263af2b856bd4b242b4194",
+        "originalSha256": "be35d8cf9253deefe62871e6abb91f26f345787ed4dfb54de6b3aed7deade662",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4430551771",
+        "scene": "multiple-real-fruits",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-293044",
+        "file": "images/coco-val-000000293044.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000293044.jpg",
+        "width": 288,
+        "height": 160,
+        "boxes": [],
+        "group": "coco-293044",
+        "sha256_file": "07d8e7555de96038de8a9c4a14af5e4a14e47b671d746d9a98fe35738e8241c4",
+        "originalSha256": "b0f6a381bc1e8b741787a129946dff2524bb530eda3f15b6af1bbfd3061c217a",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4321379116",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-530052",
+        "file": "images/coco-val-000000530052.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000530052.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-530052",
+        "sha256_file": "2da912c745d762a750a3f2f93df7fd1c071bf5064f98ea513593403fbb1bdb28",
+        "originalSha256": "b70da6030fbc057f6393b45016d40dbf280839cf80119e2959b262198f5d6ad3",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=7907967150",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-99053",
+        "file": "images/coco-val-000000099053.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000099053.jpg",
+        "width": 640,
+        "height": 559,
+        "boxes": [],
+        "group": "coco-99053",
+        "sha256_file": "70fb4406e9d7be98cba90d797019ccc1546803f24187e9956480c24ec6cd7743",
+        "originalSha256": "a4e8405077a8f93115116f548e7d59b29a092a6ac2f749732a525e7b82c2f35a",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5884430904",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-92053",
+        "file": "images/coco-val-000000092053.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000092053.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-92053",
+        "sha256_file": "941009ce7ef89764c1f54cf440cf0f38f230702df4fa6f24f89131fda8ab6af5",
+        "originalSha256": "b31ae99dde64c615138636ae6f3c3d139d7d398e830126594532a701da146ac3",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5375419008",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-397133",
+        "file": "images/coco-val-000000397133.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000397133.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-397133",
+        "sha256_file": "829d350b739ce8b44831d3e0238b804d684e895cc1ec4221bb9cb652dd9a1385",
+        "originalSha256": "09e1d25c75f7879bdaa69c327fece5cabacd53939c8c2ef9e87f1c97a2e478c4",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=6255196340",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-371677",
+        "file": "images/coco-val-000000371677.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000371677.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-371677",
+        "sha256_file": "07613f3dc87f4572b876aeba0c1881047e7e0baebded5ecd747071e881d43e48",
+        "originalSha256": "8db67d13aac1ef8f1a6c24fa7a542c794c4155343f0b9f8a9527dc4ffa9a405a",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3462811561",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-161925",
+        "file": "images/coco-val-000000161925.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000161925.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-161925",
+        "sha256_file": "c56804c3dd8dc5fe82d2b7763bc01580e4496cfd02b2a60571cf7b76cc1d4ffa",
+        "originalSha256": "862fd579f3e25dc1bc8d9cdbccd366458ea15d28778069607d7a8640b9d454b9",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3316362158",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-356248",
+        "file": "images/coco-val-000000356248.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000356248.jpg",
+        "width": 478,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-356248",
+        "sha256_file": "5ebd20ff1bf450f628cbd318c433bd1b681307168d84aadf4acdd74916d129f2",
+        "originalSha256": "82c899741205bb8a7fb3deac0acc3fca15f81c029aaaf4d0f39aabbb090f452c",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5997608563",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-129113",
+        "file": "images/coco-val-000000129113.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000129113.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-129113",
+        "sha256_file": "d2b400492f0633e06a9e452b847f20eeca383fa324c0865a2ffd782d714a57f6",
+        "originalSha256": "7afcf3b9fe07b838a808faf6cf1ba83e1527ad4e63fa79173f8a339bc3114d0d",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4892593807",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-109798",
+        "file": "images/coco-val-000000109798.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000109798.jpg",
+        "width": 500,
+        "height": 333,
+        "boxes": [],
+        "group": "coco-109798",
+        "sha256_file": "c51877a33d541af2340df53550e8cbf82d89efbd76eb6ddb9bb600f6c40e11f5",
+        "originalSha256": "8fafbfb6d1c320f9efc59291748c0b9a730726db311364c03280b2de39fe656f",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4281720883",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-309678",
+        "file": "images/coco-val-000000309678.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000309678.jpg",
+        "width": 640,
+        "height": 411,
+        "boxes": [],
+        "group": "coco-309678",
+        "sha256_file": "8725e495af7ecdc032a7f19f507958d09558d51b1b4369c8cf8f608b9f1ef95f",
+        "originalSha256": "0fe83ac7fa959dd6bfb61a784a9f795fc654448c9ae88f443d7630d00988d44f",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5595616324",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-384661",
+        "file": "images/coco-val-000000384661.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000384661.jpg",
+        "width": 500,
+        "height": 375,
+        "boxes": [],
+        "group": "coco-384661",
+        "sha256_file": "76b69347c4317430682fe8120ee2498fb136df9cb52d4f4f99a5e56dc7314172",
+        "originalSha256": "cbd94bf2c004bca32c6e2f101bbcebe3cc24f460b45e68a20f88098db82aa063",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3557337965",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-356424",
+        "file": "images/coco-val-000000356424.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000356424.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-356424",
+        "sha256_file": "3b871cca4309957d4147066b6025f95e367b8197431c0263cfee072a8ea191d1",
+        "originalSha256": "c669af906be21b4c9113b05a7a9dc489d4f893b25641ffafad19ef6327275740",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8607070980",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-189820",
+        "file": "images/coco-val-000000189820.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000189820.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-189820",
+        "sha256_file": "6f2627fbaef46ed4f030bd45052de81680ee14c2198a25f17efd3d638e391f03",
+        "originalSha256": "194f0aca3fbaed6f998e1f87d90ee64f8590bf29d39fdc4c250b79015731faab",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=32908206",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-356498",
+        "file": "images/coco-val-000000356498.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000356498.jpg",
+        "width": 500,
+        "height": 350,
+        "boxes": [],
+        "group": "coco-356498",
+        "sha256_file": "dae2937a847097b28d46d1a7b9da8475ec221635d072c4283f8bbfd125242309",
+        "originalSha256": "c52407be6458759627443a80a4fdd62730726ee8cf44c04ebae1d9c2d5776b8d",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3390188250",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-359219",
+        "file": "images/coco-val-000000359219.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000359219.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-359219",
+        "sha256_file": "1ec527a8ba4e05d378a0023f432e329da05468049a22cb00ed89dc08d78c5cb2",
+        "originalSha256": "621420fd7414fed8900286441c019ea1c8fd7ba9a6793b7139096baee01ca319",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4668011036",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-350388",
+        "file": "images/coco-val-000000350388.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000350388.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-350388",
+        "sha256_file": "8876021b08fb50586a89f6469146167c8c2e6000d8534048f9b2304f2591ce06",
+        "originalSha256": "ee7973cada25a734fafed6e6938823c5e7dee82e76ad2d3749350d193ea8179f",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8699697541",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-109916",
+        "file": "images/coco-val-000000109916.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000109916.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-109916",
+        "sha256_file": "aad2458ec523ccc808f9acf026d04e4e63741502ce3f77a17d50af8ce0934eb9",
+        "originalSha256": "b8409b5137f8653727eed92c375318c1c947cc2bb0cf75cc972d2293aacd9323",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5094504532",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-473406",
+        "file": "images/coco-val-000000473406.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000473406.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-473406",
+        "sha256_file": "d7d3a72881f2be4474bcb8596c82bf85b005099494a9f5a26aa56937fa600220",
+        "originalSha256": "821a802ea625958f0c8465a313723b265674f891482e9e6dff781eeed3314385",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3941022247",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-192191",
+        "file": "images/coco-val-000000192191.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000192191.jpg",
+        "width": 480,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-192191",
+        "sha256_file": "bd57beb8c5faf01c0878bcd71aa73c21a3ab078d44095b31c7a6177b723b7b1c",
+        "originalSha256": "f83a0d30504559d85c366bbedccac4b432c73f7bf159a61f075e5e4b938e9a72",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=8154240196",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-207844",
+        "file": "images/coco-val-000000207844.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000207844.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-207844",
+        "sha256_file": "800b496cb192cd41ef9010cac7ec42b6e836a4e90daa20e331be2940f9ec603e",
+        "originalSha256": "2bed1ff1a283312893ad8c2918b04e6c80a3fdfaacd873124e9479469c53edb8",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5329457343",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-283412",
+        "file": "images/coco-val-000000283412.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000283412.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-283412",
+        "sha256_file": "c46eee2a1d5b18f4ca91ff62ccdd09e41eff1d600e85a2472d56935d54e4402a",
+        "originalSha256": "ecff06907a7898f62175cdebf1108b752e085d9b53a4806869c6b4df508d6602",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5499994653",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-386134",
+        "file": "images/coco-val-000000386134.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000386134.jpg",
+        "width": 612,
+        "height": 612,
+        "boxes": [],
+        "group": "coco-386134",
+        "sha256_file": "5e247d4e8b8345427ee20bb26be5fe7c78a67f384b2e7d5fe9a4da0117074b9e",
+        "originalSha256": "676e88db32dd10e20e60f166df9e4b71a8574d6d552871938ddc8dfce736419f",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=9679798035",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-411938",
+        "file": "images/coco-val-000000411938.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000411938.jpg",
+        "width": 640,
+        "height": 427,
+        "boxes": [],
+        "group": "coco-411938",
+        "sha256_file": "87e1cd30a757dc7e1b5a01506841563c05f5ce82b3d99f4a1a9bbf6f608893c5",
+        "originalSha256": "8d5a4b2e84e045a974113175429619a0a0118f6f0b95124d53057c733f4ff8d1",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=5694283812",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-480936",
+        "file": "images/coco-val-000000480936.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000480936.jpg",
+        "width": 482,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-480936",
+        "sha256_file": "43158e5cb9df193df55a3035973bb061852ee7d70a93abcae3465d0ba7472d9e",
+        "originalSha256": "2487034e07fc8d7b581e0d920afae23f801f5005b5cd37b9d7fe3ed47a8a319d",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=560533087",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-372466",
+        "file": "images/coco-val-000000372466.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000372466.jpg",
+        "width": 640,
+        "height": 360,
+        "boxes": [],
+        "group": "coco-372466",
+        "sha256_file": "82c419fff9abfd17d024e5ee72c5f625483645c90c08f1c57a5c68d815d5d45c",
+        "originalSha256": "39c3879d689f32ccb2e25ebd42ecda121dc18e6255ca890411830bf0e59658e1",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=2668055050",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-127494",
+        "file": "images/coco-val-000000127494.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000127494.jpg",
+        "width": 500,
+        "height": 333,
+        "boxes": [],
+        "group": "coco-127494",
+        "sha256_file": "f5d5ddc3044cbb36a80dc2df11cb270e80404a808f523bb00c5a68987a1d9a3e",
+        "originalSha256": "65d47087b3c665d64aad0120658b00ac08dc9875597a5f8d801da4f70933f7fd",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=4066113855",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-10707",
+        "file": "images/coco-val-000000010707.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000010707.jpg",
+        "width": 640,
+        "height": 480,
+        "boxes": [],
+        "group": "coco-10707",
+        "sha256_file": "9cd3cc06c1f85b4590da2a321431b04f29c1f11424c2ff95ab74d1b25941fdc2",
+        "originalSha256": "a361abb7579193709ef3debbec6298bf0c540bece429c4aadb19be82e04ab6a0",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "id": 5,
+          "name": "Attribution-ShareAlike License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=434840964",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-578922",
+        "file": "images/coco-val-000000578922.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000578922.jpg",
+        "width": 598,
+        "height": 640,
+        "boxes": [],
+        "group": "coco-578922",
+        "sha256_file": "40b59d3abc127cf43e73de232d0e7f31903a976d28aa07535bf021ca7f6bc70b",
+        "originalSha256": "e8bdc69a8a58ae37aa4289191102f54585bc9dcf96202e061ff574c607c21b6b",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=3072908271",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      },
+      {
+        "id": "coco-val-554291",
+        "file": "images/coco-val-000000554291.jpg",
+        "source": "https://images.cocodataset.org/val2017/000000554291.jpg",
+        "width": 640,
+        "height": 428,
+        "boxes": [],
+        "group": "coco-554291",
+        "sha256_file": "0dc6f2e884227404f1d6f096a193968a256a91e109acc6b1595aa7b7762c6896",
+        "originalSha256": "87cfe902780e460e352a5de8b0ced6a8372dc7317aba136279edf3ff4e0527dc",
+        "license": {
+          "url": "http://creativecommons.org/licenses/by/2.0/",
+          "id": 4,
+          "name": "Attribution License"
+        },
+        "flickrSource": "https://www.flickr.com/photo.gne?id=256248429",
+        "scene": "no-banana",
+        "sourceSet": "val"
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "name": "Bananenblick YOLOX-Nano",
+  "architecture": "YOLOX-Nano",
+  "version": "0.2.0",
+  "path": "/models/banana-yolox-nano.onnx",
+  "inputSize": 320,
+  "inputName": "images",
+  "outputName": "predictions",
+  "classes": [
+    "unreif",
+    "reif",
+    "überreif"
+  ],
+  "trainedAt": "2026-11-10T16:24:55.901109+00:00",
+  "dataset": {
+    "title": "Annotated Banana Ripeness Stage Dataset",
+    "url": "https://data.mendeley.com/datasets/56c75hvm7r/1",
+    "license": "CC BY 4.0"
+  },
+  "preprocessing": {
+    "channelOrder": "BGR",
+    "range": [
+      0,
+      255
+    ],
+    "layout": "NCHW",
+    "padding": 114,
+    "letterbox": "top-left"
+  },
+  "output": {
+    "shape": [
+      1,
+      2100,
+      8
+    ],
+    "columns": [
+      "cx",
+      "cy",
+      "width",
+      "height",
+      "objectness",
+      "unreif",
+      "reif",
+      "überreif"
+    ],
+    "decoded": true
+  },
+  "thresholds": {
+    "detection": 0.5,
+    "classification": 0.6,
+    "margin": 0.15,
+    "nmsIou": 0.4
+  },
+  "sha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a",
+  "bytes": 3688167,
+  "metrics": {
+    "threshold": 0.5,
+    "iouThreshold": 0.5,
+    "nmsIou": 0.4,
+    "apCandidateThreshold": 0.01,
+    "maxDetectionsPerImage": 40,
+    "mAP50": 0.9498034912638874,
+    "precision": 0.9603960396039604,
+    "recall": 0.9603960396039604,
+    "f1": 0.9603960396039604,
+    "visibleRecall": 0.9405940594059405,
+    "uncertainCount": 2,
+    "perClass": [
+      {
+        "class": "unreif",
+        "support": 33,
+        "truePositive": 31,
+        "falsePositive": 2,
+        "falseNegative": 2,
+        "precision": 0.9393939393939394,
+        "recall": 0.9393939393939394,
+        "localizationRecall": 0.9393939393939394,
+        "wrongRipeness": 0,
+        "missed": 2,
+        "uncertain": 1,
+        "visibleTruePositive": 30,
+        "visibleRecall": 0.9090909090909091,
+        "ap50": 0.9153223014609154
+      },
+      {
+        "class": "reif",
+        "support": 31,
+        "truePositive": 31,
+        "falsePositive": 0,
+        "falseNegative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "localizationRecall": 1.0,
+        "wrongRipeness": 0,
+        "missed": 0,
+        "uncertain": 0,
+        "visibleTruePositive": 31,
+        "visibleRecall": 1.0,
+        "ap50": 1.0
+      },
+      {
+        "class": "überreif",
+        "support": 37,
+        "truePositive": 35,
+        "falsePositive": 2,
+        "falseNegative": 2,
+        "precision": 0.9459459459459459,
+        "recall": 0.9459459459459459,
+        "localizationRecall": 0.9459459459459459,
+        "wrongRipeness": 0,
+        "missed": 2,
+        "uncertain": 1,
+        "visibleTruePositive": 34,
+        "visibleRecall": 0.918918918918919,
+        "ap50": 0.9340881723307466
+      }
+    ],
+    "confusion": {
+      "rows": [
+        "unreif",
+        "reif",
+        "überreif"
+      ],
+      "columns": [
+        "unreif",
+        "reif",
+        "überreif",
+        "nicht erkannt"
+      ],
+      "counts": [
+        [
+          31,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          31,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          35,
+          2
+        ]
+      ]
+    },
+    "visibleConfusion": {
+      "rows": [
+        "unreif",
+        "reif",
+        "überreif"
+      ],
+      "columns": [
+        "unreif",
+        "reif",
+        "überreif",
+        "unsicher",
+        "nicht erkannt"
+      ],
+      "counts": [
+        [
+          30,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          31,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          34,
+          1,
+          2
+        ]
+      ]
+    },
+    "testImages": 101
+  },
+  "evaluationUrl": "/evaluation/test-report.json",
+  "status": "prototype",
+  "limitations": [
+    "COCO train photographs were exposed to the original COCO pretrained detector; this is a holdout from banana fine tuning, not from generic COCO pretraining.",
+    "Single coding-assistant annotation review; independent human ripeness/box adjudication is still required.",
+    "Static real photographs cannot establish live-camera temporal or device performance.",
+    "The individual-fruit target is NOT met on this static benchmark.",
+    "No physical Android/Chrome or iPhone/Safari checks in this environment."
+  ],
+  "checkpointSha256": "59086779d9133db858af9755119d498115481d96da02809e0db676fd460f3780",
+  "recommendationPolicy": {
+    "requiredConsecutiveConfirmations": 3,
+    "resetOnUncertainOrMissing": true
+  },
+  "individualBenchmark": {
+    "protocol": "Real static photos, exact browser tracking on three identical inference results at 200 ms intervals; no live-camera evidence",
+    "iou": 0.5,
+    "requiredConfirmations": 3,
+    "positiveScenes": 30,
+    "negativeScenes": 30,
+    "truePositive": 0,
+    "falsePositive": 1,
+    "falseNegative": 169,
+    "precision": 0,
+    "recall": 0,
+    "uncertainOrUnconfirmed": 1,
+    "negativeFalseRecommendations": 1,
+    "negativeFalseDetections": 7,
+    "targets": {
+      "precision": 0.95,
+      "recall": 0.8
+    },
+    "passed": false,
+    "generatedAt": "2026-11-10T16:24:55.901109+00:00",
+    "modelSha256": "555483d855e104f0e604930658b715c64ff2413a315d06b9a6a5b68e45f7089a",
+    "benchmarkSha256": "76eb42130dee722ccb2c2dc884fb4d27827ddc28fa21749a16b717e3cee0fcf3",
+    "frozenAt": "2026-11-10T16:17:40.559961+00:00",
+    "thresholds": {
+      "detection": 0.5,
+      "classification": 0.6,
+      "margin": 0.15,
+      "nmsIou": 0.4
+    },
+    "checkpointEpoch": 1,
+    "limitations": [
+      "COCO train photographs were exposed to the original COCO pretrained detector; this is a holdout from banana fine tuning, not from generic COCO pretraining.",
+      "Single coding-assistant annotation review; independent human ripeness/box adjudication is still required.",
+      "Static real photographs cannot establish live-camera temporal or device performance."
+    ],
+    "inferenceMs": {
+      "median": 11.011354000061147,
+      "p95": 43.809828949940766,
+      "context": "ONNX Runtime CPU, Linux, three threads; inference only, not smartphone throughput"
+    },
+    "realBunchScenes": null,
+    "realBunchSceneCountVerified": false
+  },
+  "training": {
+    "epochs": 8,
+    "selectedEpoch": 1,
+    "seed": 20261110,
+    "initialCheckpointSha256": "cb52dd2ba7c4139265ff83a1837104232798a07e05a8c61bbc826d20a8d44968",
+    "data": {
+      "train": 503,
+      "val": 110,
+      "test": 101,
+      "acceptance": 60
+    },
+    "benchmarkFrozenCommit": "28b35eb",
+    "validationSelection": "/evaluation/individual-validation-selection.json",
+    "totalRunSeconds": 329.8080954551697,
+    "selectedCheckpointTrainingSeconds": 19.094051361083984
+  },
+  "additionalDataset": {
+    "name": "COCO 2017",
+    "url": "https://cocodataset.org/",
+    "imageLicenses": "Individual CC BY / CC BY-SA 2.0, with source links in individual-benchmark.json",
+    "annotationReview": "Coding-assistant visual review; independent human review pending"
+  }
+}

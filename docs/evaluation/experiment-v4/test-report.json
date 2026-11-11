@@ -1,0 +1,137 @@
+{
+  "modelSha256": "9aa2bb21476b8b7b4e6fd8d79444e8971f15773e34204a8ae51f65c3a420f5d4",
+  "scope": "Legacy Mendeley 101-image test; separate from the new cropped-photo benchmark",
+  "test": {
+    "threshold": 0.5,
+    "iouThreshold": 0.5,
+    "nmsIou": 0.45,
+    "apCandidateThreshold": 0.01,
+    "maxDetectionsPerImage": 40,
+    "mAP50": 0.9268382984767527,
+    "precision": 0.9405940594059405,
+    "recall": 0.9405940594059405,
+    "f1": 0.9405940594059405,
+    "visibleRecall": 0.7821782178217822,
+    "uncertainCount": 16,
+    "perClass": [
+      {
+        "class": "unreif",
+        "support": 33,
+        "truePositive": 31,
+        "falsePositive": 2,
+        "falseNegative": 2,
+        "precision": 0.9393939393939394,
+        "recall": 0.9393939393939394,
+        "localizationRecall": 0.9393939393939394,
+        "wrongRipeness": 0,
+        "missed": 2,
+        "uncertain": 10,
+        "visibleTruePositive": 21,
+        "visibleRecall": 0.6363636363636364,
+        "ap50": 0.9191719171917192
+      },
+      {
+        "class": "reif",
+        "support": 31,
+        "truePositive": 30,
+        "falsePositive": 1,
+        "falseNegative": 1,
+        "precision": 0.967741935483871,
+        "recall": 0.967741935483871,
+        "localizationRecall": 0.967741935483871,
+        "wrongRipeness": 0,
+        "missed": 1,
+        "uncertain": 2,
+        "visibleTruePositive": 28,
+        "visibleRecall": 0.9032258064516129,
+        "ap50": 0.9584797189396359
+      },
+      {
+        "class": "überreif",
+        "support": 37,
+        "truePositive": 34,
+        "falsePositive": 3,
+        "falseNegative": 3,
+        "precision": 0.918918918918919,
+        "recall": 0.918918918918919,
+        "localizationRecall": 0.918918918918919,
+        "wrongRipeness": 0,
+        "missed": 3,
+        "uncertain": 4,
+        "visibleTruePositive": 30,
+        "visibleRecall": 0.8108108108108109,
+        "ap50": 0.9028632592989029
+      }
+    ],
+    "confusion": {
+      "rows": [
+        "unreif",
+        "reif",
+        "überreif"
+      ],
+      "columns": [
+        "unreif",
+        "reif",
+        "überreif",
+        "nicht erkannt"
+      ],
+      "counts": [
+        [
+          31,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          30,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          34,
+          3
+        ]
+      ]
+    },
+    "visibleConfusion": {
+      "rows": [
+        "unreif",
+        "reif",
+        "überreif"
+      ],
+      "columns": [
+        "unreif",
+        "reif",
+        "überreif",
+        "unsicher",
+        "nicht erkannt"
+      ],
+      "counts": [
+        [
+          21,
+          0,
+          0,
+          10,
+          2
+        ],
+        [
+          0,
+          28,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          30,
+          4,
+          3
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "version": "4-localization-refinement",
+  "frozenAt": "2026-11-11T09:39:27.273235+00:00",
+  "benchmarkSha256": "f0ebd7939a01ccb232b3b8f554e885b45ee6aaf43cb0e408633eb4a1d244d73e",
+  "holdoutUnchangedAndNotInferred": true,
+  "stage1CompletedEpochs": 20,
+  "stage1SelectedEpoch": 13,
+  "initialCheckpoint": "artifacts/banana-individual-v4-stage1.pt",
+  "initialCheckpointSha256": "8c3ea02239fbeaca73a3e1235a0e39597642c61e0a9be937073463858c18fec2",
+  "stage1HistorySource": "individual-v4-stage1-history.json",
+  "stage1HistorySha256": "f073d88091bfe92f3589eeb0da6bd3199b06782ebb0d7ab650344c715ed9f321",
+  "seed": 20261115,
+  "epochs": 4,
+  "learningRate": 3e-05,
+  "useL1": true,
+  "modelSelection": "Highest confirmed-ripe validation F1 among the unchanged stage-1 selected checkpoint and the four refinement checkpoints; fixed .25/.6/.15/.65 validation policy. No new holdout inference before the final choice and calibration.",
+  "reason": "Expanded validation baseline showed 22/38 false recommendations near the annotated individual box; stage-1 early stopping occurred before planned late L1 localization training. Finish four predeclared localization epochs before touching the new holdout.",
+  "limits": [
+    "The original 20 epochs, selected epoch, failed older tests, data membership and annotations are preserved.",
+    "No physical phone evidence."
+  ]
+}

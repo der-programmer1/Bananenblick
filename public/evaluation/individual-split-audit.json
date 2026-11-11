@@ -1,0 +1,14 @@
+{
+  "method": "Source group IDs, exact displayed source pixel hashes, 63-bit DCT pHash over eight rotations/reflections; near-duplicate threshold <=6. Training/validation Commons crops are compared using their uncropped source.",
+  "scope": "No model predictions. Public sources do not supply physical-fruit or camera-session IDs; this audit cannot establish independent fruit populations.",
+  "counts": {
+    "train": 575,
+    "val": 117,
+    "test": 101,
+    "acceptance": 60
+  },
+  "groupOverlaps": [],
+  "exactSourceDuplicates": [],
+  "nearDuplicateCandidates": [],
+  "passedAutomaticChecks": true
+}

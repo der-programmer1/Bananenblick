@@ -35,6 +35,8 @@ next-env.d.ts
 /dist/
 /.wrangler/
 /outputs/
+/test-results/
+/playwright-report/
 /work/
 /public/ort/
 /.sites-runtime/

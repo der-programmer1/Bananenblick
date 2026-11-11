@@ -3,7 +3,7 @@
     "id": "unreif",
     "src": "/examples/unreif.jpg",
     "title": "Grüne Banane",
-    "description": "Unreife Schale im öffentlichen Testdatensatz. CC BY 4.0 · Rohit et al. (2026).",
+    "description": "Unreife Schale im öffentlichen Testdatensatz. CC BY 4.0 · Rohit et al. (2026). Nummern und Essreife-Bestätigung werden mit dem neuen Modell berechnet.",
     "width": 480,
     "height": 640,
     "sourceImage": "BANANA_DATASET/images/test/unripe_085.jpg",
@@ -13,7 +13,7 @@
     "id": "reif",
     "src": "/examples/reif.jpg",
     "title": "Gelbe Banane",
-    "description": "Reife Schale im öffentlichen Testdatensatz. CC BY 4.0 · Rohit et al. (2026).",
+    "description": "Reife Schale im öffentlichen Testdatensatz. CC BY 4.0 · Rohit et al. (2026). Nummern und Essreife-Bestätigung werden mit dem neuen Modell berechnet.",
     "width": 482,
     "height": 640,
     "sourceImage": "BANANA_DATASET/images/test/ripe_136.jpg",
@@ -23,10 +23,39 @@
     "id": "ueberreif",
     "src": "/examples/ueberreif.jpg",
     "title": "Braune Schale",
-    "description": "Überreife Schale im öffentlichen Testdatensatz. CC BY 4.0 · Rohit et al. (2026).",
+    "description": "Überreife Schale im öffentlichen Testdatensatz. CC BY 4.0 · Rohit et al. (2026). Nummern und Essreife-Bestätigung werden mit dem neuen Modell berechnet.",
     "width": 640,
     "height": 480,
     "sourceImage": "BANANA_DATASET/images/test/overripe_061.jpg",
     "sourceUrl": "https://data.mendeley.com/datasets/56c75hvm7r/1"
+  },
+  {
+    "id": "bueschel",
+    "src": "/examples/bueschel.jpg",
+    "title": "Drei überlappende Früchte",
+    "description": "Drei sichtbare Bananen im Obstteller. Rahmen, Nummern und Empfehlungen werden lokal berechnet. Foto: goodiesfirst, „putahracsa fruit plate“, CC BY 2.0; verkleinert.",
+    "width": 500,
+    "height": 334,
+    "sourceImage": "https://images.cocodataset.org/val2017/000000189078.jpg",
+    "sourceUrl": "https://www.flickr.com/photos/scaredykat/4430551771/",
+    "license": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "id": "gemischter-bueschel",
+    "src": "/examples/gemischter-bueschel.jpg",
+    "title": "Büschel mit gemischter Schale",
+    "description": "Gelbe und grüne Schalen in einem Bild. Foto: Esther Musasike, Bunch of banana.jpg, CC BY-SA 4.0; Ausschnitt und verkleinert.",
+    "width": 275,
+    "height": 211,
+    "sourceImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Bunch_of_banana.jpg/960px-Bunch_of_banana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bunch_of_banana.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0",
+    "datasetUse": "training-example; not an independent performance demonstration",
+    "cropPercent": [
+      57,
+      55,
+      100,
+      99
+    ]
   }
 ]

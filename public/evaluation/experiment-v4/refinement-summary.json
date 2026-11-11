@@ -1,0 +1,13 @@
+{
+  "planSha256": "8fb7ebc88096cd082ac08ee1036a1f0e16d4e7e25aca5b17e0f2c3e53ed17b78",
+  "initialCheckpointSha256": "8c3ea02239fbeaca73a3e1235a0e39597642c61e0a9be937073463858c18fec2",
+  "stage1CompletedEpochs": 20,
+  "epochs": 4,
+  "selectedFromRefinement": false,
+  "selectedEpoch": 13,
+  "selectedF1": 0.5490196078431373,
+  "totalCompletedEpochs": 24,
+  "seconds": 453.82995104789734,
+  "holdoutInferred": false,
+  "selectedCheckpointSha256": "a008ea1f3a14cbbe23d074a68648677100368b45e106886c08b24b6c8b58aa5d"
+}

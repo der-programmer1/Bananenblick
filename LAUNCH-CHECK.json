@@ -1,39 +1,186 @@
 {
-  "status": "published-on-github-pages",
-  "scope": "Launch-Paket; keine vollständige Smartphone-Abnahme",
+  "status": "acceptance-failed-not-published",
+  "checkedAt": "2026-11-11T09:50:42.188044+00:00",
+  "scope": "GitHub Pages only; previous public deployment unchanged",
+  "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
   "verified": {
-    "zipExtraction": "passed",
-    "allFileChecksums": "passed",
-    "npmCiInFreshExtraction": "passed",
     "typescript": "passed",
     "unitTests": {
-      "passed": 9,
+      "passed": 22,
       "failed": 0
     },
-    "staticProductionBuildFromExtraction": "passed",
-    "repositorySubpathsAndModelHash": "passed",
-    "githubWorkflowActionlint": "passed (actionlint v1.7.12)",
-    "githubActionsHostedRun": {
-      "status": "success",
-      "url": "https://github.com/der-programmer1/Bananenblick/actions/runs/42658377737",
-      "buildCommit": "6b682c4707a41e9109b8a6c57034081950b69229"
+    "pythonPipelineTests": {
+      "passed": 12,
+      "failed": 0
     },
-    "publicDeployment": {
-      "url": "https://der-programmer1.github.io/Bananenblick/",
-      "httpsEnforced": true,
-      "htmlAndScriptAssets": 200,
-      "modelSha256Verified": true,
-      "wasmStatus": 200,
-      "wasmContentType": "application/wasm"
-    }
+    "browserEmulation": {
+      "context": "Production GitHub Pages build at /Bananenblick/, Playwright mobile viewport/device emulation on Linux; not physical Android or iPhone",
+      "versions": {
+        "chromium": "158.0.8127.18",
+        "webkit": "27.2"
+      },
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+          "status": "expected",
+          "durationMs": 15799
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+          "status": "expected",
+          "durationMs": 19318
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "GPU fallback during startup gives WASM its full session budget",
+          "status": "expected",
+          "durationMs": 2695
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "GPU fallback during startup gives WASM its full session budget",
+          "status": "expected",
+          "durationMs": 5142
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "GPU fallback during inference gives WASM its full session budget",
+          "status": "expected",
+          "durationMs": 2165
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "GPU fallback during inference gives WASM its full session budget",
+          "status": "expected",
+          "durationMs": 5405
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "stopping a pending camera request also stops a stream granted afterwards",
+          "status": "expected",
+          "durationMs": 1174
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "stopping a pending camera request also stops a stream granted afterwards",
+          "status": "expected",
+          "durationMs": 2757
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "a model hash mismatch stops inference and explains the retry",
+          "status": "expected",
+          "durationMs": 2308
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "a model hash mismatch stops inference and explains the retry",
+          "status": "expected",
+          "durationMs": 5050
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "status": "expected",
+          "durationMs": 9192
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+          "status": "expected",
+          "durationMs": 21910
+        },
+        {
+          "project": "chromium-mobile-emulation",
+          "title": "slow runtime download and three actual ONNX passes work in both orientations",
+          "status": "expected",
+          "durationMs": 19251
+        },
+        {
+          "project": "webkit-mobile-emulation",
+          "title": "slow runtime download and three actual ONNX passes work in both orientations",
+          "status": "expected",
+          "durationMs": 28218
+        }
+      ],
+      "verifiedModels": [
+        {
+          "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+          "inputSize": 448,
+          "browserName": "chromium",
+          "browserVersion": "158.0.8127.18",
+          "provider": "wasm",
+          "url": "http://127.0.0.1:4173/Bananenblick/"
+        },
+        {
+          "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+          "inputSize": 448,
+          "browserName": "webkit",
+          "browserVersion": "27.2",
+          "provider": "wasm",
+          "url": "http://127.0.0.1:4173/Bananenblick/"
+        }
+      ],
+      "media": "Controlled video clock and worker; Chromium canvas MediaStream; WebKit simulated media track. Separate examples run the real hash-verified ONNX worker."
+    },
+    "wasmNodeRuntime": "passed; Linux reference only",
+    "staticProductionBuild": "passed",
+    "repositorySubpathsModelHashAndSharedPostprocessing": "passed",
+    "newSplitSourceAndPerceptualAudit": "passed",
+    "numberLabelsOnDenseMobileBunch": "passed; 20 overlapping frames, unique non-overlapping number badges",
+    "coldWasmInitialization": "passed; actual provider gets its own timeout",
+    "gpuToWasmSessionBudgets": "passed in Chromium/WebKit; startup and inference fallback have distinct session and frame timeout budgets; simulated monotonic clock, not phone timing",
+    "additionalV4SourceAndPerceptualAudit": "passed; source groups, exact source pixels and pHash; no overlap with the new holdout"
   },
-  "notRun": [
-    "Live-Kameraabnahme auf echten Android-/iPhone-Geräten"
-  ],
-  "launch": [
-    "Öffentliches Repository, Branch main; gesamten Inhalt des Ordners bananenblick hochladen.",
-    "Settings → Pages → Source → GitHub Actions.",
-    "Actions → Bananenblick auf GitHub Pages → Run workflow."
-  ],
-  "modelSha256": "75ced29a13b890afaf328751289567fe48ea8471865c637a91244506d6ec6419"
+  "acceptance": {
+    "passed": false,
+    "precision": 0.8571428571428571,
+    "recall": 0.0625,
+    "truePositive": 6,
+    "falsePositive": 1,
+    "falseNegative": 90,
+    "positiveScenes": 30,
+    "negativeScenes": 30,
+    "realBunchScenes": 30,
+    "realBunchSceneCountVerified": true,
+    "physicalDeviceTestsPerformed": false
+  },
+  "publication": {
+    "publishedThisVersion": false,
+    "reason": "Current individual-fruit acceptance still failed. Further 0.4 candidate also failed its newly frozen test and was not adopted. Physical Android/Chrome and iPhone/Safari evidence still missing.",
+    "releaseGate": "failed with exit 1: precision >=95% and recall >=80% required",
+    "workflow": ".github/workflows/pages.yml",
+    "reviewBranch": "codex/numbered-individual-bananas",
+    "pullRequest": "https://github.com/der-programmer1/Bananenblick/pull/1",
+    "catalogUrl": "https://der-programmer1.github.io/AppShelf/apps/bananenblick/",
+    "cataloguedPublicVersion": "0.1.0 prototype; this update remains unpublished"
+  },
+  "additionalTrainingExperiment": {
+    "version": "0.4.0 candidate; not adopted by the app",
+    "epochsCompleted": 24,
+    "firstStageEpochs": 20,
+    "refinementEpochs": 4,
+    "selectedEpoch": 13,
+    "sourceFreezeCommit": "b1de06fd32e1759957b709bc1a40bbb972928890",
+    "modelSha256": "9aa2bb21476b8b7b4e6fd8d79444e8971f15773e34204a8ae51f65c3a420f5d4",
+    "newPositiveScenes": 30,
+    "newNegativeScenes": 30,
+    "ripeIndividualTargets": 111,
+    "truePositive": 2,
+    "falsePositive": 0,
+    "falseNegative": 109,
+    "precision": 1,
+    "recall": 0.018018018018018018,
+    "passed": false,
+    "physicalDeviceTestsPerformed": false,
+    "report": "public/evaluation/experiment-v4/report.md",
+    "examples": "public/evaluation/experiment-v4/examples.md",
+    "currentAppWeightsUnchanged": true,
+    "benchmarkMembershipAndAnnotationsUnchanged": true
+  }
 }

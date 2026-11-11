@@ -1,0 +1,122 @@
+{
+  "generatedAt": "2026-11-11T09:32:51.719Z",
+  "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+  "physicalDeviceTestsPerformed": false,
+  "devices": [],
+  "browserTests": {
+    "context": "Production GitHub Pages build at /Bananenblick/, Playwright mobile viewport/device emulation on Linux; not physical Android or iPhone",
+    "versions": {
+      "chromium": "158.0.8127.18",
+      "webkit": "27.2"
+    },
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+        "status": "expected",
+        "durationMs": 15799
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "a cold WASM session gets its own initialization timeout without a GPU restart",
+        "status": "expected",
+        "durationMs": 19318
+      },
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "GPU fallback during startup gives WASM its full session budget",
+        "status": "expected",
+        "durationMs": 2695
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "GPU fallback during startup gives WASM its full session budget",
+        "status": "expected",
+        "durationMs": 5142
+      },
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "GPU fallback during inference gives WASM its full session budget",
+        "status": "expected",
+        "durationMs": 2165
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "GPU fallback during inference gives WASM its full session budget",
+        "status": "expected",
+        "durationMs": 5405
+      },
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "stopping a pending camera request also stops a stream granted afterwards",
+        "status": "expected",
+        "durationMs": 1174
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "stopping a pending camera request also stops a stream granted afterwards",
+        "status": "expected",
+        "durationMs": 2757
+      },
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "a model hash mismatch stops inference and explains the retry",
+        "status": "expected",
+        "durationMs": 2308
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "a model hash mismatch stops inference and explains the retry",
+        "status": "expected",
+        "durationMs": 5050
+      },
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+        "status": "expected",
+        "durationMs": 9192
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "number selection, motion, uncertainty, disappearance, orientation and camera stop",
+        "status": "expected",
+        "durationMs": 21910
+      },
+      {
+        "project": "chromium-mobile-emulation",
+        "title": "slow runtime download and three actual ONNX passes work in both orientations",
+        "status": "expected",
+        "durationMs": 19251
+      },
+      {
+        "project": "webkit-mobile-emulation",
+        "title": "slow runtime download and three actual ONNX passes work in both orientations",
+        "status": "expected",
+        "durationMs": 28218
+      }
+    ],
+    "verifiedModels": [
+      {
+        "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+        "inputSize": 448,
+        "browserName": "chromium",
+        "browserVersion": "158.0.8127.18",
+        "provider": "wasm",
+        "url": "http://127.0.0.1:4173/Bananenblick/"
+      },
+      {
+        "modelSha256": "18b602c250e26962462ab38c788d115fe8e84b8831430d43d570e1c05170edb2",
+        "inputSize": 448,
+        "browserName": "webkit",
+        "browserVersion": "27.2",
+        "provider": "wasm",
+        "url": "http://127.0.0.1:4173/Bananenblick/"
+      }
+    ],
+    "media": "Controlled video clock and worker; Chromium canvas MediaStream; WebKit simulated media track. Separate examples run the real hash-verified ONNX worker."
+  },
+  "acceptance": "pending real Android/Chrome and iPhone/Safari, including camera indicator and >=3 complete camera evaluations per second"
+}

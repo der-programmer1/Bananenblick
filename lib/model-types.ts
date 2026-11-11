@@ -11,6 +11,13 @@ export type PerClassMetrics = {
 export type ModelCard = {
   inputSize: number;
   thresholds: Thresholds;
+  individualBenchmark?: {
+    precision: number;
+    recall: number;
+    passed: boolean;
+    positiveScenes: number;
+    negativeScenes: number;
+  };
   metrics: {
     perClass: PerClassMetrics[];
     testImages: number;
